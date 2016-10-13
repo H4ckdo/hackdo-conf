@@ -1,0 +1,410 @@
+							<!-- Administrador tabs -->
+							<div id="Administrador" class="tab-pane fade" ng-controller="AdminController">
+								<h2><i class="material-icons wrap-icon">create</i> Administrador</h2>
+								<hr>
+								<ul class="nav nav-tabs">
+									<li class="active"><a data-toggle="tab" href="#Usuarios">Usuarios</a></li>
+									<li><a aria-expanded="false" data-toggle="tab" href="#Galeria">Galeria de Videos</a></li>
+								</ul>
+								<!-- contenido de Administrador -->
+								<div class="tab-content">
+									<!-- Usuario Tab -->
+									<div id="Usuarios" class="tab-pane active in">
+										<br>
+										<form class="form-inline" role="form">
+											<div class="form-group wrap-form-left" >
+												<input name="searchOne" class="form-control" type="text" placeholder="Documento de identidad" ng-model="cc" />
+
+												<button type="submit" class="btn btn-default" ng-click="searchByCC(cc)">
+													<span class="glyphicon glyphicon-search"></span>
+													Buscar</button>
+											</div>
+
+
+											<div class="form-group wrap-form-right">
+												<div class="wrapUserName">
+													<input name="userName" placeholder="Filtrar" class="form-control entry-filter-user" type="text" ng-model="userName" ng-change="searchUser(userName)"/>
+												</div>
+
+											<button data-toggle="modal" data-target="#Nuevo_Usuario" class="btn btn-success">
+												<span class="glyphicon glyphicon-plus"></span>
+												Agregar</button>
+
+											</div>
+										</form>
+
+
+										<div id="Nuevo_Usuario" class="modal fade" role="dialog">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">X</button>
+														<h2>Nuevo Usuario</h2>
+													</div>
+
+													<form ng-submit="addNewUser({firstName:firstName,secondName:secondName,firstApellido:firstApellido,secondApellido:secondApellido,newEmail:newEmail,program:program,confirmPass:confirmPass,password:password,addCC:addCC})" >
+
+														<div class="modal-body">
+															<div class="row">
+																<div class="col-md-6">
+																		<div class="form-group">
+																			<label>Primer nombre:</label>
+																			<input type="text" placeholder="Primer nombre" class="form-control input-first-name" ng-model="firstName">
+
+																			<label>Segundo nombre:</label>
+																			<input type="text" placeholder="Segundo nombre" class="form-control input-second-name" ng-model="secondName">
+
+																			<label>Primer Apellido:</label>
+																			<input type="text" placeholder="Primer Apellido" class="form-control first-apellido" ng-model="firstApellido">
+
+																			<label>Segundo Apellido:</label>
+																			<input type="text" placeholder="Segundo Apellido" class="form-control second-apellido" ng-model="secondApellido">
+
+																			<label>Correo Electronico:</label>
+																			<input type="email" placeholder="Correo Electronico" class="form-control input-add-email" ng-model="newEmail">
+																			<br>
+																			<label>Programa:</label>
+																			<select class="form-control select-add-program" value="ing-sistemas">
+																				<option value="ing-sistemas">Ingenieria de sistemas</option>
+																				<option value="psicologia">Psicologia</option>
+																				<option value="trabajo-social">Trabajo social</option>
+																			</select>
+																		</div>
+																</div>
+
+																<div class="col-md-6">
+																		<div class="form-group">
+																			<label>Contraseña:</label>
+																			<input type="text" class="form-control" placeholder="Contraseña" ng-model="password"/>
+																			<label>Confirmar Contraseña:</label>
+																			<input type="text" class="form-control" placeholder="Confirmar Contraseña" ng-model="confirmPass" />
+																			<label>Documento de identidad:</label>
+																			<input type="text" class="form-control" placeholder="Documento de identidad" ng-model="addCC" />
+																		</div>
+
+																		<label>Rol:</label>
+																		{{#isEqual self.rol "SuperAdmin"}}
+																		<div class="checkbox">
+																			<label><input type="checkbox" ng-click="rolAdmin = false" ng-init="rolUser = true" ng-model="rolUser" >Usuario</label>
+																		</div>
+																		<div class="checkbox">
+																			<label><input type="checkbox" ng-click="rolUser = false" ng-init="rolAdmin = false" ng-model="rolAdmin">Administrador</label>
+																		</div>
+
+																		{{/isEqual}}
+
+																		{{#isEqual self.rol "Admin"}}
+																		<div class="checkbox">
+																			<label><input type="checkbox" ng-init="rolUser = true" ng-model="rolUser">Usuario</label>
+																		</div>
+																		{{/isEqual}}
+																</div>
+															</div>
+														</div>
+														<div class="modal-footer text-left">
+															<button align="left" type="submit" class="btn btn-warning">
+																<span class="glyphicon glyphicon-ok"></span>
+															 	Aceptar
+															</button>
+
+															<button data-dismiss="modal" align="left" ng-click="resetAddUser()" type="button" class="btn btn-danger">
+																<span class="glyphicon glyphicon-remove"></span>
+															 	Cancelar
+															</button>
+														</div>
+												</form>
+
+
+												</div>
+											</div>
+										</div>
+
+										<!-- Termina Modal -->
+										<br>
+
+										<div class="user-item">
+											<div class="row notFound hide">
+												<div class="text-center">
+													<i class="material-icons">info</i>
+												</div>
+
+												<h1 class="text-center">¡No encontrado!</h1>
+											</div>
+
+												{{#each users}}
+											<div class="row wrap-user">
+												<div  class="wrap-user-photo align-top">
+												 		{{#exist photo }}
+													<img  class="img img-thumbnail container-img-thumbnail"  src="/images-uploads/{{ photo }}">
+													{{else}}
+													<img  class="img img-thumbnail container-img-thumbnail"  src="/imagenes/usuario.png">
+													{{/exist}}
+												</div>
+
+												<div class="wrap-user-info align-middle">
+													<ul class="non-points">
+														<span class="user-id" data-userId="{{ id }}"></span>
+														<li class="wrap-username-width"> <i class="material-icons wrap-icon align-top">account_box</i> <span class="espacio wrap-username" title="{{ username }}">{{ username }}</span> </li>
+
+														<li >
+															<i class="material-icons wrap-icon">email</i>
+															<span class="wrapper-email">
+															<input type="email" placeholder="Correo electronico" class="form-control input-email" value="{{ email }}" data-email="{{ email }}" />
+
+															<button data-userid="{{ id }}" onclick="updateEmail(this)" class="btn btn-primary btn-actualizar-email ref-email">Actualizar</button>
+															</span>
+
+														</li>
+
+
+														<li>
+															<i class="material-icons wrap-icon">block</i>
+
+															<select  name="" id="" class="form-control select-blocked-time">
+
+															{{#exist banedAt}}
+																{{#releaseAccount releaseAt banedAt '1 hours'}}
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="De por vida">De por vida</option>
+																{{/releaseAccount }}
+
+																{{#releaseAccount releaseAt banedAt '2 hours'}}
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="De por vida">De por vida</option>
+																{{/releaseAccount }}
+
+																{{#releaseAccount releaseAt banedAt '5 hours'}}
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="De por vida">De por vida</option>
+																{{/releaseAccount }}
+
+
+																{{#releaseAccount releaseAt banedAt '1 day'}}
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="De por vida">De por vida</option>
+																{{/releaseAccount }}
+
+																{{#releaseAccount releaseAt banedAt '2 day'}}
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="De por vida">De por vida</option>
+																{{/releaseAccount }}
+
+
+																{{#releaseAccount releaseAt banedAt '5 day'}}
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="De por vida">De por vida</option>
+																{{/releaseAccount }}
+
+																{{#releaseAccount releaseAt banedAt 'FOREVER'}}
+																	<option value="De por vida">De por vida</option>
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="5 Dias">5 Dias</option>
+																{{/releaseAccount }}
+															{{else}}
+																	<option value="1 Hora">1 Hora</option>
+																	<option value="2 Hora">2 Hora</option>
+																	<option value="5 Hora">5 Hora</option>
+																	<option value="1 Dia">1 Dia</option>
+																	<option value="2 Dias">2 Dias</option>
+																	<option value="5 Dias">5 Dias</option>
+																	<option value="De por vida">De por vida</option>
+															{{/exist }}
+															</select>
+
+															{{#exist isBaned}}
+															<button data-userid="{{ id }}" class="unblock-user btn btn-primary btn-actualizar-email" onclick="unBlockUser(this)">Desbanear</button>
+
+															<button data-userid="{{ id }}" onclick="BlockUser(this)" class="hide btn btn-primary btn-actualizar-email block-user">Banear</button>
+
+															{{else}}
+																<button data-userid="{{ id }}" class="unblock-user hide btn btn-primary btn-actualizar-email" onclick="unBlockUser(this)">Desbanear</button>
+
+																<button data-userid="{{ id }}" onclick="BlockUser(this)" class="block-user btn btn-primary btn-actualizar-email">Banear</button>
+															{{/exist}}
+
+														</li>
+
+														<li>
+															<i class="material-icons wrap-icon">library_books</i>
+
+															<select name="" id="" class="form-control select-program">
+																{{#isEqual program "ing-sistemas"}}
+																	<option value="ing-sistemas">Ingenieria de sistemas</option>
+																	<option value="psicologia">Psicologia</option>
+																	<option value="trabajo-social">Trabajo Social</option>
+																{{/isEqual}}
+
+																{{#isEqual program "psicologia" }}
+																	<option value="psicologia">Psicologia</option>
+																	<option value="ing-sistemas">Ingenieria de sistemas</option>
+																	<option value="trabajo-social">Trabajo Social</option>
+																{{/isEqual}}
+
+																{{#isEqual program "trabajo-social" }}
+																	<option value="trabajo-social">Trabajo Social</option>
+																	<option value="psicologia">Psicologia</option>
+																	<option value="ing-sistemas">Ingenieria de sistemas</option>
+																{{/isEqual}}
+
+
+															</select>
+
+															<button onclick="updateProgram(this)" data-userid="{{ id }}" class="btn update-program btn-primary btn-actualizar-email">Actualizar</button>
+
+														</li>
+
+
+														<li>
+															<i class="material-icons wrap-icon">refresh</i>
+															<button onclick="restorePassword(this)" class="btn btn-primary btn-reset-password">Restaurar contraseña</button>
+
+														</li>
+
+
+													</ul>
+												</div><!-- end wrap-user-info -->
+											</div> <!-- end wrap-user -->
+
+
+											{{/each}}
+										</div><!-- end wrap-user -->
+
+										<div class="wrap-bnt-load-more text-center">
+											<button type="submit" class="btn btn-default text-center" ng-model="requestError" ng-init="count = 10" ng-init="requestError = false" ng-init="onRequest = false" ng-model="onRequest" ng-disabled="{[{ onRequest || requestError }]}" ng-click="requestMore(count,onRequest,requestError)" ng-model="count">
+												<span class="glyphicon glyphicon-search"></span>
+												Cargar mas
+											</button>
+										</div>
+
+
+									</div><!-- end user item -->
+
+
+
+									<div id="Galeria" class="tab-pane fade" ng-controller="VideoController">
+
+										<div id="Agregar_Video" class="modal fade" role="dialog">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">X</button>
+														<h2>Agregar Video</h2>
+													</div>
+													<div class="modal-body">
+														<form role="form" ng-submit="createVideo({vTitulo:vTitulo,vUrl:vUrl,vDescription:vDescription})">
+															<div class="form-group">
+																<label>Titulo:</label>
+																<input type="text" ng-model="vTitulo" class="form-control" placeholder="Titulo">
+
+																<label>URL:</label>
+																<input type="text" ng-model="vUrl" class="form-control" placeholder="Ejemplo:https://www.youtube.com/watch?v=ZcoqR9Bwx1Y">
+
+																<label>Descripcion:</label>
+																<textarea style="resize:none" ng-model="vDescription" class="form-control" rows="4"></textarea>
+															</div>
+															<div class="modal-footer">
+																<div align="left">
+																	<button type="submit" class="btn btn-warning">
+																		<span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+																	<button type="reset" class="btn btn-danger" data-dismiss="modal">
+																		<span class="glyphicon glyphicon-remove" ></span> Cancelar</button>
+																</div>
+ 															</div> <!-- end model footer -->
+														</form>
+													</div> <!-- modal-body -->
+												</div> <!-- modal-content -->
+											</div>  <!-- modal-dialog -->
+										</div> <!-- Agregar_Video -->
+
+
+
+										<div class="row">
+											<br>
+											<button data-toggle="modal" ng-click="resetFields()" data-target="#Agregar_Video" class="btn btn-success addMoreVideos">
+												<span class="glyphicon glyphicon-plus"></span>
+												Agregar</button>
+
+										</div>
+
+											<div class="row wrapper-video" ng-repeat="video in videos track by $index">
+												<br>
+												<div ng-model="videoId " ng-init="videoId = video.id" class="wrapper-video">
+
+												<div align="center" class="col-md-4" id="{[{ video.id }]}">
+													<a target="_blank" class="zelda" href="{[{ video.url }]}">
+														<img style="width:380px;"  class="img img-thumbnail" ng-model="video.thumbnail" ng-src="{[{ video.thumbnail }]}">
+													</a>
+												</div>
+
+												<div style="margin-top:-12px" class="col-md-6">
+													<form role="form" ng-submit="updateVideo(video)" id="{[{ video.id }]}-info">
+														<div class="form-group">
+															<label>Titulo</label>
+															<input type="text" ng-model="video.title" placeholder="Titulo del video" ng-model="oldTitle" class="form-control title">
+
+															<label>URL</label>
+															<input type="text" ng-model="video.url" placeholder="Titulo del video" class="form-control url">
+
+															<label>Descripcion</label>
+															<textarea style="resize:none" ng-model="video.description" class="form-control description" rows="3" placeholder="Descripcion del video">{[{ video.description }]}</textarea>
+
+														</div>
+
+														<div>
+															<button class="btn btn-warning" type="submit" ng-click="resetHard(video,index)">
+																<span class="glyphicon glyphicon-send"></span>
+																Actualizar</button>
+															<button class="btn btn-danger" type="button" ng-click="video.title = video.oldTitle; video.description = video.oldDescription; video.url = video.oldUrl;">
+																<span class="glyphicon glyphicon-remove"></span>
+																Cancelar</button>
+														</div>
+
+													</form>
+												</div> <!-- wrapper video -->
+												</div> <!-- video list -->
+
+
+
+									</div>
+
+										</div>
+
+
+
+
+
+				</div><!-- end tab-content -->

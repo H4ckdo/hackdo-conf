@@ -1,0 +1,56 @@
+{
+  "name": "SailsBolerPlate",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "connect-redis": "3.0.2",
+    "handlebars": "4.0.5",
+    "include-all": "~0.1.6",
+    "moment": "2.13.0",
+    "node-uuid": "^1.4.7",
+    "nodemailer": "^0.7.1",
+    "nodemailer-smtp-transport": "2.4.2",
+    "rc": "1.0.1",
+    "sails": "~0.12.3",
+    "sails-disk": "~0.10.9",
+    "sails-fixtures": "1.0.8",
+    "sails-hook-fixtures": "0.11.9",
+    "sails-memory": "0.10.6",
+    "sails-mysql": "0.12.1",
+    "sails-service-mailer": "3.2.1",
+    "skipper": "^0.6.4",
+    "skipper-disk": "0.5.4",
+    "underscore": "1.8.3",
+    "xoauth2": "1.1.0"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anonymous node/sails user/uniclateriana.git"
+  },
+  "author": "anonymous node/sails user",
+  "license": "",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "cli-color": "^1.1.0",
+    "bower": "^1.7.9",
+    "node-sass": "^3.10.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-param": "^1.0.3",
+    "gulp-sass": "^2.1.0",
+    "gulp-watch": "^4.3.5",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.10.1"
+  }
+}
