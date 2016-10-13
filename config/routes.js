@@ -2,7 +2,8 @@ module.exports.routes = {
 	"GET /route/list":function(req,res) {
 		routesList(res);
 	},
-	"GET /":"HomeController.serve",
+
+	"GET /":{view:"homepage"},
 
 	//CRUD events
 	"GET /api/events":"EventController.showAll",
