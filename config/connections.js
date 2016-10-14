@@ -28,6 +28,15 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
+
+ localDiskDb: {
+    adapter: 'sails-disk'
+  },
+  memory: {
+    adapter: 'sails-memory'
+  }
+
+
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *
@@ -36,13 +45,13 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  someMysqlServer: {
-     adapter: 'sails-mysql',
-     host: '127.0.0.1',
-     user: 'root',// optional
-     password: '123456', //optional
-     database: 'uniclateriana'// optional
-  }
+  // someMysqlServer: {
+  //    adapter: 'sails-mysql',
+  //    host: '127.0.0.1',
+  //    user: 'root',// optional
+  //    password: '123456', //optional
+  //    database: 'xxxxx'// optional
+  // }
 
   /***************************************************************************
   *                                                                          *

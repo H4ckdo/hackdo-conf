@@ -22,7 +22,7 @@ module.exports = {
   models:{
 //	   connection: 'someMysqlServer',
     connection: 'localDiskDb',
-	  migrate: "safe"
+	  migrate: "drop"
   },
 	hookTimeout: 120000
 };

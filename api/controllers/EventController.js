@@ -1,18 +1,15 @@
 module.exports = {
   showAll: function (req, res) {
-    return res.json({
-      todo: 'showAll() is not implemented yet!'
-    })
+  	res.dispatchModel(Event.find({}));
   },//end show method
   show: function (req, res) {
-    return res.json({
-      todo: 'show() is not implemented yet!'
-    })
+  	let id = req.params.id;
+   	res.dispatchModel(Event.findOne({id}));
   },//end show method
   create: function (req, res) {
-    return res.json({
-      todo: 'create() is not implemented yet!'
-    });
+  	let body = req.body;
+    res.dispatchModel(Event.create(body))
+
   },//end create method
   update: function (req, res) {
     return res.json({
