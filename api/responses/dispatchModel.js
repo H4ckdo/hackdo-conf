@@ -3,6 +3,12 @@ module.exports = function dispatchModel(query) {
   let res = this.res;
 	return (
 		query.then(function(docs) {
+			if(!docs || ( _.isArray(docs) && _.isEmpty(docs) )) {
+	  		return res.status(404).json({
+	  			message:"not found",
+	  			code:0
+	  		})
+			}
   		res.json({
   			message:"success",
   			data:docs,
@@ -10,7 +16,7 @@ module.exports = function dispatchModel(query) {
   		})
   	})
   	.catch(function(err) {
-  		res.json({
+  		res.status(500).json({
   			message:"error",
   			error:err,
   			code:0

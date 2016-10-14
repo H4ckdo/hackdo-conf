@@ -6,29 +6,27 @@ module.exports.routes = {
 	"GET /":{view:"homepage"},
 
 	//CRUD events
-	"GET /api/events":"EventController.showAll",
+	"GET /api/v1/events":"EventController.showAll",
 
-	"POST /api/event/create":"EventController.create",
+	"POST /api/v1/event/create":"EventController.create",
 
-	"PUT /api/event/update":"EventController.update",
+	"PUT /api/v1/event/update/:id":"EventController.update",
 
-	"GET /api/event/show/:id":"EventController.show",//note the :id url must be at the bottom of the routes to dont confuse
+	"GET /api/v1/event/show/:id":"EventController.show",//note the :id url must be at the bottom of the routes to dont confuse
 
-	"DELETE /api/event/delete/:id":"EventController.delete",
+	"DELETE /api/v1/event/delete/:id":"EventController.delete",
 	//END CRUD events
 
-
-
 //CRUD user
-	"GET /api/users":"UserController.showAll",
+	"GET /api/v1/users":"UserController.showAll",
 
-	"POST /api/user/create":"UserController.create",
+	"POST /api/v1/user/create":"UserController.create",
 
-	"PUT /api/user/update":"UserController.update",
+	"PUT /api/v1/user/update":"UserController.update",
 
-	"GET /api/user/show/:id":"UserController.show",//note the :id url must be at the bottom of the routes to dont confuse
+	"GET /api/v1/user/show/:id":"UserController.show",//note the :id url must be at the bottom of the routes to dont confuse
 
-	"DELETE /api/user/delete/:id":"UserController.delete"
+	"DELETE /api/v1/user/delete/:id":"UserController.delete"
 	//END CRUD user
 
 }

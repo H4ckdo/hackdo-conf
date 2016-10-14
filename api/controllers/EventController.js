@@ -8,17 +8,15 @@ module.exports = {
   },//end show method
   create: function (req, res) {
   	let body = req.body;
-    res.dispatchModel(Event.create(body))
-
+    res.dispatchModel(Event.create(body));
   },//end create method
   update: function (req, res) {
-    return res.json({
-      todo: 'update() is not implemented yet!'
-    });
+  	let id = req.params.id;
+  	let update = req.body;
+  	res.dispatchModel(Event.update({id},update));
   },//end update method
   delete: function (req, res) {
-    return res.json({
-      todo: 'delete() is not implemented yet!'
-    });
+  	let id = req.params.id;
+  	res.dispatchModel(Event.destroy({id}));
   }//end delete method
 }
