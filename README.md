@@ -1,11 +1,11 @@
 #Hackdo web site
 
 ##Backend Boilerplate
-	 - Sailsjs
-	 - Foundation css
-	 - Gulp
-	 - Handlebars
-	 - Fixtures
+	  Sailsjs
+	  Foundation css
+	  Gulp
+	  Handlebars
+	  Fixtures
 
 ##Install modules via npm
 		npm install
