@@ -1,6 +1,7 @@
 module.exports = {
   showAll: function (req, res) {
-  	res.dispatchModel(Event.find({}));
+ 		let self = req.protocol + '://' + req.get('host') + req.originalUrl;//full url
+  	res.dispatchModel(Event.find({}),{ links:{self} });
   },//end show method
   show: function (req, res) {
   	let id = req.params.id;

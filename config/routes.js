@@ -10,7 +10,7 @@ module.exports.routes = {
 
 	"POST /api/v1/event/create":"EventController.create",
 
-	"PUT /api/v1/event/update/:id":"EventController.update",
+	"PUT /api/v1/event/update":"EventController.update",
 
 	"GET /api/v1/event/show/:id":"EventController.show",//note the :id url must be at the bottom of the routes to dont confuse
 

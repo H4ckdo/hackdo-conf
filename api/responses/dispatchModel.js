@@ -1,22 +1,20 @@
-module.exports = function dispatchModel(query) {
+module.exports = function dispatchModel(query,options) {
   let req = this.req;
   let res = this.res;
+  res.set("Content-Type","application/vnd.api+json");
 	return (
 		query.then(function(docs) {
 			if(!docs || ( _.isArray(docs) && _.isEmpty(docs) )) {
-	  		return res.status(404).json({
+	  		return res.status(404).jsonApi({
 	  			message:"not found",
 	  			code:0
 	  		})
 			}
-  		res.json({
-  			message:"success",
-  			data:docs,
-  			code:1
-  		})
+			options.data = docs;
+  		res.jsonApi(options);
   	})
   	.catch(function(err) {
-  		res.status(500).json({
+  		res.status(500).jsonApi({
   			message:"error",
   			error:err,
   			code:0
