@@ -2,23 +2,42 @@ module.exports = function dispatchModel(query,options) {
   let req = this.req;
   let res = this.res;
   res.set("Content-Type","application/vnd.api+json");
+  let yeild = {};
+  let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;//full url
 	return (
 		query.then(function(docs) {
-			if(!docs || ( _.isArray(docs) && _.isEmpty(docs) )) {
-	  		return res.status(404).jsonApi({
-	  			message:"not found",
-	  			code:0
-	  		})
+			if(docs) {
+				res.status(200);
+				_.extend(yeild,options.success,{
+					data:docs,
+					links:{ self:fullUrl }
+				});
+			} else {
+				res.status(404);
+				_.extend(yeild,{
+					data:null,
+					errors:[_.extend({
+						status:404,
+						title:'Resource not found',
+					},options.errors.notFound)]
+				},{
+					links:{ self:fullUrl }
+				});
 			}
-			options.data = docs;
-  		res.jsonApi(options);
+  		res.jsonApi(yeild);
   	})
   	.catch(function(err) {
-  		res.status(500).jsonApi({
-  			message:"error",
-  			error:err,
-  			code:0
-  		})
+  		console.log(err,'err');
+			res.status(500);
+			_.extend(yeild,{
+				data:null,
+				errors:[_.extend({
+					status:500,
+					title:'The server not responding',
+				},options.errors.serverError)]
+			});
+
+
   	})
   )
 }//end dispatch model

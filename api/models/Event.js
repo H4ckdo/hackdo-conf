@@ -14,9 +14,9 @@ module.exports = {
     	defaultsTo:{
 	    	title:{type:'string'},
 		    startDate : { type: 'date',defaultsTo:new Date(),required:false },
-		    endingDate : { type: 'date'}
+		    endingDate : { type: 'date'},
 		    description : { type: 'string' },
-		    venue : { type: 'string' },
+		    venue : { type: 'string' }
     	}
     }
 
