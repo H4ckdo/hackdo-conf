@@ -25,13 +25,6 @@ module.exports = {
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
    ***************************************************************************/
-  session:{
-  	adapter:"redis",
-	  url: 'redis://pub-redis-16787.us-east-1-3.7.ec2.redislabs.com:16787',
-  	port: 6379,
-   	pass: "maxtermax04",
-   	prefix: 'sess:'
-  },
   log: {
     level: "verbose"
   },

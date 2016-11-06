@@ -8,7 +8,6 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.http.html
  */
-
 module.exports.http = {
 
   /****************************************************************************
@@ -40,7 +39,6 @@ module.exports.http = {
       'compress',
       'methodOverride',
       'poweredBy',
-//      'contentType',
       '$custom',
       'router',
       'www',
@@ -48,45 +46,13 @@ module.exports.http = {
       '404',
       '500'
     ],
-    contentType:function(req,res,next) {
-    	let requestType = req.get('content-type');
-   		let accept = req.headers.accept;
-    	let url = req.url;
-    	let methos = req.method;
-    	const isforAPI = /^(\/api\/)/gi;//match with /api/ routes
-    	if(isforAPI.test(url)) {
-   			res.setHeader('Content-Type', 'application/vnd.api+json');//setting content-type
-				delete res.charset;//removing charset because json use unicode
-				if(method === "GET" || method === "DELETE") return next();
 
-	    	if(requestType === "application/vnd.api+json") {
-	    		console.log(accept,'accept');
-	    		if(accept === "application/vnd.api+json") {
-		    		next();
-	    		} else {
-	    			res.statusCode = 406;
-						res.write(JSON.stringify({message:"406 Not Acceptable"}))
-						return res.end();
-	    		}//end accept
-	    	} else {
-    			res.statusCode = 415;
-					res.write(JSON.stringify({message:"415 Unsupported Media Type"}));
-					return res.end();
-	    	}//end requestType
-    	} else {
-    		next();
-    	}//end isforAPI
-    },
   /****************************************************************************
   *                                                                           *
   * Example custom middleware; logs each request to the console.              *
   *                                                                           *
   ****************************************************************************/
 
-    // myRequestLogger: function (req, res, next) {
-    //     console.log("Requested :: ", req.method, req.url);
-    //     return next();
-    // }
 
 
   /***************************************************************************
@@ -103,10 +69,8 @@ module.exports.http = {
   * middleware function).                                                    *
   *                                                                          *
   ***************************************************************************/
-
-    bodyParser: require('skipper')({strict: true})
-  },
-
+    bodyParser: require("skipper")()
+  }
   /***************************************************************************
   *                                                                          *
   * The number of seconds to cache flat files on disk being served by        *

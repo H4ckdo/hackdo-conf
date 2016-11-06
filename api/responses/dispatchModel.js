@@ -1,43 +1,88 @@
-module.exports = function dispatchModel(query,options) {
+module.exports = function dispatchModel(Query,options = {}, model_empty) {
   let req = this.req;
   let res = this.res;
-  res.set("Content-Type","application/vnd.api+json");
   let yeild = {};
+  options.errors = options.errors || {};
+  options.success = options.success || {};
+
   let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;//full url
+
 	return (
-		query.then(function(docs) {
+		Query.then(function(docs) {
+			if(model_empty && _.isArray(docs)) {
+				if(docs.length === 0) docs = null;
+			}
+
 			if(docs) {
-				res.status(200);
-				_.extend(yeild,options.success,{
-					data:docs,
-					links:{ self:fullUrl }
+				res.status(options.success.status || 200);
+				delete options.success.status;
+				_.extend(yeild,options.success || {},{
+					data : {attributes : docs},
+					links : {self : fullUrl}
 				});
 			} else {
+				if(options.errors.notFound) {
+					if(utils.not(options.errors.notFound.id)) options.errors.notFound.id = "MISSING_RESOURCE";
+				} else {
+					options.errors.notFound = {};
+				}
+
 				res.status(404);
 				_.extend(yeild,{
 					data:null,
-					errors:[_.extend({
-						status:404,
-						title:'Resource not found',
-					},options.errors.notFound)]
+					errors : [_.extend({
+						status : 404,
+						title : 'Resource not found',
+					},options.errors.notFound )]
 				},{
-					links:{ self:fullUrl }
+					links : {self : fullUrl}
 				});
 			}
-  		res.jsonApi(yeild);
+
+  		res.json(yeild);
   	})
   	.catch(function(err) {
-  		console.log(err,'err');
-			res.status(500);
+  		let status = 500;
+	 		let title = "Internal Server Error";
+
+			options.errors.fails = {};
+
+  		if(err.invalidAttributes) {
+  			let forbidden = options.errors.Forbidden;
+  			title = forbidden ? forbidden.title : "Forbidden";
+  			status = 403;
+  			options.errors.fails.id = (forbidden ? forbidden.id : "INVALID_PARAMS");
+  			options.errors.fails.detail = (forbidden ? forbidden.detail : "Some argument or arguments are not valid");
+  		}
+
+	 		if(err.originalError && err.originalError.code === 11000) {
+	 			let conflict = options.errors.Conflict;
+	 			status = 409;
+ 			  title = (conflict ? conflict.title : "Conflict");
+ 			  options.errors.fails.id = (conflict ? conflict.id : "RESOURCE_CONFLICT");
+ 			  options.errors.fails.detail = (conflict ? conflict.detail : "Resources in conflict.");
+	 		}
+
+	 		if(err.originalError && err.originalError.code === "missing_fields") {
+	 			let badRequest = options.errors.badRequest;
+	 			status = 400;
+	 			title = (badRequest ? badRequest.title : "Bad request");
+  			options.errors.fails.id = (badRequest ? badRequest.id : "MISSING_REQUERIMENTS");
+				options.errors.fails.detail = (badRequest ? badRequest.detail : "Client error, wrong request.");
+	 		}
+
+			res.status(status);
 			_.extend(yeild,{
-				data:null,
-				errors:[_.extend({
-					status:500,
-					title:'The server not responding',
-				},options.errors.serverError)]
+				errors : [_.extend({
+					status,
+					title
+				},( status === 500 ? (options.errors.serverError || {
+					id : "SERVER_ERROR",
+					detail : "An internal error has occurrent."
+				}) : options.errors.fails || {}))]
 			});
 
-
+			res.json(yeild);
   	})
   )
 }//end dispatch model

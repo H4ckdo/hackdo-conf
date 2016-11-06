@@ -28,9 +28,11 @@ module.exports.policies = {
 
   // '*': true,
 
-  // EventController:{
-  // 	update:["validateParams"]
-  // }
+   EventController : {
+   	create : ["validateParams"],
+	 	update:["validateParams"],
+	 	delete:["validateParams"]
+   }
 
   /***************************************************************************
   *                                                                          *
