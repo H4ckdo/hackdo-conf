@@ -44,31 +44,29 @@ module.exports = function dispatchModel(Query,options = {}, model_empty) {
   	.catch(function(err) {
   		let status = 500;
 	 		let title = "Internal Server Error";
-
 			options.errors.fails = {};
-
-  		if(err.invalidAttributes) {
+  		if(err.invalidAttributes 	|| err.message === "invalidAttributes") {
   			let forbidden = options.errors.Forbidden;
   			title = forbidden ? forbidden.title : "Forbidden";
   			status = 403;
-  			options.errors.fails.id = (forbidden ? forbidden.id : "INVALID_PARAMS");
-  			options.errors.fails.detail = (forbidden ? forbidden.detail : "Some argument or arguments are not valid");
+	 			options.errors.fails.id = (forbidden ? forbidden.id : "INVALID_PARAMS");
+	 			options.errors.fails.detail = (forbidden ? forbidden.detail : "Some argument or arguments are not valid");
   		}
 
-	 		if(err.originalError && err.originalError.code === 11000) {
+  		if(err.message === "All_ATTRIBUTES_INVALID") {
+	 			let badRequest = options.errors.badRequest;
+		 		status = 400;
+		 		title = (badRequest ? badRequest.title : "Bad request");
+	  		options.errors.fails.id = (badRequest ? badRequest.id : "MISSING_REQUERIMENTS");
+				options.errors.fails.detail = (badRequest ? badRequest.detail : "Client error, wrong request.");
+			}
+
+	 		if(err.code === 11000 || (err.originalError && err.originalError.code === 11000)) {
 	 			let conflict = options.errors.Conflict;
 	 			status = 409;
  			  title = (conflict ? conflict.title : "Conflict");
  			  options.errors.fails.id = (conflict ? conflict.id : "RESOURCE_CONFLICT");
  			  options.errors.fails.detail = (conflict ? conflict.detail : "Resources in conflict.");
-	 		}
-
-	 		if(err.originalError && err.originalError.code === "missing_fields") {
-	 			let badRequest = options.errors.badRequest;
-	 			status = 400;
-	 			title = (badRequest ? badRequest.title : "Bad request");
-  			options.errors.fails.id = (badRequest ? badRequest.id : "MISSING_REQUERIMENTS");
-				options.errors.fails.detail = (badRequest ? badRequest.detail : "Client error, wrong request.");
 	 		}
 
 			res.status(status);
