@@ -1,7 +1,7 @@
 module.exports = {
   showAll : function (req, res) {
-  	let response_cases = {type:'users'}//end cases response
-  	res.dispatchModel(User.find({}).populate("events"),response_cases);
+  	let response_cases = {type : "users", relationships : false}//end cases response
+		res.dispatchModel(User.find({}).populate("events"), response_cases);
   },//end show method
 
   show: function (req, res) {

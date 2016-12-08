@@ -16,10 +16,27 @@ module.exports = function dispatchModel(Query,options = {}, model_empty) {
 			if(docs) {
 				res.status(options.success.status || 200);
 				delete options.success.status;
-				_.extend(yeild,options.success || {},{
-					data : {attributes : docs},
-					links : {self : fullUrl}
-				});
+				let relationships = options.relationships;
+				if(relationships) {
+					yeild.relationships = {};
+					let data = [];
+					data[relationships] = docs[relationships];
+					docs.forEach(function(e) {
+						e[relationships].forEach(function(a) {
+							data.push( _.extend({type : relationships},a) )
+						});
+					})
+
+					yeild.relationships[relationships] = {
+						links : {self : fullUrl},
+					 	data
+					}
+				} else {
+					_.extend(yeild,{type:options.type},options.success || {},{
+						data : {attributes : (docs[0] || docs)},
+						links : {self : fullUrl},
+					});
+				}
 			} else {
 				if(options.errors.notFound) {
 					if(utils.not(options.errors.notFound.id)) options.errors.notFound.id = "MISSING_RESOURCE";
@@ -45,6 +62,7 @@ module.exports = function dispatchModel(Query,options = {}, model_empty) {
   		let status = 500;
 	 		let title = "Internal Server Error";
 			options.errors.fails = {};
+			console.log(err,'err');
   		if(err.invalidAttributes 	|| err.message === "invalidAttributes") {
   			let forbidden = options.errors.Forbidden;
   			title = forbidden ? forbidden.title : "Forbidden";
