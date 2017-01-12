@@ -67,7 +67,7 @@ module.exports.connections = {
      port: 27017,
 //     user: 'username', //optional
 //     password: 'password', //optional
-   	 database: 'hackdo' //optional
+   	 database: 'siso' //optional
    },
 
   /***************************************************************************

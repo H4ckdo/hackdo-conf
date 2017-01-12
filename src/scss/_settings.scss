@@ -39,6 +39,7 @@
 //  34. Title Bar
 //  35. Tooltip
 //  36. Top Bar
+//  37. Icons
 
 @import 'util/util';
 
@@ -564,3 +565,55 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+
+// 37. Icons
+// ---------
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v19/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Open Sans Regular';
+  font-style: normal;
+  src: local('Open Sans Regular'), url(/fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  src: local('Open Sans Bold'), url(/fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Open Sans Light';
+  font-style: normal;
+  src: local('Open Sans Light'), url(/fonts/Open_Sans/OpenSans-Light.ttf);
+}
+
+
+
+
+
+

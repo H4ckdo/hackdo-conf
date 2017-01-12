@@ -1,73 +1,89 @@
 let ObjectId = require('mongodb').ObjectID;
 
 module.exports = {
-	not : function(element) {
-		return !(!!element)
+  pickUpMethods: function(ClassName) {
+    let prototype = ClassName.prototype;
+    let methods = Object.getOwnPropertyNames(prototype);
+    _.pull(methods, 'constructor');
+    return _.pick(prototype, methods);
+    /*
+      @params
+        *ClassName: <class>
+      Description: Pick up all the methods of a class
+      Return<Object>: With the methods of the class
+    */
+  },
+	not: function(element) {
+		return !(!!element);
+    /*
+      @params
+        *element: <any>
+      Description: Check the boolean value
+      Return<boolean>: Negated value of the boolean value from @element parameter
+    */
 	},//end not
 
-	is_date : function(candidate) {
+	isDate: function(candidate) {
 		return (new Date(candidate) === "Invalid Date" ? false : true);
-	},//end is_date
+    /*
+      @params
+        *candidate: <any>
+      Description: Check the @candidate parameter is a valid javascript date
+      Return<boolean>: Value that mean is the @candidate parameter id a valid javascript date
+    */
+	},//end isDate
 
-	subtract : function(obj,conserve) {
-		let yeild = {};
-
-		_.forEach(conserve,(element)=> { if(obj[element]) yeild[element] = obj[element] });
-		return yeild;
+	subtract: function(obj, conserve) {
+		let yield = {};
+		_.forEach(conserve, (element)=> { if(obj[element]) yield[element] = obj[element] });
+		return yield;
+    /*
+      @params
+        *obj: <Object>
+        *conserve: <Array>
+      Description: `Iterate the conserve array and check if the @obj params have the current element as key,
+              the add it to a yield object.`
+      Return<Object>: Result of the object that whant to conserve.
+    */
 	},//end subtract
 
-	clear_query : function clear_attributes(model,data) {
-  	let attributes = model.attributes;
-  	delete attributes.id;
-  	delete attributes._id;
-  	Object.keys(data).forEach((self)=> { if(utils.not(attributes[self])) delete data[self] });
- 		return data;
-  },//end clear_query
-
-  relationships : function(model) {
-  	let attributes = model.attributes;
- 		return (Object.keys(attributes)).filter((element,index)=> {
- 				if(!!(attributes[element]['model'])) {
- 					return element;
- 				} else {
- 					return false;
- 				}
- 		});
-  },
-
-  update_native : function(model, update,resolve ,reject) {
- 		model.native(function (err, collection) {
- 			if(err) return reject(err);
- 			if(model_rel.length) {
- 				model_rel.forEach((element)=> { if(update[element]) update[element] = new ObjectId(update[element]) });
- 			}
-  		collection.update({_id : new ObjectId(id)} ,{"$set":update}, { multi: true },(err)=> {
-  			if(err) return reject(err);
-  			if(model.after_update_by_id) {
-					model.after_update_by_id(update,(err)=> { err ? reject(new Error(err.message)) : resolve(update) });
-				} else {
-					resolve(update);
-				}
-  		});
-		});
-  },
-
-  model : {
-  	update_by_id : function(id,update) {
-  		let model = this;
-  		update = utils.clear_query(model,update);
-  		return (new Promise(function(resolve,reject) {
-	  			if(Object.keys(update).length === 0) return reject(new Error("All_ATTRIBUTES_INVALID"));
-			 		let model_rel = utils.relationships(model);
-					if(model.before_update_by_id) {
-						model.before_update_by_id(update,(err)=> {
-							err ? reject(new Error(err.message)) : utils.update_native(model, update, resolve, reject)
-						});
-					} else {
-						utils.update_native(model, update, resolve, reject);
+	remove: function(omits = [], elements, unless = []) {
+		for(var i = 0; i < elements.length; i++) {
+			let current = elements[i];
+			let deep = Object.keys(current);
+			for(var e = 0; e < deep.length; e++) {
+				let stop = false;
+				for (var l = 0; l < unless.length; l++) {
+					if(unless[l] === deep[e]) {
+						stop = true;
+						break
 					}
-				})// Promise callback
-  		)
-  	}//end updateById
-  }
-}
+				}
+				if(stop) continue;
+				let x = current[deep[e]];
+				if(_.isArray(x)) {
+					utils.remove(omits, x, unless);
+				} else {
+					for(var t = 0; t < omits.length; t++) {
+						delete current[omits[t]]
+					}
+				}
+			}
+		}
+    /*
+      @params
+        *omits<default Array>: Represent an array of object that whant to remove
+        *elements<Array>: Represent an array of object over gonna be keys deleted in case that key was in the omits argument
+      Description: `Recursive function that delete the elements of a object even if is deep in the object`
+      Return<undefined>
+    */
+	},//end remove
+
+  model: {
+    validateData: function(Model, update) {
+      let attributes = Model._attributes;
+      return _.every(Object.keys(update),(current)=> attributes.hasOwnProperty(current));
+    },//end validateUpdate
+  }//end model
+
+}//end utils

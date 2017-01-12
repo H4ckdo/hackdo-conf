@@ -1,15 +1,10 @@
 "use strict";
 module.exports = function(req, res, next) {
-	next();
-	// let isAuth = req.session.authenticated;
- //  if (isAuth) {
- //  	if(req.isSocket) return next();
-	//   if(req.url === "/") return res.redirect("/home");
- //    return next();
- //  }
-
- //  // User is not allowed
- //  // (default res.forbidden() behavior can be overridden in `config/403.js`)
- //  if(req.url === "/") return next();
- //  res.redirect("/");
-};
+	let isAuth = req.session.authenticated;
+  if(isAuth) {
+  	next();
+  } else {
+  	if(req.url === "/api/v1/users/create" || req.url === "/api/v1/auth/logout" || req.url === "/api/v1/auth/login") return next()
+  	return res.redirect("/login");
+  }
+}

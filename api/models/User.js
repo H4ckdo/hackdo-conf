@@ -1,74 +1,156 @@
 module.exports = _.extend({
-	  autoPK : false,
-	  schema : true,
-	  before_update_by_id : function(data,next) {
-	  	console.log("before_update_by_id");
-			next()
-	  },//end beforeCreate
-	  attributes : {
-	 		id : {
-	       type: 'string',
-	       primaryKey: true
-	    },
-			name : {
-				type : 'string',
-				required : true
-			},
-			email : {
-				type : 'string',
-				required : true,
-				unique : true
-			},
-			events: {
-	      collection : 'event',
-	      via : 'manager'
-	    }
+  autoPK: false,
+  schema: true,
+  validatePassword: function(data, candidate, resolve, reject) {
+		bcrypt.compare(candidate, data.password, function(err, match) {
+			if(err) return reject(err);
+			if(match) {
+				User.update(data.id, {isLogin : true})
+						.then(function(docs) {
+							if(utils.not(docs)) return resolve(null); return resolve({authentication : true, id : data.id});
+						})
+						.catch((err)=> reject(err));
+			} else {
+				return reject(new Error("WRONG_PASSWORD"));
+			}
+		});
+  },//validatePassword
+
+  clearUpdate: function(update = {}, deletes = []) {
+    _.each(deletes,(del)=> delete update[del]);
+    return update;
+    /*
+      @params
+        *update<Object>: Represent the data to clear
+        *deletes<Array>: List of string that represent the attributes of @update to delete
+      Description: `Delete the attributes which is not as a proterty in the @update argument`
+      Return<Object>
+    */
+  },//end clearUpdate
+
+  createSure: function(data = {}) {
+    return (new Promise((resolve, reject)=> {
+        let isValid = utils.model.validateData(User, data);
+        if(isValid) {
+         return User.create(data).then(resolve).catch(reject);
+        } else {
+          return reject(new Error("invalidAttributes"));
+        }
+      })
+    )
+    /*
+      @params
+        *data<Object>: Represent the data to create
+      Description: `Create a document restricting to the attributes of the model
+                    in case the @data argument was invalid reject the promise`
+      Return<Promise>
+    */
+  },//end createSure
+
+  updateSure: function(id, update, session) {
+    return (new Promise((resolve, reject)=> {
+        let remove = ['id', 'rol', 'isLogin'];
+        if(session.rol === 'superadmin') {
+          //superadmin path
+          _.remove(remove, (rm)=> rm === 'rol');//allow to superadmin change rol
+          if(update.hasOwnProperty('rol')) update.rol = 'superadmin';//dont allow that a superadmin downgrade
+        } else {
+          //admin path
+          if(update.hasOwnProperty('rol')) return reject(new Error("Forbidden"))
+        }
+
+        update = this.clearUpdate(update, remove);
+        if(Object.keys(update).length === 0) reject(new Error("All_ATTRIBUTES_INVALID"));//candidate update invalid
+        let isValid = utils.model.validateData(User, update);
+        if(isValid) {
+          if(update.hasOwnProperty('password')) {
+            bcrypt.hash(update.password, 10, function(err, hash) {
+              if(err) return reject(new Error("serverError"));
+              update.password = hash;
+              User.update(id, update).then((docs)=> resolve(update)).catch(reject);
+            });
+          } else {
+            return User.update(id, update).then((docs)=> resolve(update)).catch(reject);
+          }
+        } else {
+          return reject(new Error("invalidAttributes"));
+        }
+      })
+    );
+    /*
+      @params
+        *is<String>: mongodb id represent as a string
+        *update<Object>: Represent the data to update
+        *session<Object>: Represent the session object which store the session information
+      Description: `Update a document restricting the update access for rol of the user via session.
+                    Also clean the @update argument before do the query`
+      Return<Promise>
+    */
+  },//end updateSure
+
+  login: function(data = {}) {
+  	let self = this;
+  	return (new Promise(function(resolve, reject) {
+        let hasEmail = data.hasOwnProperty("email");
+        let hasPassword = data.hasOwnProperty("password");
+  			if(utils.not(hasPassword) && utils.not(hasEmail)) return reject(new Error("All_ATTRIBUTES_INVALID"));
+  			User.findOne({email: data.email}).then(function(docs) {
+  				if(utils.not(docs)) return resolve(null);
+  				self.validatePassword(docs, data.password, resolve, reject);
+  			}).catch((err)=> reject(err));
+  		})
+  	)
+  },//end login
+
+  logout: function(session) {
+  	let self = this;
+  	let id = session.userId;
+  	return (new Promise(function(resolve, reject) {
+			if(utils.not(session.authenticated)) return reject(new Error("ALREADY_LOGOUT"));
+			User.updateById(id, {isLogin: false})
+				.then(function(docs) {
+					if(utils.not(docs)) return resolve(null);
+					session.destroy((err)=> err ? reject(err) : resolve({authentication: false}));
+				})
+				.catch((err)=> reject(err));
+  		})
+  	)
+  },
+  beforeCreate: function(data, next) {
+	  bcrypt.hash(data.password, 10, function(err, hash) {
+	    if(err) return next(err);
+	    data.password = hash;
+	   	next();
+	  })
+  },
+	attributes: {
+ 		id: {
+      type: 'objectid',
+      primaryKey: true
+    },
+    isLogin: {
+    	type: 'boolean',
+    	defaultsTo: false
+    },
+    password: {
+      type: 'string',
+      size: 20,
+      required: true
+    },
+    rol: {
+      type: 'string',
+      required: true,
+      enum: ['admin', 'superadmin', 'user']
+    },
+		name: {
+			type: 'string',
+			required: true
+		},
+		email: {
+			type: 'string',
+			required: true,
+			unique: true
+		}
 	}
-
-	// beforeValidate : function has_requeriments(data,next) {
-	// 	let attributes = User.attributes;
-	// 	delete attributes.id;
-	// 	let requires = (Object.keys(attributes).filter((attribute)=> attributes[attribute]['required']));
- //  	let has_requeriments = requires.every((element)=> data[element]);
- //  	if(has_requeriments) {
- //  		Object.keys(data).forEach((self)=> { if(utils.not(attributes[self])) delete data[self] });
- //  		return next();
- //  	} else {
-	//   	return next({code : "missing_fields", detail : "invalid attributes attempting to be created in the Event model"});
- //  	}
- //  },//end beforeValidate
-
- //  clear_query : function clear_attributes(data) {
- //  	let attributes = User.attributes;
- //  	delete attributes.id;
- //  	Object.keys(data).forEach((self)=> { if(utils.not(attributes[self])) delete data[self] });
- // 		return data;
- //  },//end clear_query
-
- //  findAndUpdate : function(query,update) {
- //  	let self = this;
- //  	update = self.clear_query(update);
- //  	return (new Promise(function(resolve,reject) {
-	// 	 		User.native(function (err, collection) {
-	// 	 			if(err) return reject(err);
-	// 	 			let where = (query.id ? {_id : new ObjectId(query.id)} : query);
-	// 	  		collection.update( where ,{"$set":update}, { multi: true },(err)=> err ? reject(err) : resolve(update));
-	// 			});
-	// 		})// Promise callback
- //  	)
- //  },//end findAndUpdate
-
- //  remove : function destroy_resource(query) {
- //  	return (new Promise(function(resolve,reject) {
-	// 	 		User.native(function (err, collection) {
-	// 	 			if(err) return reject(err);
-	// 	  		collection.remove({_id : new ObjectId(query.id)}, (err)=> err ? reject(err) : resolve(query));
-	// 			});
-	// 		})// Promise callback
- //  	)
- //  }
-}, utils.model)
-
-
-
+}, utils.model);
 

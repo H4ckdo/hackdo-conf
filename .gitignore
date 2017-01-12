@@ -41,6 +41,10 @@
 
 config/local.js
 
+build/js
+build/styles
+
+
 
 ################################################
 # Dependencies
@@ -63,8 +67,8 @@ config/local.js
 #
 ################################################
 
-./node_modules
-./bower_components
+node_modules
+bower_components
 
 
 

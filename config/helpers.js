@@ -1,7 +1,6 @@
-"use strict";
-var Handlebars = require('handlebars');
+let Handlebars = require("handlebars");
 
-Handlebars.registerHelper('isEqual', function(v1,v2,options) {
+Handlebars.registerHelper('isEqual', function(v1, v2, options) {
   if(v1 === v2) {
     return options.fn(this);
   }

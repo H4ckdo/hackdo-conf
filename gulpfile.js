@@ -1,31 +1,31 @@
 "use strict";
-const gulp = require('gulp-param')(require('gulp'), process.argv)
-,			babel = require("gulp-babel")
-,			watch = require("gulp-watch")
-,			fs = require("fs")
-,			mkdirp = require('mkdirp')
-,			clc = require('cli-color')
-,			error = clc.red.bold
-,			warn = clc.yellow
-,			notice = clc.blue
-,			done = clc.green
-,			browserify = require('gulp-browserify')
-, 		$ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const	babel = require("gulp-babel");
+const	watch = require("gulp-watch");
+const	fs = require("fs");
+const	browserify = require('gulp-browserify');
+const $ = require('gulp-load-plugins')();
+const stringify = require('stringify');
 
 
 let sassPaths = [
   'bower_components/foundation-sites/scss',
   'bower_components/motion-ui/src'
-]
+];
+
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/app.scss')
+  return gulp.src('src/scss/**/*.scss')
     .pipe($.sass({
       includePaths: sassPaths,
       outputStyle: 'compressed' // if css compressed **file size**
     })
     .on('data',()=> console.log('Compiling sass'))
     .on('error', $.sass.logError))
+    .on('error',function(err) {
+      console.log(err);
+//      if(process.env.INIT_CWD === "") return process.exit(1);
+    })
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
@@ -33,23 +33,27 @@ gulp.task('sass', function() {
     .on("end",()=> console.log("Sass done \n"));
 })//end sass
 
-gulp.task("es6",function() {
-	return gulp.src("src/js/**/*.js")
+gulp.task("js",function() {
+	return gulp.src("src/js/**/*.js", { read: false })
 		.pipe(browserify({
 			insertGlobals : false,
-     	debug : false
+     	debug : false,
+      minify:false,
+      transform:['stringify'],
+      extensions: ['.hbs']
     }))
 		.pipe(babel({
 			presets: ['es2015']
 		}))
-		.on("data",(chuck)=> console.log(done("Compiling js...")))
+		.on("data",(chuck)=> console.log("Compiling js..."))
 		.pipe(gulp.dest('build/js'))
-		.on("end",()=> console.log(done("Done js \n")));
-})//end es6 task
+		.on("end",()=> console.log("Done js \n"));
+})//end js task
 
 gulp.task("watch",function() {
 	watch(['src/scss/**/*.scss'],()=> { this.tasks['sass']['fn']() });
-	watch(['src/js/**/*.js'],()=> this.tasks['es6']['fn']());
+	watch(['src/js/**/*.js'],()=> this.tasks['js']['fn']());
+  watch(['views/components/*.hbs'],()=> this.tasks['es6']['fn']());
 })
 
 gulp.task('default',["watch"],function function_name(argument) {

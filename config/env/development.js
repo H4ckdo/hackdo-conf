@@ -20,8 +20,16 @@ module.exports = {
     level: "verbose"
   },
   models:{
-    connection:'MongodbServer',
+    connection: "MongodbServer",
 	  migrate: "drop"
+  },
+  connection:{
+    MongodbServer: {
+     adapter: 'sails-mongo',
+     host: 'localhost',
+     port: 27017,
+     database: 'hackdo' //optional
+   }
   },
 	hookTimeout: 120000
 };

@@ -34,7 +34,6 @@ module.exports.http = {
       'cookieParser',
       'session',
       'bodyParser',
-    	'fileStream',
       'handleBodyParserError',
       'compress',
       'methodOverride',
