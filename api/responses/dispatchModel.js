@@ -1,157 +1,147 @@
-module.exports = function dispatchModel(Query,options = {}, model_empty) {
+module.exports = function dispatchModel(Query, options = {}) {
   let req = this.req;
   let res = this.res;
-  let yield = {};
-  options.errors = options.errors || {};
   options.success = options.success || {};
+  options.errors = options.errors || {};
+  options.errors.notFound = options.errors.notFound || {};
+  options.errors.serverError = options.errors.serverError || {};
+  options.errors.forbidden = options.errors.forbidden || {};
+  options.errors.badRequest = options.errors.badRequest || {};
+  options.errors.conflict = options.errors.conflict || {};
 
-	return (
+  const notFound = _.extend({details: `Resource not found.`, status: 404}, options.errors.notFound);
+  const serverError = _.extend({details: `Internal server error.`, status: 500}, options.errors.serverError);
+  const forbidden = _.extend({details: `Action forbidden.`, status: 403}, options.errors.forbidden);
+  const badRequest = _.extend({details: `Bad request`, status: 400}, options.errors.badRequest || {});
+  const conflict = _.extend({status: 409, details: `Resource in conflict`}, options.errors.conflict);
+
+  return (
 		Query.then(function(docs) {
-      if(model_empty && _.isArray(docs)) {
-        if(docs.length === 0) docs = null;
-      }
+      let response = {
+        data: docs,
+        status: options.success.status || 200
+      };
 
       if(docs) {
-				res.status(options.success.status || 200);
-				delete options.success.status;
-				let relationships = options.relationships;
-				_.extend(yield, options.success || {},{data : docs});
+        if(options.success.hasOwnProperty('pick')) {
+          let picks = [];
+          let tmpPick = {};
+          /*
+            Pick a few attributes of query response
+          */
+          if(_.isArray(response.data)) {
+            //In case that response have multiples objects
+            if(response.data.length) {
+              _.each(options.success.pick, (pick)=> {
+                _.each(response.data, (doc)=> {
+                  if(doc.hasOwnProperty(pick)){
+                    tmpPick[pick] = doc[pick];
+                    tmpPick.deletedAt = new Date();
+                  }
+                });
+              });
+              picks.push(tmpPick);
+              response.data = picks;
+            }
+          } else {
+            //In case that response have a single objects
+            _.each(options.success.pick, (pick)=> {
+              if(response.data.hasOwnProperty(pick)) tmpPick[pick] = response.data[pick];
+            });
+            tmpPick.deletedAt = new Date();
+            response.data = tmpPick;
+          }
+        };
 
-				if(options.success.omit) {
-					if(_.isArray(yield.data)) {
-						utils.remove(options.success.omit.fileds, yield.data, options.success.omit.unless);
-					} else {
-						_.each(options.success.omit, (to_omit)=> delete yield['data'][to_omit]);
-					}
-					delete yield.omit;
-				}//id omit when success
-
-
-				if(options.success.single && utils.not(_.isArray(docs))) {
-					yield.data = yield.data[0];
-					delete yield.single;
-				}//if pick first document
-
-
-				if(options.success.authentication) {
-					req.session.userId = yield.data.id;
-					req.session.authenticated = true;
-					return (
-            req.session.save(function(err) {
-  						if(err) {
-  							res.status(500).json(_.extend({
-  								id : "SERVER_ERROR",
-  								title: "Internal Server Error",
-  								detail : "An internal error has occurrent."
-  							}, options.errors.serverError || {}));
-  						} else {
-                if(!options.success.conserve) {
-                  delete yield.data.id;
-                  delete yield.authentication;
-                }
-                if(options.success.view) {
-                  res.view(options.success.view, yield.data);
-                } else {
-                  delete yield.conserve;
-                  res.json(yield);
-                }
-              }
-					  })
-          )
-				}//is authentication
-        if(!options.success.conserve) {
-  				delete yield.data.id;
-  				delete yield.authentication;
-        }
-
-        if(options.success.view) {
-          res.view(options.success.view, yield.data);
+        if(options.success.hasOwnProperty('omit')) {
+          if(_.isArray(response.data)) {
+            utils.remove(options.success.omit || [], response.data, options.success.omit.unless);
+          } else {
+            _.each(options.success.omit || [], (to_omit)=> delete response['data'][to_omit]);
+          }
+        };
+        res.status(options.success.status || 200);
+        if(options.success.hasOwnProperty('view')) {
+          res.view(options.success.view, response.data);
         } else {
-          delete yield.conserve;
-					res.json(yield);
-				}
-			} else {
-				if(options.errors.notFound) {
-					if(utils.not(options.errors.notFound.id)) options.errors.notFound.id = "MISSING_RESOURCE";
-				} else {
-					options.errors.notFound = {};
-				}
-				res.status(404);
-				if(options.success.authentication) {
-					_.extend(yield,{
-						error : _.extend({
-							id : "NOT_FOUND",
-							detail : "Resource not found"
-						}, options.errors.notFound || {})
-					});
-				} else {
-					_.extend(yield,{
-						data : null,
-						error : _.extend({
-							id : "NOT_FOUND",
-							detail : "Resource not found"
-						}, options.errors.notFound || {})
-					});
-				}
-				if(options.errors.notFound.view) {
-					res.view(options.errors.notFound.view, yield.data);
-				} else{
-          res.json(yield);
-				}
-			}
+          if(options.success.hasOwnProperty('notFound') && (response.data.length === 0 || response.data === null)) throw new Error("successButNotFound");
+          res.json(response);
+        }
+      } else {
+        if(options.errors.hasOwnProperty('notFound') && options.errors.notFound.hasOwnProperty('view')) return res.view(options.errors.notFound.view, response.data);
+        res.notFound({error: notFound});
+      }
   	})
   	.catch(function(err) {
-      console.log('err ',err);
-  		let status = 500;
-	 		let title = "Internal Server Error";
-			options.errors.fails = {};
-  		if(err.invalidAttributes 	|| err.message === "invalidAttributes" || err.message === "WRONG_PASSWORD" || err.message === "ALREADY_LOGOUT" || err.message("Forbidden")) {
-  			let forbidden = options.errors.Forbidden;
-  			title = forbidden ? forbidden.title : "Forbidden";
-	 			options.errors.fails.id = (forbidden ? forbidden.id : "INVALID_PARAMS");
-  			status = 403;
-  			if(err.message === "WRONG_PASSWORD") {
-		 			options.errors.fails.detail = (forbidden ? forbidden.detail : "email or password wrong");
-  			} else if(err.message === "ALREADY_LOGOUT"){
-		 			options.errors.fails.detail = (forbidden ? forbidden.detail : "already logout");
-  			} else {
-		 			options.errors.fails.detail = (forbidden ? forbidden.detail : "Some argument or arguments are not valid");
-  			}
+      const response = {data: null};
 
-  		}
+      if(err.code === 11000 || (err.hasOwnProperty('originalError') && err.originalError.code === 11000)) {
+        _.extend(response, {error: conflict});
+        res.status(409);
+        return res.json(response);
+        /*
+          Response in case of resource conflict
+        */
+      }
 
-  		if(err.message === "All_ATTRIBUTES_INVALID") {
-	 			let badRequest = options.errors.badRequest;
-		 		status = 400;
-		 		title = (badRequest ? badRequest.title : "Bad request");
-	  		options.errors.fails.id = (badRequest ? badRequest.id : "MISSING_REQUERIMENTS");
-				options.errors.fails.detail = (badRequest ? badRequest.detail : "Client error, wrong request.");
-			}
+      if(err.message === "successButNotFound") {
+        _.extend(response, {error: options.success.notFound, status: 404});
+        if(options.success.notFound.hasOwnProperty('view')) return res.notFound(options.success.notFound.view, response.error);//Render view in case of error
+        return res.notFound(response);
+        /*
+          Response in case of notFound
+        */
+      }
 
-	 		if(err.code === 11000 || (err.originalError && err.originalError.code === 11000)) {
-	 			let conflict = options.errors.Conflict;
-	 			status = 409;
- 			  title = (conflict ? conflict.title : "Conflict");
- 			  options.errors.fails.id = (conflict ? conflict.id : "RESOURCE_CONFLICT");
- 			  options.errors.fails.detail = (conflict ? conflict.detail : "Resources in conflict.");
-	 		}
+      if(err.message === "notFound") {
+        _.extend(response, {error: notFound});
+        if(options.errors.notFound.hasOwnProperty('view')) return res.notFound(options.errors.notFound.view, response.error);//Render view in case of error
+        return res.notFound(response);
+        /*
+          Response in case of notFound
+        */
+      }
 
-			res.status(status);
-			_.extend(yield,{
-				error : _.extend({
-					status,
-					title
-				},( status === 500 ? (options.errors.serverError || {
-					id : "SERVER_ERROR",
-					detail : "An internal error has occurrent."
-				}) : options.errors.fails || {}))
-			});
+      if(err.message === "badRequest") {
+        _.extend(response, {error: badRequest});
+        if(options.errors.badRequest.hasOwnProperty('view')) return res.badRequest(options.errors.badRequest.view, response.error);//Render view in case of error
+        return res.badRequest(response);
+        /*
+          Response in case of badRequest
+        */
+      }
 
-			if(options.errors.notFound && options.errors.notFound.view) return res.view(options.errors.notFound.view, yield.data);
-			if(options.errors.serverError && options.errors.serverError.view) return res.view(options.errors.serverError.view, yield.data);
-			if(options.errors.forbidden && options.errors.forbidden.view) return res.view(options.errors.forbidden.view, yield.data);
+      if(err.message === "forbidden") {
+        _.extend(response, {error: forbidden});
+        if(options.errors.forbidden.hasOwnProperty('view')) return res.forbidden(options.errors.forbidden.view, response.error);//Render view in case of error
+        return res.forbidden(response);
+        /*
+          Response in case of forbidden
+        */
+      }
 
-      res.json(yield);
+
+      if(err.message === "serverError") {
+        _.extend(response, {error: serverError});
+        if(options.errors.serverError.hasOwnProperty('view')) return res.serverError(options.errors.serverError.view, response.error);//Render view in case of error
+        return res.serverError(response);
+        /*
+          Response in case of serverError
+        */
+      }
+
+      /*
+        Response with json format
+      */
+      res.status = 204;
+      return res.json(response);
   	})
   )
+    /*
+      @params
+        *Query<Promise>: Promise to execute
+         options<Object>: Options that use to response depend of result
+      Description: `Execute a Query and response depend of @options or not`
+      Return<Promise>
+    */
 }//end dispatch model

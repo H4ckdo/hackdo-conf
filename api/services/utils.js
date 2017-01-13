@@ -74,12 +74,21 @@ module.exports = {
       @params
         *omits<default Array>: Represent an array of object that whant to remove
         *elements<Array>: Represent an array of object over gonna be keys deleted in case that key was in the omits argument
+        unless<Array>: Represent an array of object which have specifics
       Description: `Recursive function that delete the elements of a object even if is deep in the object`
       Return<undefined>
     */
 	},//end remove
 
   model: {
+    attributesRequired: function(Model = {}) {
+      let attrs = Model._attributes;
+      let keys = Object.keys(attrs);
+      let requires = [];
+      _.each(keys,(key)=> { if(attrs[key].hasOwnProperty('required')){ requires.push(key) } });
+      return requires;
+    },//end attributesRequired
+
     validateData: function(Model, update) {
       let attributes = Model._attributes;
       return _.every(Object.keys(update),(current)=> attributes.hasOwnProperty(current));

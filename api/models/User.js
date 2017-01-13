@@ -30,11 +30,17 @@ module.exports = _.extend({
 
   createSure: function(data = {}) {
     return (new Promise((resolve, reject)=> {
-        let isValid = utils.model.validateData(User, data);
-        if(isValid) {
-         return User.create(data).then(resolve).catch(reject);
+        let requiresAttr = utils.model.attributesRequired(User);
+        let hasRequires = _.every(requiresAttr,(required)=> data.hasOwnProperty(required));
+        if(hasRequires) {
+          let isValid = utils.model.validateData(User, data);
+          if(isValid) {
+           return User.create(data).then(resolve).catch(reject);
+          } else {
+            return reject(new Error("forbidden"));
+          }
         } else {
-          return reject(new Error("invalidAttributes"));
+          return reject(new Error("badRequest"));
         }
       })
     )
@@ -56,24 +62,24 @@ module.exports = _.extend({
           if(update.hasOwnProperty('rol')) update.rol = 'superadmin';//dont allow that a superadmin downgrade
         } else {
           //admin path
-          if(update.hasOwnProperty('rol')) return reject(new Error("Forbidden"))
+          if(update.hasOwnProperty('rol')) return reject(new Error("forbidden"))
         }
 
         update = this.clearUpdate(update, remove);
-        if(Object.keys(update).length === 0) reject(new Error("All_ATTRIBUTES_INVALID"));//candidate update invalid
+        if(Object.keys(update).length === 0) reject(new Error("badRequest"));//candidate update invalid
         let isValid = utils.model.validateData(User, update);
         if(isValid) {
           if(update.hasOwnProperty('password')) {
             bcrypt.hash(update.password, 10, function(err, hash) {
               if(err) return reject(new Error("serverError"));
               update.password = hash;
-              User.update(id, update).then((docs)=> resolve(update)).catch(reject);
+              User.update(id, update).then((updated)=> resolve(update)).catch(reject);
             });
           } else {
-            return User.update(id, update).then((docs)=> resolve(update)).catch(reject);
+            return User.update(id, update).then((updated)=> resolve(update)).catch(reject);
           }
         } else {
-          return reject(new Error("invalidAttributes"));
+          return reject(new Error("forbidden"));
         }
       })
     );

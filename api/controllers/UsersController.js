@@ -1,14 +1,11 @@
 module.exports = {
   showAll: function(req, res) {
-  	let response_cases = {
+  	let responseCases = {
   		success: {
-        conserve: true,
-        omit: {
-          fileds: ["password"]
-        },
+        omit: ["password", "rol", "id", "isLogin"]
   		}
   	}
-		res.dispatchModel(User.find({}), response_cases);
+		res.dispatchModel(User.find({}), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
@@ -21,18 +18,18 @@ module.exports = {
 
   show: function(req, res) {
   	let id = req.params.id;
-  	let response_cases = {
+  	let responseCases = {
   		success: {
   			omit: ["password"]
   		},
    		errors: {
    			notFound: {
    				id: "MISSING_USER",
-					detail: `The user '${id}' was not found, please check the id parameter`
+					details: `The user '${id}' was not found, please check the id parameter`
 				}
    		}
-   	}//end response_cases
-   	res.dispatchModel(User.findOne({id}), response_cases);
+   	}//end responseCases
+   	res.dispatchModel(User.findOne({id}), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
@@ -45,14 +42,21 @@ module.exports = {
   },//end show
 
   create: function(req, res) {
-  	let response_cases = {
+  	let responseCases = {
   		success: {
   			status: 201,
-  			omit: ['password', 'isLogin'],
-        conserve: true
-  		}
-    }//end response_cases
-    res.dispatchModel(User.createSure(req.body), response_cases);
+  			omit: ['password', 'isLogin']
+      },
+      errors: {
+        badRequest: {
+          details: 'Missing requeriments'
+        },
+        forbidden: {
+          details: 'Some arguments are not allowed'
+        }
+      }
+    }//end responseCases
+    res.dispatchModel(User.createSure(req.body), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
@@ -80,17 +84,13 @@ module.exports = {
   	let id = req.params.id;
   	let responseCases = {
       success: {
-        omit: {
-          fileds: [
-            "name",
-            "password",
-            "rol",
-            "email",
-            "isLogin",
-            "createdAt",
-            "updatedAt"
-          ]
-        }
+        status: 202,
+        notFound: {
+          details: `Resource ${id} not found`
+        },
+        pick: [
+          "id"
+        ]
       }
     };
   	res.dispatchModel(User.destroy({id}), responseCases);
