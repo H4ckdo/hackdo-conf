@@ -3,15 +3,16 @@ module.exports = _.extend({
   schema: true,
   validatePassword: function(data, candidate, resolve, reject) {
 		bcrypt.compare(candidate, data.password, function(err, match) {
-			if(err) return reject(err);
+			if(err) return reject(new Error("serverError"));
 			if(match) {
 				User.update(data.id, {isLogin : true})
 						.then(function(docs) {
-							if(utils.not(docs)) return resolve(null); return resolve({authentication : true, id : data.id});
+							if(utils.not(docs)) return resolve(null);
+              return resolve({authentication : true, id : data.id});
 						})
-						.catch((err)=> reject(err));
+						.catch((err)=> reject(new Error("serverError")));
 			} else {
-				return reject(new Error("WRONG_PASSWORD"));
+				return reject(new Error("forbidden"));
 			}
 		});
   },//validatePassword
@@ -94,16 +95,16 @@ module.exports = _.extend({
     */
   },//end updateSure
 
-  login: function(data = {}) {
+  login: function(data = {}, req = {}) {
   	let self = this;
   	return (new Promise(function(resolve, reject) {
         let hasEmail = data.hasOwnProperty("email");
         let hasPassword = data.hasOwnProperty("password");
-  			if(utils.not(hasPassword) && utils.not(hasEmail)) return reject(new Error("All_ATTRIBUTES_INVALID"));
+  			if(utils.not(hasPassword) && utils.not(hasEmail)) return reject(new Error("badRequest"));
   			User.findOne({email: data.email}).then(function(docs) {
   				if(utils.not(docs)) return resolve(null);
   				self.validatePassword(docs, data.password, resolve, reject);
-  			}).catch((err)=> reject(err));
+   			}).catch((err)=> reject(err));
   		})
   	)
   },//end login
@@ -112,13 +113,13 @@ module.exports = _.extend({
   	let self = this;
   	let id = session.userId;
   	return (new Promise(function(resolve, reject) {
-			if(utils.not(session.authenticated)) return reject(new Error("ALREADY_LOGOUT"));
-			User.updateById(id, {isLogin: false})
+			if(!session.hasOwnProperty('authenticated') || session.authenticated === false) return reject(new Error("forbidden"));
+      User.update(id, {isLogin: false})
 				.then(function(docs) {
 					if(utils.not(docs)) return resolve(null);
-					session.destroy((err)=> err ? reject(err) : resolve({authentication: false}));
+					session.destroy((err)=> err ? reject(new Error("serverError")) : resolve({authentication: false}));
 				})
-				.catch((err)=> reject(err));
+				.catch((err)=> reject(new Error("serverError")));
   		})
   	)
   },

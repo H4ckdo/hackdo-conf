@@ -1,31 +1,43 @@
 module.exports = {
-  loginUser: function(req, res) {
+  login: function(req, res) {
     let data = req.body;
-    let response_cases = {
+    let responseCases = {
       success: {
+        omit: ["id"],
         authentication: true
+      },
+      errors: {
+        notFound: {
+          details: "User not found"
+        },
+        forbidden: {
+          details: "Email or password are invalid"
+        }
       }
+    };
+    if(req.session.userId) {
+      res.notAllow({
+        error: {
+          details: "Already login"
+        }
+      });
+    } else {
+      res.dispatchModel(User.login(data, req), responseCases);
     }
-    res.dispatchModel(User.login(data), response_cases);
   },//end loginUser
 
-  loginEnterprise: function(req, res) {
-    let data = req.body;
-    let response_cases = {
-      success: {
-        authentication: true
-      }
-    }
-    res.dispatchModel(User.login(data), response_cases);
-  },//end loginEnterprise
-
   logout: function(req, res) {
-    let data = req.session;
-    let response_cases = {
+    let session = req.session;
+    let responseCases = {
       success: {
         authentication: false
+      },
+      errors: {
+        forbidden: {
+          details: "Already logout"
+        }
       }
     }
-    res.dispatchModel(User.logout(data), response_cases);
+    res.dispatchModel(User.logout(session), responseCases);
   }//end logout
 };

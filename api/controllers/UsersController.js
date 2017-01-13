@@ -70,7 +70,12 @@ module.exports = {
   	let id = req.params.id;
   	let update = req.body;
     let session = req.session;
-		res.dispatchModel(User.updateSure(id, update, session));
+    let responseCases = {
+      success: {
+        omit: ["password"]
+      }
+    };
+		res.dispatchModel(User.updateSure(id, update, session), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs

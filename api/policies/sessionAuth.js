@@ -1,10 +1,9 @@
 "use strict";
-module.exports = function(req, res, next) {
-	let isAuth = req.session.authenticated;
-  if(isAuth) {
+module.exports = function sessionAuth(req, res, next) {
+	let authenticated = req.session.authenticated;
+  if(authenticated) {
   	next();
   } else {
-  	if(req.url === "/api/v1/users/create" || req.url === "/api/v1/auth/logout" || req.url === "/api/v1/auth/login") return next()
-  	return res.redirect("/login");
+  	return res.notAllow();
   }
-}
+}//end sessionAuth

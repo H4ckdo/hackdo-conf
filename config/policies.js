@@ -34,9 +34,9 @@ module.exports.policies = {
 	 	// delete : ["sessionAuth", "validateParams"]
    // },
 
-   // LoginController : {
-   // 	login : ["sessionAuth", "validateParams"]
-   // }
+   LoginController : {
+    	login: ["validateParams"]
+   }
 
   /***************************************************************************
   *                                                                          *

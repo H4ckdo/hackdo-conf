@@ -23,6 +23,7 @@ module.exports = function dispatchModel(Query, options = {}) {
       };
 
       if(docs) {
+        const id = docs.id;
         if(options.success.hasOwnProperty('pick')) {
           let picks = [];
           let tmpPick = {};
@@ -65,7 +66,16 @@ module.exports = function dispatchModel(Query, options = {}) {
           res.view(options.success.view, response.data);
         } else {
           if(options.success.hasOwnProperty('notFound') && (response.data.length === 0 || response.data === null)) throw new Error("successButNotFound");
-          res.json(response);
+          if(options.success.authentication === true) {
+            req.session.userId = id;
+            req.session.authenticated = true;
+            req.session.save((err)=> {
+              if(err) throw new Error("serverError");
+              res.json(response);
+            });
+          } else {
+           res.json(response);
+          }
         }
       } else {
         if(options.errors.hasOwnProperty('notFound') && options.errors.notFound.hasOwnProperty('view')) return res.view(options.errors.notFound.view, response.data);
