@@ -8,7 +8,7 @@ module.exports = _.extend({
 				User.update(data.id, {isLogin : true})
 						.then(function(docs) {
 							if(utils.not(docs)) return resolve(null);
-              return resolve({authentication : true, id : data.id});
+              return resolve({authentication : true, id : data.id, rol: data.rol});
 						})
 						.catch((err)=> reject(new Error("serverError")));
 			} else {

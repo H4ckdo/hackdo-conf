@@ -23,7 +23,8 @@ module.exports = function dispatchModel(Query, options = {}) {
       };
 
       if(docs) {
-        const id = docs.id;
+        const saveId = docs.id;
+        const saveRol = docs.rol;
         if(options.success.hasOwnProperty('pick')) {
           let picks = [];
           let tmpPick = {};
@@ -67,8 +68,9 @@ module.exports = function dispatchModel(Query, options = {}) {
         } else {
           if(options.success.hasOwnProperty('notFound') && (response.data.length === 0 || response.data === null)) throw new Error("successButNotFound");
           if(options.success.authentication === true) {
-            req.session.userId = id;
+            req.session.userId = saveId;
             req.session.authenticated = true;
+            req.session.rol = saveRol;
             req.session.save((err)=> {
               if(err) throw new Error("serverError");
               res.json(response);
@@ -121,7 +123,7 @@ module.exports = function dispatchModel(Query, options = {}) {
         */
       }
 
-      if(err.message === "forbidden") {
+      if(err.message === "forbidden" || err.invalidAttributes) {
         _.extend(response, {error: forbidden});
         if(options.errors.forbidden.hasOwnProperty('view')) return res.forbidden(options.errors.forbidden.view, response.error);//Render view in case of error
         return res.forbidden(response);

@@ -3,7 +3,7 @@ module.exports = {
     let data = req.body;
     let responseCases = {
       success: {
-        omit: ["id"],
+        omit: ["id", "rol"],
         authentication: true
       },
       errors: {
