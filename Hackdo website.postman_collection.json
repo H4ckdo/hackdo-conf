@@ -1,0 +1,135 @@
+{
+	"id": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
+	"name": "Hackdo website",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"owner": "337090",
+			"lastUpdatedBy": "337090",
+			"lastRevision": 960778150,
+			"id": "d44f8bde-78f1-d6a5-8004-ae27079eadd5",
+			"name": "Authentication",
+			"description": "Login superadmin",
+			"order": [
+				"2223344c-f03b-46c1-efb7-4a11b791368b",
+				"632ab170-b3b3-495d-3709-6aa45be0b10a"
+			],
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec"
+		},
+		{
+			"owner": "337090",
+			"lastUpdatedBy": "337090",
+			"lastRevision": 960808667,
+			"id": "69b7f6ca-836f-b65f-c806-6ef3e1bd7821",
+			"name": "Create user",
+			"description": "Create admin",
+			"order": [
+				"bd0f0e6c-266e-bb77-9519-a2634f08760a"
+			],
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec"
+		}
+	],
+	"timestamp": 0,
+	"owner": "337090",
+	"public": false,
+	"requests": [
+		{
+			"folder": "d44f8bde-78f1-d6a5-8004-ae27079eadd5",
+			"id": "2223344c-f03b-46c1-efb7-4a11b791368b",
+			"name": "Login",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "email",
+					"value": "esnene02@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://localhost:1337/api/v1/auth/login",
+			"preRequestScript": null,
+			"tests": "responseBody = JSON.parse(responseBody);\ntests[\"Authentication\"] = responseBody.data && responseBody.data.authentication === true;\nconsole.log(\"responseBody\", responseBody);",
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"responses": [],
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec"
+		},
+		{
+			"id": "632ab170-b3b3-495d-3709-6aa45be0b10a",
+			"headers": "",
+			"url": "http://localhost:1337/api/v1/auth/logout",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
+			"data": [],
+			"dataMode": "params",
+			"name": "Logout",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1484866652700,
+			"version": 2,
+			"responses": [],
+			"tests": "responseBody = JSON.parse(responseBody);\ntests[\"Authentication\"] = responseBody.data && responseBody.data.authentication === false; \nconsole.log(\"responseBody\", responseBody);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "d44f8bde-78f1-d6a5-8004-ae27079eadd5"
+		},
+		{
+			"id": "bd0f0e6c-266e-bb77-9519-a2634f08760a",
+			"headers": "",
+			"url": "http://localhost:1337/api/v1/users/create",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "example",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "rol",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "johndoe@example.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "responseBody = JSON.parse(responseBody);\ntests[\"is Created\"] = responseCode.code === 201;\nconsole.log(\"responseBody \", responseBody);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484866879860,
+			"name": "Create admin",
+			"description": "",
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
+			"responses": []
+		}
+	]
+}
