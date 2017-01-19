@@ -1,12 +1,12 @@
 module.exports = {
-
   showAll: function(req, res) {
+    let query = _.pick(req.query || {}, ['rol', 'name']);
   	let responseCases = {
   		success: {
         omit: ["password", "rol", "isLogin"]
   		}
-  	}
-		res.dispatchModel(User.find({}).populateAll(), responseCases);
+  	};
+		res.dispatchModel(User.find(query).populateAll(), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
