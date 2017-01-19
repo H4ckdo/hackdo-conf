@@ -28,11 +28,21 @@ module.exports.policies = {
 
   // '*': true,
 
-   UsersController : {
-   	create: ["sessionAuth", "validateParams", "allowAdmin"],
-	 	update: ["sessionAuth", "validateParams", "allowadmin"],
-	 	delete: ["sessionAuth", "validateParams", "allowAdmin"]
-   },
+  // EventsController : {
+  //   showAll: ["sessionAuth"],
+  //   show: ["sessionAuth"],
+  //   create: ["sessionAuth", "validateParams", "allowAdmin"],
+  //   update: ["sessionAuth", "validateParams", "allowadmin"],
+  //   delete: ["sessionAuth", "validateParams", "allowAdmin"]
+  //  },
+
+   // UsersController : {
+   // 	showAll: ["sessionAuth"],
+   //  show: ["sessionAuth"],
+   //  create: ["sessionAuth", "validateParams", "allowAdmin"],
+	 	// update: ["sessionAuth", "validateParams", "allowadmin"],
+	 	// delete: ["sessionAuth", "validateParams", "allowAdmin"]
+   // },
 
    LoginController : {
     	login: ["validateParams"]

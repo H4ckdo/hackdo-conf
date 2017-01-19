@@ -1,0 +1,136 @@
+module.exports = {
+  remove: function(req, res) {
+    let id = req.params.id;
+    let eid = req.params.eid;
+    res.dispatchModel(Event.removeSpeaker({id, eid}));
+    /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Find all users and response by dispatchModel custom method of @res,
+                  and also the omit the password attribute from the query,`
+      Return<undefined>
+    */
+  },//end remove
+
+  add: function(req, res) {
+    let id = req.params.id;
+    let eid = req.params.eid;
+    res.dispatchModel(Event.addSpeaker({id, eid}));
+    /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Find all users and response by dispatchModel custom method of @res,
+                  and also the omit the password attribute from the query,`
+      Return<undefined>
+    */
+  },//end add
+
+  showAll: function(req, res) {
+    let responseCases = {
+      success: {
+        omit: []
+      }
+    }
+    res.dispatchModel(Event.find({}).populateAll(), responseCases);
+    /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Find all events and response by dispatchModel custom method of @res,
+                  and also the omit the password attribute from the query,`
+      Return<undefined>
+    */
+  },//end showAll
+
+  show: function(req, res) {
+    let id = req.params.id;
+    let responseCases = {
+      success: {
+        omit: []
+      },
+      errors: {
+        notFound: {
+          id: "MISSING_EVET",
+          details: `The event '${id}' was not found, please check the id parameter`
+        }
+      }
+    }//end responseCases
+    res.dispatchModel(Event.findOne({id}), responseCases);
+    /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Find one event and response by dispatchModel custom method of @res,
+                    and also the omit the password attribute from the query,
+                    in case of not found response and custom Object`
+      Return<undefined>
+    */
+  },//end show
+
+  create: function(req, res) {
+    let responseCases = {
+      success: {
+        status: 201
+      },
+      errors: {
+        badRequest: {
+          details: 'Missing requeriments'
+        },
+        forbidden: {
+          details: 'Some arguments are not allowed'
+        }
+      }
+    }//end responseCases
+    res.dispatchModel(utils.model.createSure(req.body, Event), responseCases);
+    /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Create a event and response by dispatchModel custom method of @res`
+      Return<undefined>
+    */
+  },//end create
+
+  update: function (req, res) {
+    let id = req.params.id;
+    let update = req.body;
+    let session = req.session;
+    let responseCases = {
+      success: {
+        omit: []
+      }
+    };
+    res.dispatchModel(Event.updateSure(id, update, session), responseCases);
+    /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Update a document, in case of not found response and custom Object`
+      Return<undefined>
+    */
+  },//end update
+
+  delete: function(req, res) {
+    let id = req.params.id;
+    let responseCases = {
+      success: {
+        status: 202,
+        notFound: {
+          details: `Resource ${id} not found`
+        },
+        pick: ["id"]
+      }
+    };
+    res.dispatchModel(Event.destroy({id}), responseCases);
+     /*
+      @params
+        *req<Object>: Represent and http request object from nodejs
+        *res<Object>: Represent and http response object from nodejs
+      Description: `Destroy a document, in case of not found response and custom Object`
+      Return<undefined>
+    */
+  }//end delete
+};
+

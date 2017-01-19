@@ -1,11 +1,12 @@
 module.exports = {
+
   showAll: function(req, res) {
   	let responseCases = {
   		success: {
-        omit: ["password", "rol", "id", "isLogin"]
+        omit: ["password", "rol", "isLogin"]
   		}
   	}
-		res.dispatchModel(User.find({}), responseCases);
+		res.dispatchModel(User.find({}).populateAll(), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
@@ -56,7 +57,7 @@ module.exports = {
         }
       }
     }//end responseCases
-    res.dispatchModel(User.createSure(req.body), responseCases);
+    res.dispatchModel(utils.model.createSure(req.body, User), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs

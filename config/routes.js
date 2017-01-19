@@ -2,6 +2,26 @@ module.exports.routes = {
   "GET /": "HomepageController.show",
 
   /*
+    Relationshipt events and users
+  */
+  "POST /api/v1/events/:eid/add/user/:id": "EventsController.add",
+
+  "DELETE /api/v1/events/:eid/remove/user/:id": "EventsController.remove",
+
+  /*
+    CRUD Event
+  */
+  "GET /api/v1/events": "EventsController.showAll",
+
+  "GET /api/v1/events/:id": "EventsController.show",
+
+  "POST /api/v1/events/create": "EventsController.create",
+
+  "PUT /api/v1/events/update/:id": "EventsController.update",
+
+  "DELETE /api/v1/events/delete/:id": "EventsController.delete",
+
+  /*
     CRUD Users
   */
   "GET /api/v1/users": "UsersController.showAll",

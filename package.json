@@ -23,6 +23,7 @@
     "sails-service-mailer": "3.2.1",
     "skipper": "^0.6.4",
     "skipper-disk": "0.5.4",
+    "stringify": "^5.1.0",
     "underscore": "1.8.3",
     "xoauth2": "1.1.0"
   },
@@ -50,7 +51,7 @@
     "Motion": "./bower_components/foundation-sites/dist/plugins/foundation.util.motion.js",
     "handlebars": "./bower_components/handlebars/handlebars.js",
     "Tabs": "./bower_components/foundation-sites/dist/plugins/foundation.tabs.js",
-    "TimerAndImageLoader":"./bower_components/foundation-sites/dist/plugins/foundation.util.timerAndImageLoader.js"
+    "TimerAndImageLoader": "./bower_components/foundation-sites/dist/plugins/foundation.util.timerAndImageLoader.js"
   },
   "browserify-shim": {
     "jquery": "$",
@@ -63,7 +64,7 @@
     "MediaQuery": "MediaQuery",
     "Motion": "Motion",
     "handlebars": "Handlebars",
-    "TimerAndImageLoader":"TimerAndImageLoader"
+    "TimerAndImageLoader": "TimerAndImageLoader"
   },
   "browserify": {
     "transform": [

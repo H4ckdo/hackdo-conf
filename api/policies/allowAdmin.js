@@ -7,7 +7,7 @@ module.exports = function allowAdmin(req, res, next) {
   }
 
   if(session.rol === "admin" && (body.rol === "admin" || body.rol == "superadmin")) return res.notAllow();
-  if(session.rol === "admin" && body.rol === "user") return next();//ok
+  if(session.rol === "admin" && body.rol === "speaker") return next();//ok
   res.notAllow();
 }//end allowAdmin
 

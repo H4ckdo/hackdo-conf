@@ -1,6 +1,4 @@
 module.exports = _.extend({
-  autoPK: false,
-  schema: true,
   validatePassword: function(data, candidate, resolve, reject) {
 		bcrypt.compare(candidate, data.password, function(err, match) {
 			if(err) return reject(new Error("serverError"));
@@ -17,43 +15,6 @@ module.exports = _.extend({
 		});
   },//validatePassword
 
-  clearUpdate: function(update = {}, deletes = []) {
-    _.each(deletes,(del)=> delete update[del]);
-    return update;
-    /*
-      @params
-        *update<Object>: Represent the data to clear
-        *deletes<Array>: List of string that represent the attributes of @update to delete
-      Description: `Delete the attributes which is not as a proterty in the @update argument`
-      Return<Object>
-    */
-  },//end clearUpdate
-
-  createSure: function(data = {}) {
-    return (new Promise((resolve, reject)=> {
-        let requiresAttr = utils.model.attributesRequired(User);
-        let hasRequires = _.every(requiresAttr,(required)=> data.hasOwnProperty(required));
-        if(hasRequires) {
-          let isValid = utils.model.validateData(User, data);
-          if(isValid) {
-           return User.create(data).then(resolve).catch(reject);
-          } else {
-            return reject(new Error("forbidden"));
-          }
-        } else {
-          return reject(new Error("badRequest"));
-        }
-      })
-    )
-    /*
-      @params
-        *data<Object>: Represent the data to create
-      Description: `Create a document restricting to the attributes of the model
-                    in case the @data argument was invalid reject the promise`
-      Return<Promise>
-    */
-  },//end createSure
-
   updateSure: function(id, update, session) {
     return (new Promise((resolve, reject)=> {
         let remove = ['id', 'rol', 'isLogin'];
@@ -66,7 +27,7 @@ module.exports = _.extend({
           if(update.hasOwnProperty('rol')) return reject(new Error("forbidden"))
         }
 
-        update = this.clearUpdate(update, remove);
+        update = utils.clearUpdate(update, remove);
         if(Object.keys(update).length === 0) reject(new Error("badRequest"));//candidate update invalid
         let isValid = utils.model.validateData(User, update);
         if(isValid) {
@@ -86,11 +47,11 @@ module.exports = _.extend({
     );
     /*
       @params
-        *is<String>: mongodb id represent as a string
+        *id<String>: mongodb id represent as a string
         *update<Object>: Represent the data to update
         *session<Object>: Represent the session object which store the session information
       Description: `Update a document restricting the update access for rol of the user via session.
-                    Also clean the @update argument before do the query`
+                    Also clean the @update argument | do the query`
       Return<Promise>
     */
   },//end updateSure
@@ -130,6 +91,7 @@ module.exports = _.extend({
 	   	next();
 	  })
   },
+
 	attributes: {
  		id: {
       type: 'objectid',
@@ -147,7 +109,7 @@ module.exports = _.extend({
     rol: {
       type: 'string',
       required: true,
-      enum: ['admin', 'superadmin', 'user']
+      enum: ['admin', 'superadmin', 'speaker']
     },
 		name: {
 			type: 'string',
@@ -157,7 +119,10 @@ module.exports = _.extend({
 			type: 'string',
 			required: true,
 			unique: true
-		}
+		},
+    events: {
+      collection: 'event',
+      via: 'speakers'
+    }
 	}
 }, utils.model);
-
