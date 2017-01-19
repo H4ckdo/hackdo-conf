@@ -54,12 +54,15 @@ module.exports = {
   },//end add
 
   showAll: function(req, res) {
+    let query = _.pick(req.query || {}, ['name', 'location']);
     let responseCases = {
       success: {
-        omit: []
+        notFound: {
+          details: `Event not found`
+        }
       }
     }
-    res.dispatchModel(Event.find({}).populateAll(), responseCases);
+    res.dispatchModel(Event.find(query).populateAll(), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
