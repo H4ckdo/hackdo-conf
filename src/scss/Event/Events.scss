@@ -1,0 +1,57 @@
+@import "../app.scss";
+
+/*Form*/
+.addEvent{
+    font-size: 19px;
+
+    .columns{
+        padding: 0px
+    }
+    
+    .name{
+        border: none;
+        border-bottom: 1px groove #000; 
+        outline: none;
+     
+    }
+
+    .date{
+        border: none;
+        outline: none;
+        border-bottom: 1px groove #000; 
+        overflow-x: hidden; 
+    }    
+    .date::-webkit-inner-spin-button{ 
+  	    -webkit-appearance: none; 
+	}
+
+    .description{
+        margin-top: 1em;
+        textarea{
+            border: 1px groove #000
+        }
+    }
+
+    .lecturer{
+        margin-top: 1em;
+        a{
+            color: black;
+            border-bottom: 1px groove #000;
+            text-decoration: none;
+            font-style: italic;
+            font-size: 15px; 
+        }
+    }
+
+    .place{
+        .line{
+            border-bottom: 1px solid;
+            margin-bottom: 1em;
+        }
+    }
+
+    .button{
+        margin-bottom: 2em;
+        text-decoration: none
+    }
+}

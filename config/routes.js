@@ -1,6 +1,8 @@
 module.exports.routes = {
   "GET /": "HomepageController.show",
 
+  "GET /addEvent": "EventsController.addEvent",
+
   /*
     Relationshipt events and users
   */

@@ -160,6 +160,10 @@ module.exports = {
       Description: `Destroy a document, in case of not found response and custom Object`
       Return<undefined>
     */
-  }//end delete
+  },//end delete
+
+   addEvent: function(req, res) {
+    res.view("addEvent");
+  }//end addEvent
 };
 
