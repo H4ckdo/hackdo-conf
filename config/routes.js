@@ -22,7 +22,6 @@ module.exports.routes = {
   "PUT /api/v1/events/update/:id": "EventsController.update",
 
   "DELETE /api/v1/events/delete/:id": "EventsController.delete",
-
   /*
     CRUD Users
   */
