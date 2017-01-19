@@ -30,7 +30,7 @@ module.exports = _.extend({
           .then(function(docs) {
             if(!docs) return reject(new Error("notFound"));
             User.findOne({id: data.id}).then(function(user) {
-              if(!user) return reject(new Error("notFound"));
+              if(!user) return reject(new Error("userNotFound"));
               docs.speakers.remove(data.id);
               docs.save((err)=> err ? reject(new Error("serverError")) : resolve(docs));
             })
@@ -46,7 +46,7 @@ module.exports = _.extend({
           .then(function(docs) {
             if(!docs) return reject(new Error("notFound"));
             User.findOne({id: data.id}).then(function(user) {
-              if(!user) return reject(new Error("notFound"));
+              if(!user) return reject(new Error("userNotFound"));
               docs.speakers.add(data.id);
               docs.save((err)=> err ? reject(new Error("serverError")) : resolve(docs));
             })

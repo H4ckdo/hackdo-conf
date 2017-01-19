@@ -2,7 +2,20 @@ module.exports = {
   remove: function(req, res) {
     let id = req.params.id;
     let eid = req.params.eid;
-    res.dispatchModel(Event.removeSpeaker({id, eid}));
+    let responseCases = {
+      errors: {
+        notFound: {
+          details: `Event ${id} not found`
+        },
+        otherwise:  {
+          userNotFound: {
+            status: 404,
+            details: `User ${id} not found`
+          }
+        }
+      }
+    };
+    res.dispatchModel(Event.removeSpeaker({id, eid}), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs
@@ -16,7 +29,20 @@ module.exports = {
   add: function(req, res) {
     let id = req.params.id;
     let eid = req.params.eid;
-    res.dispatchModel(Event.addSpeaker({id, eid}));
+    let responseCases = {
+      errors: {
+        notFound: {
+          details: `Event ${id} not found`
+        },
+        otherwise:  {
+          userNotFound: {
+            status: 404,
+            details: `User ${id} not found`
+          }
+        }
+      }
+    };
+    res.dispatchModel(Event.addSpeaker({id, eid}), responseCases);
     /*
       @params
         *req<Object>: Represent and http request object from nodejs

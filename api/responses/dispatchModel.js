@@ -142,6 +142,17 @@ module.exports = function dispatchModel(Query, options = {}) {
         */
       }
 
+      if(options.errors.hasOwnProperty("otherwise") && options.errors.otherwise.hasOwnProperty(err.message)) {
+        let custom = options.errors.otherwise[err.message];
+        _.extend(response, {error: custom});
+        if(custom.hasOwnProperty('view')) return res.serverError(custom.view, response.error);//Render view in case of error
+        res.status = custom.status || 500;
+        return res.json(response);
+        /*
+          Custom error
+        */
+      }
+
       /*
         Response with json format
       */
