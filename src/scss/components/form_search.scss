@@ -1,0 +1,52 @@
+.form-search {
+  .wrap-search-options {
+    color: whitesmoke;
+    margin-top: 5px;
+    margin-left: 30px;
+    i {
+      font-size:16px;
+    }
+    .search-by {
+      margin-right: 10px;
+      display:inline-block;
+      span, i {
+        vertical-align:middle;
+      }
+      i {
+        cursor:pointer;
+      }
+    }
+  }
+  .btn-search {
+    vertical-align: top;
+    color: white;
+    outline:none;
+    transition:all 0.25s;
+    &:hover {
+      color: #1b2327;
+    }
+  }
+  .input-searh {
+    vertical-align: top;
+    border: none;
+    padding: 5px;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid white;
+    transition: all 0.25s;
+    width: calc(100% - 30px);
+    color:white;
+    &:focus {
+      font-size: 20px;
+      margin-top: -8px;
+      border-color:#1b2327;
+      border-width:2px;
+    }
+    &:hover {
+      font-size: 20px;
+      margin-top: -8px;
+      border-color:#1b2327;
+      border-width:2px;
+    }
+  }
+}

@@ -1,6 +1,11 @@
 @import "../app.scss";
+@import "../components/lines.scss";
 
 /*Form*/
+h1{
+    color: #008afe
+}
+
 .addEvent{
     font-size: 19px;
 
@@ -18,25 +23,32 @@
     .date{
         border: none;
         outline: none;
-        border-bottom: 1px groove #000; 
+        border-bottom: 1px solid #008afe; 
         overflow-x: hidden; 
     }    
     .date::-webkit-inner-spin-button{ 
   	    -webkit-appearance: none; 
 	}
 
+    .font{
+        label{
+            font-style: italic;
+            font-size: 15px; 
+            font-family: 'Open Sans Bold';
+        }
+    }
+
     .description{
         margin-top: 1em;
         textarea{
-            border: 1px groove #000
+            border: 1px solid #008afe
         }
     }
 
     .lecturer{
         margin-top: 1em;
-        a{
+        .size{
             color: black;
-            border-bottom: 1px groove #000;
             text-decoration: none;
             font-style: italic;
             font-size: 15px; 
@@ -44,8 +56,9 @@
     }
 
     .place{
+        margin-top: 1em;
         .line{
-            border-bottom: 1px solid;
+            border-bottom: 1px solid  #008afe;
             margin-bottom: 1em;
         }
     }
@@ -54,4 +67,46 @@
         margin-bottom: 2em;
         text-decoration: none
     }
+
+    .label-field {
+        font-family: 'Open Sans Bold';
+        color: #008afe;
+        display: inline;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .field-date{
+	    input[type=date]::-webkit-inner-spin-button{ 
+  	        -webkit-appearance: none; 
+  	    margin: 0; 
+	    }
+    }
+
+    .input-field {
+        border: none;
+        border-bottom: 1px solid #008afe;
+        padding-left: 0px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        width: 100%;
+        background: transparent;
+        outline: none;
+        color: #000;
+        font-size: 16px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        font-family: 'Open Sans Regular';
+        transition: all 0.25s;
+	
+        &:focus {
+            border-bottom: 2px solid #008afe;
+            font-size: 18px;
+        }
+        &:hover {
+            border-bottom: 2px solid #008afe;
+            font-size: 18px;
+        }
+    }
 }
+
