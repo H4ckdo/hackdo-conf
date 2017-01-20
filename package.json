@@ -30,7 +30,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "presintall": "echo Hola Mundo"
+    "preinstall": "echo Hola Mundo"
   },
   "main": "app.js",
   "repository": {
