@@ -28,8 +28,7 @@
     "xoauth2": "1.1.0"
   },
   "scripts": {
-    "preinstall": "npm install gulp-util",
-    "postinstall": "npm install --only=dev & npm install bower -g & npm install gulp -g & bower install --allow-root & gulp sass js",
+    "postinstall": "npm install --only=dev & npm install bower -g & bower install --allow-root",
     "debug": "node debug app.js",
     "start": "node app.js"
   },
