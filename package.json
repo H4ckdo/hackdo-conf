@@ -28,8 +28,7 @@
     "xoauth2": "1.1.0"
   },
   "scripts": {
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-    "heroku-postbuild": "npm install --only=dev & npm install bower -g & npm install gulp-util & npm install gulp -g & bower install --allow-root & gulp sass es6",
+    "postinstall": "npm install --only=dev & npm install bower -g & npm install gulp -g & bower install --allow-root & gulp sass es6",
     "debug": "node debug app.js",
     "start": "node app.js"
   },
