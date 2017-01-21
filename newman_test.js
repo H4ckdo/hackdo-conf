@@ -18,8 +18,8 @@ module.exports = function() {
       }, function (err, summary = {}) {
           if(err) return reject(err);
           if(summary.error) return reject(summary.error);
-          if(summary.failures.length != 0) return reject(summary.failures);
-          console.log('collection run complete!: ');
+          if(summary.failures && summary.failures.length != 0) return reject(summary.failures);
+          console.log('collection run complete!: ', summary);
       });
     })
   )
