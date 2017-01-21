@@ -31,7 +31,7 @@
     "debug": "node debug app.js",
     "start": "node app.js",
     "heroku-postbuild": "npm run test",
-    "test": "npm install gulp -g"
+    "test": "npm install gulp -g & gulp sass js"
   },
   "main": "app.js",
   "repository": {
