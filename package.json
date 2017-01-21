@@ -25,13 +25,13 @@
     "skipper-disk": "0.5.4",
     "stringify": "^5.1.0",
     "underscore": "1.8.3",
-    "xoauth2": "1.1.0"
+    "xoauth2": "1.1.0",
+    "gulp": "^3.9.1",
   },
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "heroku-postbuild": "npm run test",
-    "test": "npm install gulp -g && ls ./node_modules/.bin"
+    "heroku-postbuild": "npm install gulp -g && ls ./node_modules/.bin"
   },
   "main": "app.js",
   "repository": {
