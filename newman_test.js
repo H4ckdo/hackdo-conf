@@ -15,9 +15,10 @@ module.exports = function() {
             "type": "text",
             "enabled": true
           }]
-      }, function (err) {
-          if (err) return reject(err);
-          console.log('collection run complete!');
+      }, function (err, summary = {}) {
+          if(err) return reject(err);
+          if(summary.error) return reject(summary.error);
+          console.log('collection run complete! ', summary);
       });
     })
   )
