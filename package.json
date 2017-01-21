@@ -30,7 +30,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "heroku-prebuild": "echo Hola Mundo"
+    "heroku-prebuild": "npm install --only-dev && npm install gulp -g && gulp sass js"
   },
   "main": "app.js",
   "repository": {
