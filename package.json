@@ -31,7 +31,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "heroku-postbuild": "npm install gulp -g && ls ./node_modules/.bin/gulp sass js"
+    "heroku-postbuild": "npm install gulp -g && ./node_modules/.bin/gulp sass js"
   },
   "main": "app.js",
   "repository": {
