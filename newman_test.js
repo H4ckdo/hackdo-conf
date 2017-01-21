@@ -1,10 +1,14 @@
-const exec = require('child_process').exec;
+const newman = require('newman'); // require newman in your project
 module.exports = function() {
   return (new Promise(function(resolve, reject) {
-    console.log("TRY API TEST");
-      exec(`newman run hackdo_website.postman_collection.json --bail`, (err, stdout, stderr) => {
-        if (err) return reject(err);
-        return resolve(stdout);
+      console.log("TRY API TEST");
+      newman.run({
+          collection: require("./hackdo_website.postman_collection.json"),
+          reporters: 'cli',
+          bail: true
+      }, function (err) {
+          if (err) return reject(err);
+          console.log('collection run complete!');
       });
     })
   )
