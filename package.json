@@ -30,7 +30,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "preinstall": "echo Hola Mundo"
+    "heroku-prebuild": "echo Hola Mundo"
   },
   "main": "app.js",
   "repository": {
