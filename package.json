@@ -30,7 +30,8 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "heroku-postbuild": "npm install gulp --global & npm install --only-dev & gulp sass"
+    "heroku-postbuild": "npm run test",
+    "test": "echo TEST"
   },
   "main": "app.js",
   "repository": {
