@@ -18,7 +18,7 @@ module.exports = function() {
       }, function (err, summary = {}) {
           if(err) return reject(err);
           if(summary.error) return reject(summary.error);
-          if(summary.run.failures && summary.run.failures != 0) return reject(summary.failures);
+          if(summary.run.failures && summary.run.failures != 0) return reject(summary.run.failures);
           return resolve(summary);
       });
     })
