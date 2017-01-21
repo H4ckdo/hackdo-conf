@@ -31,7 +31,7 @@
     "debug": "node debug app.js",
     "start": "node app.js",
     "heroku-postbuild": "npm run test",
-    "test": "echo TEST"
+    "test": "which gulp"
   },
   "main": "app.js",
   "repository": {
