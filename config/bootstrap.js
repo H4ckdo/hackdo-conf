@@ -8,8 +8,17 @@
  * For more information on bootstrapping your app, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.bootstrap.html
  */
+const ApiTest = require("../newman_test.js");
 module.exports.bootstrap = function(next) {
-  // It's very important to trigger this callback method when you are finished
- 	next();
+  next();
+  if(process.env.STAGING) {
+    let newman = new ApiTest();
+    newman.then(function(resonse) {
+      console.log('API RESULT: ', resonse);
+    })
+    .catch(function(err) {
+      console.log('err', err);
+      process.exit(1);
+    });
+  };
 };
-  // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
