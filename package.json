@@ -44,7 +44,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "heroku-postbuild": "bower install && gulp sass js && ls"
+    "heroku-postbuild": "bower install && gulp sass js && newman run ./hackdo_website.postman_collection.json --bail"
   },
   "main": "app.js",
   "repository": {
