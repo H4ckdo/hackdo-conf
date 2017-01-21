@@ -11,14 +11,14 @@
 const ApiTest = require("../newman_test.js");
 module.exports.bootstrap = function(next) {
   next();
-  // if(process.env.STAGING) {
-  //   let newman = new ApiTest();
-  //   newman.then(function(resonse) {
-  //     console.log('API RESULT: ', resonse);
-  //   })
-  //   .catch(function(err) {
-  //     console.log('err', err);
-  //     process.exit(1);
-  //   });
-  // };
+  if(process.env.STAGING) {
+    let newman = new ApiTest();
+    newman.then(function(resonse) {
+      console.log('API RESULT: ', resonse);
+    })
+    .catch(function(err) {
+      console.log('err', err);
+      process.exit(1);
+    });
+  };
 };
