@@ -1,11 +1,19 @@
-const newman = require('newman'); // require newman in your project
+const newman = require('newman');
+const collection = require("./hackdo_website.postman_collection.json");
+
 module.exports = function() {
   return (new Promise(function(resolve, reject) {
       console.log("TRY API TEST");
       newman.run({
-          collection: require("./hackdo_website.postman_collection.json"),
+          collection: collection,
           reporters: 'cli',
-          bail: true
+          bail: true,
+          globals: [{
+            "key": "PORT",
+            "value": 1337,
+            "type": "text",
+            "enabled": true
+          }]
       }, function (err) {
           if (err) return reject(err);
           console.log('collection run complete!');

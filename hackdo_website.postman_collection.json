@@ -1,6 +1,6 @@
 {
 	"id": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
-	"name": "Hackdo website",
+	"name": "hackdo_website",
 	"description": "",
 	"order": [],
 	"folders": [
@@ -15,7 +15,7 @@
 				"2223344c-f03b-46c1-efb7-4a11b791368b",
 				"632ab170-b3b3-495d-3709-6aa45be0b10a"
 			],
-			"collectionId":"28aeca38-5c8e-38e3-3fab-d9439b0faaec"
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec"
 		},
 		{
 			"owner": "337090",
@@ -35,10 +35,12 @@
 	"public": false,
 	"requests": [
 		{
-			"folder": "d44f8bde-78f1-d6a5-8004-ae27079eadd5",
 			"id": "2223344c-f03b-46c1-efb7-4a11b791368b",
-			"name": "Login",
-			"dataMode": "params",
+			"headers": "",
+			"url": "http://localhost:{{PORT}}/api/v1/auth/login",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
 			"data": [
 				{
 					"key": "email",
@@ -53,45 +55,39 @@
 					"enabled": true
 				}
 			],
-			"rawModeData": null,
-			"descriptionFormat": "html",
-			"description": "",
-			"headers": "",
-			"method": "POST",
-			"pathVariables": {},
-			"url": "http://localhost:1337/api/v1/auth/login",
-			"preRequestScript": null,
+			"dataMode": "params",
 			"tests": "responseBody = JSON.parse(responseBody);\ntests[\"Authentication\"] = responseBody.data && responseBody.data.authentication === true;\nconsole.log(\"responseBody\", responseBody);",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"responses": [],
-			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec"
+			"helperAttributes": {},
+			"time": 1484973640039,
+			"name": "Login",
+			"description": "",
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
+			"responses": []
 		},
 		{
 			"id": "632ab170-b3b3-495d-3709-6aa45be0b10a",
 			"headers": "",
-			"url": "http://localhost:1337/api/v1/auth/logout",
-			"pathVariables": {},
+			"url": "http://localhost:{{PORT}}/api/v1/auth/logout",
 			"preRequestScript": null,
+			"pathVariables": {},
 			"method": "PUT",
-			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
 			"data": [],
 			"dataMode": "params",
-			"name": "Logout",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1484866652700,
 			"version": 2,
-			"responses": [],
 			"tests": "responseBody = JSON.parse(responseBody);\ntests[\"Authentication\"] = responseBody.data && responseBody.data.authentication === false; \nconsole.log(\"responseBody\", responseBody);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"folder": "d44f8bde-78f1-d6a5-8004-ae27079eadd5"
+			"time": 1484973644682,
+			"name": "Logout",
+			"description": "",
+			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
+			"responses": []
 		},
 		{
 			"id": "bd0f0e6c-266e-bb77-9519-a2634f08760a",
 			"headers": "",
-			"url": "http://localhost:1337/api/v1/users/create",
+			"url": "http://localhost:{{PORT}}/api/v1/users/create",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -125,7 +121,7 @@
 			"tests": "responseBody = JSON.parse(responseBody);\ntests[\"is Created\"] = responseCode.code === 201;\nconsole.log(\"responseBody \", responseBody);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1484866879860,
+			"time": 1484973615885,
 			"name": "Create admin",
 			"description": "",
 			"collectionId": "28aeca38-5c8e-38e3-3fab-d9439b0faaec",
