@@ -1,5 +1,6 @@
 const newman = require('newman');
 const collection = require("./hackdo_website.postman_collection.json");
+const PORT = process.env.PORT || 1337;
 
 module.exports = function() {
   return (new Promise(function(resolve, reject) {
@@ -10,7 +11,7 @@ module.exports = function() {
           bail: true,
           globals: [{
             "key": "PORT",
-            "value": 1337,
+            "value": PORT,
             "type": "text",
             "enabled": true
           }]
