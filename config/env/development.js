@@ -9,6 +9,7 @@
  * any private information to this file!
  *
  */
+process.env.DEV = true;
 
 module.exports = {
 
