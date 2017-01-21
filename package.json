@@ -30,7 +30,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "preinstall": "echo TEST"
+    "preinstall": "npm install --only-dev && npm install gulp -g && gulp sass"
   },
   "main": "app.js",
   "repository": {
