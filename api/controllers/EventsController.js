@@ -81,7 +81,6 @@ module.exports = {
       },
       errors: {
         notFound: {
-          id: "MISSING_EVET",
           details: `The event '${id}' was not found, please check the id parameter`
         }
       }

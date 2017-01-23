@@ -1,5 +1,5 @@
 const newman = require('newman');
-const collection = require("./hackdo_website.postman_collection.json");
+const collection = require("./hackdo_web_api_test.postman_collection.json");
 const PORT = process.env.PORT || 1337;
 
 module.exports = function() {

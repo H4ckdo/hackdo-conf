@@ -1,7 +1,18 @@
 module.exports.routes = {
+  /*
+    Serve views
+  */
+
   "GET /": "HomepageController.show",
 
   "GET /add/event": "EventsController.addEvent",
+
+
+
+
+  /*
+    API ROUTES
+  */
 
   /*
     Relationshipt events and users

@@ -18,7 +18,8 @@ module.exports = {
     if(req.session.userId) {
       res.notAllow({
         error: {
-          details: "Already login"
+          details: "Already login",
+          status: 405
         }
       });
     } else {
@@ -33,7 +34,7 @@ module.exports = {
         authentication: false
       },
       errors: {
-        forbidden: {
+        notAllow: {
           details: "Already logout"
         }
       }

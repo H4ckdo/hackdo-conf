@@ -9,11 +9,9 @@
  * any private information to this file!
  *
  */
-const fixtures = require("../fixtures.js").resolve(process.env.DEV || process.env.STAGING);
+const fixtures = require("../fixtures.js").resolve(process.env.STAGING);
 
 module.exports = {
-  fixtures,
-
   /***************************************************************************
    * Set the default database connection for models in the production        *
    * environment (see config/connections.js and config/models.js )           *

@@ -25,7 +25,6 @@ module.exports = {
   		},
    		errors: {
    			notFound: {
-   				id: "MISSING_USER",
 					details: `The user '${id}' was not found, please check the id parameter`
 				}
    		}
