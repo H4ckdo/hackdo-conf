@@ -8,7 +8,7 @@ module.exports = function() {
       newman.run({
           collection: collection,
           reporters: 'cli',
-          bail: true,
+          bail: false,
           globals: [{
             "key": "PORT",
             "value": PORT,
