@@ -1,0 +1,22 @@
+staging:
+  type: deploy
+  script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - curl -sL https://deb.nodesource.com/setup_7.x | bash -
+  - apt-get install -y nodejs
+  - npm install --only=dev
+  - npm install bower gulp -g
+  - bower install --allow-root
+  - gulp sass js
+  - gem install dpl
+  - dpl --provider=heroku --skip_cleanup=true --app=hackdo-web --api-key=$HEROKU_STAGING_API_KEY
+  only:
+  - master
+production:
+  type: deploy
+  script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - dpl --provider=heroku --skip_cleanup=true --app=hackdo-web --api-key=$HEROKU_PRODUCTION_API_KEY
