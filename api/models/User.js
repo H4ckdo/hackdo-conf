@@ -35,10 +35,16 @@ module.exports = _.extend({
             bcrypt.hash(update.password, 10, function(err, hash) {
               if(err) return reject(new Error("serverError"));
               update.password = hash;
-              User.update(id, update).then((updated)=> resolve(update)).catch(reject);
+              User.update(id, update).then((updated)=> {
+                if(updated && updated.length === 0) return reject(new Error("notFound"));
+                resolve(update);
+              }).catch(reject);
             });
           } else {
-            return User.update(id, update).then((updated)=> resolve(update)).catch(reject);
+            return User.update(id, update).then((updated)=> {
+              if(updated && updated.length === 0) return reject(new Error("notFound"));
+              resolve(update);
+           }).catch(reject);
           }
         } else {
           return reject(new Error("forbidden"));
@@ -61,7 +67,7 @@ module.exports = _.extend({
   	return (new Promise(function(resolve, reject) {
         let hasEmail = data.hasOwnProperty("email");
         let hasPassword = data.hasOwnProperty("password");
-  			if(utils.not(hasPassword) && utils.not(hasEmail)) return reject(new Error("badRequest"));
+  			if(utils.not(hasPassword) || utils.not(hasEmail)) return reject(new Error("badRequest"));
   			User.findOne({email: data.email}).then(function(docs) {
   				if(utils.not(docs)) return resolve(null);
   				self.validatePassword(docs, data.password, resolve, reject);
@@ -74,7 +80,7 @@ module.exports = _.extend({
   	let self = this;
   	let id = session.userId;
   	return (new Promise(function(resolve, reject) {
-			if(!session.hasOwnProperty('authenticated') || session.authenticated === false) return reject(new Error("forbidden"));
+			if(!session.hasOwnProperty('authenticated') || session.authenticated === false) return reject(new Error("notAllow"));
       User.update(id, {isLogin: false})
 				.then(function(docs) {
 					if(utils.not(docs)) return resolve(null);

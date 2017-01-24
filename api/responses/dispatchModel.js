@@ -8,12 +8,14 @@ module.exports = function dispatchModel(Query, options = {}) {
   options.errors.forbidden = options.errors.forbidden || {};
   options.errors.badRequest = options.errors.badRequest || {};
   options.errors.conflict = options.errors.conflict || {};
+  options.errors.notAllow = options.errors.notAllow || {};
 
   const notFound = _.extend({details: `Resource not found.`, status: 404}, options.errors.notFound);
   const serverError = _.extend({details: `Internal server error.`, status: 500}, options.errors.serverError);
   const forbidden = _.extend({details: `Action forbidden.`, status: 403}, options.errors.forbidden);
   const badRequest = _.extend({details: `Bad request`, status: 400}, options.errors.badRequest || {});
   const conflict = _.extend({status: 409, details: `Resource in conflict`}, options.errors.conflict);
+  const notAllow = _.extend({status: 405, details: `Action not allow`}, options.errors.notAllow);
 
   return (
 		Query.then(function(docs) {
@@ -86,7 +88,6 @@ module.exports = function dispatchModel(Query, options = {}) {
   	})
   	.catch(function(err) {
       const response = {data: null};
-
       if(err.code === 11000 || (err.hasOwnProperty('originalError') && err.originalError.code === 11000)) {
         _.extend(response, {error: conflict});
         res.status(409);
@@ -132,6 +133,17 @@ module.exports = function dispatchModel(Query, options = {}) {
         */
       }
 
+      if(err.message === "notAllow") {
+        delete response.data;
+        _.extend(response, {error: notAllow});
+        //TODO MAKE A VIEW OPTION WHEN NOT ALLOW
+//        if(options.errors.notAllow.hasOwnProperty('view')) return res.notAllow(options.errors.notAllow.view, response.error);//Render view in case of error
+        return res.notAllow(response);
+        /*
+          Response in case of notAllow
+        */
+      }
+
 
       if(err.message === "serverError") {
         _.extend(response, {error: serverError});
@@ -146,7 +158,7 @@ module.exports = function dispatchModel(Query, options = {}) {
         let custom = options.errors.otherwise[err.message];
         _.extend(response, {error: custom});
         if(custom.hasOwnProperty('view')) return res.serverError(custom.view, response.error);//Render view in case of error
-        res.status = custom.status || 500;
+        res.status(custom.status || 500);
         return res.json(response);
         /*
           Custom error
@@ -156,7 +168,7 @@ module.exports = function dispatchModel(Query, options = {}) {
       /*
         Response with json format
       */
-      res.status = 204;
+      res.status(204);
       return res.json(response);
   	})
   )

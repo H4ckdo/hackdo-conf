@@ -23,8 +23,7 @@ gulp.task('sass', function() {
     .on('data',()=> console.log('Compiling sass'))
     .on('error', $.sass.logError))
     .on('error',function(err) {
-      console.log(err);
-//      if(process.env.INIT_CWD === "") return process.exit(1);
+      if(process.env.NODE_ENV) return process.exit(1);
     })
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
@@ -46,6 +45,9 @@ gulp.task("js",function() {
 			presets: ['es2015']
 		}))
 		.on("data",(chuck)=> console.log("Compiling js..."))
+    .on('error',function(err) {
+      if(process.env.NODE_ENV) return process.exit(1);
+    })
 		.pipe(gulp.dest('build/js'))
 		.on("end",()=> console.log("Done js \n"));
 })//end js task

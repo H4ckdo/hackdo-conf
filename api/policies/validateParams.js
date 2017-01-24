@@ -1,6 +1,6 @@
 module.exports = function validateParams(req, res, next) {
 	const isDate = utils.isDate;
-	const checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$");
+	const isObjectId = new RegExp("^[0-9a-fA-F]{24}$");
 	const	isTitle = /^\S[a-z0-9ñÑ]{3,}/g;
 	const isPassword = /^\S[a-z0-9ñÑ]{5,20}/g;
 	const	isDescription = /^[a-z0-9ñÑ_ -]{3,500}/g;
@@ -13,12 +13,26 @@ module.exports = function validateParams(req, res, next) {
 	if(body.email) isValid = isEmail.test(body.email);
 	if(body.description) isValid = isDescription.test(body.description);
 	if(body.password) isValid = isPassword.test(body.password);
-	if(req.params.id) isValid = checkForHexRegExp.test(req.params.id);
+	if(req.params.id) isValid = isObjectId.test(req.params.id);
+  if(req.params.eid) isValid = isObjectId.test(req.params.eid);
+
   if(isValid) return next();
-  res.forbidden({
-    error: {
-      details: "Some arguments are not valid"
-    },
-    status: 403
-  });
+  if(Object.keys(body).length === 0) {
+    //body empty
+    res.badRequest({
+      error: {
+        details: "Body empty, need some payload"
+      },
+      status: 400
+    });
+  } else {
+    res.forbidden({
+      error: {
+        details: "Some arguments are not valid"
+      },
+      status: 403
+    });
+  };
+
+
 }//end validateParams
