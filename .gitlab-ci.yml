@@ -5,12 +5,10 @@ staging:
   - apt-get install -y ruby-dev
   - curl -sL https://deb.nodesource.com/setup_7.x | bash -
   - apt-get install -y nodejs
-  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  - yarn install --pure-lockfile
-  - yarn --only=dev
+  - npm install --only=dev
+  - npm install
   - node app.js
-  - yarn global add bower gulp
+  - npm install bower gulp -g
   - bower install --allow-root
   - gulp sass js
   - gem install dpl
