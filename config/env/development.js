@@ -9,7 +9,6 @@
  * any private information to this file!
  *
  */
-
 const fixtures = require("../fixtures.js").resolve(process.env.STAGING);
 
 module.exports = {
