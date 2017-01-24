@@ -10,7 +10,7 @@
  */
 
 const fixtures = require("../fixtures.js").resolve(process.env.STAGING);
-
+console.log("TEST", process.env.MONGO_URI_STAGING);
 module.exports = {
   fixtures,
   /***************************************************************************
@@ -24,11 +24,11 @@ module.exports = {
     connection: "MongodbServer",
 	  migrate: "drop"
   },
-  connection:{
+  connections :{
     MongodbServer: {
       adapter: 'sails-mongo',
-      url: "mongodb://hackdo_website_staging:maxtermax02@ds127439.mlab.com:27439/hackdo_website_staging"
-    }
+      url: process.env.MONGO_URI_STAGING
+     }
   },
 	hookTimeout: 120000
 };
