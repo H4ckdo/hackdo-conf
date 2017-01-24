@@ -8,6 +8,8 @@ staging:
   - apt-get install -y nodejs
   - npm install --only=dev
   - npm install bower gulp -g
+  - node app.js
+  - echo 'TEST APP LIFTED'
   - bower install --allow-root
   - gulp sass js
   - gem install dpl
