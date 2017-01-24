@@ -10,7 +10,6 @@
  */
 
 const fixtures = require("../fixtures.js").resolve(process.env.STAGING);
-console.log("TEST", process.env.MONGO_URI_STAGING);
 module.exports = {
   fixtures,
   /***************************************************************************
