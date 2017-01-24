@@ -5,11 +5,12 @@ staging:
   - apt-get install -y ruby-dev
   - curl -sL https://deb.nodesource.com/setup_7.x | bash -
   - apt-get install -y nodejs
-  - npm install --only=dev
-  - npm install
+  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - yarn install --pure-lockfile
+  - yarn --only=dev
   - node app.js
-  - npm install bower gulp -g
-  - echo 'TEST APP LIFTED'
+  - yarn global add bower gulp
   - bower install --allow-root
   - gulp sass js
   - gem install dpl

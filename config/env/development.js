@@ -8,7 +8,6 @@
  * file.  If your repository will be publicly viewable, don't add
  * any private information to this file!
  */
-
 const fixtures = require("../fixtures.js").resolve(process.env.STAGING);
 module.exports = {
   fixtures,
