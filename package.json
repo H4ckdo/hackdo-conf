@@ -29,7 +29,6 @@
     "moment": "2.13.0",
     "xoauth2": "1.1.0",
     "newman": "^3.4.2",
-    "stringify": "^5.1.0"
   },
   "scripts": {
     "debug": "node debug app.js",
