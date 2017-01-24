@@ -9,8 +9,8 @@
  * any private information to this file!
  *
  */
-process.env.DEV = true;
-const fixtures = require("../fixtures.js").resolve(process.env.DEV || process.env.STAGING);
+
+const fixtures = require("../fixtures.js").resolve(process.env.STAGING);
 
 module.exports = {
   fixtures,
@@ -27,11 +27,9 @@ module.exports = {
   },
   connection:{
     MongodbServer: {
-     adapter: 'sails-mongo',
-     host: 'localhost',
-     port: 27017,
-     database: 'hackdo' //optional
-   }
+      adapter: 'sails-mongo',
+      url: "mongodb://hackdo_website_staging:maxtermax02@ds127439.mlab.com:27439/hackdo_website_staging"
+    }
   },
 	hookTimeout: 120000
 };
