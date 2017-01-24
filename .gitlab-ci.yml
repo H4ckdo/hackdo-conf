@@ -7,8 +7,9 @@ staging:
   - curl -sL https://deb.nodesource.com/setup_7.x | bash -
   - apt-get install -y nodejs
   - npm install --only=dev
-  - npm install bower gulp sails -g
+  - npm install
   - node app.js
+  - npm install bower gulp -g
   - echo 'TEST APP LIFTED'
   - bower install --allow-root
   - gulp sass js
