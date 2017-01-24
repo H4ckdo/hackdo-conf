@@ -26,11 +26,17 @@ module.exports = {
    * Set the log level in production environment to "silent"                 *
    ***************************************************************************/
   log: {
-    level: "verbose"
+    level: "silent"
   },
   models:{
-    connection: 'localDiskDb',
-	  migrate: "safe"
+    connection: "MongodbServer",
+    migrate: "safe"
+  },
+  connections :{
+    MongodbServer: {
+      adapter: 'sails-mongo',
+      url: process.env.MONGO_URI
+     }
   },
 
 	hookTimeout: 120000
