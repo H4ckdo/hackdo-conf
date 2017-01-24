@@ -33,7 +33,8 @@ module.exports = {
     migrate: "safe"
   },
   session: {
-    adapter: 'connect-mongo'
+    adapter: 'connect-mongo',
+    url: process.env.MONGO_URI
   },
   connections :{
     MongodbServer: {

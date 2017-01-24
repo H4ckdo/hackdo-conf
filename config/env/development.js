@@ -23,7 +23,8 @@ module.exports = {
 	  migrate: "drop"
   },
   session: {
-    adapter: 'connect-mongo'
+    adapter: 'connect-mongo',
+    url: process.env.MONGO_URI_STAGING
   },
   connections :{
     MongodbServer: {
