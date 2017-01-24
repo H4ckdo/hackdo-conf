@@ -5,10 +5,12 @@
   "description": "Hackdo website",
   "dependencies": {
     "bcryptjs": "^2.3.0",
+    "connect-mongo": "1.1.0",
     "connect-redis": "3.0.2",
     "handlebars": "^4.0.5",
     "include-all": "~0.1.6",
     "moment": "2.13.0",
+    "newman": "^3.4.2",
     "node-uuid": "^1.4.7",
     "nodemailer": "^0.7.1",
     "nodemailer-smtp-transport": "2.4.2",
@@ -24,8 +26,7 @@
     "skipper": "^0.6.4",
     "skipper-disk": "0.5.4",
     "underscore": "1.8.3",
-    "xoauth2": "1.1.0",
-    "newman": "^3.4.2"
+    "xoauth2": "1.1.0"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -51,7 +52,7 @@
     "Motion": "./bower_components/foundation-sites/dist/plugins/foundation.util.motion.js",
     "handlebars": "./bower_components/handlebars/handlebars.js",
     "Tabs": "./bower_components/foundation-sites/dist/plugins/foundation.tabs.js",
-    "TimerAndImageLoader":"./bower_components/foundation-sites/dist/plugins/foundation.util.timerAndImageLoader.js"
+    "TimerAndImageLoader": "./bower_components/foundation-sites/dist/plugins/foundation.util.timerAndImageLoader.js"
   },
   "browserify-shim": {
     "jquery": "$",
@@ -64,7 +65,7 @@
     "MediaQuery": "MediaQuery",
     "Motion": "Motion",
     "handlebars": "Handlebars",
-    "TimerAndImageLoader":"TimerAndImageLoader"
+    "TimerAndImageLoader": "TimerAndImageLoader"
   },
   "browserify": {
     "transform": [

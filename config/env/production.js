@@ -32,6 +32,9 @@ module.exports = {
     connection: "MongodbServer",
     migrate: "safe"
   },
+  session: {
+    adapter: 'connect-mongo'
+  },
   connections :{
     MongodbServer: {
       adapter: 'sails-mongo',
