@@ -15,6 +15,7 @@ module.exports.bootstrap = function(next) {
     let newman = new ApiTest();
     newman.then(function(response) {
      // console.log('API RESULT: ', response);
+      process.exit(0);
     })
     .catch(function(err) {
       console.log('err', err);
