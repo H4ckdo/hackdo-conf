@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="" lang="es">
+  <head>
+    <title>Hackdo | dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/styles/Event/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/styles/components/form_search.css">
+  </head> 
+  <body>
+    <div class="row columns large-10">
+        <div class="text-center large-12">
+          <div class="line-top"></div>
+          <h1>DASHBOARD</h1>
+          <div class="line-bottom"></div>
+        </div>
+      <div class="columns large-3">
+        <a href="#" class="button large-10 ">AGREGAR</a>
+      </div>
+      
+      <div class="columns large-9 ">
+        <div class="row large-push-1 large-10">{{> search}}</div>
+        <div class="row large-10 large-push-1">
+          <div class="columns large-6">
+              <span class="label-field"><i class="material-icons">today</i> Fecha</span>
+              <input class="date" type="date" name="start">
+          </div>
+          <div class="columns large-5">
+            {{> search}}
+          </div>
+        </div>
+
+        <div class="row large-12">
+          <h2 class="large-push-1">Eventos</h2>
+          <div class="row columns large-12 line-left">
+
+            <div class="row columns large-10 large-push-1"> 
+              <div class="columns large-10"><strong>QUIBDOJS</strong></div>
+              <div class="columns large-2  size">
+                <a href="">Eliminar</a>
+                <a href="">Editar</a>
+              </div>
+            </div>  
+            
+            <div class="row columns large-push-1">2017-01-28 | CAMARA DE COMERCIO</div>
+            
+            <div class="row columns large-push-1 large-10"><p class="text-justify">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            </p></div>
+
+          </div>          
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

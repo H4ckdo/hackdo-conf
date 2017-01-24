@@ -1,0 +1,50 @@
+@import "../app.scss";
+
+.red{
+    background: red
+}
+
+.blue{
+    background: blue
+}
+*{
+    font-family: 'Open Sans Bold';
+}
+
+.columns{
+    padding: 0px
+}
+
+.label-field {
+        font-family: 'Open Sans Bold';
+        color: #000;
+        display: inline;
+        width: 100%;
+        
+        i{
+            vertical-align: middle
+        }
+    }
+ 
+.size{
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 15px; 
+}
+
+.line-left{
+    border-left: 2px solid
+}
+
+p{
+    font-family: "Times New Roman"
+}
+
+a{
+    color: #000
+}
+
+.button{
+    background: black
+}

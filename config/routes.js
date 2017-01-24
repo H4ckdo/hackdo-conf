@@ -5,7 +5,11 @@ module.exports.routes = {
 
   "GET /": "HomepageController.show",
 
-  "GET /add/event": "EventsController.addEvent",
+  "GET /event/add": "EventsController.addEvent",
+
+  "GET /event/dashboard": "EventsController.dashboardEvent",
+
+  "GET /event/edit": "EventsController.editEvent",
 
 
 
