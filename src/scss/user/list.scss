@@ -103,7 +103,7 @@
   .container-loadmore  {
     padding:0px !important;
   }
-  .event {
+  .user {
     padding-left: 10px !important;
   }
   .form-search_container .search-by_date {
@@ -136,19 +136,19 @@
   }
 }
 
-.container_events {
-  .event {
+.container_users {
+  .user {
     padding-left: 25px;
     padding-top: 40px;
     padding-bottom: 10px;
     color: #1d1d1d;
-    .event_description {
+    .user_description {
       margin-top: 10px;
     }
   }
-  .container-event-header {
+  .container-user-header {
     position: relative;
-    .container-event-header_title {
+    .container-user-header_title {
       margin-top: 0px;
       margin-bottom: 0px;
       font-family:'Open Sans Light';
@@ -156,7 +156,7 @@
       padding-bottom: 5px;
       color: #2196f3
     }
-    .container-event-header_attributes {
+    .container-user-header_attributes {
       .wrap_header_date, .wrap_header_location {
         display:inline-block;
         vertical-align: middle;
@@ -168,11 +168,11 @@
       }
     }
 
-    .wrap-event-options {
+    .wrap-user-options {
       padding: 7px;
       padding-left: 0px;
       color: #1d1d1d;
-      .wrap-event-options_delete {
+      .wrap-user-options_delete {
         display: inline-block;
         padding-right: 10px;
         color: #9c9898;
@@ -186,7 +186,7 @@
           font-size: 15px;
         }
       }
-      .wrap-event-options_edit {
+      .wrap-user-options_edit {
         display: inline-block;
         color: #9c9898;
         transition: all 0.25s;

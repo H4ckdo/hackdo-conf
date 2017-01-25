@@ -1,0 +1,32 @@
+.footer {
+  background: #151515;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Open Sans Regular';
+  .hackdo-copy {
+    font-family: 'Open Sans Light';
+  }
+  .hackdo-title {
+    font-size: 30px;
+    margin-bottom: 5px !important;
+    margin-top: 15px;
+  }
+  .wrap-hackdo-contact {
+    h4 {
+      font-size: 30px;
+      margin: 0px !important;
+    }
+    a {
+      color:white;
+    }
+    border-left: 1px solid white;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrap-hackdo-contact {
+    border-left: none !important;
+    border-top: 1px solid white;
+  }
+}

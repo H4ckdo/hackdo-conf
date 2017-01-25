@@ -7,12 +7,17 @@ module.exports.routes = {
 
   "GET /event/add": "EventsController.addEvent",
 
-  "GET /event/dashboard": "EventsController.dashboardEvent",
+  "GET /dashboard": "EventsController.dashboardEvent",
 
   "GET /event/edit": "EventsController.editEvent",
 
+  "GET /user": "UsersController.profile",
 
+  "GET /user/create": "UsersController.add",
 
+  "GET /user/list": "UsersController.list",
+
+  "GET /user/update": "UsersController.serveUpdate",
 
   /*
     API ROUTES

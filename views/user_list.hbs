@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>HACKDO | DASHBOARD</title>
+    <link rel="stylesheet" type="text/css" href="/styles/user/list.css">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="menu align-right">
+          <li>
+            <a href="#"><i class="material-icons">&#xE90F;</i> Cerrar sesion</a>
+          </li>
+          <li>
+            <a href="/user"> <i class="material-icons">&#xE851;</i> Perfil </a>
+          </li>
+
+          <li class="active">
+            <a href="/dashboard"> <i class="material-icons">&#xE8EF;</i> Dashboard </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="dashboard_header">
+      <div class="row text-center">
+        <h1 class="dashboard_title">
+          <div class="line-top line-narrow"></div>LISTADO DE USUARIOS<div class="line-bottom line-narrow"></div>
+        </h1><!-- end title -->
+      </div><!-- end title container -->
+    </div><!-- end dashboard_header -->
+
+    <div class="row">
+      <section class="columns large-8 medium-12 small-12 section-feed large-centered">
+        <div class="large-12">
+          <div class="large-centered form-search_container">
+            <div class="wrap-search-options row">
+
+              <div class="search-by columns large-12 search-by_name">
+                <form class="form-search">
+                  <button type="button" class="btn-search"><i class="material-icons">&#xE8B6;</i> </button>
+                  <input type="text" autocomplete="true" class="input-search input-search_location" placeholder="Buscar"><!-- end input-searh -->
+                </form><!-- end form-search -->
+              </div>
+
+            </div><!-- end wrap-search-options -->
+          </div> <!-- end form-search_container -->
+        </div>
+
+        <div class="container_users large-12">
+          <div class="user">
+            <div class="row container-user-header">
+              <div class="columns large-8 wrap-user-header">
+                <h1 class="container-user-header_title">Esneyder</h1>
+                <div class="container-user-header_attributes">
+                  <div class="wrap_header_rol">
+                    <i class="material-icons">&#xE0DA;</i>
+                    <span class="container-user-header_location">Admin</span>
+                  </div><!-- end wrap_header_rol -->
+                </div><!-- end wrap-user-header -->
+              </div><!-- end container-user-header -->
+
+              <div class="columns large-4 container-user-options">
+                <div class="wrap-user-options">
+                   <div class="wrap-user-options_delete">
+                     <i class="material-icons">&#xE872;</i>
+                     <span>Eliminar</span>
+                   </div>
+
+                    <div class="wrap-user-options_edit">
+                     <i class="material-icons">&#xE22B;</i>
+                     <a href="/user/update">
+                       <span>Editar</span>
+                     </a>
+
+                    </div>
+                </div><!-- end wrap-user-options -->
+              </div><!-- end container-user-options -->
+            </div><!-- end container-user-header -->
+          </div><!-- end user -->
+
+          <div class="container-loadmore text-center">
+            <button class="container-loadmore_btn">
+              <i class="material-icons">&#xE8FA;</i>
+              <span>CARGAR MAS</span>
+            </button>
+          </div>
+
+        </div><!-- end container_users -->
+      </section>
+    </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="row large-10">
+      <div class="columns large-8">
+        <h4 class="hackdo-title">HACKDO FOUNDATION</h4>
+        <p class="hackdo-copy">
+          Creando el futuro del ecosistema de emprendimiento y tecnología del Chocó con ❤.
+        </p>
+      </div>
+
+      <div class="columns large-4 wrap-hackdo-contact">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Github</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+  </body>
+</html>

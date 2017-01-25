@@ -169,13 +169,8 @@ module.exports = {
     res.view("editEvent");
   },//end editEvent
 
-    dashboardEvent: function(req, res) {
-      let components = {
-        partials:{
-          search:"./components/form_search"
-        }
-      };
-    res.view("dashboardEvent", components);
+  dashboardEvent: function(req, res) {
+    res.view("dashboardEvent");
   }//end dashboard
 };
 
