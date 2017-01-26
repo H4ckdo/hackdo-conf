@@ -34,16 +34,15 @@ gulp.task('sass', function() {
 
 gulp.task("js",function() {
 	return gulp.src("src/js/**/*.js", { read: false })
-		.pipe(browserify({
-			insertGlobals : false,
-     	debug : false,
-      minify:false,
-      transform:['stringify'],
-      extensions: ['.hbs']
+    .pipe(browserify({
+      transform: ['babelify'],
+      insertGlobals : false,
+      debug : false,
+      minify:false
     }))
-		.pipe(babel({
-			presets: ['es2015']
-		}))
+    .pipe(babel({
+      presets: ['es2015']
+    }))
 		.on("data",(chuck)=> console.log("Compiling js..."))
     .on('error',function(err) {
       if(process.env.NODE_ENV) return process.exit(1);
@@ -52,6 +51,7 @@ gulp.task("js",function() {
 		.on("end",()=> console.log("Done js \n"));
 })//end js task
 
+
 gulp.task("watch",function() {
 	watch(['src/scss/**/*.scss'],()=> { this.tasks['sass']['fn']() });
 	watch(['src/js/**/*.js'],()=> this.tasks['js']['fn']());
@@ -59,5 +59,5 @@ gulp.task("watch",function() {
 })
 
 gulp.task('default',["watch"],function function_name(argument) {
-	console.log("task done ")
+	console.log("start task")
 });
