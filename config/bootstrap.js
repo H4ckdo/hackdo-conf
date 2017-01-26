@@ -14,7 +14,7 @@ module.exports.bootstrap = function(next) {
   if(process.env.STAGING) {
     let newman = new ApiTest();
     newman.then(function(response) {
-     // console.log('API RESULT: ', response);
+      // console.log('API RESULT: ', response);
       process.exit(0);
     })
     .catch(function(err) {
