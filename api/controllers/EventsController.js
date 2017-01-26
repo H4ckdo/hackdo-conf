@@ -170,7 +170,7 @@ module.exports = {
   },//end editEvent
 
   dashboardEvent: function(req, res) {
-    res.view("dashboardEvent");
+    res.view("dashboard");
   }//end dashboard
 };
 
