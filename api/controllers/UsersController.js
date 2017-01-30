@@ -1,15 +1,15 @@
 module.exports = {
   profile: function(req, res) {
-    res.view("profile");
+    res.view("user/profile");
   },
   add: function(req, res) {
-    res.view("user_add");
+    res.view("user/add");
   },
   list: function(req, res) {
-    res.view("user_list");
+    res.view("user/list");
   },
   serveUpdate: function(req, res) {
-    res.view("user_update");
+    res.view("user/update");
   },
   showAll: function(req, res) {
     let query = _.pick(req.query || {}, ['rol', 'name']);

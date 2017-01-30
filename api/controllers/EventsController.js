@@ -162,15 +162,15 @@ module.exports = {
   },//end delete
 
    addEvent: function(req, res) {
-    res.view("addEvent");
+    res.view("event/add");
   },//end addEvent
 
   editEvent: function(req, res) {
-    res.view("editEvent");
+    res.view("event/edit");
   },//end editEvent
 
   dashboardEvent: function(req, res) {
-    res.view("dashboard");
+    res.view("dashboard/dashboard");
   }//end dashboard
 };
 

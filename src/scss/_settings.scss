@@ -44,13 +44,21 @@
 @import 'util/util';
 // 1. Global
 // ---------
+$primary: #2196F3;
+$primary_hover: #1d7cc7;
+$secondary: #9c9898;
+$secondary_hover: #8c8989;
+
+$success: #3adb76;
+$warning: #FF9800;
+$error: red;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
+  primary: #2196F3,
+  secondary: #9c9898,
   success: #3adb76,
   warning: #ffae00,
   alert: #ec5840,
@@ -60,6 +68,8 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$global-font-family: 'Open Sans Regular';
+$global-font-family-light: 'Open Sans Light';
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -569,47 +579,7 @@ $topbar-unstack-breakpoint: medium;
 // ---------
 
 /* fallback */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v19/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
-}
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
-
-@font-face {
-  font-family: 'Open Sans Regular';
-  font-style: normal;
-  src: local('Open Sans Regular'), url(/fonts/Open_Sans/OpenSans-Regular.ttf);
-}
-
-
-@font-face {
-  font-family: 'Open Sans Bold';
-  font-style: normal;
-  src: local('Open Sans Bold'), url(/fonts/Open_Sans/OpenSans-Bold.ttf);
-}
-
-@font-face {
-  font-family: 'Open Sans Light';
-  font-style: normal;
-  src: local('Open Sans Light'), url(/fonts/Open_Sans/OpenSans-Light.ttf);
-}
 
 
 

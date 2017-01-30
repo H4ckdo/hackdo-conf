@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <title>HACKDO | DASHBOARD</title>
-    <link rel="stylesheet" type="text/css" href="/styles/dashboard/dashboard.css">
+    <script src="/js/dashboard.bundle.js"></script>
   </head>
 
   <body>
@@ -71,25 +71,7 @@
       <section class="columns large-9 medium-12 small-12 section-feed">
         <div class="large-8">
           <div class="large-centered form-search_container">
-            <form class="form-search">
-              <button type="button" class="btn-search"><i class="material-icons">&#xE8B6;</i> </button>
-              <input type="text" class="input-search" placeholder="Buscar Evento"><!-- end input-searh -->
-            </form><!-- end form-search -->
-
-            <div class="wrap-search-options row">
-              <div class="search-by search-by_date columns large-6">
-                <i class="material-icons">&#xE916;</i>
-                <input type="date" class="input_start_at">
-              </div><!-- end search-by -->
-
-              <div class="search-by columns large-6 search-by_location">
-                <form class="form-search">
-                  <button type="button" class="btn-search"><i class="material-icons">&#xE8B6;</i> </button>
-                  <input type="text" autocomplete="true" class="input-search input-search_location" placeholder="Buscar por lugar"><!-- end input-searh -->
-                </form><!-- end form-search -->
-              </div>
-
-            </div><!-- end wrap-search-options -->
+            <div id="root"></div>
           </div> <!-- end form-search_container -->
         </div>
 
@@ -143,30 +125,6 @@
         </div><!-- end container_events -->
       </section>
     </div>
-
-  <div id="root"></div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="row large-10">
-      <div class="columns large-8">
-        <h4 class="hackdo-title">HACKDO FOUNDATION</h4>
-        <p class="hackdo-copy">
-          Creando el futuro del ecosistema de emprendimiento y tecnología del Chocó con ❤.
-        </p>
-      </div>
-
-      <div class="columns large-4 wrap-hackdo-contact">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Github</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </footer>
-  <script src="/js/dashboard/dashboard.js"></script>
-  </body>
+  <div id="containder-footer"></div>
+ </body>
 </html>

@@ -8,9 +8,8 @@ staging:
   - npm install --only=dev
   - npm install
   - node app.js
-  - npm install bower gulp -g
   - bower install --allow-root
-  - gulp sass js
+  - npm run webpack:build
   - gem install dpl
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
   only:

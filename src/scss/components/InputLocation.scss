@@ -1,0 +1,49 @@
+@import '../settings';
+
+.invalid {
+  border-color: $error !important;
+}
+
+.empty {
+  border-color: $warning !important;
+}
+.valid {
+  border-color: $primary !important;
+}
+
+
+.search-by_location {
+  margin-top: 10px;
+  .btn-search_location {
+    color: $primary;
+    vertical-align: top;
+    outline:none;
+    transition:all 0.25s;
+    cursor: pointer;
+    &:hover {
+      color: $primary_hover;
+    }
+  }
+
+  .input-search_location {
+    font-family: $global-font-family;
+    vertical-align: top;
+    border: none;
+    padding: 5px;
+    outline: none;
+    border-bottom: 1px solid #2196F3;
+    transition: all 0.25s;
+    width: calc(100% - 30px);
+    color: #1d1d1d;
+    font-size: 15px;
+    &:hover {
+      font-size: 16px;
+      border-width: 2px;
+    }
+    &:focus {
+      font-size: 16px;
+      border-width: 2px;
+    }
+  }
+}
+

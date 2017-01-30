@@ -7,7 +7,7 @@ module.exports.routes = {
 
   "GET /event/add": "EventsController.addEvent",
 
-  "GET /dashboard": "EventsController.dashboardEvent",
+  "GET /dashboard": "DashboardController.dashboard",
 
   "GET /event/edit": "EventsController.editEvent",
 

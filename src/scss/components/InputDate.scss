@@ -1,0 +1,28 @@
+@import '../settings';
+
+.search-by_date {
+  font-size: 16px;
+  margin-top: 10px;
+  i {
+    vertical-align: bottom;
+    font-size: 26px;
+    padding-right: 5px;
+    color: $primary;
+  }
+  .input_start_at {
+    vertical-align: middle;
+    border: none;
+    border-bottom: 1px solid $primary;
+    padding-top: 3px;
+    outline:none;
+    color: $secondary;
+    width: calc(100% - 34px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-by_date {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+}

@@ -3,50 +3,92 @@
 @import 'foundation';
 @import 'motion-ui';
 
-@include foundation-global-styles;
-@include foundation-grid;
+//@include foundation-global-styles;
+//@include foundation-grid;
 // @include foundation-flex-grid;
 //@include foundation-typography;
-@include foundation-button;
+//@include foundation-button;
 //@include foundation-forms;
 //@include foundation-range-input;
 //@include foundation-accordion;
 //@include foundation-accordion-menu;
 //@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-close-button;
-@include foundation-menu;
+//@include foundation-breadcrumbs;
+//@include foundation-button-group;
+//@include foundation-callout;
+//@include foundation-close-button;
+//@include foundation-menu;
 //@include foundation-menu-icon;
 //@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
+//@include foundation-dropdown;
+//@include foundation-dropdown-menu;
 
 //@include foundation-flex-video;
 //@include foundation-label;
 //@include foundation-media-object;
 //@include foundation-off-canvas;
 //@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
+//@include foundation-pagination;
+//@include foundation-progress-bar;
 //@include foundation-progress-element;
 //@include foundation-meter-element;
 //@include foundation-slider;
 //@include foundation-sticky;
-@include foundation-reveal;
+//@include foundation-reveal;
 //@include foundation-switch;
 //@include foundation-table;
-@include foundation-tabs;
+//@include foundation-tabs;
 //@include foundation-thumbnail;
-@include foundation-title-bar;
+//@include foundation-title-bar;
 //@include foundation-tooltip;
-@include foundation-top-bar;
-@include foundation-visibility-classes;
+//@include foundation-top-bar;
+//@include foundation-visibility-classes;
 //@include foundation-float-classes;
 //@include foundation-flex-classes;
-@include motion-ui-transitions;
-@include motion-ui-animations;
+//@include motion-ui-transitions;
+//@include motion-ui-animations;
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v19/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Open Sans Regular';
+  font-style: normal;
+  src: local('Open Sans Regular'), url(/fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  src: local('Open Sans Bold'), url(/fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Open Sans Light';
+  font-style: normal;
+  src: local('Open Sans Light'), url(/fonts/Open_Sans/OpenSans-Light.ttf);
+}
 
 .float-none {
   float:none !important;
@@ -70,4 +112,32 @@
 
 .float-left {
   float:left;
+}
+
+.error {
+  color: $error;
+}
+.warning {
+  color: $warning;
+}
+.input-msg {
+  margin-left: 25px;
+  font-size: 12px;
+  font-family: $global-font-family-light;
+  display: inline-block;
+  line-height: 1.4;
+  margin-top: 5px;
+  transition: all 0.25s;
+  animation-name: appear;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
