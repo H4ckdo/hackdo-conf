@@ -8,7 +8,7 @@ staging:
   - npm install --only=dev
   - npm install
   - node app.js
-  - bower install --allow-root
+  - npm install webpack -g
   - npm run webpack:build
   - gem install dpl
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
