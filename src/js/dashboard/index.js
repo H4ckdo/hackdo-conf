@@ -8,6 +8,7 @@ import InputLocation from '../components/InputLocation.jsx';
 import FormSearch from '../components/FormSearch.jsx';
 import Footer from '../components/Footer.jsx';
 
+
 let options = [
   {
     name: 'One',
