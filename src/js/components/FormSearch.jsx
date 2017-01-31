@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/components/formSearch.scss';
+import '../../scss/components/FormSearch.scss';
 
 export default class FormSearch extends React.Component {
   constructor(props) {
