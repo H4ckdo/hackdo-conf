@@ -12,9 +12,11 @@ export default class Layout extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
-        <Title data={this.props.title}/>
-        <Feed content={this.props.content}/>
+        <div>
+          <Header/>
+          <Title data={this.props.title}/>
+          <Feed content={this.props.content}/>
+        </div>
         <Footer/>
       </div>
     )

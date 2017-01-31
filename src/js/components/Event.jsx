@@ -4,13 +4,15 @@ import '../../scss/components/Event.scss';
 export default class Event extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
+    this.state.data = this.props.data;
   }
 
   render() {
     return (
       <div className="event-wrap">
         {
-          this.props.data.map((event, index) => {
+          this.state.data.map((event, index) => {
             return (
               <div key={index}>
                   <div className="row container-event-header">
@@ -31,15 +33,15 @@ export default class Event extends React.Component {
 
                     <div className="columns large-4 container-event-options">
                       <div className="wrap-event-options">
-                         <div className="wrap-event-options_delete">
+                         <div className="wrap-event-options_delete" onClick={this.props.delete.bind(this, event, index)}>
                            <i className="material-icons">&#xE872;</i>
                            <span>Eliminar</span>
                          </div>
 
                           <div className="wrap-event-options_edit">
-                           <i className="material-icons">&#xE22B;</i>
-                             <a href="/event/edit">
-                               <span>Editar</span>
+                            <a target="_blank" href={"/event/edit?eid="+event.id}>
+                              <i className="material-icons">&#xE22B;</i>
+                              <span>Editar</span>
                              </a>
                           </div>
                       </div> {/* end wrap-event-options */}

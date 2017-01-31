@@ -14,6 +14,7 @@ import LoadMore from '../components/LoadMore.jsx';
 const data = [
   {
     name: 'QUIBDO_JS',
+    id: 1,
     startAt: '2017-02-17',
     location: 'Camara de Comercio',
     description:`
@@ -37,6 +38,10 @@ export default class Dashboard extends React.Component {
     return !(new RegExp(/(\W)/g).test(candidate));
   }
 
+  patternLocation(candidate) {
+    return !(new RegExp(/[^A-Za-z0-9_-\s#]/g).test(candidate));
+  }
+
   addFormSearchChildren(child) {
     this.FormSearch.childrens.push(child);
   }
@@ -51,6 +56,15 @@ export default class Dashboard extends React.Component {
     console.log('data', data);
   }
 
+  deleteEvent(event, index) {
+    let eventContext = this;
+    let eid = event.id;
+    eventContext.setState((prev)=>  {
+      eventContext.state.data.splice(index, 1);
+      return eventContext.state;
+    })
+  }
+
   render() {
     return (
       <section className="columns large-6 medium-12 small-12 section-feed">
@@ -61,10 +75,10 @@ export default class Dashboard extends React.Component {
               <FormSearch placeholder="Buscar Evento" lift={self => this.FormSearch.self = self} onSubmit={this.search.bind(this)} pattern={this.pattern.bind(this)}  options={
                   [
                     <InputDate lift={this.addFormSearchChildren.bind(this)} />,
-                    <InputLocation lift={this.addFormSearchChildren.bind(this)} pattern={this.pattern.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
+                    <InputLocation lift={this.addFormSearchChildren.bind(this)} pattern={this.patternLocation.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
                   ]
-                } />,
-              <Event data={data}/>
+                } />
+              <Event data={data} delete={this.deleteEvent}/>
             </div>{/* end event */}
             <LoadMore/>
           </div>{/* end container_events */}

@@ -30,7 +30,7 @@ export default class InputLocation extends React.Component {
   }
 
   validate(canditate = "") {
-    return this.props.pattern(canditate) && canditate.length > 3 && canditate.length < 15;
+    return this.props.pattern(canditate) && canditate.length > 3 && canditate.length < 25;
   }
 
   hideMsg() {

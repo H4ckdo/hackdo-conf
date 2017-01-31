@@ -1,6 +1,10 @@
 @import '../settings';
 
 .container_events {
+  .event-wrap {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
   .event {
     padding-left: 25px;
     padding-top: 20px;
