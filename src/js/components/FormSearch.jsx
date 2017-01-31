@@ -5,14 +5,14 @@ export default class FormSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      childrens: this.props.options,
+      childrens: [],
       error: false,
       warning: false,
       msgStyle: 'valid',
       valid: false,
-      search: '',
-      pattern: this.props.pattern
+      search: ''
     };
+
   }
 
   bindValue(self) {
@@ -22,7 +22,7 @@ export default class FormSearch extends React.Component {
       let isValid = self.validate(canditate);
       if(isValid) {
        self.hideMsg();
-        self.setState({search: canditate, valid: true})
+        self.setState({search: canditate, valid: true});
       } else {
        self.showError();
       }
@@ -30,7 +30,7 @@ export default class FormSearch extends React.Component {
   }
 
   validate(canditate) {
-    return /^\S[a-z0-9ñÑ]{3,}/g.test(canditate);
+    return this.props.pattern(canditate) && canditate.length > 3 && canditate.length < 15;
   }
 
   hideMsg() {
@@ -53,8 +53,6 @@ export default class FormSearch extends React.Component {
           <input type="text" className={"input-search "+(this.state.msgStyle)} placeholder={this.props.placeholder} onChange={this.bindValue(this)}/>
           <small className={"input-msg error "+ (!this.state.error ? 'hide' : '')} >Campo invalido</small>
           <small className={"input-msg warning "+ (!this.state.warning ? 'hide' : '')} >Campo vacio</small>
-
-
           <div className="row">
             {
               this.props.options.map((option, index)=> {
@@ -69,6 +67,7 @@ export default class FormSearch extends React.Component {
         </form>
       </div>
     )
+
   }
 };
 

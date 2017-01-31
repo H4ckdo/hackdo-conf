@@ -21,12 +21,21 @@ let options = [
 ];
 
 class Dashboard {
+  pattern(candidate) {
+    return !(new RegExp(/(\W)/g).test(candidate));
+  }
+
+  addChildren(child) {
+    return child => this.childrens.push(child);
+  }
+
   constructor() {
+    this.childrens = [];
     ReactDOM.render(
-      <FormSearch placeholder="Buscar Evento" onSubmit={this.search} pattern={/^\S[a-z0-9ñÑ]{3,}/g}  options={
+      <FormSearch placeholder="Buscar Evento" onSubmit={this.search} pattern={this.pattern.bind(this)}  options={
           [
             <InputDate />,
-            <InputLocation pattern={/^\S[a-z0-9ñÑ]{3,}/g} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
+            <InputLocation pattern={this.pattern.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
           ]
         } />,
       document.getElementById('root')
