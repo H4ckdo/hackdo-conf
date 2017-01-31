@@ -5,12 +5,14 @@ export default class InputLocation extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      param: 'location',
       error: false,
       warning: false,
       msgStyle: 'valid',
       valid: false,
-      location: ''
+      value: ''
     };
+    this.props.lift(this);
   }
 
   bindValue(self) {
@@ -20,7 +22,7 @@ export default class InputLocation extends React.Component {
       let isValid = self.validate(canditate);
       if(isValid) {
         self.hideMsg();
-        self.setState({location: canditate, valid: true})
+        self.setState({value: canditate, valid: true})
       } else {
         self.showError();
       }

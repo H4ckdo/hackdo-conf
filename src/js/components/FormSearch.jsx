@@ -10,9 +10,9 @@ export default class FormSearch extends React.Component {
       warning: false,
       msgStyle: 'valid',
       valid: false,
-      search: ''
+      value: ''
     };
-
+    this.props.lift(this);
   }
 
   bindValue(self) {
@@ -22,7 +22,7 @@ export default class FormSearch extends React.Component {
       let isValid = self.validate(canditate);
       if(isValid) {
        self.hideMsg();
-        self.setState({search: canditate, valid: true});
+        self.setState({value: canditate, valid: true});
       } else {
        self.showError();
       }

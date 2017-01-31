@@ -13,10 +13,6 @@ let options = [
   {
     name: 'One',
     checked: true
-  },
-  {
-    name: 'Two',
-    checked: false
   }
 ];
 
@@ -25,17 +21,18 @@ class Dashboard {
     return !(new RegExp(/(\W)/g).test(candidate));
   }
 
-  addChildren(child) {
-    return child => this.childrens.push(child);
+  addFormSearchChildren(child) {
+    this.FormSearch.childrens.push(child);
   }
 
   constructor() {
-    this.childrens = [];
+    this.FormSearch = {};
+    this.FormSearch.childrens = [];
     ReactDOM.render(
-      <FormSearch placeholder="Buscar Evento" onSubmit={this.search} pattern={this.pattern.bind(this)}  options={
+      <FormSearch placeholder="Buscar Evento" lift={self => this.FormSearch.self = self} onSubmit={this.search.bind(this)} pattern={this.pattern.bind(this)}  options={
           [
-            <InputDate />,
-            <InputLocation pattern={this.pattern.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
+            <InputDate lift={this.addFormSearchChildren.bind(this)} />,
+            <InputLocation lift={this.addFormSearchChildren.bind(this)} pattern={this.pattern.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
           ]
         } />,
       document.getElementById('root')
@@ -49,7 +46,12 @@ class Dashboard {
 
   search(e) {
     e.preventDefault();
-    console.log('this', this);
+    let data = {};
+    if(this.FormSearch.self.state.valid) data.name = this.FormSearch.self.state.value;
+    this.FormSearch.childrens.forEach(child => {
+      if(child.state.valid) data[child.state.param] = child.state.value;
+    });
+    console.log('data', data);
   }
 };
 

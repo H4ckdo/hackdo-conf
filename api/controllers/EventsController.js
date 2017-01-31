@@ -54,7 +54,7 @@ module.exports = {
   },//end add
 
   showAll: function(req, res) {
-    let query = _.pick(req.query || {}, ['name', 'location']);
+    let query = _.pick(req.query || {}, ['name', 'location', 'startAt']);
     let responseCases = {
       success: {
         notFound: {
