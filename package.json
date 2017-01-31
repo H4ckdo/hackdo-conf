@@ -44,8 +44,8 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "webpack:build": "webpack --progress --color --display-error-details",
-    "webpack:watch": "webpack --progress --color --watch --display-error-details"
+    "webpack:build": "webpack --progress --color --display-error-details --bail",
+    "webpack:watch": "webpack --progress --color --watch --display-error-details --bail"
   },
   "main": "app.js",
   "repository": {
