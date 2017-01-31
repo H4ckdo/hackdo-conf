@@ -1,8 +1,16 @@
+@import '../settings';
+
+.active {
+  a {
+    background:#3F51B5 !important;
+  }
+}
+
 header {
   .menu {
-    background: #1d1d1d;
+    background: $black;
     color:white;
-    font-family: 'Open Sans Regular';
+    font-family: $global-font-family;
     font-size: 18px;
     li {
       cursor: pointer;

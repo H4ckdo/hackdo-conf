@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../scss/components/formSearch.scss';
-import $ from 'jquery';
+
 export default class FormSearch extends React.Component {
   constructor(props) {
     super(props);

@@ -1,11 +1,18 @@
+@import '../settings';
+
+body {
+  position: relative;
+}
+
 .footer {
-  background: #151515;
+  background: $black;
   padding: 20px;
   color: white;
   font-size: 18px;
-  font-family: 'Open Sans Regular';
+  font-family: $global-font-family;
+  width: 100%;
   .hackdo-copy {
-    font-family: 'Open Sans Light';
+    font-family: $global-font-family-light;
   }
   .hackdo-title {
     font-size: 30px;
