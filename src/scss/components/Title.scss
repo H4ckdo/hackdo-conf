@@ -1,15 +1,49 @@
 @import '../settings';
 
-.dashboard_header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.title-container {
+  text-align: center;
 }
 
-.dashboard_title {
+.title {
   font-family: $global-font-family-light;
   font-weight: 100;
   color: $primary;
 }
+
+.clean {
+  .line-top, .line-bottom {
+    display: none;
+  }
+}
+
+.line-left {
+  text-align: left !important;
+  margin:10px !important;
+  .line-top {
+    margin:0px;
+    margin-bottom: 10px;
+  }
+  .line-bottom {
+    margin:0px;
+    margin-top: 10px;
+  }
+}
+
+.line-right {
+  text-align: right !important;
+  margin:10px !important;
+  .line-top, .line-bottom {
+    margin:0px;
+    margin-left: calc(100% - 50px);
+  }
+  .line-top {
+    margin-bottom: 5px;
+  }
+  .line-bottom {
+    margin-top: 5px;
+  }
+}
+
 
 .line-top {
   position: relative;
@@ -17,6 +51,7 @@
   margin-bottom: 10px;
   padding-bottom: 1px;
   width: 50px;
+  border-bottom: 1px solid $primary;
 }
 
 .line-bottom {
@@ -25,14 +60,18 @@
   margin-top: 10px;
   padding-top: 1px;
   width: 50px;
+  border-bottom: 1px solid $primary;
 }
 
 .line-narrow {
-  background: $primary;
-  position: relative;
-  margin: 0px auto;
-  margin-top: 10px;
-  padding-top: 1px;
-  width: 10px;
-  height: 10px;
+  .line-bottom, .line-top {
+    background: $primary;
+    position: relative;
+    margin: 0px auto;
+    margin-top: 10px;
+    padding-top: 1px;
+    width: 10px;
+    height: 10px;
+    border:none;
+  }
 }

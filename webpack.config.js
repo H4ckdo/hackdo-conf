@@ -11,8 +11,9 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "/build/js"),
-    filename:"[name].bundle.js"
+    filename:"[name].bundle.js",
   },
+  devtool: 'source-map',
   sassLoader: {
     includePaths: [
       path.resolve(__dirname, "./node_modules/foundation-sites/scss"),
@@ -20,11 +21,8 @@ module.exports = {
     ]
   },
   resolve: {
-    modulesDirectories: ['node_modules']
-  },
- externals: {
-    jQuery: 'jQuery',
-    foundation: 'Foundation'
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js'],
   },
   module: {
     loaders:[
@@ -43,6 +41,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new WebpackNotifierPlugin({alwaysNotify: true})
+    new WebpackNotifierPlugin({alwaysNotify: true}),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
   ]
 }

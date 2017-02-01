@@ -9,7 +9,16 @@ import FormSearch from '../components/FormSearch.jsx';
 import AsideList from '../components/AsideList.jsx';
 import Event from '../components/Event.jsx';
 import LoadMore from '../components/LoadMore.jsx';
+import PopUpConfirm from '../components/PopUpConfirm.jsx';
 
+// import 'foundation-sites/js/foundation.reveal.js';
+// import 'foundation-sites/js/foundation.util.keyboard.js';
+// import 'foundation-sites/js/foundation.util.box.js';
+// import 'foundation-sites/js/foundation.util.triggers.js';
+// import 'foundation-sites/js/foundation.util.mediaQuery.js';
+// import 'foundation-sites/js/foundation.util.motion.js';
+
+// import 'foundation-sites/js/foundation.core.js';
 
 const data = [
   {
@@ -57,12 +66,18 @@ export default class Dashboard extends React.Component {
   }
 
   deleteEvent(event, index) {
-    let eventContext = this;
-    let eid = event.id;
-    eventContext.setState((prev)=>  {
-      eventContext.state.data.splice(index, 1);
-      return eventContext.state;
-    })
+    window.modalConfirm.open();
+    // let eventContext = this;
+    // let eid = event.id;
+    // eventContext.setState((prev)=>  {
+    //   eventContext.state.data.splice(index, 1);
+    //   return eventContext.state;
+    // })
+  }
+
+  close() {
+   console.log(' window.modalConfirm',  window.modalConfirm);
+    window.modalConfirm.close();
   }
 
   render() {
@@ -78,7 +93,8 @@ export default class Dashboard extends React.Component {
                     <InputLocation lift={this.addFormSearchChildren.bind(this)} pattern={this.patternLocation.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
                   ]
                 } />
-              <Event data={data} delete={this.deleteEvent}/>
+              <Event data={data} delete={this.deleteEvent} PopUpConfirm={'exampleModal1'}/>
+              <PopUpConfirm close={this.close}/>
             </div>{/* end event */}
             <LoadMore/>
           </div>{/* end container_events */}
@@ -91,7 +107,7 @@ export default class Dashboard extends React.Component {
 
 $(document).ready(()=> {
   ReactDOM.render(
-    <Layout title={'DASHBOARD'} content={[
+    <Layout title={'DASHBOARD'} narrow={true} content={[
       <AsideList/>,
       <Dashboard/>
     ]}/>,

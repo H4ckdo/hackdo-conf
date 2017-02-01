@@ -14,7 +14,7 @@ export default class Layout extends React.Component {
       <div>
         <div>
           <Header/>
-          <Title data={this.props.title}/>
+          <Title data={this.props.title} narrow={this.props.narrow} left={this.props.left} right={this.props.right}/>
           <Feed content={this.props.content}/>
         </div>
         <Footer/>

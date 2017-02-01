@@ -9,6 +9,7 @@
     "connect-mongo": "1.1.0",
     "connect-redis": "3.0.2",
     "css-loader": "^0.26.1",
+    "exports-loader": "^0.6.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "foundation-sites": "^6.3.0",
     "handlebars": "^4.0.5",
@@ -45,7 +46,7 @@
     "debug": "node debug app.js",
     "start": "node app.js",
     "webpack:build": "webpack --progress --color --display-error-details --bail",
-    "webpack:watch": "webpack --progress --color --watch --display-error-details --bail"
+    "webpack:watch": "webpack --progress --color --watch --display-error-details"
   },
   "main": "app.js",
   "repository": {
