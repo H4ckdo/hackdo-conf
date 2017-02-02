@@ -17,25 +17,44 @@ require("expose?Motion!../../../node_modules/foundation-sites/js/foundation.util
 export default class PopUpConfirm extends React.Component {
   constructor(props) {
     super(props);
-    console.log('props', props);
+    this.childrens = [];
   }
 
   componentDidMount() {
-    let modal = $("#exampleModal1");
+    let modal = $("#confirmModal");
     window.modalConfirm = new Foundation.Reveal(modal);
+    modal.on("closed.zf.reveal",(e)=> {
+      this.childrens.forEach(child => child.resetState());
+    })
+  }
+
+  addChild(child) {
+    this.childrens.push(child);
+  }
+
+  blockButton(button) {
+    this.childrens.forEach((child)=> {
+      if(button.props.style != child.props.style) child.setState({disabled: true});
+    });
+  }
+
+  releaseButton(button) {
+    this.childrens.forEach((child)=> {
+      if(button.props.style != child.props.style) child.setState({disabled: false});
+    });
   }
 
   render() {
     return (
-      <div className="reveal" id="exampleModal1" data-reveal>
+      <div className="reveal" id="confirmModal" data-reveal>
         <Title data={'¿ Estas seguro/a ?'} clean={true}/>
         <div className="row">
           <div className="columns large-6">
-            <Button style={'btn-confirm'} onClick={this.props.close} type="button" data={'CANCELAR'}/>
+            <Button style={'btn-cancel'} enableActions={this.releaseButton.bind(this)} disabledActions={this.blockButton.bind(this)} lift={this.addChild.bind(this)} onClick={this.props.close} type="button" data={'CANCELAR'}/>
           </div>
 
           <div className="columns large-6">
-            <Button style={'btn-confirm'} onClick={this.props.close} type="button" data={'ACEPTAR'}/>
+            <Button style={'btn-confirm'} enableActions={this.releaseButton.bind(this)} disabledActions={this.blockButton.bind(this)} lift={this.addChild.bind(this)} onClick={this.props.confirm} type="button" data={'ACEPTAR'}/>
           </div>
 
         </div>

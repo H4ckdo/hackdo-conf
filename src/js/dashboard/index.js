@@ -11,14 +11,6 @@ import Event from '../components/Event.jsx';
 import LoadMore from '../components/LoadMore.jsx';
 import PopUpConfirm from '../components/PopUpConfirm.jsx';
 
-// import 'foundation-sites/js/foundation.reveal.js';
-// import 'foundation-sites/js/foundation.util.keyboard.js';
-// import 'foundation-sites/js/foundation.util.box.js';
-// import 'foundation-sites/js/foundation.util.triggers.js';
-// import 'foundation-sites/js/foundation.util.mediaQuery.js';
-// import 'foundation-sites/js/foundation.util.motion.js';
-
-// import 'foundation-sites/js/foundation.core.js';
 
 const data = [
   {
@@ -76,8 +68,20 @@ export default class Dashboard extends React.Component {
   }
 
   close() {
-   console.log(' window.modalConfirm',  window.modalConfirm);
     window.modalConfirm.close();
+  }
+
+  request() {
+    let PopUpButtons = this;
+    if(PopUpButtons.state.loading === false && PopUpButtons.state.fail) {
+      PopUpButtons.setFail();
+    } else {
+      PopUpButtons.setLoading();
+    }
+
+    setTimeout(()=>{
+      PopUpButtons.resetState();
+    }, 2000);
   }
 
   render() {
@@ -94,7 +98,7 @@ export default class Dashboard extends React.Component {
                   ]
                 } />
               <Event data={data} delete={this.deleteEvent} PopUpConfirm={'exampleModal1'}/>
-              <PopUpConfirm close={this.close}/>
+              <PopUpConfirm close={this.close} confirm={this.request}/>
             </div>{/* end event */}
             <LoadMore/>
           </div>{/* end container_events */}
