@@ -1,7 +1,7 @@
 stages:
   - test
   - build
-  - staging
+  - deploy
 
 test:
   type: test
@@ -19,7 +19,7 @@ build:
   - npm install webpack -g
   - npm run webpack:build
 
-staging:
+deploy:
   type: deploy
   script:
   - apt-get update -qy
@@ -28,5 +28,3 @@ staging:
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
-
-
