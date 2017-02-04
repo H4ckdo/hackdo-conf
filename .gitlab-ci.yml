@@ -14,10 +14,3 @@ staging:
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
-production:
-  type: deploy
-  script:
-  - apt-get update -qy
-  - apt-get install -y ruby-dev
-  - gem install dpl
-  - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_PRODUCTION_API_KEY
