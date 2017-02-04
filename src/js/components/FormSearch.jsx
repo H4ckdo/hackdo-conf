@@ -1,11 +1,12 @@
 import React from 'react';
 import '../../scss/components/FormSearch.scss';
+import Input from '../components/Input.jsx';
 
 export default class FormSearch extends React.Component {
   constructor(props) {
     super(props);
+    this.childrens = [];
     this.state = {
-      childrens: [],
       error: false,
       warning: false,
       msgStyle: 'valid',
@@ -45,15 +46,16 @@ export default class FormSearch extends React.Component {
     this.setState({error: false, warning: true, msgStyle: 'empty', valid: false})
   }
 
+  addChildren(child) {
+    this.childrens.push(child);
+  }
+
   render() {
     return (
       <div>
         <form className="form-search" onSubmit={this.props.onSubmit.bind(this)}>
           <div className="static-height_search">
-            <button type="submit" className="btn-search"><i className="material-icons">&#xE8B6;</i> </button>
-            <input type="text" className={"input-search "+(this.state.msgStyle)} placeholder={this.props.placeholder} onChange={this.bindValue(this)}/>
-            <small className={"input-msg error "+ (!this.state.error ? 'hide' : '')} >Campo invalido</small>
-            <small className={"input-msg warning "+ (!this.state.warning ? 'hide' : '')} >Campo vacio</small>
+            <Input lift={this.addChildren.bind(this)} param="event" type="text" pattern={this.props.pattern.bind(this)} placeholder={this.props.placeholder}  title={this.props.title}/>
           </div>
 
           <div className="row static-height_options">

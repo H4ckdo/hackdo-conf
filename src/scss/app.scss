@@ -120,24 +120,3 @@
 .warning {
   color: $warning;
 }
-.input-msg {
-  margin-left: 25px;
-  font-size: 12px;
-  font-family: $global-font-family-light;
-  display: inline-block;
-  line-height: 1.4;
-  margin-top: 5px;
-  transition: all 0.25s;
-  animation-name: appear;
-  animation-duration: 0.25s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}

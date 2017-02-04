@@ -1,0 +1,13 @@
+@import '../settings';
+.popup {
+  font-family: $global-font-family-light;
+}
+
+.error-icon {
+  font-size: 75px;
+  color: $error;
+}
+.warning-icon {
+  font-size: 75px;
+  color: $warning;
+}

@@ -3,14 +3,13 @@ import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import InputDate from '../components/InputDate.jsx';
-import InputLocation from '../components/InputLocation.jsx';
+import Input from '../components/Input.jsx';
 import Layout from '../components/Layout.jsx';
 import FormSearch from '../components/FormSearch.jsx';
 import AsideList from '../components/AsideList.jsx';
 import Event from '../components/Event.jsx';
-import LoadMore from '../components/LoadMore.jsx';
-import PopUpConfirm from '../components/PopUpConfirm.jsx';
-
+import Button from '../components/Button.jsx';
+import PopUp from '../components/PopUp.jsx';
 
 const data = [
   {
@@ -31,8 +30,7 @@ const data = [
 export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.FormSearch = {};
-    this.FormSearch.childrens = [];
+    this.childrens = [];
   }
 
   pattern(candidate) {
@@ -43,28 +41,13 @@ export default class Dashboard extends React.Component {
     return !(new RegExp(/[^A-Za-z0-9_-\s#]/g).test(candidate));
   }
 
-  addFormSearchChildren(child) {
-    this.FormSearch.childrens.push(child);
+  addChildren(child) {
+    this.childrens.push(child);
   }
 
   search(e) {
     e.preventDefault();
-    let data = {};
-    if(this.FormSearch.self.state.valid) data.name = this.FormSearch.self.state.value;
-    this.FormSearch.childrens.forEach(child => {
-      if(child.state.valid) data[child.state.param] = child.state.value;
-    });
-    console.log('data', data);
-  }
-
-  deleteEvent(event, index) {
-    window.modalConfirm.open();
-    // let eventContext = this;
-    // let eid = event.id;
-    // eventContext.setState((prev)=>  {
-    //   eventContext.state.data.splice(index, 1);
-    //   return eventContext.state;
-    // })
+   console.log('this', this);
   }
 
   close() {
@@ -72,35 +55,49 @@ export default class Dashboard extends React.Component {
   }
 
   request() {
-    let PopUpButtons = this;
-    if(PopUpButtons.state.loading === false && PopUpButtons.state.fail) {
-      PopUpButtons.setFail();
-    } else {
-      PopUpButtons.setLoading();
-    }
+    // let PopUpButtons = this;
+    // if(PopUpButtons.state.loading === false && PopUpButtons.state.fail) {
+    //   PopUpButtons.setFail();
+    // } else {
+    //   PopUpButtons.setLoading();
+    // }
+    // setTimeout(()=>{
 
-    setTimeout(()=>{
-      PopUpButtons.resetState();
-    }, 2000);
+    //   PopUpButtons.resetState();
+    //   window.modalConfirm.close();
+    // }, 2000);
+  }
+
+  requestMore() {
+    console.log("request more")
+  }
+
+  deleteEvent(event, index) {
+    console.log('this', this);
   }
 
   render() {
+    let title= `
+      Debes escribir como minimo 3 caracteres y maximo 15,
+      solo se permiten caracteres de la 'a' hasta la 'z',
+      numeros del 0 al 9, sin espacios.
+    `;
+
     return (
       <section className="columns large-6 medium-12 small-12 section-feed">
         <div>
           <div className="large-centered form-search_container">
           <div className="container_events">
             <div id="event-wrapper" className="event">
-              <FormSearch placeholder="Buscar Evento" lift={self => this.FormSearch.self = self} onSubmit={this.search.bind(this)} pattern={this.pattern.bind(this)}  options={
+              <FormSearch component="FormSearch" placeholder="Buscar Evento" param="name" title={title} lift={this.addChildren.bind(this)} onSubmit={this.search.bind(this)} pattern={this.pattern.bind(this)}  options={
                   [
-                    <InputDate lift={this.addFormSearchChildren.bind(this)} />,
-                    <InputLocation lift={this.addFormSearchChildren.bind(this)} pattern={this.patternLocation.bind(this)} placeholder="Buscar por lugar" title="Debes escribir como minimo 3 caracteres y maximo 15, solo se permiten caracteres de la 'a' hasta la 'z', numeros del 0 al 9, sin espacios."/>
+                    <Input component="InputDate" lift={this.addChildren.bind(this)} param="startAt" type="date" />,
+                    <Input component="InputLocation" lift={this.addChildren.bind(this)} param="location" type="text" pattern={this.patternLocation.bind(this)} placeholder="Buscar por lugar" title={title}/>
                   ]
                 } />
-              <Event data={data} delete={this.deleteEvent} PopUpConfirm={'exampleModal1'}/>
-              <PopUpConfirm close={this.close} confirm={this.request}/>
+               <Event data={data} delete={this.deleteEvent.bind(this)} lift={this.addChildren.bind(this)}/>
             </div>{/* end event */}
-            <LoadMore/>
+            <Button style={'btn-loadmore'} onClick={this.requestMore} type="button" data={'CARGAR MAS'}/>
           </div>{/* end container_events */}
           </div> {/* end form-search_container */}
         </div>

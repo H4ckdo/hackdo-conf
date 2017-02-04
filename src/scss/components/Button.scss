@@ -19,6 +19,22 @@
   }
 }
 
+.btn-warning {
+  border: 1px solid $warning;
+  color: $warning;
+  &:hover {
+    border-color:$warning;
+    background:$warning;
+    color:white;
+  }
+   &:focus {
+    border-color:$warning;
+    background:$warning;
+    color:white;
+  }
+}
+
+
 .btn-fail {
   border-color:$error !important;
   transition: all 0.25s;

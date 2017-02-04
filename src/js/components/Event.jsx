@@ -8,6 +8,18 @@ export default class Event extends React.Component {
     this.state.data = this.props.data;
   }
 
+  delete() {
+
+  }
+
+  close() {
+    console.log("close");
+  }
+
+  confirm() {
+    console.log("confirm");
+  }
+
   render() {
     return (
       <div className="event-wrap">
@@ -33,9 +45,9 @@ export default class Event extends React.Component {
 
                     <div className="columns large-4 container-event-options">
                       <div className="wrap-event-options">
-                         <div className="wrap-event-options_delete" onClick={this.props.delete.bind(this, event, index)}>
+                         <div className="wrap-event-options_delete" onClick={this.delete.bind(this)}>
                            <i className="material-icons">&#xE872;</i>
-                           <span data-open={this.props.PopUpConfirm}>Eliminar</span>
+                           <span onClick={this.props.delete.bind(this, event, index)}>Eliminar</span>
                          </div>
 
                           <div className="wrap-event-options_edit">

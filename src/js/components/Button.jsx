@@ -17,7 +17,7 @@ export default class Button extends React.Component {
   }
 
   componentDidMount() {
-    this.props.lift(this);
+    if(this.props.lift) this.props.lift(this);
   }
 
   setLoading() {
@@ -30,11 +30,6 @@ export default class Button extends React.Component {
 
   resetState() {
     this.setState({loading: false, fail: false, disabled: false});
-  }
-
-  componentWillUpdate(nextProp, nextState) {
-    if(this.props.disabledActions && nextState.loading) this.props.disabledActions(this);
-    if(this.props.enableActions && nextState.loading === false && this.state.disabled === true) this.props.enableActions(this);
   }
 
   render() {
@@ -54,7 +49,8 @@ export default class Button extends React.Component {
           <div className={(this.state.loading || this.state.fail) ? "hide" : "show"}>
             <span>{this.state.data}</span>
             <i className={"material-icons "+(this.state.style === "btn-confirm" ? "show": "hide") }>&#xE86C;</i>
-            <i className={"material-icons "+(this.state.style === "btn-cancel" ? "show": "hide") }>&#xE888;</i>
+            <i className={"material-icons "+(this.state.style === "btn-cancel"? "show": "hide") }>&#xE888;</i>
+            <i className={"material-icons "+(this.state.style === "btn-warning"? "show": "hide") }>&#xE888;</i>
             <i className={"material-icons "+(this.state.style === "btn-loadmore" ? "show": "hide") }>&#xE8FA;</i>
           </div>
         </button>
