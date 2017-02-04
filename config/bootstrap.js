@@ -11,7 +11,7 @@
 const ApiTest = require("../newman_test.js");
 module.exports.bootstrap = function(next) {
   next();
-  if(process.env.STAGING) {
+  if(process.env.TEST) {
     let newman = new ApiTest();
     newman.then(function(response) {
       // console.log('API RESULT: ', response);

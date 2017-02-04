@@ -1,22 +1,27 @@
+test:
+  type: test
+  script:
+  - curl -sL https://deb.nodesource.com/setup_7.x | bash -
+  - apt-get install -y nodejs
+  - apt-get update -qy
+  - npm install
+  - node app.js
+
+build:
+  type: build
+  script:
+  - npm install --only=dev
+  - npm install webpack -g
+  - npm run webpack:build
+
 staging:
   type: deploy
   script:
   - apt-get update -qy
   - apt-get install -y ruby-dev
-  - curl -sL https://deb.nodesource.com/setup_7.x | bash -
-  - apt-get install -y nodejs
-  - npm install --only=dev
-  - npm install
-  - node app.js
-  - npm install webpack -g
-  - npm run webpack:build
   - gem install dpl
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
 
-backup:
-  type: test
-  script:
-  - apt-get update -qy
-  - echo "backup"
+
