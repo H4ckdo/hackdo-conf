@@ -14,3 +14,9 @@ staging:
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
+
+staging:
+  type: backup
+  script:
+  - apt-get update -qy
+  - echo "backup"
