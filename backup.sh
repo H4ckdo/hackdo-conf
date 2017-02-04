@@ -50,8 +50,10 @@ done
 if [ -n $BACKUP ]; then
 	if [ "$BACKUP" == "true" ]; then
 		echo "Attempting backup..."
-		mongodump -h ds141209.mlab.com:41209 -d $DATABASE -u $USER -p $PASSWORD -o ./backups/$DATE
-		echo "Backup executed good at: $DATE" >> Backup.md
+        mongodump -h ds141209.mlab.com:41209 -d $DATABASE -u $USER -p $PASSWORD -o ./backups/$DATE >> ./backups/log.txt 2>&1
+        sed -i -e '$a Backup finish at: '$DATE ./backups/log.txt 2>&1
+        cat ./backups/log.txt
+
 	else
 		if [ "$SYNC" == "true" ]; then
 			echo "sync"
@@ -60,8 +62,7 @@ if [ -n $BACKUP ]; then
 				mongorestore --drop --db $DATABASE ./backups/"$FOLDER"/$DATABASE
 			else
 				echo "Attempting synchronisation to production..."
-				mongorestore --drop -h ds141209.mlab.com:41209 -d $DATABASE -u $USER -p $PASSWORD ./backups/"$FOLDER"/$DATABASE
-				echo "Synchronisation good at: $DATE" >> Synchronisation.md
+				mongorestore --drop -h ds141209.mlab.com:41209 -d $DATABASE -u $USER -p $PASSWORD ./backups/"$FOLDER"/$DATABASE >> Synchronisation.md
 			fi
 		fi
 	fi
