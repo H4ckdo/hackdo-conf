@@ -15,8 +15,8 @@ staging:
   only:
   - master
 
-staging:
-  type: backup
+backup:
+  type: test
   script:
   - apt-get update -qy
   - echo "backup"
