@@ -1,4 +1,4 @@
-image: node:argon
+image: node:7.5.0
 
 stages:
   - test
@@ -8,8 +8,6 @@ stages:
 test:
   type: test
   script:
-  - curl -sL https://deb.nodesource.com/setup_7.x | bash -
-  - apt-get install -y nodejs
   - apt-get update -qy
   - npm install
   - node app.js
