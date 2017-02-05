@@ -8,9 +8,6 @@
     "bcryptjs": "^2.3.0",
     "connect-mongo": "1.1.0",
     "connect-redis": "3.0.2",
-    "css-loader": "^0.26.1",
-    "exports-loader": "^0.6.3",
-    "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "handlebars": "^4.0.5",
     "include-all": "~0.1.6",
@@ -22,7 +19,6 @@
     "node-uuid": "^1.4.7",
     "nodemailer": "^0.7.1",
     "nodemailer-smtp-transport": "2.4.2",
-    "postcss-loader": "^0.8.0",
     "rc": "1.0.1",
     "sails": "~0.12.3",
     "sails-disk": "~0.10.9",
@@ -32,10 +28,8 @@
     "sails-mongo": "^0.12.1",
     "sails-mysql": "0.12.1",
     "sails-service-mailer": "3.2.1",
-    "sass-loader": "^4.1.1",
     "skipper": "^0.6.4",
     "skipper-disk": "0.5.4",
-    "style-loader": "^0.13.1",
     "underscore": "1.8.3",
     "xoauth2": "1.1.0"
   },
@@ -64,6 +58,12 @@
     "jquery": "^3.1.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "foundation-sites": "^6.3.0"
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "css-loader": "^0.26.1",
+    "exports-loader": "^0.6.3",
+    "expose-loader": "^0.7.1",
+    "foundation-sites": "^6.3.0",
+    "postcss-loader": "^0.8.0"
   }
 }
