@@ -1,14 +1,9 @@
+image: node:argon
+
 stages:
   - test
   - build
   - deploy
-
-cache:
-  untracked: true
-  key: "$test"
-  paths:
-    - node_modules/
-
 
 test:
   type: test
