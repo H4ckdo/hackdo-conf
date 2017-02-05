@@ -12,10 +12,8 @@
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "foundation-sites": "^6.3.0",
     "handlebars": "^4.0.5",
     "include-all": "~0.1.6",
-    "jquery": "^3.1.1",
     "lodash": "^4.17.4",
     "moment": "2.13.0",
     "motion-ui": "^1.2.2",
@@ -26,8 +24,6 @@
     "nodemailer-smtp-transport": "2.4.2",
     "postcss-loader": "^0.8.0",
     "rc": "1.0.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
     "sails": "~0.12.3",
     "sails-disk": "~0.10.9",
     "sails-fixtures": "1.0.8",
@@ -64,6 +60,10 @@
     "handlebars": "^4.0.5",
     "node-sass": "^3.10.1",
     "webpack": "^1.14.0",
-    "webpack-notifier": "^1.5.0"
+    "webpack-notifier": "^1.5.0",
+    "jquery": "^3.1.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "foundation-sites": "^6.3.0"
   }
 }
