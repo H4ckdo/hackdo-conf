@@ -21,6 +21,7 @@ build:
 
 deploy:
   type: deploy
+  image: ruby:2.1
   script:
   - apt-get update -qy
   - apt-get install -y ruby-dev
