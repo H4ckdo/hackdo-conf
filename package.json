@@ -33,6 +33,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
+    "postinstall":"cd build/js && ls",
     "webpack:build": "webpack --progress --color --display-error-details --bail",
     "webpack:watch": "webpack --progress --color --watch --display-error-details"
   },

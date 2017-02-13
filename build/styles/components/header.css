@@ -1,0 +1,1 @@
+header .menu{background:#1d1d1d;color:white;font-family:'Open Sans Regular';font-size:18px}header .menu li{cursor:pointer;transition:all 0.25s}header .menu li:hover{background:#3F51B5}header .menu li i,header .menu li span,header .menu li a{vertical-align:middle;color:white;text-decoration:none}
