@@ -22,7 +22,6 @@ build:
 deploy:
   type: deploy
   image: ruby:2.3.3
-  cache: false
   script:
   - apt-get update -qy
   - apt-get install -y ruby-dev
