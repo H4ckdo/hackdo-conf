@@ -4,7 +4,11 @@ module.exports = {
     let responseCases = {
       success: {
         omit: ["id", "rol"],
-        authentication: true
+        authentication: true,
+        session: {
+          id: true,
+          rol: true
+        }
       },
       errors: {
         notFound: {

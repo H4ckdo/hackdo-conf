@@ -41,9 +41,8 @@
 
 config/local.js
 backups/
-build/js/*.js
-build/styles/*.css
-
+build/js/
+build/styles/
 
 
 ################################################
