@@ -8,7 +8,6 @@ stages:
 test:
   type: test
   script:
-  - rm -R build/js
   - apt-get update -qy
   - npm install
   - node app.js
@@ -23,10 +22,12 @@ build:
 deploy:
   type: deploy
   image: ruby:2.3.3
+  cache: false
   script:
   - apt-get update -qy
   - apt-get install -y ruby-dev
   - gem install dpl
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
+  - cd build/js && ls
   only:
   - master
