@@ -17,6 +17,7 @@ build:
   script:
   - npm install --only=dev
   - npm install webpack -g
+  - rm -R build/js
   - npm run webpack:build
   - cache:
      directories:
