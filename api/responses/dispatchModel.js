@@ -65,6 +65,13 @@ module.exports = function dispatchModel(Query, options = {}) {
           }
         };//end omit
 
+        if(options.success.hasOwnProperty('map')) {
+          if(_.isArray(response.data)) {
+            response.data = response.data.map(options.success.map);
+          } else {
+            response.data = [response.data].map(options.success.map)[0];
+          }
+        };//end if map
 
         res.status(options.success.status || 200);
         if(options.success.hasOwnProperty('view')) {
