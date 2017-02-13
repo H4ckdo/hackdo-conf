@@ -18,6 +18,10 @@ build:
   - npm install --only=dev
   - npm install webpack -g
   - npm run webpack:build
+  - cache:
+     directories:
+      - build/js
+      - build/styles
   - cd build/js && ls
 
 deploy:
