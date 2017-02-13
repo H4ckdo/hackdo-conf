@@ -10,7 +10,7 @@
  */
 const ApiTest = require("../newman_test.js");
 module.exports.bootstrap = function(next) {
-  next();
+  next();//LIFT APP
   if(process.env.TEST) {
     let newman = new ApiTest();
     newman.then(function(response) {

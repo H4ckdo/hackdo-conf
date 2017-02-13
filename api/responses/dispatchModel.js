@@ -55,7 +55,7 @@ module.exports = function dispatchModel(Query, options = {}) {
             tmpPick.deletedAt = new Date();
             response.data = tmpPick;
           }
-        };
+        };//end pick
 
         if(options.success.hasOwnProperty('omit')) {
           if(_.isArray(response.data)) {
@@ -63,7 +63,9 @@ module.exports = function dispatchModel(Query, options = {}) {
           } else {
             _.each(options.success.omit || [], (to_omit)=> delete response['data'][to_omit]);
           }
-        };
+        };//end omit
+
+
         res.status(options.success.status || 200);
         if(options.success.hasOwnProperty('view')) {
           res.view(options.success.view, response.data);
