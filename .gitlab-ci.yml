@@ -19,10 +19,6 @@ build:
   - npm install webpack -g
   - rm -R build/js
   - npm run webpack:build
-  - cache:
-     directories:
-      - build/js
-      - build/styles
   - cd build/js && ls
 
 deploy:
