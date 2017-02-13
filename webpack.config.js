@@ -13,7 +13,7 @@ module.exports = {
     path: path.join(__dirname, "/build/js"),
     filename:"[name].bundle.js",
   },
-  devtool: 'source-map',
+  devtool: (!process.env.TEST ? 'source-map' : null),
   sassLoader: {
     includePaths: [
       path.resolve(__dirname, "./node_modules/foundation-sites/scss"),
