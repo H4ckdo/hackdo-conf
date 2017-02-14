@@ -18,6 +18,7 @@ build:
   - npm install --only=dev
   - npm install webpack -g
   - npm run webpack:build
+  - ls build/js
 
 deploy:
   type: deploy
@@ -27,6 +28,5 @@ deploy:
   - apt-get install -y ruby-dev
   - gem install dpl
   - dpl --provider=heroku --skip_cleanup=true --app=hackdo-website --api-key=$HEROKU_STAGING_API_KEY
-  - cd build/js && ls
   only:
   - master
