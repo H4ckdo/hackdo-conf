@@ -1,15 +1,16 @@
-image: node:7.5.0
+#image: node:7.5.0
 
 stages:
   - build
   - deploy
+  
 
 build:
   type: build
   cache:
+    untracked: true
     paths:
-      - node_modules/
-      - build/js
+     - build/js
   script:
     - mkdir build/js
     - ls build
