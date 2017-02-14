@@ -15,11 +15,11 @@ cache:
 build:
   type: build
   script:
-    - ls $HOME
+
     - mkdir build/js
     - ls build
 deploy:
   type: deploy
   script:
-  - echo $HOME
-  - ls build
+   - ls $HOME/.cache
+   - ls build
