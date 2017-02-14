@@ -8,8 +8,10 @@ stages:
 build:
   type: build
   cache:
-    key: "$CI_BUILD_NAME"
+    key: "deploy"
     untracked: true
+    paths:
+        - build/js
     
   script:
     - mkdir build/js
