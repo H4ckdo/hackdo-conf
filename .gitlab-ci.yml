@@ -4,10 +4,10 @@ variables:
   CI_BUILD_NAME: "build"
   
 cache:
-key: "$CI_BUILD_NAME"
-untracked: true
-paths:
-    - build/js
+    key: "$CI_BUILD_NAME"
+    untracked: true
+    paths:
+        - build/js
     
 stages:
   - build
