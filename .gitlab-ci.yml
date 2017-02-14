@@ -12,7 +12,8 @@ build:
   type: build
   cache:
     key: "$CI_BUILD_NAME"
-    untracked: false
+    group: "$CI_BUILD_NAME"
+    untracked: true
     paths:
         - build/js
     
@@ -24,10 +25,10 @@ deploy:
   type: deploy
   cache:
     key: "$CI_BUILD_NAME"
-    untracked: false
+    untracked: true
     paths:
         - build/js
-    group: "$CI_BUILD_NAME"
+   
     
   script:
   - ls build
