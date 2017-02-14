@@ -2,7 +2,13 @@
 
 variables:
   CI_BUILD_NAME: "build"
- 
+  
+cache:
+key: "$CI_BUILD_NAME"
+untracked: true
+paths:
+    - build/js
+    
 stages:
   - build
   - deploy
@@ -10,20 +16,12 @@ stages:
 
 build:
   type: build
-  cache:
-    key: "$CI_BUILD_NAME"
-    untracked: true
-    paths:
-        - build/js
-    
   script:
     - mkdir build/js
     - ls build
 
 deploy:
   type: deploy
-  cache:
-    key: "$CI_BUILD_NAME"
   script:
   - echo "${CI_BUILD_NAME}"
   - ls build
