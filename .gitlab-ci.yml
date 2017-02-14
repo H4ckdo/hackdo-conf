@@ -1,4 +1,5 @@
 image: node:7.5.0
+cache: false
 
 stages:
   - test
@@ -8,6 +9,7 @@ stages:
 test:
   type: test
   script:
+  - rm -R build/js
   - apt-get update -qy
   - npm install
   - node app.js
