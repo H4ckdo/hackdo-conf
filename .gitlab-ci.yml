@@ -1,7 +1,7 @@
 #image: node:7.5.0
 
 variables:
-  CI_BUILD_NAME: "build"
+  CI_BUILD_NAME: "deploy"
   
 cache:
     key: "$CI_BUILD_NAME"
