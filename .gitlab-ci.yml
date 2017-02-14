@@ -22,5 +22,4 @@ build:
 deploy:
   type: deploy
   script:
-  - ls $HOME
   - ls build
