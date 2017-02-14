@@ -18,6 +18,9 @@ build:
 
     - mkdir build/js
     - ls build
+    - cd ..
+    - cd /root
+    - ls
 deploy:
   type: deploy
   script:
