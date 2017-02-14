@@ -1,6 +1,6 @@
 #image: node:7.5.0
-
-export CI_BUILD_NAME="deploy"
+variables:
+    CI_BUILD_NAME="deploy"
 
 stages:
   - build
