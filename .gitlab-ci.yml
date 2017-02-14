@@ -4,13 +4,12 @@ stages:
   - build
   - deploy
 
-cache:
-  paths:
-    - node_modules/
-    - build/js
-
 build:
   type: build
+  cache:
+    paths:
+      - node_modules/
+      - build/js
   script:
     - mkdir build/js
 
