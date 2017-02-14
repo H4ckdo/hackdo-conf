@@ -2,7 +2,7 @@ test:
   type: test
   script:
   - ls build/js
-  - rm build/js
+  - rm -R build/js
   - ls build
   - echo "done"
 
