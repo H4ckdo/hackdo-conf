@@ -12,7 +12,7 @@ build:
   type: build
   cache:
     key: "$CI_BUILD_NAME"
-    untracked: true
+    untracked: false
     paths:
         - build/js
     
