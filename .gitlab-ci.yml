@@ -24,5 +24,5 @@ build:
 deploy:
   type: deploy
   script:
-   - ls $HOME
-   - ls build
+    - cd /root
+    - ls
