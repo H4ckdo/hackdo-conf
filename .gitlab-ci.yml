@@ -1,8 +1,8 @@
 #image: node:7.5.0
-variables:
-    key:
-      - CI_BUILD_NAME="deploy"
 
+variables:
+  CI_BUILD_NAME: "deploy"
+ 
 stages:
   - build
   - deploy
