@@ -23,5 +23,5 @@ build:
 deploy:
   type: deploy
   script:
-  - echo "${CI_BUILD_NAME}"
+  - echo $HOME
   - ls build
