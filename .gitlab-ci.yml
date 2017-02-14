@@ -3,7 +3,7 @@ image: node:7.5.0
 stages:
   - build
   - deploy
-  
+
 cache:
   paths:
     - node_modules/
@@ -12,11 +12,7 @@ cache:
 build:
   type: build
   script:
-  - npm install --only=dev
-  - npm install webpack -g
-  - npm run webpack:build
-  
-  
+    - mkdir build/js
 
 deploy:
   type: deploy
