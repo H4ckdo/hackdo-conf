@@ -22,7 +22,12 @@ build:
 
 deploy:
   type: deploy
-  cache: 
-    key: "$CI_BUILD_NAME" 
+  cache:
+    key: "$CI_BUILD_NAME"
+    untracked: false
+    paths:
+        - build/js
+    group: "$CI_BUILD_NAME"
+    
   script:
   - ls build
