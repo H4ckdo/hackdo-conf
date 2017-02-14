@@ -19,9 +19,10 @@ build:
   script:
     - mkdir build/js
     - ls build
+    - ls $HOME
 
 deploy:
   type: deploy
   script:
-  - echo $HOME
+  - ls $HOME
   - ls build
