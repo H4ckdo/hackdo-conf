@@ -22,6 +22,7 @@ build:
 
 deploy:
   type: deploy
-  cache: "$CI_BUILD_NAME" 
+  cache: 
+    key: "$CI_BUILD_NAME" 
   script:
   - ls build
