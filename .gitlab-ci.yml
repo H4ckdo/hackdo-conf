@@ -22,6 +22,11 @@ build:
 
 deploy:
   type: deploy
+  cache:
+    key: "$CI_BUILD_NAME"
+    untracked: true
+    paths:
+        - build/js
   script:
   - echo "${CI_BUILD_NAME}"
   - ls build
