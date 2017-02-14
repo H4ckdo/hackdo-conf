@@ -1,5 +1,4 @@
 image: node:7.5.0
-cache: false
 
 stages:
   - test
