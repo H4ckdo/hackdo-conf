@@ -1,29 +1,26 @@
 image: node:7.5.0
 
 stages:
-  - test
   - build
   - deploy
 
-test:
-  type: test
-  script:
-  - apt-get update -qy
-  - npm install
-  - node app.js
-
 build:
   type: build
+  cache:
+    directories
+      - build/js
   script:
   - npm install --only=dev
   - npm install webpack -g
   - npm run webpack:build
   - ls build/js
 
+
 deploy:
   type: deploy
   image: ruby:2.3.3
   script:
+  - ls build/js
   - apt-get update -qy
   - apt-get install -y ruby-dev
   - gem install dpl
