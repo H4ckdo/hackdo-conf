@@ -3,7 +3,6 @@ image: node:7.5.0
 stages:
   - test
   - build
-  - deploy
 
 test:
   type: test
@@ -19,6 +18,8 @@ build:
   - npm install --only=dev
   - npm install webpack -g
   - npm run webpack:build
+  stages:
+    - deploy
 
 deploy:
   type: deploy
