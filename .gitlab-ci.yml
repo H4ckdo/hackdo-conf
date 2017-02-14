@@ -12,6 +12,7 @@ build:
       - build/js
   script:
     - mkdir build/js
+    ls build
 
 deploy:
   type: deploy
