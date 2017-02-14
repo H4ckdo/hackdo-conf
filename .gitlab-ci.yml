@@ -13,12 +13,11 @@ test:
 
 build:
   type: build
+  stage: "deploy"
   script:
   - npm install --only=dev
   - npm install webpack -g
   - npm run webpack:build
-  stage:
-    - deploy
 
 deploy:
   type: deploy
