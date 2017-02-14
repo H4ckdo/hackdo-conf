@@ -12,13 +12,12 @@ test:
   - node app.js
 
 build:
-  cache: "/build/js"
   type: build
   script:
   - npm install --only=dev
   - npm install webpack -g
   - npm run webpack:build
-  stages:
+  stage:
     - deploy
 
 deploy:
