@@ -1,6 +1,6 @@
 #image: node:7.5.0
 variables:
-    CI_BUILD_NAME="deploy"
+    CI_BUILD_NAME:"deploy"
 
 stages:
   - build
