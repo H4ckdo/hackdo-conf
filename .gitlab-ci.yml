@@ -1,8 +1,4 @@
 image: node:7.5.0
-cache:
-  - path:
-      -/build/js
-
 
 stages:
   - test
@@ -17,6 +13,7 @@ test:
   - node app.js
 
 build:
+  cache: "/build/js"
   type: build
   script:
   - npm install --only=dev
