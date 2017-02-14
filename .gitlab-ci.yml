@@ -15,6 +15,7 @@ cache:
 build:
   type: build
   script:
+    - ls $HOME
     - mkdir build/js
     - ls build
 deploy:
