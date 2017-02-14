@@ -1,5 +1,7 @@
 #image: node:7.5.0
 
+export CI_BUILD_NAME="deploy"
+
 stages:
   - build
   - deploy
@@ -8,7 +10,7 @@ stages:
 build:
   type: build
   cache:
-    key: "deploy"
+    key: "$CI_BUILD_NAME"
     untracked: true
     paths:
         - build/js
