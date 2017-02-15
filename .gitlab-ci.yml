@@ -9,7 +9,7 @@ stages:
   - deploy
 
 cache:
-  directories:
+  paths:
     - build/js
   
 build:
