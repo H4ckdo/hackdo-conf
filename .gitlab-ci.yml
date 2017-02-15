@@ -9,9 +9,8 @@ stages:
   - deploy
 
 cache:
-  key: "$CI_BUILD_NAME"
   directories:
-  - build/js
+    - build/js
   
 build:
   type: build
