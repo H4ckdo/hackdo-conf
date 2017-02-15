@@ -15,10 +15,10 @@ cache:
 build:
   type: build
   script:
-    - cd /root
-    - ls
+    - mkdir /build/js
+    - ls /build
 
 deploy:
   type: deploy
   script:
-    echo "deploy"
+    - $HOME/.cache/"${CI_BUILD_NAME}"
