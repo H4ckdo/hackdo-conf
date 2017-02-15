@@ -1,18 +1,24 @@
+#image: node:7.5.0
+
+variables:
+  CI_BUILD_NAME: "deploy"
+
+
 stages:
   - build
   - deploy
 
+cache:
+  paths:
+    - build/js
+
 build:
   type: build
-  cache:
-    paths:
-      - node_modules/
-      - build/js
   script:
     - mkdir build/js
-    - ls build
+    - ls build/
 
 deploy:
   type: deploy
   script:
-  - ls build
+    - ls build/
