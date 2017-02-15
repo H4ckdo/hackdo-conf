@@ -1,5 +1,3 @@
-image: node:7.5.0
-
 stages:
   - build
   - deploy
