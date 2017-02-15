@@ -7,11 +7,12 @@ variables:
 stages:
   - build
   - deploy
+
 cache:
-    key: "$CI_BUILD_NAME"
-    untracked: true
-     directories:
-      - build/js
+  key: "$CI_BUILD_NAME"
+  directories:
+  - build/js
+  
 build:
   type: build
   script:
