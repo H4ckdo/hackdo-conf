@@ -10,7 +10,7 @@ stages:
 cache:
     key: "$CI_BUILD_NAME"
     untracked: true
-    paths:
+     directories:
       - build/js
 build:
   type: build
@@ -21,4 +21,4 @@ build:
 deploy:
   type: deploy
   script:
-    - ls $HOME/.cache/"${CI_BUILD_NAME}"
+    - ls build/
