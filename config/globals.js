@@ -1,63 +1,61 @@
+const { surePromise, prometify, fieldContains, AttachMethods } = require('../utils/index.js');
+const routes = require('./anchors/routes.json');
+const models = require('./anchors/models.json');
+const mongoose = require('mongoose');
+const _ = require('lodash');
+
+let {
+  GraphQLNonNull,
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLSchema,
+  GraphQLList,
+  GraphQLID,
+  GraphQLInputObjectType,
+  GraphQLBoolean
+} = require('graphql');
+
+const dependencies = {
+  GraphQLInputObjectType,
+  GraphQLObjectType,
+  GraphQLNonNull,
+  GraphQLBoolean,
+  GraphQLString,
+  fieldContains,
+  GraphQLSchema,
+  GraphQLList,
+  GraphQLID,
+  mongoose,  
+  routes,
+  models,
+  AttachMethods,
+  surePromise,
+  prometify,
+  _
+}
+
 /**
- * Global Variable Configuration
- * (sails.config.globals)
- *
- * Configure which global variables which will be exposed
- * automatically by Sails.
- *
- * For more information on configuration, check out:
- * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.globals.html
+ * @function loadModels
+ * @param  {type} models list of the models
+ * @return {type} {description}
  */
-module.exports.globals = {
+const loadModels = (models = []) => {
+  for (model of models) {
+    global[model] = require(`../models/${model}`);
+  }
+  global.availableModels = models;
+}
 
-  /****************************************************************************
-  *                                                                           *
-  * Expose the lodash installed in Sails core as a global variable. If this   *
-  * is disabled, like any other node module you can always run npm install    *
-  * lodash --save, then var _ = require('lodash') at the top of any file.     *
-  *                                                                           *
-  ****************************************************************************/
+/**
+ * @function setDependencies
+ * @param  {type} const globalDependencies {description}
+ * @return {type} {description}
+ */
+const setDependencies = dependencies => {  
+  _.each(_.keys(dependencies), dependencie => global[dependencie] = dependencies[dependencie])
+  loadModels(models);
+}
 
-	// _: true,
-
-  /****************************************************************************
-  *                                                                           *
-  * Expose the async installed in Sails core as a global variable. If this is *
-  * disabled, like any other node module you can always run npm install async *
-  * --save, then var async = require('async') at the top of any file.         *
-  *                                                                           *
-  ****************************************************************************/
-
-	// async: true,
-
-  /****************************************************************************
-  *                                                                           *
-  * Expose the sails instance representing your app. If this is disabled, you *
-  * can still get access via req._sails.                                      *
-  *                                                                           *
-  ****************************************************************************/
-
-	// sails: true,
-
-  /****************************************************************************
-  *                                                                           *
-  * Expose each of your app's services as global variables (using their       *
-  * "globalId"). E.g. a service defined in api/models/NaturalLanguage.js      *
-  * would have a globalId of NaturalLanguage by default. If this is disabled, *
-  * you can still access your services via sails.services.*                   *
-  *                                                                           *
-  ****************************************************************************/
-
-	// services: true,
-
-  /****************************************************************************
-  *                                                                           *
-  * Expose each of your app's models as global variables (using their         *
-  * "globalId"). E.g. a model defined in api/models/User.js would have a      *
-  * globalId of User by default. If this is disabled, you can still access    *
-  * your models via sails.models.*.                                           *
-  *                                                                           *
-  ****************************************************************************/
-
-	// models: true
-};
+module.exports = () => prometify(
+  setDependencies.bind(setDependencies, dependencies)
+)

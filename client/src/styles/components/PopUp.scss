@@ -1,0 +1,26 @@
+$popup-border-radius: 0.2em;
+$popup-padding: 1em;
+$popup-min-height: 100px;
+$popup-background-color: #ffffff;
+
+.popup-wrapper {
+    background: $popup-background-color;
+    min-height: $popup-min-height;
+    border-radius: $popup-border-radius;
+    padding: $popup-padding;
+}
+
+.loader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    span {
+       grid-area: 2/2;
+       justify-self: center;
+       align-self: center;
+       img {
+           width: 40px;
+           height: 40px;
+       }
+    }
+}

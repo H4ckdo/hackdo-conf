@@ -1,64 +1,28 @@
-module.exports.routes = {
-  /*
-    Serve views
-  */
+const path = require('path');
+const routes = require(path.resolve(__dirname,'./anchors/routes.json'))
 
-  "GET /": "HomepageController.show",
+function requireControllers(app) {
+  let controllers = _.keys(routes);
+  for(controller of controllers) {
+    let Ctrl = require(`../build/controllers/${controller}/index.js`);
+    let newController = new Ctrl();
+    let methods = _.keys(routes[controller]);
+    for(method of methods) {
+      let configs = routes[controller][method];        
+      for (config of configs) {
+        let route = app.route(config.route);
+        let handler = newController[config.handler];
+        if(method === "GET") route.get(handler);
+        if(method === "POST") route.post(handler);
+        if(method === "PUT") route.put(handler);
+        if(method === "DELETE") route.delete(handler);
+      }
+    }
+  }
+}
 
-  "GET /event/add": "EventsController.addEvent",
-
-  "GET /dashboard": "DashboardController.dashboard",
-
-  "GET /event/edit": "EventsController.editEvent",
-
-  "GET /user": "UsersController.profile",
-
-  "GET /user/create": "UsersController.add",
-
-  "GET /user/list": "UsersController.list",
-
-  "GET /user/update": "UsersController.serveUpdate",
-
-  /*
-    API ROUTES
-  */
-
-  /*
-    Relationshipt events and users
-  */
-  "POST /api/v1/events/:eid/add/user/:id": "EventsController.add",
-
-  "DELETE /api/v1/events/:eid/remove/user/:id": "EventsController.remove",
-
-  /*
-    CRUD Event
-  */
-  "GET /api/v1/events": "EventsController.showAll",
-
-  "GET /api/v1/events/:id": "EventsController.show",
-
-  "POST /api/v1/events/create": "EventsController.create",
-
-  "PUT /api/v1/events/update/:id": "EventsController.update",
-
-  "DELETE /api/v1/events/delete/:id": "EventsController.delete",
-  /*
-    CRUD Users
-  */
-  "GET /api/v1/users": "UsersController.showAll",
-
-  "GET /api/v1/users/:id": "UsersController.show",
-
-  "POST /api/v1/users/create": "UsersController.create",
-
-  "PUT /api/v1/users/update/:id": "UsersController.update",
-
-  "DELETE /api/v1/users/delete/:id": "UsersController.delete",
-
-  /*
-    Auth
-  */
-  "POST /api/v1/auth/login": "LoginController.login",
-
-  "PUT /api/v1/auth/logout": "LoginController.logout"
+module.exports = (app) => {
+  return surePromise(
+    prometify(requireControllers.bind(requireControllers, app))
+  )
 }

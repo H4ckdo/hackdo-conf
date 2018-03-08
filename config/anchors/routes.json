@@ -1,0 +1,10 @@
+{
+  "RootController": {
+    "GET": [
+      {
+        "route": "/*",
+        "handler": "main"
+      }
+    ]
+  }
+}

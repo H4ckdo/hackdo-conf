@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/",
+    "component": "App",
+    "exact": true
+  },
+  {
+    "path": "/foo",
+    "component": "Foo",
+    "exact": true
+  },
+    {
+    "path": "/boo",
+    "component": "PopUp",
+    "exact": true
+  }
+]

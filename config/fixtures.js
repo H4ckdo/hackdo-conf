@@ -1,18 +1,7 @@
-let fixtures = {
-  order: ['User'],
-  User: [
+module.exports = {
+  Users: [  
     {
-      name: 'esneyder',
-      email: 'esnene02@gmail.com',
-      password: '123456',
-      rol: 'superadmin'
+      name: 'Esneyder amin palacios mena'
     }
   ]
-};
-
-module.exports = {
-  resolve: function(env) {
-    if(env) return fixtures;
-    return {};
-  }
-};
+}

@@ -1,0 +1,21 @@
+@charset 'utf-8';
+@import 'settings';
+@import './normalize';
+@import './animations';
+@import './fonts';
+@import './components/Input';
+@import './components/Header';
+@import './components/Button';
+@import './components/Mask';
+@import './components/PopUp';
+@import './components/Section';
+
+#app {
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+}

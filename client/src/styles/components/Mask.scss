@@ -1,0 +1,17 @@
+#mask-wrapper {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  .content {
+    grid-area: 2/2;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+  }
+}

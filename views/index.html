@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="/app.css">
+  <title>Hackdó Conf 2018</title>
+  <% if(environment === 'development'){ %>
+    <script src="http://localhost:35729/livereload.js"></script>
+  <% } %>
+  <script>
+    window.__preloadedState__ = <%- JSON.stringify(preloadedState) %>;
+  </script>
+</head>
+  <body>
+    <div id="app"><%- markup %></div>
+  </body>
+  <script src="/bundle.js"></script>
+</html>
