@@ -69,7 +69,7 @@ var bootstrap = function () {
               break;
             }
 
-            if (!FIXTURES) {
+            if (! /*FIXTURES*/false) {
               _context.next = 24;
               break;
             }

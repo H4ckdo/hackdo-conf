@@ -26,7 +26,7 @@ const bootstrap = async () => {
     let connectionResult = {ok: true}//await connection();//start db connection
     if (connectionResult.ok) {
       //debugger;
-      if (FIXTURES) {
+      if (/*FIXTURES*/ false) {
         let fixturesResult = await installFixtures(fixtures, connectionResult.result);
         //debugger;
         if (fixturesResult.ok === false) return errorStarting(fixturesResult.error);//log the error
