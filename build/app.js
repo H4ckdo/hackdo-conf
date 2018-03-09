@@ -100,7 +100,7 @@ var bootstrap = function () {
             //define routes
             //debugger;
             if (routesLoades.ok) {
-              app.listen(PORT, HOST, function () {
+              app.listen(PORT, function () {
                 return console.log("App listen on: ", HOST + ':' + PORT);
               }); //lift the server
             } else {

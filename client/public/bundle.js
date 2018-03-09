@@ -28165,7 +28165,15 @@ var Section = function (_React$Component) {
   (0, _createClass3.default)(Section, [{
     key: 'render',
     value: function render() {
-      return React.createElement('div', { className: 'background-section' });
+      return React.createElement(
+        'div',
+        { className: 'background-section' },
+        React.createElement(
+          'span',
+          { className: 'background-section__date' },
+          'QUIBD\xD3-CHOC\xD3 / MAYO 16-18 DEL 2018'
+        )
+      );
     }
   }]);
   return Section;
