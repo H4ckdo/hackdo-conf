@@ -35,7 +35,7 @@ const bootstrap = async () => {
       let routesLoades = await routes(app);//define routes
       //debugger;
       if (routesLoades.ok) {
-          app.listen(PORT, HOST, () => console.log("App listen on: ", `${HOST}:${PORT}`))//lift the server
+          app.listen(PORT, () => console.log("App listen on: ", `${HOST}:${PORT}`))//lift the server
       } else {
         errorStarting(routesLoades.error);//log the error
       }
