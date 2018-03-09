@@ -100,6 +100,28 @@
   }
 }
 
+@keyframes disappear-smoothly-end-close {
+  from {
+    opacity: 1;
+  }
+  to {
+     opacity: 0 !important;
+     display: none !important;
+  }
+}
+
+@keyframes appear-smoothly-and-open {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    display: block !important;    
+  }
+}
+
 
 @keyframes scale-box {
   from {
@@ -353,4 +375,16 @@
     animation-duration: .4s;
     animation-iteration-count: 1;
   };
+}
+
+.close {
+  animation-duration: .4s;
+  animation-timing-function: ease;
+  animation-name: disappear-smoothly-end-close;
+}
+
+.open {
+  animation-duration: .4s;
+  animation-timing-function: ease;
+  animation-name: appear-smoothly-and-open;
 }

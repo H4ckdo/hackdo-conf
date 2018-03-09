@@ -39,15 +39,7 @@ var Section = function (_React$Component) {
   (0, _createClass3.default)(Section, [{
     key: 'render',
     value: function render() {
-      return React.createElement(
-        'div',
-        { className: 'background-section' },
-        React.createElement(
-          'h2',
-          null,
-          '2-3 SEPT, 2016  MEDELL\xCDN, COLOMBIA'
-        )
-      );
+      return React.createElement('div', { className: 'background-section' });
     }
   }]);
   return Section;

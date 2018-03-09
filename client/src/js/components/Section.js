@@ -10,7 +10,7 @@ class Section extends React.Component {
   render() {
     return (
       <div className="background-section">
-        <h2>2-3 SEPT, 2016  MEDELLÍN, COLOMBIA</h2>
+       {/* <h2>2-3 SEPT, 2016  MEDELLÍN, COLOMBIA</h2>*/}
       </div>
     )
   }

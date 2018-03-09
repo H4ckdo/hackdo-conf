@@ -37,10 +37,23 @@ var Header = function (_React$Component) {
 
   function Header() {
     (0, _classCallCheck3.default)(this, Header);
-    return (0, _possibleConstructorReturn3.default)(this, (Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call(this));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call(this));
+
+    _this.state = {
+      isMenuOpen: false
+    };
+    return _this;
   }
 
   (0, _createClass3.default)(Header, [{
+    key: 'toggleMenu',
+    value: function toggleMenu() {
+      var isMenuOpen = this.state.isMenuOpen;
+
+      this.setState({ isMenuOpen: !isMenuOpen });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -49,6 +62,15 @@ var Header = function (_React$Component) {
         React.createElement(
           'div',
           { className: 'header-content' },
+          React.createElement(
+            'div',
+            { className: 'toggle-options', onClick: this.toggleMenu.bind(this) },
+            React.createElement(
+              'i',
+              { className: 'material-icons' },
+              'reorder'
+            )
+          ),
           React.createElement('div', { className: 'wrap-logo' }),
           React.createElement(
             'div',
@@ -74,13 +96,57 @@ var Header = function (_React$Component) {
             ),
             React.createElement(
               'nav',
-              null,
+              { className: 'col-nav ' + (this.state.isMenuOpen ? 'show' : 'hide') },
               React.createElement(
                 'ul',
                 null,
                 React.createElement(
                   'li',
-                  { className: 'option-selected' },
+                  null,
+                  React.createElement(
+                    Link,
+                    { to: '/' },
+                    'Speakers '
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    Link,
+                    { to: '/' },
+                    'Programacion'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    Link,
+                    { to: '/' },
+                    'Lugar de encuentro'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    Link,
+                    { to: '/' },
+                    'Patrocionadores'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'nav',
+              { className: 'row-nav' },
+              React.createElement(
+                'ul',
+                null,
+                React.createElement(
+                  'li',
+                  null,
                   'Speakers'
                 ),
                 React.createElement(

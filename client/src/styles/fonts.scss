@@ -5,6 +5,15 @@
        url('./../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
 }
 
+
+
+@font-face  {
+  font-family: 'Open Sans Light';
+  font-style: normal;
+  src: local('Open Sans Light'),
+       url('./../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'Raleway Bold';
   font-style: normal;
