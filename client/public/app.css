@@ -632,10 +632,10 @@ input:-webkit-autofill:active {
   border-width: 2px !important; }
 
 .valid {
-  border-color: #002890 !important; }
+  border-color: #291605 !important; }
 
 .default {
-  color: #000000; }
+  color: #1d1d1d; }
 
 .hide {
   display: none !important; }
@@ -651,10 +651,10 @@ input:-webkit-autofill:active {
     border: none;
     padding: 5px;
     outline: none;
-    border-bottom: 1px solid #002890;
+    border-bottom: 1px solid #291605;
     transition: all 0.25s;
     width: 100%;
-    color: #000000;
+    color: #1d1d1d;
     font-size: 16px;
     height: 28px; }
 
@@ -673,7 +673,8 @@ input:-webkit-autofill:active {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
   width: 100%;
-  position: absolute; }
+  position: absolute;
+  z-index: 100; }
   .header-container .header-content {
     max-width: 1440px;
     width: 1024px;
@@ -756,7 +757,7 @@ input:-webkit-autofill:active {
         display: grid;
         grid-template-columns: 1fr;
         height: 100%;
-        align-items: end;
+        align-items: center;
         text-align: right; }
         .header-container .header-content .wrap-options .row-nav ul {
           list-style: none;
@@ -768,7 +769,7 @@ input:-webkit-autofill:active {
             text-align: center;
             cursor: pointer;
             font-size: 1em;
-            font-family: "Open Sans Regular";
+            font-family: "Open Sans Light";
             font-weight: 100;
             transition: all 0.25s ease-in;
             height: 30px;
@@ -776,9 +777,9 @@ input:-webkit-autofill:active {
             padding-top: 8px;
             padding-left: 8px;
             padding-right: 8px;
-            border: 1px solid transparent; }
+            border: 2px solid transparent; }
             .header-container .header-content .wrap-options .row-nav ul li:hover {
-              border: 1px solid white; }
+              border: 2px solid white; }
 
 @media (max-width: 1024px) {
   .header-container {
@@ -903,7 +904,7 @@ input:-webkit-autofill:active {
     color: white; }
 
 .btn-load .container-loader {
-  border: 1px solid #002890;
+  border: 1px solid #291605;
   background-image: url("/../../../images/loader.gif");
   background-size: 80px;
   background-repeat: no-repeat;
@@ -913,8 +914,8 @@ input:-webkit-autofill:active {
 .btn-list,
 .btn-list-add,
 .btn-add {
-  border: 1px solid #002890;
-  color: #002890; }
+  border: 1px solid #291605;
+  color: #291605; }
   .btn-confirm:hover,
   .btn-list:hover,
   .btn-list-add:hover,
@@ -933,10 +934,10 @@ input:-webkit-autofill:active {
 .btn-confirm:disabled {
   opacity: 0.8; }
   .btn-confirm:disabled:hover {
-    color: #002890;
+    color: #291605;
     background: none !important; }
   .btn-confirm:disabled:focus {
-    color: #002890;
+    color: #291605;
     background: none !important; }
 
 .btn-loadmore:disabled {
@@ -983,7 +984,7 @@ input:-webkit-autofill:active {
   width: 20px;
   height: 20px;
   display: inline-block;
-  color: #002890;
+  color: #291605;
   vertical-align: top;
   outline: none;
   transition: all 0.25s;
@@ -1033,26 +1034,48 @@ input:-webkit-autofill:active {
       height: 40px; }
 
 .background-section {
-  width: 100%;
-  height: 480px;
-  background-image: url(http://enamoratedelchoco.co/wp-content/uploads/2016/06/Enamorate-Choco%CC%81-SOL-DE-COLORES-9-de-13.jpg);
+  background-image: url("/assets/images/back-image.jpg");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-  display: grid;
-  grid-template-columns: 0.6fr 1fr 0.6fr;
-  align-items: center; }
+  background-position: center center;
+  align-items: center;
+  height: 500px; }
   .background-section .background-section__date {
-    background: rgba(0, 0, 0, 0.8);
-    grid-area: 1/2;
+    background: #071d92;
+    mix-blend-mode: multiply;
     text-align: center;
-    padding: 20px;
-    color: white;
-    font-family: "Open Sans Light";
-    font-size: 25px;
+    grid-area: 1/1;
     position: relative;
-    margin-top: 50px;
-    line-height: 1.3; }
+    line-height: 1.3;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 0.25fr;
+    grid-template-rows: 1.5fr 1fr 1fr; }
+    .background-section .background-section__date .do-title {
+      grid-area: 2/2;
+      text-align: center;
+      font-size: 105px;
+      color: #FFEB3B;
+      line-height: 1.1;
+      font-family: "Open Sans Light";
+      font-weight: bold; }
+    .background-section .background-section__date .do-date {
+      font-family: "Open Sans Light";
+      grid-area: 3/2;
+      position: relative;
+      bottom: 10px;
+      color: #FFEB3B;
+      font-size: 30px; }
+      .background-section .background-section__date .do-date .lower-bar {
+        position: relative;
+        background: white;
+        margin: 20px auto;
+        width: 80px; }
+
+.lower-bar {
+  width: 100px;
+  height: 5px;
+  background: white; }
 
 @media (max-width: 768px) {
   .background-section {
@@ -1065,6 +1088,33 @@ input:-webkit-autofill:active {
     .background-section .background-section__date {
       margin-top: 70px; } }
 
+/*
+.section-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    width: $large;
+    margin: 0px auto;
+    position: relative;
+    .section-about__article {
+        padding: 20px;
+        .section-about__article__title {
+            font-size: 2em;
+            font-family: $global-font-title;
+            padding: 0px;
+            margin: 0px;
+            display: inline;
+            color: $primary;
+        }
+        .section-about__article__copy {
+            font-size: 1em;
+            font-family: $global-font-family;
+            line-height: 1.5;
+            color: $black;
+        }
+    }
+}
+*/
 #app {
   padding: 0px;
   margin: 0px;

@@ -5661,8 +5661,10 @@ var map = {
 	"./PopUp.js": 112,
 	"./Routes": 113,
 	"./Routes.js": 113,
-	"./Section": 218,
-	"./Section.js": 218
+	"./SectionAbout": 222,
+	"./SectionAbout.js": 222,
+	"./SectionDate": 219,
+	"./SectionDate.js": 219
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -5742,13 +5744,15 @@ var App = (_dec = connect(function (store) {
           data = _props.data,
           PopUp = _props.PopUp,
           Header = _props.Header,
-          Section = _props.Section;
+          SectionDate = _props.SectionDate,
+          SectionAbout = _props.SectionAbout;
 
       return React.createElement(
         'div',
         null,
         React.createElement(Header, null),
-        React.createElement(Section, null)
+        React.createElement(SectionDate, null),
+        React.createElement(SectionAbout, null)
       );
     }
   }]);
@@ -5756,7 +5760,7 @@ var App = (_dec = connect(function (store) {
 }(React.Component)) || _class);
 
 
-module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './Section.js']);
+module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js']);
 
 /***/ }),
 /* 106 */
@@ -28120,7 +28124,8 @@ module.exports = {
 
 /***/ }),
 /* 217 */,
-/* 218 */
+/* 218 */,
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28154,32 +28159,119 @@ var InjectChildComponent = __webpack_require__(5);
 var _require = __webpack_require__(61),
     Link = _require.Link;
 
-var Section = function (_React$Component) {
-  (0, _inherits3.default)(Section, _React$Component);
+var SectionDate = function (_React$Component) {
+  (0, _inherits3.default)(SectionDate, _React$Component);
 
-  function Section() {
-    (0, _classCallCheck3.default)(this, Section);
-    return (0, _possibleConstructorReturn3.default)(this, (Section.__proto__ || (0, _getPrototypeOf2.default)(Section)).call(this));
+  function SectionDate() {
+    (0, _classCallCheck3.default)(this, SectionDate);
+    return (0, _possibleConstructorReturn3.default)(this, (SectionDate.__proto__ || (0, _getPrototypeOf2.default)(SectionDate)).call(this));
   }
 
-  (0, _createClass3.default)(Section, [{
+  (0, _createClass3.default)(SectionDate, [{
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
         { className: 'background-section' },
         React.createElement(
-          'span',
-          { className: 'background-section__date' },
-          'QUIBD\xD3-CHOC\xD3 / MAYO 16-18 DEL 2018'
+          'div',
+          { className: 'background-section__date ' },
+          React.createElement(
+            'span',
+            { className: 'do-title' },
+            'QUIBD\xD3-CHOC\xD3'
+          ),
+          React.createElement(
+            'small',
+            { className: 'do-date' },
+            'JUNIO 16-18 DEL 2018',
+            React.createElement('div', { className: 'lower-bar' })
+          )
         )
       );
     }
   }]);
-  return Section;
+  return SectionDate;
 }(React.Component);
 
-module.exports = InjectChildComponent(Section, []);
+module.exports = InjectChildComponent(SectionDate, []);
+
+/***/ }),
+/* 220 */,
+/* 221 */,
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _getPrototypeOf = __webpack_require__(6);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(8);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(9);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(10);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(11);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var React = __webpack_require__(0);
+var InjectChildComponent = __webpack_require__(5);
+
+var _require = __webpack_require__(61),
+    Link = _require.Link;
+
+var SectionAbout = function (_React$Component) {
+  (0, _inherits3.default)(SectionAbout, _React$Component);
+
+  function SectionAbout() {
+    (0, _classCallCheck3.default)(this, SectionAbout);
+    return (0, _possibleConstructorReturn3.default)(this, (SectionAbout.__proto__ || (0, _getPrototypeOf2.default)(SectionAbout)).call(this));
+  }
+
+  (0, _createClass3.default)(SectionAbout, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'wrap-about' },
+        React.createElement(
+          'section',
+          { className: 'section-about' },
+          React.createElement(
+            'article',
+            { className: 'section-about__article' },
+            React.createElement(
+              'h1',
+              { className: 'section-about__article__title' },
+              'FUNDACI\xD3N HACKD\xD3'
+            ),
+            React.createElement(
+              'p',
+              { className: 'section-about__article__copy' },
+              'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est\xE1ndar de las industrias desde el a\xF1o 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido us\xF3 una galer\xEDa de textos y los mezcl\xF3 de tal manera que logr\xF3 hacer un libro de textos especimen. No s\xF3lo sobrevivi\xF3 500 a\xF1os, sino que tambien ingres\xF3 como texto de relleno en documentos electr\xF3nicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creaci\xF3n de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y m\xE1s recientemente con software de autoedici\xF3n, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+            )
+          )
+        )
+      );
+    }
+  }]);
+  return SectionAbout;
+}(React.Component);
+
+module.exports = InjectChildComponent(SectionAbout, []);
 
 /***/ })
 /******/ ]);

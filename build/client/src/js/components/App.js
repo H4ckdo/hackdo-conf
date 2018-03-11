@@ -55,13 +55,15 @@ var App = (_dec = connect(function (store) {
           data = _props.data,
           PopUp = _props.PopUp,
           Header = _props.Header,
-          Section = _props.Section;
+          SectionDate = _props.SectionDate,
+          SectionAbout = _props.SectionAbout;
 
       return React.createElement(
         'div',
         null,
         React.createElement(Header, null),
-        React.createElement(Section, null)
+        React.createElement(SectionDate, null),
+        React.createElement(SectionAbout, null)
       );
     }
   }]);
@@ -69,4 +71,4 @@ var App = (_dec = connect(function (store) {
 }(React.Component)) || _class);
 
 
-module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './Section.js']);
+module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js']);
