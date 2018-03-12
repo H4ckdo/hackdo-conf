@@ -16,12 +16,13 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, PopUp, Header, SectionDate, SectionAbout } = this.props;
+    const { data, PopUp, Header, SectionDate, SectionAbout, SectionSpeakers } = this.props;
     return (
       <div>
         <Header/>
         <SectionDate/>
         <SectionAbout/>
+        <SectionSpeakers/>
       </div>
     )
   }
@@ -31,5 +32,6 @@ module.exports = InjectChildComponent(App, [
   './PopUp.js', 
   './Header.js', 
   './SectionDate.js',
-  './SectionAbout.js'
+  './SectionAbout.js',
+  './SectionSpeakers.js'
 ]);

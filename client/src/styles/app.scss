@@ -10,13 +10,9 @@
 @import './components/PopUp';
 @import './components/SectionDate';
 @import './components/SectionAbout';
+@import './components/SectionSpeakers';
 
 #app {
     padding: 0px;
     margin: 0px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
 }

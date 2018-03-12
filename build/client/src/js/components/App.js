@@ -56,14 +56,16 @@ var App = (_dec = connect(function (store) {
           PopUp = _props.PopUp,
           Header = _props.Header,
           SectionDate = _props.SectionDate,
-          SectionAbout = _props.SectionAbout;
+          SectionAbout = _props.SectionAbout,
+          SectionSpeakers = _props.SectionSpeakers;
 
       return React.createElement(
         'div',
         null,
         React.createElement(Header, null),
         React.createElement(SectionDate, null),
-        React.createElement(SectionAbout, null)
+        React.createElement(SectionAbout, null),
+        React.createElement(SectionSpeakers, null)
       );
     }
   }]);
@@ -71,4 +73,4 @@ var App = (_dec = connect(function (store) {
 }(React.Component)) || _class);
 
 
-module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js']);
+module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js']);

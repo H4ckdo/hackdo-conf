@@ -6,7 +6,7 @@
     align-items: center;
     height: 500px;
     .background-section__date {
-        background: #071d92;
+        background: linear-gradient(270deg, #071d92, #F44336);
         mix-blend-mode: multiply;
         text-align: center;
         grid-area: 1/1;
@@ -41,7 +41,6 @@
         }
     }
 }
-
 
 .lower-bar {
     width: 100px;

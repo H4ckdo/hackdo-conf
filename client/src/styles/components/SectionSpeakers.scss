@@ -1,0 +1,52 @@
+.section-speakers {     
+     max-width: $x-large;
+     width: $large;
+     margin: 0px auto;
+     padding-left: 40px;
+    .section-speakers__title {
+        font-family: $global-font-title;
+        .lower-bar {
+            background: black;
+            margin-top: 10px;
+        }
+    }
+    .section-speakers__content {      
+        padding: 20px; 
+        .section-speakers__content__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            list-style: none;
+            margin: 0px;
+            padding: 0px; 
+            .section-speakers__content__list__item {
+                height: 220px;
+                width: 200px;
+                border: 4px solid #FFEB3B;
+                padding: 10px;
+                margin: 0px auto;
+                position: relative;
+                text-align: center;
+                transition: all ease-in 0.25s; 
+                &:hover {
+                    background: #FFEB3B;
+                    color: black;
+                }
+                .section-speakers__content__list__item__image {
+                    width: 200px;
+                    height: 165px;
+                    background-image: url(http://www.hackdo.co/assets/img/ui-01.jpg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;                     
+                }
+                .section-speakers__content__list__item__name {
+                    display: block;
+                    font-size: 18px;
+                    margin-top: 8px;
+                    font-family: $global-font-title-light;
+                }
+            }
+        }
+    }
+}

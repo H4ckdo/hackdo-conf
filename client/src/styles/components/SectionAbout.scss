@@ -1,20 +1,33 @@
-/*
 .section-about {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px;
+    grid-template-columns: 0.5fr 0.5fr;
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: $large;
+    max-width: $x-large;
     margin: 0px auto;
     position: relative;
     .section-about__article {
         padding: 20px;
+        .section-about__article-image {
+            background-image: url('https://lh3.googleusercontent.com/-qeLhkxUbftk/VgWN5GVZhzI/AAAAAAAAEAg/pgng5t-v4iELSLNvn9x_hVNxXl2vRlhYwCHMYBhgL/s1306/IMG_8080%2B%2528FILEminimizer%2529.JPG');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;            
+        }
         .section-about__article__title {
             font-size: 2em;
             font-family: $global-font-title;
             padding: 0px;
             margin: 0px;
             display: inline;
-            color: $primary;
+            color: black;
+            .lower-bar {
+                background-color: black;
+                margin-top: 10px;
+            }
         }
         .section-about__article__copy {
             font-size: 1em;
@@ -24,4 +37,4 @@
         }
     }
 }
-*/
+

@@ -41,12 +41,31 @@ var Header = function (_React$Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call(this));
 
     _this.state = {
-      isMenuOpen: false
+      isMenuOpen: false,
+      color: ''
     };
     return _this;
   }
 
   (0, _createClass3.default)(Header, [{
+    key: 'onScroll',
+    value: function onScroll(background, HeaderContainer, e) {
+      var calc = background.offsetHeight - HeaderContainer.offsetHeight;
+      //console.log(window.scrollY, calc);
+      if (window.scrollY >= calc) {
+        this.setState({ color: 'header-black' });
+      } else {
+        this.setState({ color: '' });
+      }
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var background = document.getElementsByClassName('background-section')[0];
+      var HeaderContainer = document.getElementById('HeaderContainer');
+      window.addEventListener("scroll", this.onScroll.bind(this, background, HeaderContainer));
+    }
+  }, {
     key: 'toggleMenu',
     value: function toggleMenu() {
       var isMenuOpen = this.state.isMenuOpen;
@@ -56,9 +75,11 @@ var Header = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var color = this.state.color;
+
       return React.createElement(
         'header',
-        { className: 'header-container' },
+        { className: 'header-container ' + color, id: 'HeaderContainer' },
         React.createElement(
           'div',
           { className: 'header-content' },

@@ -7,8 +7,25 @@ class Header extends React.Component {
   constructor() {
     super();
     this.state = {
-      isMenuOpen: false
+      isMenuOpen: false,
+      color: ''
     };
+  }
+
+  onScroll(background, HeaderContainer, e) {    
+    let calc = background.offsetHeight - HeaderContainer.offsetHeight;
+    //console.log(window.scrollY, calc);
+    if(window.scrollY >= calc) {
+      this.setState({color: 'header-black'});  
+    } else {
+      this.setState({color: ''});  
+    }    
+  }
+
+  componentDidMount() {
+    let background = document.getElementsByClassName('background-section')[0];
+    let HeaderContainer = document.getElementById('HeaderContainer');
+    window.addEventListener("scroll", this.onScroll.bind(this, background, HeaderContainer));
   }
 
   toggleMenu() {
@@ -17,8 +34,9 @@ class Header extends React.Component {
   }
 
   render() {    
+  let { color } = this.state;
     return (
-      <header className="header-container">
+      <header className={`header-container ${color}`} id="HeaderContainer">
         <div className="header-content">  
           <div className="toggle-options" onClick={this.toggleMenu.bind(this)}>
             <i className="material-icons">reorder</i>
