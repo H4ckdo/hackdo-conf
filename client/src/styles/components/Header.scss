@@ -56,7 +56,7 @@
         color: white;
         font-size: 30px;
         font-weight: 100;
-        font-family: $global-font-title-light;
+        font-family: $global-font-family-light;
         padding: 0px;
         margin: 0px;
         border-bottom: 5px solid transparent;
@@ -89,7 +89,7 @@
             color: white;
             border-top: 1px solid #ffffff70;
             padding-top: 15px;
-            font-family: $global-font-title-light;
+            font-family: $global-font-family-light;
             a {
               text-decoration: none;
               color: white;
@@ -114,7 +114,7 @@
             text-align: center;
             cursor: pointer;
             font-size: 1em;
-            font-family: $global-font-title-light;
+            font-family:$global-font-family-light;
             font-weight: 100;
             transition: all 0.25s ease-in;            
             height: 30px;

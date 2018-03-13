@@ -1,52 +1,70 @@
-.section-speakers {     
-     max-width: $x-large;
-     width: $large;
-     margin: 0px auto;
-     padding-left: 40px;
-    .section-speakers__title {
-        font-family: $global-font-title;
-        .lower-bar {
-            background: black;
-            margin-top: 10px;
+.wrap-section-speakers {
+    background: #FFEB3B;
+    padding: 20px;
+    max-height: 525px;
+    .section-speakers {     
+         max-width: $x-large;
+         width: $large;
+         margin: 0px auto;
+         padding-left: 40px;
+        .section-speakers__title {
+            font-family: $global-font-title;
+            .lower-bar {
+                background: black;
+                margin-top: 10px;
+            }
         }
-    }
-    .section-speakers__content {      
-        padding: 20px; 
-        .section-speakers__content__list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            list-style: none;
-            margin: 0px;
-            padding: 0px; 
-            .section-speakers__content__list__item {
-                height: 220px;
-                width: 200px;
-                border: 4px solid #FFEB3B;
-                padding: 10px;
-                margin: 0px auto;
-                position: relative;
-                text-align: center;
-                transition: all ease-in 0.25s; 
-                &:hover {
-                    background: #FFEB3B;
-                    color: black;
-                }
-                .section-speakers__content__list__item__image {
+
+        .section-speakers__content {      
+            padding: 20px; 
+            .section-speakers__content__list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                list-style: none;
+                margin: 0px;
+                padding: 0px; 
+                .section-speakers__content__list__item {
+                    background-color: #ffffff;
+                    border-radius: 2px;
+                    max-height: 400px;
                     width: 200px;
-                    height: 165px;
-                    background-image: url(http://www.hackdo.co/assets/img/ui-01.jpg);
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;                     
-                }
-                .section-speakers__content__list__item__name {
-                    display: block;
-                    font-size: 18px;
-                    margin-top: 8px;
-                    font-family: $global-font-title-light;
+                    padding: 10px;
+                    margin: 0px auto;
+                    position: relative;
+                    text-align: center;
+                    transition: all ease-in 0.25s; 
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    &:hover {
+                        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+                    }
+                    .section-speakers__content__list__item__image {
+                        border-radius: 100%;                        
+                        width: 150px;
+                        height: 150px;
+                        background-image: url(https://pbs.twimg.com/profile_banners/193440359/1483672579/1500x500);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;                     
+                        margin: 0px auto;
+                        position: relative;
+                    }
+                    .section-speakers__content__list__item__name {
+                        display: block;
+                        font-size: 22px;
+                        margin-top: 16px;
+                        font-family: $global-font-title;
+                    }
+
+                    .section-speakers__content__list__item__copy {
+                        display: block;
+                        font-size: 1em;
+                        font-family: $global-font-family-light
+                    }
                 }
             }
         }
     }
+
 }

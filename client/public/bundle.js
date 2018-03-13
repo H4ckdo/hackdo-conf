@@ -28338,82 +28338,101 @@ var _require = __webpack_require__(29),
 var InjectChildComponent = __webpack_require__(4);
 
 var SectionSpeakers = function (_React$Component) {
-    (0, _inherits3.default)(SectionSpeakers, _React$Component);
+  (0, _inherits3.default)(SectionSpeakers, _React$Component);
 
-    function SectionSpeakers(props) {
-        (0, _classCallCheck3.default)(this, SectionSpeakers);
-        return (0, _possibleConstructorReturn3.default)(this, (SectionSpeakers.__proto__ || (0, _getPrototypeOf2.default)(SectionSpeakers)).call(this, props));
-    }
+  function SectionSpeakers(props) {
+    (0, _classCallCheck3.default)(this, SectionSpeakers);
+    return (0, _possibleConstructorReturn3.default)(this, (SectionSpeakers.__proto__ || (0, _getPrototypeOf2.default)(SectionSpeakers)).call(this, props));
+  }
 
-    (0, _createClass3.default)(SectionSpeakers, [{
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'section',
-                { className: 'section-speakers' },
+  (0, _createClass3.default)(SectionSpeakers, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'wrap-section-speakers' },
+        React.createElement(
+          'section',
+          { className: 'section-speakers' },
+          React.createElement(
+            'h1',
+            { className: 'section-speakers__title' },
+            'Speakers',
+            React.createElement('div', { className: 'lower-bar' })
+          ),
+          React.createElement(
+            'article',
+            { className: 'section-speakers__content' },
+            React.createElement(
+              'ol',
+              { className: 'section-speakers__content__list' },
+              React.createElement(
+                'li',
+                { className: 'section-speakers__content__list__item' },
+                React.createElement('div', { className: 'section-speakers__content__list__item__image' }),
                 React.createElement(
-                    'h1',
-                    { className: 'section-speakers__title' },
-                    'Speakers',
-                    React.createElement('div', { className: 'lower-bar' })
+                  'span',
+                  { className: 'section-speakers__content__list__item__name' },
+                  'Nombre del speakers'
                 ),
                 React.createElement(
-                    'div',
-                    { className: 'section-speakers__content' },
-                    React.createElement(
-                        'ol',
-                        { className: 'section-speakers__content__list' },
-                        React.createElement(
-                            'li',
-                            { className: 'section-speakers__content__list__item' },
-                            React.createElement('div', { className: 'section-speakers__content__list__item__image' }),
-                            React.createElement(
-                                'span',
-                                { className: 'section-speakers__content__list__item__name' },
-                                'Nombre del speakers'
-                            ),
-                            React.createElement(
-                                'a',
-                                { className: '', href: '#', target: '_blank' },
-                                '@Twiter'
-                            )
-                        ),
-                        React.createElement(
-                            'li',
-                            { className: 'section-speakers__content__list__item' },
-                            React.createElement('div', { className: 'section-speakers__content__list__item__image' }),
-                            React.createElement(
-                                'span',
-                                { className: 'section-speakers__content__list__item__name' },
-                                'Nombre del speakers'
-                            ),
-                            React.createElement(
-                                'a',
-                                { className: '', href: '#', target: '_blank' },
-                                '@Twiter'
-                            )
-                        ),
-                        React.createElement(
-                            'li',
-                            { className: 'section-speakers__content__list__item' },
-                            React.createElement('div', { className: 'section-speakers__content__list__item__image' }),
-                            React.createElement(
-                                'span',
-                                { className: 'section-speakers__content__list__item__name' },
-                                'Nombre del speakers'
-                            ),
-                            React.createElement(
-                                'a',
-                                { className: '', href: '#', target: '_blank' },
-                                '@Twiter'
-                            )
-                        )
-                    )
+                  'p',
+                  { className: 'section-speakers__content__list__item__copy' },
+                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+                ),
+                React.createElement(
+                  'a',
+                  { className: '', href: '#', target: '_blank' },
+                  '@Twiter'
                 )
-            );
-        }
-    }]);
-    return SectionSpeakers;
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-speakers__content__list__item' },
+                React.createElement('div', { className: 'section-speakers__content__list__item__image' }),
+                React.createElement(
+                  'span',
+                  { className: 'section-speakers__content__list__item__name' },
+                  'Nombre del speakers'
+                ),
+                React.createElement(
+                  'p',
+                  { className: 'section-speakers__content__list__item__copy' },
+                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+                ),
+                React.createElement(
+                  'a',
+                  { className: '', href: '#', target: '_blank' },
+                  '@Twiter'
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-speakers__content__list__item' },
+                React.createElement('div', { className: 'section-speakers__content__list__item__image' }),
+                React.createElement(
+                  'span',
+                  { className: 'section-speakers__content__list__item__name' },
+                  'Nombre del speakers'
+                ),
+                React.createElement(
+                  'p',
+                  { className: 'section-speakers__content__list__item__copy' },
+                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+                ),
+                React.createElement(
+                  'a',
+                  { className: '', href: '#', target: '_blank' },
+                  '@Twiter'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+  return SectionSpeakers;
 }(React.Component);
 
 module.exports = InjectChildComponent(SectionSpeakers, []);
