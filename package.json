@@ -11,7 +11,7 @@
     "webpack": "./node_modules/.bin/webpack",
     "babel": "./node_modules/.bin/babel",
     "nodemon": "./node_modules/.bin/nodemon",
-    "start": "yarn prod && yarn controllers && yarn babel:components && yarn server && NODE_ENV=production node ./build/app.js",
+    "start": "yarn controllers && yarn babel:components && yarn server && NODE_ENV=production node ./build/app.js",
     "debug": "yarn controllers && yarn babel:components && yarn server && NODE_ENV=development node --inspect ./build/app.js",
     "babel:components": "yarn babel ./client/src/js/ --out-dir ./build/client/src/js/",
     "controllers": "yarn babel ./controllers --out-dir ./build/controllers --source-maps",
