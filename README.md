@@ -1,2 +1,2 @@
-# Hackdo website
+# Hackdo conf website
 
