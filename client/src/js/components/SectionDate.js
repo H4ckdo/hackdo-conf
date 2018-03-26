@@ -6,16 +6,22 @@ class SectionDate extends React.Component {
   constructor() {
     super();
   }
-
   render() {
     return (
       <div className="background-section">
        <div className="background-section__date ">
-        <span className="do-title">QUIBDÓ-CHOCÓ</span>
+        <span className="do-title appear ">
+            JUNIO 16, 17 Y 18
+            <div className="lower-bar"></div>
+        </span>
+        {
+          /*
          <small className="do-date">
             JUNIO 16-18 DEL 2018 
             <div className="lower-bar"></div>
           </small>
+          */
+        }
         </div>
       </div>
     )

@@ -17,6 +17,7 @@
         grid-template-columns: 0.25fr 1fr 0.25fr;
         grid-template-rows: 1.5fr 1fr 1fr;
         .do-title {
+            mix-blend-mode: color-dodge;
             grid-area: 2/2;
             text-align: center;
             font-size: 105px;
@@ -24,6 +25,10 @@
             line-height: 1.1;
             font-family: $global-font-family-light;
             font-weight: bold;
+            .lower-bar {
+                margin: 20px auto;
+                background: #FFEB3B;
+            }
         }
         .do-date {
             font-family: $global-font-family-light;
@@ -50,17 +55,29 @@
 
 @media (max-width: $medium) {
     .background-section {
-        grid-template-columns: 0.25fr 1fr 0.25fr;
+        grid-template-columns: 0.1fr 1fr 0.1fr;
+    }
+    .background-section__date  {
+        grid-template-columns: 0.1fr 1fr 0.1fr;
+        .do-title {
+            grid-area: 2/1;
+            font-size: 93px !important;
+            margin-top: 100px;
+        }
     }
 }
 
-
 @media (max-width: $medium-l) {
-    .background-section {
-        grid-template-columns: 0.1fr 1fr 0.1fr;
-        height: 380px;
-        .background-section__date {
-            margin-top: 70px;
+    .background-section__date  {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+        .do-title {
+            font-size: 70px !important;
+            margin-top: 0px !important;
         }
+    }
+    .background-section {
+        grid-template-columns: .1fr 1fr .1fr;
+        height: 500px;
     }
 }

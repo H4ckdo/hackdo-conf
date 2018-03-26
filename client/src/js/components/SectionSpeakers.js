@@ -16,6 +16,7 @@ class SectionSpeakers extends React.Component {
             <div className="lower-bar"></div>
         </h1>
          <article className="section-speakers__content">
+            <p className="section-speakers__content__copy">Envia tu propuesta de conferencia <span className="btn-speaker">Aqui</span></p>
             <ol className="section-speakers__content__list">
                 <li className="section-speakers__content__list__item">
                     <div className="section-speakers__content__list__item__image"></div>

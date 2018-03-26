@@ -83,15 +83,6 @@ var Header = function (_React$Component) {
         React.createElement(
           'div',
           { className: 'header-content' },
-          React.createElement(
-            'div',
-            { className: 'toggle-options', onClick: this.toggleMenu.bind(this) },
-            React.createElement(
-              'i',
-              { className: 'material-icons' },
-              'reorder'
-            )
-          ),
           React.createElement('div', { className: 'wrap-logo' }),
           React.createElement(
             'div',
@@ -117,50 +108,6 @@ var Header = function (_React$Component) {
             ),
             React.createElement(
               'nav',
-              { className: 'col-nav ' + (this.state.isMenuOpen ? 'show' : 'hide') },
-              React.createElement(
-                'ul',
-                null,
-                React.createElement(
-                  'li',
-                  null,
-                  React.createElement(
-                    Link,
-                    { to: '/' },
-                    'Speakers '
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  null,
-                  React.createElement(
-                    Link,
-                    { to: '/' },
-                    'Programacion'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  null,
-                  React.createElement(
-                    Link,
-                    { to: '/' },
-                    'Lugar de encuentro'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  null,
-                  React.createElement(
-                    Link,
-                    { to: '/' },
-                    'Patrocionadores'
-                  )
-                )
-              )
-            ),
-            React.createElement(
-              'nav',
               { className: 'row-nav' },
               React.createElement(
                 'ul',
@@ -173,7 +120,7 @@ var Header = function (_React$Component) {
                 React.createElement(
                   'li',
                   null,
-                  'Programacion'
+                  'Agenda'
                 ),
                 React.createElement(
                   'li',

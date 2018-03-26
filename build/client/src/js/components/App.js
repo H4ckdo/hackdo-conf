@@ -57,7 +57,8 @@ var App = (_dec = connect(function (store) {
           Header = _props.Header,
           SectionDate = _props.SectionDate,
           SectionAbout = _props.SectionAbout,
-          SectionSpeakers = _props.SectionSpeakers;
+          SectionSpeakers = _props.SectionSpeakers,
+          Agenda = _props.Agenda;
 
       return React.createElement(
         'div',
@@ -73,4 +74,4 @@ var App = (_dec = connect(function (store) {
 }(React.Component)) || _class);
 
 
-module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js']);
+module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js', './Agenda.js']);

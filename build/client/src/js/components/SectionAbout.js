@@ -51,7 +51,7 @@ var SectionAbout = function (_React$Component) {
             React.createElement(
               'h1',
               { className: 'section-about__article__title' },
-              'FUNDACI\xD3N HACKD\xD3',
+              'ACERCA DEL EVENTO',
               React.createElement('div', { className: 'lower-bar' })
             ),
             React.createElement(
@@ -62,7 +62,7 @@ var SectionAbout = function (_React$Component) {
           ),
           React.createElement(
             'article',
-            { className: 'section-about__article' },
+            { className: 'section-about__article wrap-about-image' },
             React.createElement('div', { className: 'section-about__article-image' })
           )
         )

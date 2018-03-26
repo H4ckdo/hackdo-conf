@@ -56,6 +56,16 @@ var SectionSpeakers = function (_React$Component) {
             'article',
             { className: 'section-speakers__content' },
             React.createElement(
+              'p',
+              { className: 'section-speakers__content__copy' },
+              'Envia tu propuesta de conferencia ',
+              React.createElement(
+                'span',
+                { className: 'btn-speaker' },
+                'Aqui'
+              )
+            ),
+            React.createElement(
               'ol',
               { className: 'section-speakers__content__list' },
               React.createElement(

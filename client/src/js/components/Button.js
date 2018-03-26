@@ -10,17 +10,17 @@ class Button extends React.Component {
       style: this.props.style,
       disabled: this.props.disabled || false
     }
-  }//end constructor
+  }
 
   componentDidMount() {
     if(this.props.lift) this.props.lift(this);
-  }//end componentDidMount
+  }
 
   templateLoader() {
     return (
       <div className="container-loader"></div>
     )
-  }//end templateLoader
+  }
 
   templateCancel() {
     return (
@@ -29,7 +29,7 @@ class Button extends React.Component {
         <i className="material-icons">&#xE888;</i>
       </div>
     )
-  }//end templateCancel
+  }
 
   templateConfirm() {
     return (
@@ -38,7 +38,7 @@ class Button extends React.Component {
         <i className="material-icons">&#xE86C;</i>
       </div>
     )
-  }//end templateConfirm
+  }
 
   templateLoadMore() {
     return (
@@ -47,7 +47,7 @@ class Button extends React.Component {
         <i className="material-icons">&#xE8B6;</i>
       </div>
     )
-  }//end templateLoadMore
+  }
 
 
   btn(icon = "") {
@@ -57,7 +57,7 @@ class Button extends React.Component {
         <span>{this.state.data}</span>
       </div>
     )
-  }//end btnAdd
+  }
 
   templateSearch() {
     return (
@@ -65,7 +65,7 @@ class Button extends React.Component {
         <i className="material-icons">&#xE8B6;</i>
       </div>
     )
-  }//end templateSearch
+  }
 
   templateSend() {
     return (
@@ -73,7 +73,7 @@ class Button extends React.Component {
         <i className="material-icons">&#xE163;</i>
       </div>
     )
-  }//end templateSend
+  }
 
   templateReset() {
     return (
@@ -91,7 +91,7 @@ class Button extends React.Component {
         { data }
       </div>
     )
-  }//end templateCustom
+  }
 
   render() {
     let style = this.state.style;

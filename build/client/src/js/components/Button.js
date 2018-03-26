@@ -40,20 +40,18 @@ var Button = function (_React$Component) {
       disabled: _this.props.disabled || false
     };
     return _this;
-  } //end constructor
+  }
 
   (0, _createClass3.default)(Button, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (this.props.lift) this.props.lift(this);
-    } //end componentDidMount
-
+    }
   }, {
     key: 'templateLoader',
     value: function templateLoader() {
       return React.createElement('div', { className: 'container-loader' });
-    } //end templateLoader
-
+    }
   }, {
     key: 'templateCancel',
     value: function templateCancel() {
@@ -71,8 +69,7 @@ var Button = function (_React$Component) {
           '\uE888'
         )
       );
-    } //end templateCancel
-
+    }
   }, {
     key: 'templateConfirm',
     value: function templateConfirm() {
@@ -90,8 +87,7 @@ var Button = function (_React$Component) {
           '\uE86C'
         )
       );
-    } //end templateConfirm
-
+    }
   }, {
     key: 'templateLoadMore',
     value: function templateLoadMore() {
@@ -109,9 +105,7 @@ var Button = function (_React$Component) {
           '\uE8B6'
         )
       );
-    } //end templateLoadMore
-
-
+    }
   }, {
     key: 'btn',
     value: function btn() {
@@ -127,8 +121,7 @@ var Button = function (_React$Component) {
           this.state.data
         )
       );
-    } //end btnAdd
-
+    }
   }, {
     key: 'templateSearch',
     value: function templateSearch() {
@@ -141,8 +134,7 @@ var Button = function (_React$Component) {
           '\uE8B6'
         )
       );
-    } //end templateSearch
-
+    }
   }, {
     key: 'templateSend',
     value: function templateSend() {
@@ -155,8 +147,7 @@ var Button = function (_React$Component) {
           '\uE163'
         )
       );
-    } //end templateSend
-
+    }
   }, {
     key: 'templateReset',
     value: function templateReset() {
@@ -190,8 +181,7 @@ var Button = function (_React$Component) {
         ),
         data
       );
-    } //end templateCustom
-
+    }
   }, {
     key: 'render',
     value: function render() {

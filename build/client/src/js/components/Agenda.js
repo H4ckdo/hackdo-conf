@@ -23,39 +23,57 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
-var InjectChildComponent = require('./Inject.js');
 
 var _require = require('react-router-dom'),
     Link = _require.Link;
 
-var SectionDate = function (_React$Component) {
-  (0, _inherits3.default)(SectionDate, _React$Component);
+var InjectChildComponent = require('./Inject.js');
 
-  function SectionDate() {
-    (0, _classCallCheck3.default)(this, SectionDate);
-    return (0, _possibleConstructorReturn3.default)(this, (SectionDate.__proto__ || (0, _getPrototypeOf2.default)(SectionDate)).call(this));
+var Agenda = function (_React$Component) {
+  (0, _inherits3.default)(Agenda, _React$Component);
+
+  function Agenda(props) {
+    (0, _classCallCheck3.default)(this, Agenda);
+    return (0, _possibleConstructorReturn3.default)(this, (Agenda.__proto__ || (0, _getPrototypeOf2.default)(Agenda)).call(this, props));
   }
 
-  (0, _createClass3.default)(SectionDate, [{
+  (0, _createClass3.default)(Agenda, [{
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
-        { className: 'background-section' },
+        { className: 'wrap-agenda-section' },
         React.createElement(
-          'div',
-          { className: 'background-section__date ' },
+          'section',
+          { className: 'agenda-section' },
           React.createElement(
-            'span',
-            { className: 'do-title appear ' },
-            'JUNIO 16, 17 Y 18',
-            React.createElement('div', { className: 'lower-bar' })
+            'ol',
+            null,
+            React.createElement(
+              'span',
+              null,
+              '16 DE JUNIO'
+            ),
+            React.createElement(
+              'li',
+              null,
+              React.createElement(
+                'span',
+                null,
+                'Introduccion'
+              ),
+              React.createElement(
+                'p',
+                null,
+                'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+              )
+            )
           )
         )
       );
     }
   }]);
-  return SectionDate;
+  return Agenda;
 }(React.Component);
 
-module.exports = InjectChildComponent(SectionDate, []);
+module.exports = InjectChildComponent(Agenda, []);

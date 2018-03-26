@@ -13,7 +13,7 @@ class SectionAbout extends React.Component {
         <section className="section-about">
           <article className="section-about__article">
               <h1 className="section-about__article__title">
-                FUNDACIÓN HACKDÓ
+                ACERCA DEL EVENTO
                 <div className="lower-bar"></div>
               </h1> 
                
@@ -22,7 +22,7 @@ class SectionAbout extends React.Component {
               </p>
           </article>
 
-          <article className="section-about__article">
+          <article className="section-about__article wrap-about-image">
             <div className="section-about__article-image"></div>
           </article>
 

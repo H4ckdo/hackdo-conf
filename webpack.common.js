@@ -17,7 +17,7 @@ module.exports = {
     mainFields: ["web", "browser", "style", "main"],
     alias: {
       anchors: path.resolve(__dirname, 'config/anchors/')
-    } 
+    }
   },
   module: {
     rules: [
@@ -58,9 +58,12 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          publicPath: path.join(__dirname, "/dist"),
-          use: ['css-loader', {
-            loader: "sass-loader"
+          use: [{
+            loader: "css-loader",
+            options: { minimize: true }
+          }, {
+            loader: "sass-loader",
+            options: { minimize: true }
           }]
         })
       }

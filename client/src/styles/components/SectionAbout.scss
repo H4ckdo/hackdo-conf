@@ -38,3 +38,19 @@
     }
 }
 
+@media (max-width: $medium-l) {
+    .wrap-about-image {
+        display: none;
+    }
+    .section-about {
+        padding: 0px;
+    }
+}
+
+@media (max-width: $large) {
+    .section-about {
+        width: 100%;
+        grid-template-columns: 1fr;        
+    }
+}
+

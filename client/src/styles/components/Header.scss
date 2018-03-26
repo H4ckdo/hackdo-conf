@@ -142,6 +142,7 @@
   }
 }
 
+
 @media (max-width: $large) {
   .header-container {
     grid-template-columns: 1fr;
@@ -152,8 +153,11 @@
   }
 }
 
+
 @media (max-width: $medium) {
   .header-container {
+    background-color: black;
+    transition: all 0.25s;
     grid-template-columns: 1fr; 
     .row-nav {
       display: none !important;  
