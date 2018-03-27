@@ -48,8 +48,7 @@ var SectionDate = function (_React$Component) {
           React.createElement(
             'span',
             { className: 'do-title appear ' },
-            'JUNIO 16, 17 Y 18',
-            React.createElement('div', { className: 'lower-bar' })
+            'JUNIO 16, 17 Y 18'
           )
         )
       );

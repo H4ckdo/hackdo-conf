@@ -48,6 +48,23 @@ var Header = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Header, [{
+    key: 'scrollBy',
+    value: function scrollBy(distance, duration) {
+      var initialY = document.body.scrollTop;
+      var y = initialY + distance;
+      var baseY = (initialY + y) * 0.5;
+      var difference = initialY - baseY;
+      var startTime = performance.now();
+      function step() {
+        var normalizedTime = (performance.now() - startTime) / duration;
+        if (normalizedTime > 1) normalizedTime = 1;
+
+        window.scrollTo(0, baseY + difference * Math.cos(normalizedTime * Math.PI));
+        if (normalizedTime < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    }
+  }, {
     key: 'onScroll',
     value: function onScroll(background, HeaderContainer, e) {
       var calc = background.offsetHeight - HeaderContainer.offsetHeight;
@@ -59,11 +76,28 @@ var Header = function (_React$Component) {
       }
     }
   }, {
+    key: 'goDown',
+    value: function goDown(id) {
+      if (typeof window !== 'undefined') {
+        var element = document.querySelector(id);
+        var rect = element.getBoundingClientRect();
+        this.scrollBy(element.offsetTop - 143, 1000);
+        console.log(element.offsetTop, rect.right, rect.bottom, rect.left);
+      }
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       var background = document.getElementsByClassName('background-section')[0];
       var HeaderContainer = document.getElementById('HeaderContainer');
       window.addEventListener("scroll", this.onScroll.bind(this, background, HeaderContainer));
+      window.addEventListener('resize', function (e) {
+        if (visualViewport.width > 768) {
+          if (_this2.state.isMenuOpen) _this2.setState({ isMenuOpen: false });
+        }
+      });
     }
   }, {
     key: 'toggleMenu',
@@ -75,7 +109,9 @@ var Header = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var color = this.state.color;
+      var _state = this.state,
+          color = _state.color,
+          isMenuOpen = _state.isMenuOpen;
 
       return React.createElement(
         'header',
@@ -83,6 +119,14 @@ var Header = function (_React$Component) {
         React.createElement(
           'div',
           { className: 'header-content' },
+          React.createElement(
+            'div',
+            { className: 'toggle-options', onClick: this.toggleMenu.bind(this) },
+            React.createElement('img', {
+              width: '28px',
+              height: '28px',
+              src: isMenuOpen ? "/assets/images/menu-close.png" : "/assets/images/menu-options.png" })
+          ),
           React.createElement('div', { className: 'wrap-logo' }),
           React.createElement(
             'div',
@@ -108,28 +152,56 @@ var Header = function (_React$Component) {
             ),
             React.createElement(
               'nav',
+              { className: 'col-nav ' + (this.state.isMenuOpen ? 'show' : 'hide') },
+              React.createElement(
+                'ul',
+                null,
+                React.createElement(
+                  'li',
+                  { onClick: this.goDown.bind(this, '.wrap-section-speakers') },
+                  'Speakers'
+                ),
+                React.createElement(
+                  'li',
+                  { onClick: this.goDown.bind(this, '.wrap-section-agenda') },
+                  'Agenda'
+                ),
+                React.createElement(
+                  'li',
+                  { onClick: this.goDown.bind(this, '.wrap-venue') },
+                  'Lugar de encuentro'
+                ),
+                React.createElement(
+                  'li',
+                  { onClick: this.goDown.bind(this, '.wrap-sponsors') },
+                  'Patrocionadores'
+                )
+              )
+            ),
+            React.createElement(
+              'nav',
               { className: 'row-nav' },
               React.createElement(
                 'ul',
                 null,
                 React.createElement(
                   'li',
-                  null,
+                  { onClick: this.goDown.bind(this, '.wrap-section-speakers') },
                   'Speakers'
                 ),
                 React.createElement(
                   'li',
-                  null,
+                  { onClick: this.goDown.bind(this, '.wrap-section-agenda') },
                   'Agenda'
                 ),
                 React.createElement(
                   'li',
-                  null,
+                  { onClick: this.goDown.bind(this, '.wrap-venue') },
                   'Lugar de encuentro'
                 ),
                 React.createElement(
                   'li',
-                  null,
+                  { onClick: this.goDown.bind(this, '.wrap-sponsors') },
                   'Patrocionadores'
                 )
               )

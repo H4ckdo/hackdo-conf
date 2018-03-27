@@ -42,7 +42,7 @@ var Agenda = function (_React$Component) {
     value: function render() {
       return React.createElement(
         'div',
-        { className: 'wrap-section-section' },
+        { className: 'wrap-section-agenda' },
         React.createElement(
           'section',
           { className: 'section-agenda' },

@@ -25,51 +25,48 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var React = require('react');
 var InjectChildComponent = require('./Inject.js');
 
-var _require = require('react-router-dom'),
-    Link = _require.Link;
+var Venue = function (_React$Component) {
+  (0, _inherits3.default)(Venue, _React$Component);
 
-var SectionAbout = function (_React$Component) {
-  (0, _inherits3.default)(SectionAbout, _React$Component);
-
-  function SectionAbout() {
-    (0, _classCallCheck3.default)(this, SectionAbout);
-    return (0, _possibleConstructorReturn3.default)(this, (SectionAbout.__proto__ || (0, _getPrototypeOf2.default)(SectionAbout)).call(this));
+  function Venue() {
+    (0, _classCallCheck3.default)(this, Venue);
+    return (0, _possibleConstructorReturn3.default)(this, (Venue.__proto__ || (0, _getPrototypeOf2.default)(Venue)).call(this));
   }
 
-  (0, _createClass3.default)(SectionAbout, [{
+  (0, _createClass3.default)(Venue, [{
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
-        { className: 'wrap-about' },
+        { className: 'wrap-venue' },
         React.createElement(
           'section',
-          { className: 'section-about' },
+          { className: 'section-venue' },
           React.createElement(
             'article',
-            { className: 'section-about__article' },
+            { className: 'section-venue__article wrap-venue-image' },
+            React.createElement('div', { className: 'section-venue__article-image' })
+          ),
+          React.createElement(
+            'article',
+            { className: 'section-venue__article' },
             React.createElement(
               'h1',
-              { className: 'section-about__article__title' },
-              'Acerca del evento',
+              { className: 'section-venue__article__title' },
+              'Lugar de encuentro',
               React.createElement('div', { className: 'lower-bar' })
             ),
             React.createElement(
               'p',
-              { className: 'section-about__article__copy' },
+              { className: 'section-venue__article__copy' },
               'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est\xE1ndar de las industrias desde el a\xF1o 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido us\xF3 una galer\xEDa de textos y los mezcl\xF3 de tal manera que logr\xF3 hacer un libro de textos especimen. No s\xF3lo sobrevivi\xF3 500 a\xF1os, sino que tambien ingres\xF3 como texto de relleno en documentos electr\xF3nicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creaci\xF3n de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y m\xE1s recientemente con software de autoedici\xF3n, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
             )
-          ),
-          React.createElement(
-            'article',
-            { className: 'section-about__article wrap-about-image' },
-            React.createElement('div', { className: 'section-about__article-image' })
           )
         )
       );
     }
   }]);
-  return SectionAbout;
+  return Venue;
 }(React.Component);
 
-module.exports = InjectChildComponent(SectionAbout, []);
+module.exports = InjectChildComponent(Venue, []);

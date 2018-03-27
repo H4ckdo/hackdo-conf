@@ -12,7 +12,7 @@ class SectionDate extends React.Component {
        <div className="background-section__date ">
         <span className="do-title appear ">
             JUNIO 16, 17 Y 18
-            <div className="lower-bar"></div>
+            {/*<div className="lower-bar"></div>*/}
         </span>
         {
           /*

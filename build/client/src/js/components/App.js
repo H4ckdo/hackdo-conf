@@ -52,13 +52,16 @@ var App = (_dec = connect(function (store) {
     key: 'render',
     value: function render() {
       var _props = this.props,
+          Footer = _props.Footer,
           data = _props.data,
           PopUp = _props.PopUp,
           Header = _props.Header,
           SectionDate = _props.SectionDate,
           SectionAbout = _props.SectionAbout,
           SectionSpeakers = _props.SectionSpeakers,
-          Agenda = _props.Agenda;
+          SectionAgenda = _props.SectionAgenda,
+          SectionVenue = _props.SectionVenue,
+          SectionSponsors = _props.SectionSponsors;
 
       return React.createElement(
         'div',
@@ -66,7 +69,11 @@ var App = (_dec = connect(function (store) {
         React.createElement(Header, null),
         React.createElement(SectionDate, null),
         React.createElement(SectionAbout, null),
-        React.createElement(SectionSpeakers, null)
+        React.createElement(SectionSpeakers, null),
+        React.createElement(SectionAgenda, null),
+        React.createElement(SectionVenue, null),
+        React.createElement(SectionSponsors, null),
+        React.createElement(Footer, null)
       );
     }
   }]);
@@ -74,4 +81,4 @@ var App = (_dec = connect(function (store) {
 }(React.Component)) || _class);
 
 
-module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js', './Agenda.js']);
+module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js', './SectionAgenda.js', './SectionVenue.js', './SectionSponsors.js', './Footer.js']);
