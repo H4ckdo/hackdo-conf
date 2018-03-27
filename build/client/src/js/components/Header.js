@@ -82,7 +82,7 @@ var Header = function (_React$Component) {
         var element = document.querySelector(id);
         var rect = element.getBoundingClientRect();
         this.scrollBy(element.offsetTop - 143, 1000);
-        console.log(element.offsetTop, rect.right, rect.bottom, rect.left);
+        this.setState({ isMenuOpen: false });
       }
     }
   }, {
