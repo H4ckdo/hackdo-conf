@@ -20,32 +20,18 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _dec, _class;
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-var _require = require('react-redux'),
-    connect = _require.connect;
-
 var InjectChildComponent = require('./Inject.js');
 
-var _require2 = require('react-router-dom'),
-    Link = _require2.Link;
-
-var App = (_dec = connect(function (store) {
-  var Users = store.Users.data;
-  //console.log('store ', store);
-  return { Users: Users };
-}), _dec(_class = function (_React$Component) {
+var App = function (_React$Component) {
   (0, _inherits3.default)(App, _React$Component);
 
   function App() {
     (0, _classCallCheck3.default)(this, App);
     return (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).call(this));
-    // console.log('props ', this.props)
   }
 
   (0, _createClass3.default)(App, [{
@@ -78,7 +64,6 @@ var App = (_dec = connect(function (store) {
     }
   }]);
   return App;
-}(React.Component)) || _class);
-
+}(React.Component);
 
 module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js', './SectionAgenda.js', './SectionVenue.js', './SectionSponsors.js', './Footer.js']);

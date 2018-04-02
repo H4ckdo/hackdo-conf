@@ -16,7 +16,8 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss'],
     mainFields: ["web", "browser", "style", "main"],
     alias: {
-      anchors: path.resolve(__dirname, 'config/anchors/')
+      anchors: path.resolve(__dirname, 'config/anchors/'),
+      images: path.resolve(__dirname, 'client/src/images/'),
     }
   },
   module: {
@@ -47,10 +48,13 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'url-loader',
+            options: {
+              mimetype: 'image/png'
+            }
           }
         ]
       },
@@ -58,18 +62,21 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: [{
-            loader: "css-loader",
-            options: { minimize: true }
-          }, {
-            loader: "sass-loader",
-            options: { minimize: true }
-          }]
+          use: [
+            {
+              loader: "css-loader",
+              options: { minimize: true }
+            },
+            {
+              loader: "sass-loader",
+              options: { minimize: true }
+            }
+          ]
         })
       }
     ]
   },
-  plugins:[
+  plugins: [
     new ExtractTextPlugin({
       filename: 'app.css',
       disable: false,

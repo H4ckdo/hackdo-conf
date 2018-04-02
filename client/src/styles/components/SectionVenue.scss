@@ -11,12 +11,12 @@
     .section-venue__article {
         padding: 20px;
         .section-venue__article-image {
-            background-image: url('https://c1.staticflickr.com/4/3927/15460422575_1d5b320a94_z.jpg');
+            background-image: url('~images/venue.jpg');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             width: 100%;
-            height: 100%;            
+            height: 100%;
         }
         .section-venue__article__title {
             font-size: 2em;
@@ -52,10 +52,10 @@
 @media (max-width: $large) {
     .section-venue {
         width: 100%;
-        grid-template-columns: 1fr;        
+        grid-template-columns: 1fr;
         .section-venue__article {
-            padding-top: 10px !important; 
-            padding-bottom: 10px !important; 
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
         }
     }
 }

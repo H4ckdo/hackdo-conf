@@ -18,6 +18,7 @@
     "server": "yarn babel app.jsx --out-file ./build/app.js --source-maps",
     "dev": "yarn webpack --config  webpack.dev.js",
     "dev:watch": "yarn webpack --watch --config webpack.dev.js",
+    "postinstall":"yarn run prod",
     "prod": "yarn webpack --config webpack.prod.js",
     "clean-cache": "yarn cache clean",
     "generator": "node --inspect ./generator/index.js"
