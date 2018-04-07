@@ -9,7 +9,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 50px;
-    padding-bottom: 40px;    
+    padding-bottom: 40px;
     color: white;
     .section-sponsors__article__copy {
         font-size: 1em;
@@ -44,7 +44,7 @@
             background-color : white;
             margin-top: 10px;
         }
-    }    
+    }
 }
 
 .section-sponsors__article__list__gold__title,
@@ -59,6 +59,7 @@
     .section-sponsors__article__list__silver {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
         .section-sponsors__article__list__gold__item,
         .section-sponsors__article__list__silver__item {
             list-style: none;
@@ -79,7 +80,7 @@
 @media (max-width: $large) {
     .section-sponsors {
         width: auto !important;
-    }    
+    }
     .section-sponsors__article__list__gold__item,
     .section-sponsors__article__list__silver__item {
         margin-top: 20px;

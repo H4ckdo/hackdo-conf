@@ -1,53 +1,83 @@
 const React = require('react');
-const { Link } = require('react-router-dom');
-const InjectChildComponent = require('./Inject.js');
+import Speaker1 from '../../images/speaker_1.jpg';
+import Speaker2 from '../../images/speaker_2.jpg';
+import Speaker3 from '../../images/speaker_3.jpg';
+import Speaker4 from '../../images/speaker_4.jpg';
+import Speaker5 from '../../images/speaker_5.jpg';
+import Speaker6 from '../../images/speaker_6.jpg';
 
+const InjectChildComponent = require('./Inject.js');
 class SectionSpeakers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       speakers: [
         {
-          image: 'https://pbs.twimg.com/profile_images/973370095585120256/9STMOBrn_400x400.jpg',
+          image: Speaker1,
           name: 'Julián Duque',
-          bio: 'Developer and Educator - Engineer at @NodeSource - Co-Organizer at @Suncoastjs @MedellinJS @JSConfCo {Medellín, St. Petersburg, FL} - Satán es la Cumbia',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Developer and Educator - Engineer at <a target="_blank" href="https://twitter.com/NodeSource">@NodeSource</a> - Co-Organizer at <a target="_blank" href='https://twitter.com/Suncoastjs'>@Suncoastjs</a> <a href='https://twitter.com/MedellinJS'>@MedellinJS</a> <a href='https://twitter.com/jsconfco'>@JSConfCo</a> {'{Medellín, St. Petersburg, FL}'} - Satán es la Cumbia
+            </p>
+          ),
           link: 'https://twitter.com/julian_duque',
           nickname: '@julian_duque'
         },
         {
-          image: 'https://pbs.twimg.com/profile_images/959616357615702016/AxcYu77t_400x400.jpg',
-          name: 'Romel Pérez',
-          bio: 'Software engineering autodidact. Enthusiast, JavaScript dev, Sci-Fi and nature fan. Making the world a better place through lines of code.',
-          link: 'https://twitter.com/romelperez07',
-          nickname: '@romelperez07'          
+          image: Speaker2,
+          name: 'David Castillo',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              I’m David Castillo, a Software Developer/ Systems Engineer based in Medellin, Colombia.
+              I write code, and run the Medellin DevOps Meetup. I like to photograph stuff from time to time.
+            </p>
+          ),
+          link: 'https://twitter.com/castillobgr',
+          nickname: '@castillobgr'
         },
         {
-          image: 'https://pbs.twimg.com/profile_images/920878828645421057/jlmgoUDb_400x400.jpg',
+          image: Speaker3,
           name: 'Fredy E',
-          bio: 'Founder of @H4ckdo  + @Quibdojs Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Founder of <a target="_blank" href="https://twitter.com/H4ckdo">@H4ckdo</a> + <a target="_blank" href="https://twitter.com/QuibdoJs">@Quibdojs</a> Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor
+            </p>
+          ),
           link: 'https://twitter.com/xfry',
-          nickname: '@xfry'          
+          nickname: '@xfry'
         },
         {
-          image: 'https://pbs.twimg.com/profile_images/840689870637006849/EXs4Tq2m_400x400.jpg',
+          image: Speaker4,
           name: 'Oscar Rendon',
-          bio: 'Cycling, programming, communities, math/ai enthusiast',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Cycling, programming, communities, math/ai enthusiast
+            </p>
+          ),
           link: 'https://twitter.com/orendon',
-          nickname: '@orendon'          
+          nickname: '@orendon'
         },
         {
-          image: 'https://pbs.twimg.com/profile_images/809138513530654720/VgvOSRQT_400x400.jpg',
+          image: Speaker5,
           name: 'Giovanny Gongora',
-          bio: 'Support Engineer at @NodeSource. I spend time coding, giving talks at events and doing random stuff. Formerly @Mozilla.',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Support Engineer at <a target="_blank" href="https://twitter.com/NodeSource">@NodeSource</a>. I spend time coding, giving talks at events and doing random stuff. Formerly <a target="_blank" href='https://twitter.com/mozilla'>@Mozilla</a>.
+            </p>
+          ),
           link: 'https://twitter.com/Gioyik',
-          nickname: '@Gioyik'          
+          nickname: '@Gioyik'
         },
         {
-          image: 'https://pbs.twimg.com/profile_images/975354262720077824/GFdVch8l_400x400.jpg',
+          image: Speaker6,
           name: 'Giovanny Beltran',
-          bio: 'Making games @juegos_indies - @bogotajs organizer mira mi canal: http://goo.gl/IDLO8C  http://agar3s.games ',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Making games <a target="_blank" href='https://twitter.com/juegos_indies'>@juegos_indies</a> - <a target="_blank" href='https://twitter.com/bogotajs'>@bogotajs</a> organizer mira mi canal: <a target="_blank" href=' http://goo.gl/IDLO8C'>Youtube</a> y mi <a target="_blank" href='http://agar3s.games'>pagina web</a>.
+            </p>
+          ),
           link: 'https://twitter.com/agar3s',
-          nickname: '@agar3s'                    
+          nickname: '@agar3s'
         }
       ]
     }
@@ -69,23 +99,21 @@ class SectionSpeakers extends React.Component {
                 speakers.map(({name, image, link, nickname, bio}, index) => {
                   return (
                     <li className="section-speakers__content__list__item" key={index}>
-                        <div className="section-speakers__content__list__item__image" style={ 
+                        <div className="section-speakers__content__list__item__image" style={
                           { 'backgroundImage': `url(${image})` }
                          }></div>
                         <span className="section-speakers__content__list__item__name">
                           { name }
                         </span>
-                        <p className="section-speakers__content__list__item__copy">
-                          { `${bio}` }
-                        </p>
+                        { bio }
                         <a className="twiter-link" target="_blank" href={link} target="_blank">{nickname}</a>
-                    </li>    
-                  )                                    
-                })            
+                    </li>
+                  )
+                })
               }
 
             </ol>
-         </article>   
+         </article>
       </section>
      </div>
     )

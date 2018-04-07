@@ -20,6 +20,22 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
+var _sponsor_ = require('../../images/sponsor_1.jpg');
+
+var _sponsor_2 = _interopRequireDefault(_sponsor_);
+
+var _sponsor_3 = require('../../images/sponsor_2.png');
+
+var _sponsor_4 = _interopRequireDefault(_sponsor_3);
+
+var _sponsor_5 = require('../../images/sponsor_3.png');
+
+var _sponsor_6 = _interopRequireDefault(_sponsor_5);
+
+var _sponsor_7 = require('../../images/sponsor_4.png');
+
+var _sponsor_8 = _interopRequireDefault(_sponsor_7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -85,7 +101,7 @@ var SectionSponsors = function (_React$Component) {
                 React.createElement(
                   'a',
                   { href: 'https://nodesource.com', target: '_blank' },
-                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: 'https://pbs.twimg.com/profile_images/831194359034843136/lWqDN9SS_400x400.jpg' })
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_2.default })
                 )
               ),
               React.createElement(
@@ -94,7 +110,16 @@ var SectionSponsors = function (_React$Component) {
                 React.createElement(
                   'a',
                   { href: 'http://www.samitic.com/', target: '_blank' },
-                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: 'http://www.hackdo.co/assets/img/samitic.png' })
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_4.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__gold__item' },
+                React.createElement(
+                  'a',
+                  { href: 'https://s4n.co/', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_6.default })
                 )
               )
             ),
@@ -112,7 +137,7 @@ var SectionSponsors = function (_React$Component) {
                 React.createElement(
                   'a',
                   { href: 'http://enamoratedelchoco.co/', target: '_blank' },
-                  React.createElement('img', { className: 'section-sponsors__article__list__silver__img', src: 'http://www.hackdo.co/assets/img/waosolo.png' })
+                  React.createElement('img', { className: 'section-sponsors__article__list__silver__img', src: '' + _sponsor_8.default })
                 )
               )
             )

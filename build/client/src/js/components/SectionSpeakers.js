@@ -24,12 +24,34 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
+var _speaker_ = require('../../images/speaker_1.jpg');
+
+var _speaker_2 = _interopRequireDefault(_speaker_);
+
+var _speaker_3 = require('../../images/speaker_2.jpg');
+
+var _speaker_4 = _interopRequireDefault(_speaker_3);
+
+var _speaker_5 = require('../../images/speaker_3.jpg');
+
+var _speaker_6 = _interopRequireDefault(_speaker_5);
+
+var _speaker_7 = require('../../images/speaker_4.jpg');
+
+var _speaker_8 = _interopRequireDefault(_speaker_7);
+
+var _speaker_9 = require('../../images/speaker_5.jpg');
+
+var _speaker_10 = _interopRequireDefault(_speaker_9);
+
+var _speaker_11 = require('../../images/speaker_6.jpg');
+
+var _speaker_12 = _interopRequireDefault(_speaker_11);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
 
-var _require = require('react-router-dom'),
-    Link = _require.Link;
 
 var InjectChildComponent = require('./Inject.js');
 
@@ -43,39 +65,137 @@ var SectionSpeakers = function (_React$Component) {
 
     _this.state = {
       speakers: [{
-        image: 'https://pbs.twimg.com/profile_images/973370095585120256/9STMOBrn_400x400.jpg',
+        image: _speaker_2.default,
         name: 'Julián Duque',
-        bio: 'Developer and Educator - Engineer at @NodeSource - Co-Organizer at @Suncoastjs @MedellinJS @JSConfCo {Medellín, St. Petersburg, FL} - Satán es la Cumbia',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Developer and Educator - Engineer at ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/NodeSource' },
+            '@NodeSource'
+          ),
+          ' - Co-Organizer at ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/Suncoastjs' },
+            '@Suncoastjs'
+          ),
+          ' ',
+          React.createElement(
+            'a',
+            { href: 'https://twitter.com/MedellinJS' },
+            '@MedellinJS'
+          ),
+          ' ',
+          React.createElement(
+            'a',
+            { href: 'https://twitter.com/jsconfco' },
+            '@JSConfCo'
+          ),
+          ' ',
+          '{Medellín, St. Petersburg, FL}',
+          ' - Sat\xE1n es la Cumbia'
+        ),
         link: 'https://twitter.com/julian_duque',
         nickname: '@julian_duque'
       }, {
-        image: 'https://pbs.twimg.com/profile_images/959616357615702016/AxcYu77t_400x400.jpg',
-        name: 'Romel Pérez',
-        bio: 'Software engineering autodidact. Enthusiast, JavaScript dev, Sci-Fi and nature fan. Making the world a better place through lines of code.',
-        link: 'https://twitter.com/romelperez07',
-        nickname: '@romelperez07'
+        image: _speaker_4.default,
+        name: 'David Castillo',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'I\u2019m David Castillo, a Software Developer/ Systems Engineer based in Medellin, Colombia. I write code, and run the Medellin DevOps Meetup. I like to photograph stuff from time to time.'
+        ),
+        link: 'https://twitter.com/castillobgr',
+        nickname: '@castillobgr'
       }, {
-        image: 'https://pbs.twimg.com/profile_images/920878828645421057/jlmgoUDb_400x400.jpg',
+        image: _speaker_6.default,
         name: 'Fredy E',
-        bio: 'Founder of @H4ckdo  + @Quibdojs Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Founder of ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/H4ckdo' },
+            '@H4ckdo'
+          ),
+          ' + ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/QuibdoJs' },
+            '@Quibdojs'
+          ),
+          ' Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor'
+        ),
         link: 'https://twitter.com/xfry',
         nickname: '@xfry'
       }, {
-        image: 'https://pbs.twimg.com/profile_images/840689870637006849/EXs4Tq2m_400x400.jpg',
+        image: _speaker_8.default,
         name: 'Oscar Rendon',
-        bio: 'Cycling, programming, communities, math/ai enthusiast',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Cycling, programming, communities, math/ai enthusiast'
+        ),
         link: 'https://twitter.com/orendon',
         nickname: '@orendon'
       }, {
-        image: 'https://pbs.twimg.com/profile_images/809138513530654720/VgvOSRQT_400x400.jpg',
+        image: _speaker_10.default,
         name: 'Giovanny Gongora',
-        bio: 'Support Engineer at @NodeSource. I spend time coding, giving talks at events and doing random stuff. Formerly @Mozilla.',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Support Engineer at ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/NodeSource' },
+            '@NodeSource'
+          ),
+          '. I spend time coding, giving talks at events and doing random stuff. Formerly ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/mozilla' },
+            '@Mozilla'
+          ),
+          '.'
+        ),
         link: 'https://twitter.com/Gioyik',
         nickname: '@Gioyik'
       }, {
-        image: 'https://pbs.twimg.com/profile_images/975354262720077824/GFdVch8l_400x400.jpg',
+        image: _speaker_12.default,
         name: 'Giovanny Beltran',
-        bio: 'Making games @juegos_indies - @bogotajs organizer mira mi canal: http://goo.gl/IDLO8C  http://agar3s.games ',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Making games ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/juegos_indies' },
+            '@juegos_indies'
+          ),
+          ' - ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/bogotajs' },
+            '@bogotajs'
+          ),
+          ' organizer mira mi canal: ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: ' http://goo.gl/IDLO8C' },
+            'Youtube'
+          ),
+          ' y mi ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'http://agar3s.games' },
+            'pagina web'
+          ),
+          '.'
+        ),
         link: 'https://twitter.com/agar3s',
         nickname: '@agar3s'
       }]
@@ -132,11 +252,7 @@ var SectionSpeakers = function (_React$Component) {
                     { className: 'section-speakers__content__list__item__name' },
                     name
                   ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-speakers__content__list__item__copy' },
-                    '' + bio
-                  ),
+                  bio,
                   React.createElement(
                     'a',
                     (0, _defineProperty3.default)({ className: 'twiter-link', target: '_blank', href: link }, 'target', '_blank'),
