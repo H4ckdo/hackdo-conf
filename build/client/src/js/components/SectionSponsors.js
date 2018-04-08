@@ -24,7 +24,7 @@ var _sponsor_ = require('../../images/sponsor_1.jpg');
 
 var _sponsor_2 = _interopRequireDefault(_sponsor_);
 
-var _sponsor_3 = require('../../images/sponsor_2.png');
+var _sponsor_3 = require('../../images/sponsor_2.jpg');
 
 var _sponsor_4 = _interopRequireDefault(_sponsor_3);
 
@@ -32,7 +32,7 @@ var _sponsor_5 = require('../../images/sponsor_3.png');
 
 var _sponsor_6 = _interopRequireDefault(_sponsor_5);
 
-var _sponsor_7 = require('../../images/sponsor_4.png');
+var _sponsor_7 = require('../../images/sponsor_4.jpg');
 
 var _sponsor_8 = _interopRequireDefault(_sponsor_7);
 

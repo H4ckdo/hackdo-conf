@@ -61,7 +61,7 @@ var Agenda = function (_React$Component) {
               React.createElement(
                 'h2',
                 { className: 'section-agenda__list__title' },
-                '16 De junio'
+                '9 De junio'
               ),
               React.createElement(
                 'li',
@@ -132,78 +132,7 @@ var Agenda = function (_React$Component) {
               React.createElement(
                 'h2',
                 { className: 'section-agenda__list__title' },
-                '17 De junio'
-              ),
-              React.createElement(
-                'li',
-                { className: 'section-agenda__list__item' },
-                React.createElement(
-                  'span',
-                  { className: 'section-agenda__list__item__title' },
-                  React.createElement(
-                    'b',
-                    null,
-                    '10 AM'
-                  ),
-                  ' Introduccion'
-                ),
-                React.createElement(
-                  'p',
-                  { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Tercer piso salon ',
-                  React.createElement(
-                    'b',
-                    null,
-                    '9A'
-                  )
-                )
-              ),
-              React.createElement(
-                'li',
-                { className: 'section-agenda__list__item' },
-                React.createElement(
-                  'span',
-                  { className: 'section-agenda__list__item__title' },
-                  React.createElement(
-                    'b',
-                    null,
-                    '2 PM'
-                  ),
-                  ' Introduccion a javascript'
-                ),
-                React.createElement(
-                  'p',
-                  { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
-                )
-              ),
-              React.createElement(
-                'li',
-                { className: 'section-agenda__list__item' },
-                React.createElement(
-                  'span',
-                  { className: 'section-agenda__list__item__title' },
-                  React.createElement(
-                    'b',
-                    null,
-                    '4 PM'
-                  ),
-                  ' Video juegos'
-                ),
-                React.createElement(
-                  'p',
-                  { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
-                )
-              )
-            ),
-            React.createElement(
-              'ol',
-              { className: 'section-agenda__list' },
-              React.createElement(
-                'h2',
-                { className: 'section-agenda__list__title' },
-                '18 De junio'
+                '10 De junio'
               ),
               React.createElement(
                 'li',
