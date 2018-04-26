@@ -18,7 +18,9 @@ class SectionAbout extends React.Component {
               </h1>
 
               <p className="section-about__article__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                Hackdó Conf, es el evento anual llevado a cabo por la Hackdó Fundation que reúne a entusiasta emprendedores y desarrolladores durante dos días en la ciudad de Quibdó.
+                <br/>
+                Más de 2 años impactando el ecosistema de báse tecnolgógica del Chocó, llegando a más de <strong>200 personas con 22 charlas impartidas, 17 talleres sobre 4 lenguajes de programación.</strong>
               </p>
           </article>
 
