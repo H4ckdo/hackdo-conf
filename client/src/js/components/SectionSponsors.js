@@ -4,6 +4,8 @@ import Sponsor1 from '../../images/sponsor_1.jpg';
 import Sponsor2 from '../../images/sponsor_2.jpg';
 import Sponsor3 from '../../images/sponsor_3.png';
 import Sponsor4 from '../../images/sponsor_4.jpg';
+import Sponsor5 from '../../images/sponsor_5.jpg';
+import Sponsor6 from '../../images/sponsor_6.jpg';
 
 class SectionSponsors extends React.Component {
   constructor() {
@@ -42,6 +44,19 @@ class SectionSponsors extends React.Component {
                   <img className="section-sponsors__article__list__gold__img" src={`${Sponsor3}`} />
                 </a>
               </li>
+
+              <li className="section-sponsors__article__list__gold__item">
+                <a href="http://www.comfachoco.com.co/" target="_blank">
+                  <img className="section-sponsors__article__list__gold__img" src={`${Sponsor5}`} />
+                </a>
+              </li>
+
+              <li className="section-sponsors__article__list__gold__item">
+                <a href="https://twitter.com/colombia_dev" target="_blank">
+                  <img className="section-sponsors__article__list__gold__img" src={`${Sponsor6}`} />
+                </a>
+              </li>
+
             </ol>
 
             <h2 className="section-sponsors__article__list__silver__title">Silver</h2>

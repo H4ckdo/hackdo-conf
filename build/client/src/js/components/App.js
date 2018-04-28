@@ -47,7 +47,8 @@ var App = function (_React$Component) {
           SectionSpeakers = _props.SectionSpeakers,
           SectionAgenda = _props.SectionAgenda,
           SectionVenue = _props.SectionVenue,
-          SectionSponsors = _props.SectionSponsors;
+          SectionSponsors = _props.SectionSponsors,
+          SectionTeam = _props.SectionTeam;
 
       return React.createElement(
         'div',
@@ -58,6 +59,7 @@ var App = function (_React$Component) {
         React.createElement(SectionSpeakers, null),
         React.createElement(SectionAgenda, null),
         React.createElement(SectionVenue, null),
+        React.createElement(SectionTeam, null),
         React.createElement(SectionSponsors, null),
         React.createElement(Footer, null)
       );
@@ -66,4 +68,4 @@ var App = function (_React$Component) {
   return App;
 }(React.Component);
 
-module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js', './SectionAgenda.js', './SectionVenue.js', './SectionSponsors.js', './Footer.js']);
+module.exports = InjectChildComponent(App, ['./PopUp.js', './Header.js', './SectionDate.js', './SectionAbout.js', './SectionSpeakers.js', './SectionAgenda.js', './SectionVenue.js', './SectionSponsors.js', './Footer.js', './SectionTeam.js']);

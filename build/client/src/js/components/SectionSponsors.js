@@ -36,6 +36,14 @@ var _sponsor_7 = require('../../images/sponsor_4.jpg');
 
 var _sponsor_8 = _interopRequireDefault(_sponsor_7);
 
+var _sponsor_9 = require('../../images/sponsor_5.jpg');
+
+var _sponsor_10 = _interopRequireDefault(_sponsor_9);
+
+var _sponsor_11 = require('../../images/sponsor_6.jpg');
+
+var _sponsor_12 = _interopRequireDefault(_sponsor_11);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -120,6 +128,24 @@ var SectionSponsors = function (_React$Component) {
                   'a',
                   { href: 'https://s4n.co/', target: '_blank' },
                   React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_6.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__gold__item' },
+                React.createElement(
+                  'a',
+                  { href: 'http://www.comfachoco.com.co/', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_10.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__gold__item' },
+                React.createElement(
+                  'a',
+                  { href: 'https://twitter.com/colombia_dev', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_12.default })
                 )
               )
             ),

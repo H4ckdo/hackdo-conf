@@ -112,26 +112,14 @@ var SectionSpeakers = function (_React$Component) {
         nickname: '@castillobgr'
       }, {
         image: _speaker_6.default,
-        name: 'Fredy E',
+        name: 'Romel Pérez',
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
-          'Founder of ',
-          React.createElement(
-            'a',
-            { target: '_blank', href: 'https://twitter.com/H4ckdo' },
-            '@H4ckdo'
-          ),
-          ' + ',
-          React.createElement(
-            'a',
-            { target: '_blank', href: 'https://twitter.com/QuibdoJs' },
-            '@Quibdojs'
-          ),
-          ' Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor'
+          'Software engineering autodidact. Enthusiast, JavaScript dev, Sci-Fi and nature fan. Making the world a better place through lines of code.'
         ),
-        link: 'https://twitter.com/xfry',
-        nickname: '@xfry'
+        link: 'https://twitter.com/romelperez07',
+        nickname: '@romelperez07'
       }, {
         image: _speaker_8.default,
         name: 'Oscar Rendon',

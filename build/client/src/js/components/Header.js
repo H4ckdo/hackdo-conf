@@ -173,6 +173,11 @@ var Header = function (_React$Component) {
                 ),
                 React.createElement(
                   'li',
+                  { onClick: this.goDown.bind(this, '.wrap-team') },
+                  'Equipo'
+                ),
+                React.createElement(
+                  'li',
                   { onClick: this.goDown.bind(this, '.wrap-sponsors') },
                   'Patrocionadores'
                 )
@@ -198,6 +203,11 @@ var Header = function (_React$Component) {
                   'li',
                   { onClick: this.goDown.bind(this, '.wrap-venue') },
                   'Lugar de encuentro'
+                ),
+                React.createElement(
+                  'li',
+                  { onClick: this.goDown.bind(this, '.wrap-team') },
+                  'Equipo'
                 ),
                 React.createElement(
                   'li',

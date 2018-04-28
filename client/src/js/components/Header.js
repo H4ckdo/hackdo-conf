@@ -87,6 +87,7 @@ class Header extends React.Component {
                 <li onClick={this.goDown.bind(this, '.wrap-section-speakers')}>Speakers</li>
                 <li onClick={this.goDown.bind(this, '.wrap-section-agenda')}>Agenda</li>
                 <li onClick={this.goDown.bind(this, '.wrap-venue')}>Lugar de encuentro</li>
+                <li onClick={this.goDown.bind(this, '.wrap-team')}>Equipo</li>
                 <li onClick={this.goDown.bind(this, '.wrap-sponsors')}>Patrocionadores</li>
               </ul>
             </nav>
@@ -96,6 +97,7 @@ class Header extends React.Component {
                 <li onClick={this.goDown.bind(this, '.wrap-section-speakers')}>Speakers</li>
                 <li onClick={this.goDown.bind(this, '.wrap-section-agenda')}>Agenda</li>
                 <li onClick={this.goDown.bind(this, '.wrap-venue')}>Lugar de encuentro</li>
+                <li onClick={this.goDown.bind(this, '.wrap-team')}>Equipo</li>
                 <li onClick={this.goDown.bind(this, '.wrap-sponsors')}>Patrocionadores</li>
               </ul>
             </nav>

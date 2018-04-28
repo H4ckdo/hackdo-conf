@@ -57,7 +57,33 @@ var SectionAbout = function (_React$Component) {
             React.createElement(
               'p',
               { className: 'section-about__article__copy' },
-              'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est\xE1ndar de las industrias desde el a\xF1o 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido us\xF3 una galer\xEDa de textos y los mezcl\xF3 de tal manera que logr\xF3 hacer un libro de textos especimen. No s\xF3lo sobrevivi\xF3 500 a\xF1os, sino que tambien ingres\xF3 como texto de relleno en documentos electr\xF3nicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creaci\xF3n de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y m\xE1s recientemente con software de autoedici\xF3n, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+              'Hackd\xF3 Conf, es el evento anual llevado a cabo por la Hackd\xF3 Foundation y Partners, que re\xFAne a entusiasta emprendedores y desarrolladores durante dos d\xEDas en la ciudad de Quibd\xF3.',
+              React.createElement('br', null),
+              'M\xE1s de 2 a\xF1os impactando el ecosistema de base tecnol\xF3gica del Choc\xF3, llegando a m\xE1s de ',
+              React.createElement(
+                'b',
+                null,
+                '200 personas'
+              ),
+              ' con ',
+              React.createElement(
+                'b',
+                null,
+                '22 charlas'
+              ),
+              ' impartidas, ',
+              React.createElement(
+                'b',
+                null,
+                '17 talleres sobre 4 lenguajes de programaci\xF3na'
+              ),
+              ' adem\xE1s de charlas sobre el internet de las cosas y ',
+              React.createElement(
+                'b',
+                null,
+                'programaci\xF3n de hardware'
+              ),
+              '.'
             )
           ),
           React.createElement(

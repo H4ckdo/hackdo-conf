@@ -20,7 +20,8 @@ class SectionAbout extends React.Component {
               <p className="section-about__article__copy">
                 Hackdó Conf, es el evento anual llevado a cabo por la Hackdó Foundation y Partners, que reúne a entusiasta emprendedores y desarrolladores durante dos días en la ciudad de Quibdó.
                 <br/>
-                Más de 2 años impactando el ecosistema de base tecnolgógica del Chocó, llegando a más de <strong>200 personas con 22 charlas impartidas, 17 talleres sobre 4 lenguajes de programación además de charlas sobre el internet de las cosas y programación de hardware.</strong>
+                Más de 2 años impactando el ecosistema de base tecnológica del Chocó,
+                llegando a más de <b>200 personas</b> con <b>22 charlas</b> impartidas, <b>17 talleres sobre 4 lenguajes de programacióna</b> además de charlas sobre el internet de las cosas y <b>programación de hardware</b>.
               </p>
           </article>
 
