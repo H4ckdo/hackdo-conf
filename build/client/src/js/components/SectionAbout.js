@@ -39,12 +39,19 @@ var SectionAbout = function (_React$Component) {
   (0, _createClass3.default)(SectionAbout, [{
     key: 'render',
     value: function render() {
+      var Gallery = this.props.Gallery;
+
       return React.createElement(
         'div',
         { className: 'wrap-about' },
         React.createElement(
           'section',
           { className: 'section-about' },
+          React.createElement(
+            'article',
+            { className: 'section-about__gallery' },
+            React.createElement(Gallery, null)
+          ),
           React.createElement(
             'article',
             { className: 'section-about__article' },
@@ -57,7 +64,31 @@ var SectionAbout = function (_React$Component) {
             React.createElement(
               'p',
               { className: 'section-about__article__copy' },
-              'Hackd\xF3 Conf, es el evento anual llevado a cabo por la Hackd\xF3 Foundation y Partners, que re\xFAne a entusiasta emprendedores y desarrolladores durante dos d\xEDas en la ciudad de Quibd\xF3.',
+              React.createElement(
+                'b',
+                null,
+                'Hackd\xF3 Conf'
+              ),
+              ', es el evento ',
+              React.createElement(
+                'b',
+                null,
+                'gratuito'
+              ),
+              ' anual llevado a cabo por la ',
+              React.createElement(
+                'b',
+                null,
+                'Hackd\xF3 Foundation'
+              ),
+              ' y ',
+              React.createElement(
+                'b',
+                null,
+                'Partners'
+              ),
+              ', que re\xFAne a entusiasta emprendedores y desarrolladores durante dos d\xEDas en la ciudad de Quibd\xF3.',
+              React.createElement('br', null),
               React.createElement('br', null),
               'M\xE1s de 2 a\xF1os impactando el ecosistema de base tecnol\xF3gica del Choc\xF3, llegando a m\xE1s de ',
               React.createElement(
@@ -85,11 +116,6 @@ var SectionAbout = function (_React$Component) {
               ),
               '.'
             )
-          ),
-          React.createElement(
-            'article',
-            { className: 'section-about__article wrap-about-image' },
-            React.createElement('div', { className: 'section-about__article-image' })
           )
         )
       );
@@ -98,4 +124,4 @@ var SectionAbout = function (_React$Component) {
   return SectionAbout;
 }(React.Component);
 
-module.exports = InjectChildComponent(SectionAbout, []);
+module.exports = InjectChildComponent(SectionAbout, ['./Gallery.js']);

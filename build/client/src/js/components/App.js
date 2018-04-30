@@ -59,8 +59,8 @@ var App = function (_React$Component) {
         React.createElement(SectionSpeakers, null),
         React.createElement(SectionAgenda, null),
         React.createElement(SectionVenue, null),
-        React.createElement(SectionTeam, null),
         React.createElement(SectionSponsors, null),
+        React.createElement(SectionTeam, null),
         React.createElement(Footer, null)
       );
     }

@@ -173,13 +173,13 @@ var Header = function (_React$Component) {
                 ),
                 React.createElement(
                   'li',
-                  { onClick: this.goDown.bind(this, '.wrap-team') },
-                  'Equipo'
+                  { onClick: this.goDown.bind(this, '.wrap-sponsors') },
+                  'Patrocionadores'
                 ),
                 React.createElement(
                   'li',
-                  { onClick: this.goDown.bind(this, '.wrap-sponsors') },
-                  'Patrocionadores'
+                  { onClick: this.goDown.bind(this, '.wrap-team') },
+                  'Equipo'
                 )
               )
             ),
@@ -206,13 +206,13 @@ var Header = function (_React$Component) {
                 ),
                 React.createElement(
                   'li',
-                  { onClick: this.goDown.bind(this, '.wrap-team') },
-                  'Equipo'
+                  { onClick: this.goDown.bind(this, '.wrap-sponsors') },
+                  'Patrocionadores'
                 ),
                 React.createElement(
                   'li',
-                  { onClick: this.goDown.bind(this, '.wrap-sponsors') },
-                  'Patrocionadores'
+                  { onClick: this.goDown.bind(this, '.wrap-team') },
+                  'Equipo'
                 )
               )
             )

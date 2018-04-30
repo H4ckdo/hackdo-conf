@@ -1,5 +1,5 @@
 .wrap-team {
-  background: #8BC34A;
+  background: rgb(255, 255, 255);
 }
 
 .section-team {
@@ -82,6 +82,35 @@
           }
         }
     }
+}
+
+
+@media (max-width: $large) {
+  .section-team__article__members__wrap-items {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-gap: 15px !important;
+    width: auto !important;
+  }
+  .section-team {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 512px) {
+  .section-team__article__members__wrap-items__image {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+@media (max-width: $medium-l) {
+  .section-team__article__members__wrap-items {
+    grid-gap: 5px !important;
+  }
+  .section-team__article__members__wrap-items__image {
+    width: 100px !important;
+    height: 100px !important;
+  }
 }
 
 

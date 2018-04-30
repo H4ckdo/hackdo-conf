@@ -44,6 +44,10 @@ var _sponsor_11 = require('../../images/sponsor_6.jpg');
 
 var _sponsor_12 = _interopRequireDefault(_sponsor_11);
 
+var _sponsor_13 = require('../../images/sponsor_7.png');
+
+var _sponsor_14 = _interopRequireDefault(_sponsor_13);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -58,6 +62,11 @@ var SectionSponsors = function (_React$Component) {
   }
 
   (0, _createClass3.default)(SectionSponsors, [{
+    key: 'join',
+    value: function join() {
+      window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -87,7 +96,7 @@ var SectionSponsors = function (_React$Component) {
               ' es posible, ayudanos y convi\xE9rtete en un patrocinador tu tambien',
               React.createElement(
                 'button',
-                { className: 'section-sponsors__article__copy__join' },
+                { className: 'section-sponsors__article__copy__join', onClick: this.join.bind() },
                 'Unirse'
               )
             )
@@ -164,6 +173,15 @@ var SectionSponsors = function (_React$Component) {
                   'a',
                   { href: 'http://enamoratedelchoco.co/', target: '_blank' },
                   React.createElement('img', { className: 'section-sponsors__article__list__silver__img', src: '' + _sponsor_8.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__silver__item' },
+                React.createElement(
+                  'a',
+                  { href: 'http://www.camarachoco.org.co/', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__silver__img', src: '' + _sponsor_14.default })
                 )
               )
             )

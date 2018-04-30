@@ -34,6 +34,12 @@ var SectionVenue = function (_React$Component) {
   }
 
   (0, _createClass3.default)(SectionVenue, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var mapElement = document.getElementById('venue-map');
+      mapElement.innerHTML = '\n      <iframe\n      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.178073462174!2d-76.66347725008087!3d5.687387995857421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e488f6da62de11d%3A0xb545d85aecc1e7a0!2sComfachoco!5e0!3m2!1ses-419!2sco!4v1525045034031"\n      frameborder="0" style="border:0" allowfullscreen></iframe>\n    ';
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -42,11 +48,7 @@ var SectionVenue = function (_React$Component) {
         React.createElement(
           'section',
           { className: 'section-venue' },
-          React.createElement(
-            'article',
-            { className: 'section-venue__article wrap-venue-image' },
-            React.createElement('div', { className: 'section-venue__article-image' })
-          ),
+          React.createElement('article', { className: 'section-venue__article wrap-venue-map', id: 'venue-map' }),
           React.createElement(
             'article',
             { className: 'section-venue__article' },
@@ -59,7 +61,18 @@ var SectionVenue = function (_React$Component) {
             React.createElement(
               'p',
               { className: 'section-venue__article__copy' },
-              'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est\xE1ndar de las industrias desde el a\xF1o 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido us\xF3 una galer\xEDa de textos y los mezcl\xF3 de tal manera que logr\xF3 hacer un libro de textos especimen. No s\xF3lo sobrevivi\xF3 500 a\xF1os, sino que tambien ingres\xF3 como texto de relleno en documentos electr\xF3nicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creaci\xF3n de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y m\xE1s recientemente con software de autoedici\xF3n, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+              'Hotel ',
+              React.createElement(
+                'b',
+                null,
+                'Comfachoc\xF3'
+              ),
+              ' ubicado en la ciudad de Quibd\xF3 a solo 5 minutos del aeropuerto el Cara\xF1o de la ciudad de Quibd\xF3.',
+              React.createElement(
+                'b',
+                null,
+                ' Calle. 23 #5-1, Quibd\xF3, Choc\xF3'
+              )
             )
           )
         )

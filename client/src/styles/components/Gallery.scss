@@ -1,0 +1,173 @@
+.alice-carousel .animated {
+  animation-fill-mode: both; }
+
+.alice-carousel .animated-out {
+  z-index: 1; }
+
+.alice-carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+.alice-carousel {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 60px;
+  margin: auto; }
+
+.alice-carousel__wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: solid 1px rgba(70, 87, 152, 0.3); }
+
+.alice-carousel__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  box-sizing: border-box; }
+  .alice-carousel__stage-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    line-height: 0; }
+    .alice-carousel__stage-item * {
+      line-height: initial; }
+    .alice-carousel__stage-item.__cloned {
+      opacity: 0;
+      visibility: hidden; }
+  .alice-carousel__stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; }
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  display: inline-block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  color: #6e7ebc;
+  cursor: pointer;
+  font-size: 1.9em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #6e7ebc;
+  transition: 0.3s ease; }
+  .alice-carousel__prev-btn-item:before,
+  .alice-carousel__next-btn-item:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; }
+  .alice-carousel__prev-btn-item:hover,
+  .alice-carousel__next-btn-item:hover {
+    color: darkred;
+    border: 1px solid darkred; }
+  .alice-carousel__prev-btn-item.__inactive,
+  .alice-carousel__next-btn-item.__inactive {
+    opacity: .4; }
+
+.alice-carousel__prev-btn-item {
+  left: 0; }
+  .alice-carousel__prev-btn-item:after {
+    content: '\02039'; }
+
+.alice-carousel__next-btn-item {
+  right: 0; }
+  .alice-carousel__next-btn-item:after {
+    content: '\0203A'; }
+
+.alice-carousel__play-btn {
+  display: inline-block;
+  position: absolute;
+  bottom: 90px;
+  left: 80px;
+  -ms-transform: scale(0.8);
+      transform: scale(0.8); }
+  .alice-carousel__play-btn:hover {
+    cursor: pointer; }
+
+.alice-carousel__play-btn-item {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: 0;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  width: 32px;
+  height: 30px;
+  outline: none; }
+  .alice-carousel__play-btn-item::before, .alice-carousel__play-btn-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 8px 0 8px 15px;
+    border-left-color: #fff;
+    width: 0;
+    height: 0;
+    transition: all 0.3s linear; }
+  .alice-carousel__play-btn-item::before {
+    height: 16px; }
+  .alice-carousel__play-btn-item::after {
+    left: 15px;
+    top: 8px; }
+  .alice-carousel__play-btn-item.__pause::before, .alice-carousel__play-btn-item.__pause::after {
+    border-width: 0 0 0 10px;
+    height: 30px; }
+  .alice-carousel__play-btn-item.__pause::after {
+    left: 18px;
+    top: 0; }
+
+.alice-carousel__dots {
+  position: absolute;
+  display: inline-block;
+  margin: auto;
+  padding: 0;
+  bottom: 20px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%); }
+  .alice-carousel__dots-item {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #e0e4fb; }
+    .alice-carousel__dots-item:not(:last-child) {
+      margin-right: 15px; }
+    .alice-carousel__dots-item:hover, .alice-carousel__dots-item.__active {
+      background-color: #6e7ebc; }

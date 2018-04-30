@@ -78,7 +78,7 @@ var Footer = function (_React$Component) {
             React.createElement(
               'b',
               null,
-              'example@gmail.com'
+              'h4ckdo@gmail.com'
             )
           )
         )

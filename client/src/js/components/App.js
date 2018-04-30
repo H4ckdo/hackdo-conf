@@ -17,8 +17,8 @@ class App extends React.Component {
         <SectionSpeakers/>
         <SectionAgenda/>
         <SectionVenue/>
-        <SectionTeam/>
         <SectionSponsors/>
+        <SectionTeam/>
         <Footer/>
       </div>
     )

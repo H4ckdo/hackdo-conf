@@ -5,22 +5,31 @@ class SectionVenue extends React.Component {
   constructor() {
     super();
   }
+
+  componentDidMount() {
+    let mapElement = document.getElementById('venue-map');
+    mapElement.innerHTML = `
+      <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.178073462174!2d-76.66347725008087!3d5.687387995857421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e488f6da62de11d%3A0xb545d85aecc1e7a0!2sComfachoco!5e0!3m2!1ses-419!2sco!4v1525045034031"
+      frameborder="0" style="border:0" allowfullscreen></iframe>
+    `
+  }
+
   render() {
     return (
       <div className="wrap-venue">
         <section className="section-venue">
-          <article className="section-venue__article wrap-venue-image">
-            <div className="section-venue__article-image"></div>
-          </article>
+          <article className="section-venue__article wrap-venue-map" id="venue-map"></article>
 
           <article className="section-venue__article">
               <h1 className="section-venue__article__title">
                 Lugar de encuentro
                 <div className="lower-bar"></div>
-              </h1> 
-               
+              </h1>
+
               <p className="section-venue__article__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                Hotel <b>Comfachocó</b> ubicado en la ciudad de Quibdó a solo 5 minutos del aeropuerto el Caraño de la ciudad de Quibdó.
+                    <b> Calle. 23 #5-1, Quibdó, Chocó</b>
               </p>
           </article>
         </section>
