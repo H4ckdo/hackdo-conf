@@ -27,7 +27,7 @@ class SectionVenue extends React.Component {
 
               <p className="section-venue__article__copy">
                 Hotel <b>Comfachocó</b> ubicado en la ciudad de Quibdó a solo 5 minutos del aeropuerto el Caraño de la ciudad de Quibdó.
-                     <b>Cl. 24 #231, Quibdó, Chocó </b>
+                     <b>a 23-183,, Cl. 24 #231, Quibdó, Chocó</b>
               </p>
           </article>
         </section>
