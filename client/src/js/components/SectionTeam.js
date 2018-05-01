@@ -5,6 +5,7 @@ import member_2 from '../../images/member_2.jpeg';
 import member_3 from '../../images/member_3.jpeg';
 import member_4 from '../../images/member_4.jpeg';
 import member_5 from '../../images/member_5.jpg';
+import member_6 from '../../images/member_6.jpg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -56,6 +57,15 @@ class SectionTeam extends React.Component {
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
               Founder of <a href="http://www.hackdo.co/">@H4ckdo</a>  + <a href="https://twitter.com/QuibdoJs">@Quibdojs</a> Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor
+            </p>
+          )
+        },
+        {
+          title: `Luis Fernando Moreno`,
+          image: `${member_6}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              #Researcher | #Engineer | #SoftwareDeveloper | #Teacher | <a href="http://fdomoreno.co/" target="_blank">fdomoreno.com</a>
             </p>
           )
         }

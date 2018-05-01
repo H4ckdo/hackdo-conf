@@ -37,7 +37,7 @@ var SectionVenue = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var mapElement = document.getElementById('venue-map');
-      mapElement.innerHTML = '\n      <iframe\n      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.178073462174!2d-76.66347725008087!3d5.687387995857421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e488f6da62de11d%3A0xb545d85aecc1e7a0!2sComfachoco!5e0!3m2!1ses-419!2sco!4v1525045034031"\n      frameborder="0" style="border:0" allowfullscreen></iframe>\n    ';
+      mapElement.innerHTML = '\n      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31761.510198575405!2d-76.63861136336621!3d5.685837071151528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4759686a7b2d74b0!2sCentro+Recreacional+Comfachoco!5e0!3m2!1ses-419!2sco!4v1525134914422" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>\n    ';
     }
   }, {
     key: 'render',
@@ -71,7 +71,7 @@ var SectionVenue = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                ' Calle. 23 #5-1, Quibd\xF3, Choc\xF3'
+                'a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
               )
             )
           )

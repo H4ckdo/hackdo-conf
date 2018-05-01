@@ -40,6 +40,10 @@ var _member_9 = require('../../images/member_5.jpg');
 
 var _member_10 = _interopRequireDefault(_member_9);
 
+var _member_11 = require('../../images/member_6.jpg');
+
+var _member_12 = _interopRequireDefault(_member_11);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -128,6 +132,19 @@ var SectionTeam = function (_React$Component) {
             '@Quibdojs'
           ),
           ' Javascript full stack developer. I write about programming, art, Traditional Animation and Watercolor'
+        )
+      }, {
+        title: 'Luis Fernando Moreno',
+        image: '' + _member_12.default,
+        copy: React.createElement(
+          'p',
+          { className: 'section-team__article__members__wrap-items__copy' },
+          '#Researcher | #Engineer | #SoftwareDeveloper | #Teacher | ',
+          React.createElement(
+            'a',
+            { href: 'http://fdomoreno.co/', target: '_blank' },
+            'fdomoreno.com'
+          )
         )
       }]
     };

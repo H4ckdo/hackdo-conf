@@ -64,38 +64,6 @@ var _gallery_19 = require('../../images/gallery_10.jpg');
 
 var _gallery_20 = _interopRequireDefault(_gallery_19);
 
-var _gallery_21 = require('../../images/gallery_11.jpg');
-
-var _gallery_22 = _interopRequireDefault(_gallery_21);
-
-var _gallery_23 = require('../../images/gallery_12.jpg');
-
-var _gallery_24 = _interopRequireDefault(_gallery_23);
-
-var _gallery_25 = require('../../images/gallery_13.jpg');
-
-var _gallery_26 = _interopRequireDefault(_gallery_25);
-
-var _gallery_27 = require('../../images/gallery_14.jpg');
-
-var _gallery_28 = _interopRequireDefault(_gallery_27);
-
-var _gallery_29 = require('../../images/gallery_15.jpg');
-
-var _gallery_30 = _interopRequireDefault(_gallery_29);
-
-var _gallery_31 = require('../../images/gallery_16.jpg');
-
-var _gallery_32 = _interopRequireDefault(_gallery_31);
-
-var _gallery_33 = require('../../images/gallery_17.jpg');
-
-var _gallery_34 = _interopRequireDefault(_gallery_33);
-
-var _gallery_35 = require('../../images/gallery_18.jpg');
-
-var _gallery_36 = _interopRequireDefault(_gallery_35);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -137,15 +105,7 @@ var Gallery = function (_React$Component) {
         React.createElement('img', { src: '' + _gallery_14.default }),
         React.createElement('img', { src: '' + _gallery_16.default }),
         React.createElement('img', { src: '' + _gallery_18.default }),
-        React.createElement('img', { src: '' + _gallery_20.default }),
-        React.createElement('img', { src: '' + _gallery_22.default }),
-        React.createElement('img', { src: '' + _gallery_24.default }),
-        React.createElement('img', { src: '' + _gallery_26.default }),
-        React.createElement('img', { src: '' + _gallery_28.default }),
-        React.createElement('img', { src: '' + _gallery_30.default }),
-        React.createElement('img', { src: '' + _gallery_32.default }),
-        React.createElement('img', { src: '' + _gallery_34.default }),
-        React.createElement('img', { src: '' + _gallery_36.default })
+        React.createElement('img', { src: '' + _gallery_20.default })
       );
     }
   }]);
