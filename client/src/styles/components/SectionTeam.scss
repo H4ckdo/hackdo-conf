@@ -105,7 +105,24 @@
 
 @media (max-width: $medium-l) {
   .section-team__article__members__wrap-items {
-    grid-gap: 5px !important;
+    grid-gap: 0px !important;
+  }
+  .section-team__article {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .section-team__article__title {
+    padding-left: 10px !important;
+    .lower-bar {
+      margin-left: 10px;
+    }
+  }
+  .section-team__article__copy {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+    bottom: 15px;
+    position: relative;
   }
   .section-team__article__members__wrap-items__image {
     width: 100px !important;
