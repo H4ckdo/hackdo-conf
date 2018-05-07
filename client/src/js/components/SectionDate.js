@@ -6,12 +6,18 @@ class SectionDate extends React.Component {
   constructor() {
     super();
   }
+
+  goToRegister() {
+    window.open("https://goo.gl/forms/BPEVsVOTguclB2yn1");
+  }
+
   render() {
     return (
       <div className="background-section">
        <div className="background-section__date ">
         <span className="do-title appear ">
             JUNIO 9 y 10
+            <button onClick={this.goToRegister.bind(this)} className="background-section__date-btn-register">Inscribirse</button>
             {/*<div className="lower-bar"></div>*/}
         </span>
         {

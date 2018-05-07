@@ -48,7 +48,6 @@ var SectionVenue = function (_React$Component) {
         React.createElement(
           'section',
           { className: 'section-venue' },
-          React.createElement('article', { className: 'section-venue__article wrap-venue-map', id: 'venue-map' }),
           React.createElement(
             'article',
             { className: 'section-venue__article' },
@@ -74,7 +73,8 @@ var SectionVenue = function (_React$Component) {
                 'a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
               )
             )
-          )
+          ),
+          React.createElement('article', { className: 'section-venue__article wrap-venue-map', id: 'venue-map' })
         )
       );
     }

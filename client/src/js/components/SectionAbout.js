@@ -12,10 +12,6 @@ class SectionAbout extends React.Component {
     return (
       <div className="wrap-about">
         <section className="section-about">
-          <article className="section-about__gallery">
-            <Gallery />
-          </article>
-
           <article className="section-about__article">
               <h1 className="section-about__article__title">
                 Acerca del evento
@@ -29,6 +25,10 @@ class SectionAbout extends React.Component {
                 Más de 2 años impactando el ecosistema de base tecnológica del Chocó,
                 llegando a más de <b>200 personas</b> con <b>22 charlas</b> impartidas, <b>17 talleres sobre 4 lenguajes de programacióna</b> además de charlas sobre el internet de las cosas y <b>programación de hardware</b>.
               </p>
+          </article>
+
+          <article className="section-about__gallery">
+            <Gallery />
           </article>
         </section>
        </div>

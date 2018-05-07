@@ -6755,11 +6755,6 @@ var SectionAbout = function (_React$Component) {
           { className: 'section-about' },
           React.createElement(
             'article',
-            { className: 'section-about__gallery' },
-            React.createElement(Gallery, null)
-          ),
-          React.createElement(
-            'article',
             { className: 'section-about__article' },
             React.createElement(
               'h1',
@@ -6822,6 +6817,11 @@ var SectionAbout = function (_React$Component) {
               ),
               '.'
             )
+          ),
+          React.createElement(
+            'article',
+            { className: 'section-about__gallery' },
+            React.createElement(Gallery, null)
           )
         )
       );
@@ -7101,7 +7101,12 @@ var SectionDate = function (_React$Component) {
           React.createElement(
             'span',
             { className: 'do-title appear ' },
-            'JUNIO 9 y 10'
+            'JUNIO 9 y 10',
+            React.createElement(
+              'button',
+              { className: 'background-section__date-btn-register' },
+              'Inscribirse'
+            )
           )
         )
       );
@@ -7855,7 +7860,6 @@ var SectionVenue = function (_React$Component) {
         React.createElement(
           'section',
           { className: 'section-venue' },
-          React.createElement('article', { className: 'section-venue__article wrap-venue-map', id: 'venue-map' }),
           React.createElement(
             'article',
             { className: 'section-venue__article' },
@@ -7881,7 +7885,8 @@ var SectionVenue = function (_React$Component) {
                 'a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
               )
             )
-          )
+          ),
+          React.createElement('article', { className: 'section-venue__article wrap-venue-map', id: 'venue-map' })
         )
       );
     }

@@ -49,11 +49,6 @@ var SectionAbout = function (_React$Component) {
           { className: 'section-about' },
           React.createElement(
             'article',
-            { className: 'section-about__gallery' },
-            React.createElement(Gallery, null)
-          ),
-          React.createElement(
-            'article',
             { className: 'section-about__article' },
             React.createElement(
               'h1',
@@ -116,6 +111,11 @@ var SectionAbout = function (_React$Component) {
               ),
               '.'
             )
+          ),
+          React.createElement(
+            'article',
+            { className: 'section-about__gallery' },
+            React.createElement(Gallery, null)
           )
         )
       );

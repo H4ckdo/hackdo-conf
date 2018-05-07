@@ -37,6 +37,11 @@ var SectionDate = function (_React$Component) {
   }
 
   (0, _createClass3.default)(SectionDate, [{
+    key: 'goToRegister',
+    value: function goToRegister() {
+      window.open("https://goo.gl/forms/BPEVsVOTguclB2yn1");
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -48,7 +53,12 @@ var SectionDate = function (_React$Component) {
           React.createElement(
             'span',
             { className: 'do-title appear ' },
-            'JUNIO 9 y 10'
+            'JUNIO 9 y 10',
+            React.createElement(
+              'button',
+              { onClick: this.goToRegister.bind(this), className: 'background-section__date-btn-register' },
+              'Inscribirse'
+            )
           )
         )
       );

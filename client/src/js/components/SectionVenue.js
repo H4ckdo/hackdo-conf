@@ -17,8 +17,6 @@ class SectionVenue extends React.Component {
     return (
       <div className="wrap-venue">
         <section className="section-venue">
-          <article className="section-venue__article wrap-venue-map" id="venue-map"></article>
-
           <article className="section-venue__article">
               <h1 className="section-venue__article__title">
                 Lugar de encuentro
@@ -30,6 +28,8 @@ class SectionVenue extends React.Component {
                      <b>a 23-183,, Cl. 24 #231, Quibdó, Chocó</b>
               </p>
           </article>
+
+          <article className="section-venue__article wrap-venue-map" id="venue-map"></article>
         </section>
        </div>
     )
