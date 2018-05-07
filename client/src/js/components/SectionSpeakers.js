@@ -98,7 +98,7 @@ class SectionSpeakers extends React.Component {
             <div className="lower-bar"></div>
         </h1>
          <article className="section-speakers__content">
-            <p className="section-speakers__content__copy">Envia tu propuesta de conferencia <span className="btn-speaker" onClick={ this.proposal.bind(this) }>Aqui</span></p>
+            <p className="section-speakers__content__copy">Envía tu propuesta de conferencia <span className="btn-speaker" onClick={ this.proposal.bind(this) }>Aqui</span></p>
             <ol className="section-speakers__content__list">
               {
                 speakers.map(({name, image, link, nickname, bio}, index) => {

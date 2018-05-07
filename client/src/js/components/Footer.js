@@ -14,7 +14,7 @@ class Footer extends React.Component {
            Contacto
           </h2>
           <p className="footer-container__contact__copy">
-            Siguenos en la redes sociales
+            Síguenos en la redes sociales
              <span className="footer-container__contact__copy__ol__item">
               <a href="https://www.facebook.com/groups/1462262297359495/" target="_blank">
                 <img src="/assets/images/fb-icon.png"/>

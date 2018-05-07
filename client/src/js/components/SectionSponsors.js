@@ -29,8 +29,8 @@ class SectionSponsors extends React.Component {
                 <div className="lower-bar"></div>
               </h1>
               <p className="section-sponsors__article__copy">
-                 Gracias a estos patrocinadores la <b>Hackdó conf</b> es posible, ayudanos y conviértete en un patrocinador tu tambien
-                 <button className="section-sponsors__article__copy__join" onClick={this.join.bind()}>Unirse</button>
+                Gracias a estos patrocinadores la <b>Hackdó Conf</b> es posible, ayúdanos y conviértete en un patrocinador tu también
+                <button className="section-sponsors__article__copy__join" onClick={this.join.bind()}>Unirse</button>
               </p>
           </article>
           <article className="section-sponsors__article__list">
