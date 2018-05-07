@@ -15,7 +15,8 @@ class SectionSponsors extends React.Component {
   }
 
   join() {
-    window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+    //window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+    window.open("https://goo.gl/forms/fABJGuh1bqm3Ua5g2");
   }
 
   render() {

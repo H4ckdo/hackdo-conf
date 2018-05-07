@@ -84,7 +84,8 @@ class SectionSpeakers extends React.Component {
   }
 
   proposal() {
-    window.location.href = "https://goo.gl/forms/60LHY4IjvvTDyumH2";
+    //window.location.href = "https://goo.gl/forms/60LHY4IjvvTDyumH2";
+    window.open("https://goo.gl/forms/60LHY4IjvvTDyumH2");
   }
 
   render() {
