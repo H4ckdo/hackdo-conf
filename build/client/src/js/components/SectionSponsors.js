@@ -48,6 +48,10 @@ var _sponsor_13 = require('../../images/sponsor_7.png');
 
 var _sponsor_14 = _interopRequireDefault(_sponsor_13);
 
+var _sponsor_15 = require('../../images/sponsor_8.jpg');
+
+var _sponsor_16 = _interopRequireDefault(_sponsor_15);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -137,6 +141,15 @@ var SectionSponsors = function (_React$Component) {
                   'a',
                   { href: 'https://s4n.co/', target: '_blank' },
                   React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_6.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__gold__item' },
+                React.createElement(
+                  'a',
+                  { href: 'http://www.comfachoco.com.co/', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_16.default })
                 )
               ),
               React.createElement(
