@@ -20,13 +20,13 @@ const bootstrap = async () => {
     app.engine('html', require('ejs').renderFile);
     app.set('view engine', 'html');
     app.set('views', path.resolve(__dirname, '../views'));
-      let routesLoades = await routes(app);//define routes
-      //debugger;
-      if (routesLoades.ok) {
-          app.listen(PORT, () => console.log("App listen on: ", `${HOST}:${PORT}`))//lift the server
-      } else {
-        errorStarting(routesLoades.error);//log the error
-      }
+    let routesLoades = await routes(app);//define routes
+    //debugger;
+    if (routesLoades.ok) {
+      app.listen(PORT, () => console.log("App listen on: ", `${HOST}:${PORT}`))//lift the server
+    } else {
+      errorStarting(routesLoades.error);//log the error
+    }
   } else {
     errorStarting(middlewaresResult.error);//log the error
   }

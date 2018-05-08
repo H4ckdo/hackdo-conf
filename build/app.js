@@ -34,26 +34,23 @@ var _require2 = require('../utils/index.js'),
 
 var bootstrap = function () {
   var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-    var routes, connection, middlewares, fixtures, compression, app, middlewaresResult, connectionResult, fixturesResult, routesLoades;
+    var routes, middlewares, app, middlewaresResult, routesLoades;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             require('../config/logger.js');
             routes = require('../config/routes.js');
-            connection = require('../config/connection.js');
             middlewares = require('../config/middlewares/index.js');
-            fixtures = require('../config/fixtures.js');
-            compression = require('compression');
             app = express();
-            _context.next = 9;
+            _context.next = 6;
             return middlewares(app);
 
-          case 9:
+          case 6:
             middlewaresResult = _context.sent;
 
             if (!middlewaresResult.ok) {
-              _context.next = 33;
+              _context.next = 18;
               break;
             }
 
@@ -61,41 +58,10 @@ var bootstrap = function () {
             app.engine('html', require('ejs').renderFile);
             app.set('view engine', 'html');
             app.set('views', path.resolve(__dirname, '../views'));
-            connectionResult = { ok: true //await connection();//start db connection
-            };
-
-            if (!connectionResult.ok) {
-              _context.next = 30;
-              break;
-            }
-
-            if (! /*FIXTURES*/false) {
-              _context.next = 24;
-              break;
-            }
-
-            _context.next = 20;
-            return installFixtures(fixtures, connectionResult.result);
-
-          case 20:
-            fixturesResult = _context.sent;
-
-            if (!(fixturesResult.ok === false)) {
-              _context.next = 23;
-              break;
-            }
-
-            return _context.abrupt('return', errorStarting(fixturesResult.error));
-
-          case 23:
-            //log the error
-            console.log(fixturesResult.result);
-
-          case 24:
-            _context.next = 26;
+            _context.next = 14;
             return routes(app);
 
-          case 26:
+          case 14:
             routesLoades = _context.sent;
             //define routes
             //debugger;
@@ -106,21 +72,13 @@ var bootstrap = function () {
             } else {
               errorStarting(routesLoades.error); //log the error
             }
-            _context.next = 31;
+            _context.next = 19;
             break;
 
-          case 30:
-            //debugger;
-            errorStarting(connectionResult.error); //log the error
-
-          case 31:
-            _context.next = 34;
-            break;
-
-          case 33:
+          case 18:
             errorStarting(middlewaresResult.error); //log the error
 
-          case 34:
+          case 19:
           case 'end':
             return _context.stop();
         }
