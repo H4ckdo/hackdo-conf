@@ -29,7 +29,7 @@ class SectionTeam extends React.Component {
             <p className="section-team__article__members__wrap-items__copy">
               <b>DEVELOPER POR PASION</b>
               <br/>
-              Maker, Emprendedor, Programador en startup <a href="http://medpike.com/" target="_blank">Medpike.com</a>. Ganador Medellin te reta 2014. Miembro de la Comunidad Quibdojs, fundador Chocó-libre, desarrollador web
+              #Researcher | #Engineer | #SoftwareDeveloper | #HackerPorPasion
             </p>
           )
         },
