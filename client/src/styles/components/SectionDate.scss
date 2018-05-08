@@ -50,7 +50,7 @@
 
 .wrap-btn-register {
   position: absolute;
-  bottom: 0px;
+  bottom: 80px;
   left: calc(50% - 125px);
 }
 
@@ -86,7 +86,7 @@
         grid-template-columns: 0.1fr 1fr 0.1fr;
     }
     .wrap-btn-register {
-      bottom: -100px;
+      bottom: -50px;
     }
     .background-section__date  {
         grid-template-columns: 0.1fr 1fr 0.1fr;
