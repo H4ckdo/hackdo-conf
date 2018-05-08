@@ -36,7 +36,7 @@ var _sponsor_7 = require('../../images/sponsor_4.jpg');
 
 var _sponsor_8 = _interopRequireDefault(_sponsor_7);
 
-var _sponsor_9 = require('../../images/sponsor_5.jpg');
+var _sponsor_9 = require('../../images/sponsor_5.png');
 
 var _sponsor_10 = _interopRequireDefault(_sponsor_9);
 

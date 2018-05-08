@@ -4,7 +4,7 @@ import Sponsor1 from '../../images/sponsor_1.jpg';
 import Sponsor2 from '../../images/sponsor_2.jpg';
 import Sponsor3 from '../../images/sponsor_3.png';
 import Sponsor4 from '../../images/sponsor_4.jpg';
-import Sponsor5 from '../../images/sponsor_5.jpg';
+import Sponsor5 from '../../images/sponsor_5.png';
 import Sponsor6 from '../../images/sponsor_6.jpg';
 import Sponsor7 from '../../images/sponsor_7.png';
 import Sponsor8 from '../../images/sponsor_8.jpg';

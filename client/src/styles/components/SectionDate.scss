@@ -49,9 +49,8 @@
 }
 
 .wrap-btn-register {
-  position: absolute;
-  bottom: 80px;
-  left: calc(50% - 125px);
+    position: relative;
+    bottom: 240px;
 }
 
 .btn-register {
@@ -81,12 +80,16 @@
     background: white;
 }
 
+
+@media (max-width: 1106px) {
+  .wrap-btn-register {
+    bottom: 135px;
+  }
+}
+
 @media (max-width: $medium) {
     .background-section {
         grid-template-columns: 0.1fr 1fr 0.1fr;
-    }
-    .wrap-btn-register {
-      bottom: -50px;
     }
     .background-section__date  {
         grid-template-columns: 0.1fr 1fr 0.1fr;
@@ -100,7 +103,7 @@
 
 @media (max-width: $medium-l) {
   .wrap-btn-register {
-    bottom: 0px;
+    padding-top: 18px;
   }
   .background-section__date  {
         grid-template-columns: 1fr !important;
