@@ -3330,7 +3330,7 @@ var Footer = function (_React$Component) {
           React.createElement(
             'p',
             { className: 'footer-container__contact__copy' },
-            'Siguenos en la redes sociales',
+            'S\xEDguenos en la redes sociales',
             React.createElement(
               'span',
               { className: 'footer-container__contact__copy__ol__item' },
@@ -6807,9 +6807,9 @@ var SectionAbout = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                '17 talleres sobre 4 lenguajes de programaci\xF3na'
+                '17 talleres sobre 4 lenguajes de programaci\xF3n'
               ),
-              ' adem\xE1s de charlas sobre el internet de las cosas y ',
+              ' adem\xE1s de charlas sobre el Internet de las cosas y ',
               React.createElement(
                 'b',
                 null,
@@ -7106,12 +7106,16 @@ var SectionDate = function (_React$Component) {
           React.createElement(
             'span',
             { className: 'do-title appear ' },
-            'JUNIO 9 y 10',
-            React.createElement(
-              'button',
-              { onClick: this.goToRegister.bind(this), className: 'background-section__date-btn-register' },
-              'Inscribirse'
-            )
+            'JUNIO 8, 9 y 10'
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'wrap-btn-register' },
+          React.createElement(
+            'button',
+            { onClick: this.goToRegister.bind(this), className: 'btn-register' },
+            'Inscribirse'
           )
         )
       );
@@ -7323,7 +7327,8 @@ var SectionSpeakers = function (_React$Component) {
   (0, _createClass3.default)(SectionSpeakers, [{
     key: 'proposal',
     value: function proposal() {
-      window.location.href = "https://goo.gl/forms/60LHY4IjvvTDyumH2";
+      //window.location.href = "https://goo.gl/forms/60LHY4IjvvTDyumH2";
+      window.open("https://goo.gl/forms/60LHY4IjvvTDyumH2");
     }
   }, {
     key: 'render',
@@ -7348,7 +7353,7 @@ var SectionSpeakers = function (_React$Component) {
             React.createElement(
               'p',
               { className: 'section-speakers__content__copy' },
-              'Envia tu propuesta de conferencia ',
+              'Env\xEDa tu propuesta de conferencia ',
               React.createElement(
                 'span',
                 { className: 'btn-speaker', onClick: this.proposal.bind(this) },
@@ -7468,7 +7473,8 @@ var SectionSponsors = function (_React$Component) {
   (0, _createClass3.default)(SectionSponsors, [{
     key: 'join',
     value: function join() {
-      window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+      //window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+      window.open("https://goo.gl/forms/fABJGuh1bqm3Ua5g2");
     }
   }, {
     key: 'render',
@@ -7495,9 +7501,9 @@ var SectionSponsors = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                'Hackd\xF3 conf'
+                'Hackd\xF3 Conf'
               ),
-              ' es posible, ayudanos y convi\xE9rtete en un patrocinador tu tambien',
+              ' es posible, ay\xFAdanos y convi\xE9rtete en un patrocinador tu tambi\xE9n',
               React.createElement(
                 'button',
                 { className: 'section-sponsors__article__copy__join', onClick: this.join.bind() },
@@ -7548,7 +7554,7 @@ var SectionSponsors = function (_React$Component) {
                 { className: 'section-sponsors__article__list__gold__item' },
                 React.createElement(
                   'a',
-                  { href: 'http://www.comfachoco.com.co/', target: '_blank' },
+                  { href: '#', target: '_blank' },
                   React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_16.default })
                 )
               ),
@@ -7704,13 +7710,7 @@ var SectionTeam = function (_React$Component) {
             'DEVELOPER POR PASION'
           ),
           React.createElement('br', null),
-          'Maker, Emprendedor, Programador en startup ',
-          React.createElement(
-            'a',
-            { href: 'http://medpike.com/', target: '_blank' },
-            'Medpike.com'
-          ),
-          '. Ganador Medellin te reta 2014. Miembro de la Comunidad Quibdojs, fundador Choc\xF3-libre, desarrollador web'
+          '#Researcher | #Engineer | #SoftwareDeveloper | #HackerPorPasion'
         )
       }, {
         title: 'D\xE9kar',
@@ -7900,7 +7900,7 @@ var SectionVenue = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                'a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
+                ' a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
               )
             )
           ),

@@ -53,12 +53,16 @@ var SectionDate = function (_React$Component) {
           React.createElement(
             'span',
             { className: 'do-title appear ' },
-            'JUNIO 9 y 10',
-            React.createElement(
-              'button',
-              { onClick: this.goToRegister.bind(this), className: 'background-section__date-btn-register' },
-              'Inscribirse'
-            )
+            'JUNIO 8, 9 y 10'
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'wrap-btn-register' },
+          React.createElement(
+            'button',
+            { onClick: this.goToRegister.bind(this), className: 'btn-register' },
+            'Inscribirse'
           )
         )
       );

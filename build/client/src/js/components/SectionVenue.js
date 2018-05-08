@@ -70,7 +70,7 @@ var SectionVenue = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                'a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
+                ' a 23-183,, Cl. 24 #231, Quibd\xF3, Choc\xF3'
               )
             )
           ),

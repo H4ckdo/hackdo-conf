@@ -54,7 +54,7 @@ var Footer = function (_React$Component) {
           React.createElement(
             'p',
             { className: 'footer-container__contact__copy' },
-            'Siguenos en la redes sociales',
+            'S\xEDguenos en la redes sociales',
             React.createElement(
               'span',
               { className: 'footer-container__contact__copy__ol__item' },

@@ -68,7 +68,8 @@ var SectionSponsors = function (_React$Component) {
   (0, _createClass3.default)(SectionSponsors, [{
     key: 'join',
     value: function join() {
-      window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+      //window.location.href = 'https://goo.gl/forms/fABJGuh1bqm3Ua5g2';
+      window.open("https://goo.gl/forms/fABJGuh1bqm3Ua5g2");
     }
   }, {
     key: 'render',
@@ -95,9 +96,9 @@ var SectionSponsors = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                'Hackd\xF3 conf'
+                'Hackd\xF3 Conf'
               ),
-              ' es posible, ayudanos y convi\xE9rtete en un patrocinador tu tambien',
+              ' es posible, ay\xFAdanos y convi\xE9rtete en un patrocinador tu tambi\xE9n',
               React.createElement(
                 'button',
                 { className: 'section-sponsors__article__copy__join', onClick: this.join.bind() },
@@ -148,7 +149,7 @@ var SectionSponsors = function (_React$Component) {
                 { className: 'section-sponsors__article__list__gold__item' },
                 React.createElement(
                   'a',
-                  { href: 'http://www.comfachoco.com.co/', target: '_blank' },
+                  { href: '#', target: '_blank' },
                   React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_16.default })
                 )
               ),

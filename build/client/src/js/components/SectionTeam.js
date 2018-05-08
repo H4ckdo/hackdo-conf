@@ -89,13 +89,7 @@ var SectionTeam = function (_React$Component) {
             'DEVELOPER POR PASION'
           ),
           React.createElement('br', null),
-          'Maker, Emprendedor, Programador en startup ',
-          React.createElement(
-            'a',
-            { href: 'http://medpike.com/', target: '_blank' },
-            'Medpike.com'
-          ),
-          '. Ganador Medellin te reta 2014. Miembro de la Comunidad Quibdojs, fundador Choc\xF3-libre, desarrollador web'
+          '#Researcher | #Engineer | #SoftwareDeveloper | #HackerPorPasion'
         )
       }, {
         title: 'D\xE9kar',

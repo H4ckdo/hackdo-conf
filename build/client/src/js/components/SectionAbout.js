@@ -101,9 +101,9 @@ var SectionAbout = function (_React$Component) {
               React.createElement(
                 'b',
                 null,
-                '17 talleres sobre 4 lenguajes de programaci\xF3na'
+                '17 talleres sobre 4 lenguajes de programaci\xF3n'
               ),
-              ' adem\xE1s de charlas sobre el internet de las cosas y ',
+              ' adem\xE1s de charlas sobre el Internet de las cosas y ',
               React.createElement(
                 'b',
                 null,

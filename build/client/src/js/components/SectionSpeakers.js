@@ -194,7 +194,8 @@ var SectionSpeakers = function (_React$Component) {
   (0, _createClass3.default)(SectionSpeakers, [{
     key: 'proposal',
     value: function proposal() {
-      window.location.href = "https://goo.gl/forms/60LHY4IjvvTDyumH2";
+      //window.location.href = "https://goo.gl/forms/60LHY4IjvvTDyumH2";
+      window.open("https://goo.gl/forms/60LHY4IjvvTDyumH2");
     }
   }, {
     key: 'render',
@@ -219,7 +220,7 @@ var SectionSpeakers = function (_React$Component) {
             React.createElement(
               'p',
               { className: 'section-speakers__content__copy' },
-              'Envia tu propuesta de conferencia ',
+              'Env\xEDa tu propuesta de conferencia ',
               React.createElement(
                 'span',
                 { className: 'btn-speaker', onClick: this.proposal.bind(this) },
