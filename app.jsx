@@ -12,10 +12,7 @@ const { installFixtures } = require('utils/index.js');
 const bootstrap = async () => {
   require('config/logger.js');
   const routes = require('config/routes.js');
-  const connection = require('config/connection.js');
   const middlewares = require('config/middlewares/index.js');
-  const fixtures = require('config/fixtures.js');
-  const compression = require('compression');
   let app = express();
   let middlewaresResult = await middlewares(app);
   if(middlewaresResult.ok) {
@@ -23,15 +20,6 @@ const bootstrap = async () => {
     app.engine('html', require('ejs').renderFile);
     app.set('view engine', 'html');
     app.set('views', path.resolve(__dirname, '../views'));
-    let connectionResult = {ok: true}//await connection();//start db connection
-    if (connectionResult.ok) {
-      //debugger;
-      if (/*FIXTURES*/ false) {
-        let fixturesResult = await installFixtures(fixtures, connectionResult.result);
-        //debugger;
-        if (fixturesResult.ok === false) return errorStarting(fixturesResult.error);//log the error
-        console.log(fixturesResult.result);
-      }
       let routesLoades = await routes(app);//define routes
       //debugger;
       if (routesLoades.ok) {
@@ -39,10 +27,6 @@ const bootstrap = async () => {
       } else {
         errorStarting(routesLoades.error);//log the error
       }
-    } else {
-      //debugger;
-      errorStarting(connectionResult.error);//log the error
-    }
   } else {
     errorStarting(middlewaresResult.error);//log the error
   }

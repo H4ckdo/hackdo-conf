@@ -1,19 +1,8 @@
-const bodyParser = require('body-parser');
-const uploadFiles = require('./uploadFiles.js');
-const expressSanitized = require('express-sanitized');
-const mongoSanitize = require('express-mongo-sanitize');
-const graphql = require('./graphql/index.js');
 const logger = require('morgan');
 const compression = require('compression');
 
 let middlewares = [
   () => logger('combined'),//logger middleware
-  () => bodyParser.json(),
-  () => bodyParser.urlencoded({ extended: true }),
-  () => expressSanitized(),
-  () => mongoSanitize(),
-  uploadFiles,
-  graphql,
   () => compression(),
 ]
 
