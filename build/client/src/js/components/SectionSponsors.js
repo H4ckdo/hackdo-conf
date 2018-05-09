@@ -36,7 +36,7 @@ var _sponsor_7 = require('../../images/sponsor_4.jpg');
 
 var _sponsor_8 = _interopRequireDefault(_sponsor_7);
 
-var _sponsor_9 = require('../../images/sponsor_5.png');
+var _sponsor_9 = require('../../images/sponsor_5.jpg');
 
 var _sponsor_10 = _interopRequireDefault(_sponsor_9);
 
@@ -51,6 +51,14 @@ var _sponsor_14 = _interopRequireDefault(_sponsor_13);
 var _sponsor_15 = require('../../images/sponsor_8.jpg');
 
 var _sponsor_16 = _interopRequireDefault(_sponsor_15);
+
+var _sponsor_17 = require('../../images/sponsor_9.jpg');
+
+var _sponsor_18 = _interopRequireDefault(_sponsor_17);
+
+var _sponsor_19 = require('../../images/sponsor_10.jpg');
+
+var _sponsor_20 = _interopRequireDefault(_sponsor_19);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -169,6 +177,24 @@ var SectionSponsors = function (_React$Component) {
                   'a',
                   { href: 'https://twitter.com/colombia_dev', target: '_blank' },
                   React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_12.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__gold__item' },
+                React.createElement(
+                  'a',
+                  { href: 'http://www.comfachoco.com.co/', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_18.default })
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-sponsors__article__list__gold__item' },
+                React.createElement(
+                  'a',
+                  { href: 'http://www.comfachoco.com.co/', target: '_blank' },
+                  React.createElement('img', { className: 'section-sponsors__article__list__gold__img', src: '' + _sponsor_20.default })
                 )
               )
             ),
