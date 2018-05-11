@@ -234,7 +234,7 @@ var SectionSpeakers = function (_React$Component) {
           )
         ),
         link: '',
-        nickname: '@agar3s'
+        nickname: ''
       },
       /*
       {
@@ -242,11 +242,10 @@ var SectionSpeakers = function (_React$Component) {
         name: 'Juan David Castillo Betancur',
         bio: (
           <p className="section-speakers__content__list__item__copy">
-            
-          </p>
+           </p>
         ),
         link: '',
-        nickname: '@agar3s'                    
+        nickname: '@agar3s'
       },
       */
       {
@@ -271,11 +270,10 @@ var SectionSpeakers = function (_React$Component) {
         name: 'Juan Pablo Correa Rendón',
         bio: (
           <p className="section-speakers__content__list__item__copy">
-            
-          </p>
+           </p>
         ),
         link: '',
-        nickname: '@agar3s'                                        
+        nickname: '@agar3s'
       },
       */
       {
@@ -284,10 +282,10 @@ var SectionSpeakers = function (_React$Component) {
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
-          'Ingeniera de desarrollo en Seven4N'
+          'Dise\xF1adora Gr\xE1fica, Corporaci\xF3n Escuela de Artes y Letras Ingeniera de desarrollo en Seven4N'
         ),
         link: '',
-        nickname: '@agar3s'
+        nickname: ''
       }, {
         image: _speaker_20.default,
         name: 'Rafael Socarras',
@@ -328,7 +326,7 @@ var SectionSpeakers = function (_React$Component) {
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
-          'Master\'s Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks. passionate about statistical learning and an aspirant to become a fullstack Javascript developer\uD83D\uDC7D'
+          'Master\'s Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks. passionate about statistical learning and an aspirant to become a fullstack Javascript developer'
         ),
         link: 'https://twitter.com/jarlinton_zea',
         nickname: '@jarlinton_zea'

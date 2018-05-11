@@ -94,7 +94,7 @@ class SectionSpeakers extends React.Component {
             </p>
           ),
           link: '',
-          nickname: '@agar3s'          
+          nickname: ''
         },
         /*
         {
@@ -102,11 +102,11 @@ class SectionSpeakers extends React.Component {
           name: 'Juan David Castillo Betancur',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              
+
             </p>
           ),
           link: '',
-          nickname: '@agar3s'                    
+          nickname: '@agar3s'
         },
         */
         {
@@ -118,7 +118,7 @@ class SectionSpeakers extends React.Component {
             </p>
           ),
           link: 'https://twitter.com/ykiriki?lang=es',
-          nickname: '@ykiriki'                              
+          nickname: '@ykiriki'
         },
         /*
         {
@@ -126,11 +126,11 @@ class SectionSpeakers extends React.Component {
           name: 'Juan Pablo Correa Rendón',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              
+
             </p>
           ),
           link: '',
-          nickname: '@agar3s'                                        
+          nickname: '@agar3s'
         },
         */
         {
@@ -138,11 +138,12 @@ class SectionSpeakers extends React.Component {
           name: 'Laura Camacho Vásquez',
           bio: (
             <p className="section-speakers__content__list__item__copy">
+              Diseñadora Gráfica, Corporación Escuela de Artes y Letras
               Ingeniera de desarrollo en Seven4N
             </p>
           ),
           link: '',
-          nickname: '@agar3s'                                                  
+          nickname: ''
         },
         {
           image: Speaker10,
@@ -153,43 +154,43 @@ class SectionSpeakers extends React.Component {
             </p>
           ),
           link: 'https://twitter.com/rafaelsocarras',
-          nickname: '@rafaelsocarras'                                                            
+          nickname: '@rafaelsocarras'
         },
         {
           image: Speaker11,
           name: 'Jota Rodriguez',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Founder INNOVAATICS, Do In Bits, eduBits, Docente catedratico universidad Tecnológica del Chocó Diego Luis Córdoba     
+              Founder INNOVAATICS, Do In Bits, eduBits, Docente catedratico universidad Tecnológica del Chocó Diego Luis Córdoba
               <br/>
               Funder & CEO in Dó In Bits.
             </p>
           ),
           link: 'https://doinbits.com.co/',
-          nickname: 'doinbits'                                                                      
+          nickname: 'doinbits'
         },
         {
           image: Speaker12,
           name: 'Jarlinton Moreno Zea',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Master's Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks. 
-              passionate about statistical learning and an aspirant to become a fullstack Javascript developer👽             
+              Master's Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks.
+              passionate about statistical learning and an aspirant to become a fullstack Javascript developer
             </p>
           ),
           link: 'https://twitter.com/jarlinton_zea',
-          nickname: '@jarlinton_zea'                                                                                
+          nickname: '@jarlinton_zea'
         },
         {
           image: Speaker13,
           name: 'Valeria Garcia Gonzalez',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Soy una diseñadora e ilustradora de La Guajira, Colombia. Estudié Diseño Gráfico en la Universidad Pontificia Bolivariana. 
+              Soy una diseñadora e ilustradora de La Guajira, Colombia. Estudié Diseño Gráfico en la Universidad Pontificia Bolivariana.
             </p>
           ),
           link: 'https://twitter.com/_painpony',
-          nickname: '@_painpony'                                                                                          
+          nickname: '@_painpony'
         }
       ]
     }
