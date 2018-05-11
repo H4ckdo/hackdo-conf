@@ -139,7 +139,7 @@ class SectionSpeakers extends React.Component {
           bio: (
             <p className="section-speakers__content__list__item__copy">
               Diseñadora Gráfica, Corporación Escuela de Artes y Letras.
-              Ingeniera de desarrollo en Seven4N
+              Ingeniera de desarrollo en <b>Seven4N</b>
             </p>
           ),
           link: '',
