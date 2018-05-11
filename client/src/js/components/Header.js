@@ -42,7 +42,8 @@ class Header extends React.Component {
     if(typeof window !== 'undefined') {
       let element = document.querySelector(id);
       var rect = element.getBoundingClientRect();
-      this.scrollBy(element.offsetTop - 143, 1000);
+      //this.scrollBy(element.offsetTop - 143, 1000);
+      window.scrollTo(0, element.offsetTop - 143);
       this.setState({isMenuOpen: false});
     }
   }

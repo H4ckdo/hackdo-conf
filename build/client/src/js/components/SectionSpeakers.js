@@ -48,6 +48,34 @@ var _speaker_11 = require('../../images/speaker_6.jpg');
 
 var _speaker_12 = _interopRequireDefault(_speaker_11);
 
+var _speaker_13 = require('../../images/speaker_7.jpg');
+
+var _speaker_14 = _interopRequireDefault(_speaker_13);
+
+var _speaker_15 = require('../../images/speaker_8.jpg');
+
+var _speaker_16 = _interopRequireDefault(_speaker_15);
+
+var _speaker_17 = require('../../images/speaker_9.jpg');
+
+var _speaker_18 = _interopRequireDefault(_speaker_17);
+
+var _speaker_19 = require('../../images/speaker_10.jpg');
+
+var _speaker_20 = _interopRequireDefault(_speaker_19);
+
+var _speaker_21 = require('../../images/speaker_11.jpg');
+
+var _speaker_22 = _interopRequireDefault(_speaker_21);
+
+var _speaker_23 = require('../../images/speaker_12.jpg');
+
+var _speaker_24 = _interopRequireDefault(_speaker_23);
+
+var _speaker_25 = require('../../images/speaker_13.jpg');
+
+var _speaker_26 = _interopRequireDefault(_speaker_25);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -106,7 +134,7 @@ var SectionSpeakers = function (_React$Component) {
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
-          'I\u2019m David Castillo, a Software Developer/ Systems Engineer based in Medellin, Colombia. I write code, and run the Medellin DevOps Meetup. I like to photograph stuff from time to time.'
+          'Desarrollador de Software en Medellin, Colombia. Escribo c\xF3digo y tomo fotos de vez en cuando.'
         ),
         link: 'https://twitter.com/castillobgr',
         nickname: '@castillobgr'
@@ -186,6 +214,134 @@ var SectionSpeakers = function (_React$Component) {
         ),
         link: 'https://twitter.com/agar3s',
         nickname: '@agar3s'
+      }, {
+        image: _speaker_14.default,
+        name: 'Harlen giraldo ortega',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Desarrollador de front-end en ',
+          React.createElement(
+            'b',
+            null,
+            'Seven4N'
+          ),
+          ', organizador de ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'http://angularmedellin.com/' },
+            'angular Medellin'
+          )
+        ),
+        link: '',
+        nickname: '@agar3s'
+      },
+      /*
+      {
+        image: Speaker6,
+        name: 'Juan David Castillo Betancur',
+        bio: (
+          <p className="section-speakers__content__list__item__copy">
+            
+          </p>
+        ),
+        link: '',
+        nickname: '@agar3s'                    
+      },
+      */
+      {
+        image: _speaker_18.default,
+        name: 'Yuji Kiriki',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Certified\u2122 Buzzword\xA9 Surfer\xAE. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://yujikiriki.github.io/' },
+            'http://yujikiriki.com '
+          )
+        ),
+        link: 'https://twitter.com/ykiriki?lang=es',
+        nickname: '@ykiriki'
+      },
+      /*
+      {
+        image: Speaker6,
+        name: 'Juan Pablo Correa Rendón',
+        bio: (
+          <p className="section-speakers__content__list__item__copy">
+            
+          </p>
+        ),
+        link: '',
+        nickname: '@agar3s'                                        
+      },
+      */
+      {
+        image: _speaker_16.default,
+        name: 'Laura Camacho Vásquez',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Ingeniera de desarrollo en Seven4N'
+        ),
+        link: '',
+        nickname: '@agar3s'
+      }, {
+        image: _speaker_20.default,
+        name: 'Rafael Socarras',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Co-Fundador y CTO de ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://twitter.com/MensajerosUrban' },
+            '@MensajerosUrban'
+          ),
+          ' y ',
+          React.createElement(
+            'a',
+            { href: '' },
+            '@Pleizt'
+          ),
+          ' Miembro Junta directiva Andi del Futuro, so\xF1ador, emprendedor serial, cambiando el mundo desde el emprendimiento'
+        ),
+        link: 'https://twitter.com/rafaelsocarras',
+        nickname: '@rafaelsocarras'
+      }, {
+        image: _speaker_22.default,
+        name: 'Jota Rodriguez',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Founder INNOVAATICS, Do In Bits, eduBits, Docente catedratico universidad Tecnol\xF3gica del Choc\xF3 Diego Luis C\xF3rdoba',
+          React.createElement('br', null),
+          'Funder & CEO in D\xF3 In Bits.'
+        ),
+        link: 'https://doinbits.com.co/',
+        nickname: 'doinbits'
+      }, {
+        image: _speaker_24.default,
+        name: 'Jarlinton Moreno Zea',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Master\'s Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks. passionate about statistical learning and an aspirant to become a fullstack Javascript developer\uD83D\uDC7D'
+        ),
+        link: 'https://twitter.com/jarlinton_zea',
+        nickname: '@jarlinton_zea'
+      }, {
+        image: _speaker_26.default,
+        name: 'Valeria Garcia Gonzalez',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Soy una dise\xF1adora e ilustradora de La Guajira, Colombia. Estudi\xE9 Dise\xF1o Gr\xE1fico en la Universidad Pontificia Bolivariana.'
+        ),
+        link: 'https://twitter.com/_painpony',
+        nickname: '@_painpony'
       }]
     };
     return _this;

@@ -25,6 +25,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var React = require('react');
 var ReactDOM = require('react-dom');
 var InjectChildComponent = require('./Inject.js');
+/*
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(function (registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  }).catch(function (err) {
+    // registration failed :(
+    console.log('ServiceWorker registration failed: ', err);
+  });
+}
+*/
 
 var App = function (_React$Component) {
   (0, _inherits3.default)(App, _React$Component);

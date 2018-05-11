@@ -17,24 +17,85 @@ class Agenda extends React.Component {
                 <div className="lower-bar"></div>
              </h1>
             <ol className="section-agenda__list">
+              <h2 className="section-agenda__list__title">8 De junio</h2>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>2:00 PM</b> - Registro 🖊️
+                 </span>
+                 <p className="section-agenda__list__item__copy">
+                   Registro de los asistentes.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>3:00 PM</b> - Charla
+                  <br/>                  
+                 </span>
+                <p className="section-agenda__list__item__copy">
+                   <b>Rafael Socarras</b> - Expone <span>como crear emprendimiento de base tecnologica en colombia.</span>  
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                <b>3:30 PM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Romel Pérez</b> - Expone como iniciar tu carrera en programacion con <b>Open Source</b>.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>4:00 PM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Oscar Rendon</b> - Entendiendo machine learning.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>4:30 PM</b> - Pausa activa 🍕
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  Refrigerios
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>5:00 PM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Jota Rodriguez</b> - Realidad aumentada.
+                </p>
+              </li>
+
+            </ol>
+
+          {
+            /*
+            <ol className="section-agenda__list">
               <h2 className="section-agenda__list__title">9 De junio</h2>
 
               <li className="section-agenda__list__item">
                 <span className="section-agenda__list__item__title" >
-                  <b>10 AM</b> Introduccion
-                 </span>
+                  <b>8:00 AM</b> - Charla
+                </span>
                 <p className="section-agenda__list__item__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                  Tercer piso salon <b>9A</b>
+                  <b>Yuji Kiriki</b> - Expone cuales son las habilidades relevantes de un desarrollador de software.
                 </p>
               </li>
 
               <li className="section-agenda__list__item">
                 <span className="section-agenda__list__item__title" >
-                  <b>2 PM</b> Introduccion a javascript
-                </span>
+                  <b>8:30 AM</b> - Charla
+                 </span>
                 <p className="section-agenda__list__item__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                  <b>Jarlinton Moreno Zea</b> - Machine learning y complex network.  
                 </p>
               </li>
 
@@ -46,40 +107,9 @@ class Agenda extends React.Component {
                   Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
                 </p>
               </li>
-            </ol>
-
-
-            <ol className="section-agenda__list">
-              <h2 className="section-agenda__list__title">10 De junio</h2>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>10 AM</b> Introduccion
-                 </span>
-                <p className="section-agenda__list__item__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                  Tercer piso salon <b>9A</b>
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>2 PM</b> Introduccion a javascript
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>4 PM</b> Video juegos
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                </p>
-              </li>
-            </ol>
+            </ol>           
+            */
+          }
           </article>
         </section>
       </div>

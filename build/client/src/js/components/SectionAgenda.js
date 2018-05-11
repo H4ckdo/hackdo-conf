@@ -61,7 +61,7 @@ var Agenda = function (_React$Component) {
               React.createElement(
                 'h2',
                 { className: 'section-agenda__list__title' },
-                '9 De junio'
+                '8 De junio'
               ),
               React.createElement(
                 'li',
@@ -72,18 +72,43 @@ var Agenda = function (_React$Component) {
                   React.createElement(
                     'b',
                     null,
-                    '10 AM'
+                    '2:00 PM'
                   ),
-                  ' Introduccion'
+                  ' - Registro \uD83D\uDD8A\uFE0F'
                 ),
                 React.createElement(
                   'p',
                   { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Tercer piso salon ',
+                  'Registro de los asistentes.'
+                )
+              ),
+              React.createElement(
+                'li',
+                { className: 'section-agenda__list__item' },
+                React.createElement(
+                  'span',
+                  { className: 'section-agenda__list__item__title' },
                   React.createElement(
                     'b',
                     null,
-                    '9A'
+                    '3:00 PM'
+                  ),
+                  ' - Charla',
+                  React.createElement('br', null)
+                ),
+                React.createElement(
+                  'p',
+                  { className: 'section-agenda__list__item__copy' },
+                  React.createElement(
+                    'b',
+                    null,
+                    'Rafael Socarras'
+                  ),
+                  ' - Expone ',
+                  React.createElement(
+                    'span',
+                    null,
+                    'como crear emprendimiento de base tecnologica en colombia.'
                   )
                 )
               ),
@@ -96,14 +121,25 @@ var Agenda = function (_React$Component) {
                   React.createElement(
                     'b',
                     null,
-                    '2 PM'
+                    '3:30 PM'
                   ),
-                  ' Introduccion a javascript'
+                  ' - Charla'
                 ),
                 React.createElement(
                   'p',
                   { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+                  React.createElement(
+                    'b',
+                    null,
+                    'Romel P\xE9rez'
+                  ),
+                  ' - Expone como iniciar tu carrera en programacion con ',
+                  React.createElement(
+                    'b',
+                    null,
+                    'Open Source'
+                  ),
+                  '.'
                 )
               ),
               React.createElement(
@@ -115,47 +151,19 @@ var Agenda = function (_React$Component) {
                   React.createElement(
                     'b',
                     null,
-                    '4 PM'
+                    '4:00 PM'
                   ),
-                  ' Video juegos'
+                  ' - Charla'
                 ),
                 React.createElement(
                   'p',
                   { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
-                )
-              )
-            ),
-            React.createElement(
-              'ol',
-              { className: 'section-agenda__list' },
-              React.createElement(
-                'h2',
-                { className: 'section-agenda__list__title' },
-                '10 De junio'
-              ),
-              React.createElement(
-                'li',
-                { className: 'section-agenda__list__item' },
-                React.createElement(
-                  'span',
-                  { className: 'section-agenda__list__item__title' },
                   React.createElement(
                     'b',
                     null,
-                    '10 AM'
+                    'Oscar Rendon'
                   ),
-                  ' Introduccion'
-                ),
-                React.createElement(
-                  'p',
-                  { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Tercer piso salon ',
-                  React.createElement(
-                    'b',
-                    null,
-                    '9A'
-                  )
+                  ' - Entendiendo machine learning.'
                 )
               ),
               React.createElement(
@@ -167,14 +175,14 @@ var Agenda = function (_React$Component) {
                   React.createElement(
                     'b',
                     null,
-                    '2 PM'
+                    '4:30 PM'
                   ),
-                  ' Introduccion a javascript'
+                  ' - Pausa activa \uD83C\uDF55'
                 ),
                 React.createElement(
                   'p',
                   { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+                  'Refrigerios'
                 )
               ),
               React.createElement(
@@ -186,14 +194,19 @@ var Agenda = function (_React$Component) {
                   React.createElement(
                     'b',
                     null,
-                    '4 PM'
+                    '5:00 PM'
                   ),
-                  ' Video juegos'
+                  ' - Charla'
                 ),
                 React.createElement(
                   'p',
                   { className: 'section-agenda__list__item__copy' },
-                  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'
+                  React.createElement(
+                    'b',
+                    null,
+                    'Jota Rodriguez'
+                  ),
+                  ' - Realidad aumentada.'
                 )
               )
             )
