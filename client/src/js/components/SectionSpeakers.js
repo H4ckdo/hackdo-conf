@@ -138,7 +138,7 @@ class SectionSpeakers extends React.Component {
           name: 'Laura Camacho Vásquez',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Diseñadora Gráfica, Corporación Escuela de Artes y Letras
+              Diseñadora Gráfica, Corporación Escuela de Artes y Letras.
               Ingeniera de desarrollo en Seven4N
             </p>
           ),
