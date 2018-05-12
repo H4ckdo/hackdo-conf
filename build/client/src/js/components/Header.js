@@ -175,7 +175,7 @@ var Header = function (_React$Component) {
                 React.createElement(
                   'li',
                   { onClick: this.goDown.bind(this, '.wrap-sponsors') },
-                  'Patrocionadores'
+                  'Patrocinadores'
                 ),
                 React.createElement(
                   'li',
@@ -208,7 +208,7 @@ var Header = function (_React$Component) {
                 React.createElement(
                   'li',
                   { onClick: this.goDown.bind(this, '.wrap-sponsors') },
-                  'Patrocionadores'
+                  'Patrocinadores'
                 ),
                 React.createElement(
                   'li',

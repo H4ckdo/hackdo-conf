@@ -7,10 +7,15 @@
         padding-top: 20px;
         padding-bottom: 20px;
         color: white;
+        .section-agenda__wrap_dates {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
         .section-agenda__list__item__copy {
             margin-top: 5px;
             font-size: 16px;
             font-family: $global-font-family;
+            line-height: 1.4;
         }
         .section-agenda__list__item {
             list-style: none;
@@ -32,7 +37,7 @@
             }
         }
         .section-agenda__list {
-            margin-top: 40px;
+            margin-top: 5px;
             .section-agenda__list__item__title {                
                 font-family: $global-font-title;
                 font-size: 22px;
@@ -82,5 +87,11 @@
     }    
     .section-agenda__title {
         padding-left: 20px;        
+    }
+}
+
+@media (max-width: $medium) {
+    .section-agenda__wrap_dates {
+        grid-template-columns: 1fr !important;
     }
 }
