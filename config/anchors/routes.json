@@ -5,6 +5,12 @@
         "route": "/*",
         "handler": "main"
       }
+    ],
+    "POST": [
+      {
+        "route": "/suscribe",
+        "handler": "suscribe"
+      }
     ]
   }
 }

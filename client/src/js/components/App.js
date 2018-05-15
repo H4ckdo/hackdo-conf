@@ -3,8 +3,65 @@ const ReactDOM = require('react-dom');
 const InjectChildComponent = require('./Inject.js');
 var serviceWorker;
 
+function buildApplicationServerKey() {
+  const base64 = window.publicServerKey;
+  const rfc4648 = base64.replace(/-/g, '+').replace(/_/g, '/');
+  const characters = atob(rfc4648).split('').map(character => character.charCodeAt(0));
+  return new Uint8Array(characters);
+}
+
+function subscribe() {
+  Notification.requestPermission().then((result) => {
+    if (result === 'granted') {
+      const options = {
+        userVisibleOnly: true,
+        applicationServerKey: buildApplicationServerKey(),
+      };
+      navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
+        serviceWorkerRegistration.pushManager.subscribe(options)
+          .then((subscription) => {
+            console.log('subscription ', subscription);
+            sendSubscriptionToServer(subscription);
+          });
+      });
+    }
+  });
+}
+
+window.subscribe = subscribe;
+
+async function sendSubscriptionToServer(subscription, skip = false) {
+  if(skip) return;
+  const rawResponse = await fetch('/suscribe', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(subscription.toJSON())
+  });
+  const content = await rawResponse.json();
+  console.log(content);
+}
+
+function tryPushNotification() {
+  navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
+    serviceWorkerRegistration.pushManager.getSubscription().then((subscription) => {
+        // Do we already have a push message subscription?
+        console.log('subscription ', subscription);
+        if (subscription) {
+          sendSubscriptionToServer(subscription, true);
+        } else {
+          subscribe();
+        }
+      });
+  });
+}
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function (registration) {
+    tryPushNotification();
+
     if (registration.installing) {
       serviceWorker = registration.installing;
       //console.log('installing');

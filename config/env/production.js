@@ -3,5 +3,6 @@ module.exports = {
   PORT: process.env.PORT,
   HOST: 'localhost',
   URI: 'mongodb://localhost/hackdo-web',
-  FIXTURES: false
+  FIXTURES: false,
+  SECRET_PUSH_KEY: process.env.SECRET_PUSH_KEY
 }

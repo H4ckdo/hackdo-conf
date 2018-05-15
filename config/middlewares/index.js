@@ -1,9 +1,12 @@
 const logger = require('morgan');
 const compression = require('compression');
+const bodyParser = require('body-parser');
 
 let middlewares = [
   () => logger('combined'),//logger middleware
   () => compression(),
+  () => bodyParser.json(),
+  () => bodyParser.urlencoded({ extended: true }),
 ]
 
 /**

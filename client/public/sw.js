@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v1';
+let CACHE_NAME = 'v15';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -9,6 +9,16 @@ let urlsToCache = [
   '/assets/images/tw-icon.png',
   '/assets/images/menu-close.png',
 ];
+
+self.addEventListener('push', function(event) {
+  console.log(event);
+  event.waitUntil(
+    self.registration.showNotification('Notificaciones Activadas', {
+      body: 'Recibiras notificaciones del evento pronto :)',
+      icon: '/assets/images/logo-2x.png',
+    })
+  )
+})
 
 self.addEventListener('install', function (event) {
   self.skipWaiting();
@@ -43,7 +53,7 @@ self.addEventListener('fetch', function (event) {
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
-
+            //console.log(fetchRequest);
 
             // IMPORTANT: Clone the response. A response is a stream
             // and because we want the browser to consume the response
