@@ -25,17 +25,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var React = require('react');
 var ReactDOM = require('react-dom');
 var InjectChildComponent = require('./Inject.js');
-/*
+var serviceWorker;
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function (registration) {
-    // Registration was successful
-    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    if (registration.installing) {
+      serviceWorker = registration.installing;
+      //console.log('installing');
+    } else if (registration.waiting) {
+      serviceWorker = registration.waiting;
+      //console.log('waiting');
+    } else if (registration.active) {
+      serviceWorker = registration.active;
+      //console.log('active');
+    }
   }).catch(function (err) {
     // registration failed :(
     console.log('ServiceWorker registration failed: ', err);
   });
+
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    //console.log("NUEVO SERVICE WORKER LISTO PARA TOMAR EL CONTROL")
+    window.location.reload();
+  });
 }
-*/
 
 var App = function (_React$Component) {
   (0, _inherits3.default)(App, _React$Component);

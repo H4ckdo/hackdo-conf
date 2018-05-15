@@ -12,6 +12,7 @@ import Speaker10 from '../../images/speaker_10.jpg';
 import Speaker11 from '../../images/speaker_11.jpg';
 import Speaker12 from '../../images/speaker_12.jpg';
 import Speaker13 from '../../images/speaker_13.jpg';
+import Speaker14 from '../../images/speaker_14.jpg';
 
 const InjectChildComponent = require('./Inject.js');
 class SectionSpeakers extends React.Component {
@@ -114,7 +115,7 @@ class SectionSpeakers extends React.Component {
           name: 'Yuji Kiriki',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">http://yujikiriki.com </a>
+              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
             </p>
           ),
           link: 'https://twitter.com/ykiriki?lang=es',
@@ -138,7 +139,6 @@ class SectionSpeakers extends React.Component {
           name: 'Laura Camacho Vásquez',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Diseñadora Gráfica, Corporación Escuela de Artes y Letras.
               Ingeniera de desarrollo en <b>Seven4N</b>
             </p>
           ),
@@ -175,7 +175,7 @@ class SectionSpeakers extends React.Component {
           bio: (
             <p className="section-speakers__content__list__item__copy">
               Master's Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks.
-              passionate about statistical learning and an aspirant to become a fullstack Javascript developer
+              passionate about statistical learning and an aspirant to become a fullstack Javascript developer.
             </p>
           ),
           link: 'https://twitter.com/jarlinton_zea',
@@ -191,6 +191,17 @@ class SectionSpeakers extends React.Component {
           ),
           link: 'https://twitter.com/_painpony',
           nickname: '@_painpony'
+        },
+        {
+          image: Speaker14,
+          name: 'Santiago Bernal',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Software Engineer, Teacher, Translator : InfoSec, AR/VR, Drones, iOT, Soccer, Productivity
+            </p>
+          ),
+          link: 'https://twitter.com/santiaguf',
+          nickname: '@aumentada'
         }
       ]
     }
@@ -211,7 +222,8 @@ class SectionSpeakers extends React.Component {
             <div className="lower-bar"></div>
         </h1>
          <article className="section-speakers__content">
-            <p className="section-speakers__content__copy">Envía tu propuesta de conferencia <span className="btn-speaker" onClick={ this.proposal.bind(this) }>Aqui</span></p>
+            {/*<p className="section-speakers__content__copy">Envía tu propuesta de conferencia <span className="btn-speaker" onClick={ this.proposal.bind(this) }>Aqui</span></p>*/}
+            <p className="section-speakers__content__copy">Estos son nuestros speakers ⭐</p>
             <ol className="section-speakers__content__list">
               {
                 speakers.map(({name, image, link, nickname, bio}, index) => {

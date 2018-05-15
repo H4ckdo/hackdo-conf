@@ -82,7 +82,7 @@ var SectionAbout = function (_React$Component) {
                 null,
                 'Partners'
               ),
-              ', que re\xFAne a entusiasta emprendedores y desarrolladores durante dos d\xEDas en la ciudad de Quibd\xF3.',
+              ', que re\xFAne a entusiasta emprendedores y desarrolladores durante tres d\xEDas en la ciudad de Quibd\xF3.',
               React.createElement('br', null),
               React.createElement('br', null),
               'M\xE1s de 2 a\xF1os impactando el ecosistema de base tecnol\xF3gica del Choc\xF3, llegando a m\xE1s de ',

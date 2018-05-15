@@ -29,7 +29,7 @@ class Header extends React.Component {
   }
 
   onScroll(background, HeaderContainer, e) {
-    let calc = background.offsetHeight - HeaderContainer.offsetHeight;
+    let calc =( background.offsetHeight - HeaderContainer.offsetHeight)-180;
     //console.log(window.scrollY, calc);
     if(window.scrollY >= calc) {
       this.setState({color: 'header-black'});
@@ -88,7 +88,7 @@ class Header extends React.Component {
                 <li onClick={this.goDown.bind(this, '.wrap-section-speakers')}>Speakers</li>
                 <li onClick={this.goDown.bind(this, '.wrap-section-agenda')}>Agenda</li>
                 <li onClick={this.goDown.bind(this, '.wrap-venue')}>Lugar de encuentro</li>
-                <li onClick={this.goDown.bind(this, '.wrap-sponsors')}>Patrocionadores</li>
+                <li onClick={this.goDown.bind(this, '.wrap-sponsors')}>Patrocinadores</li>
                 <li onClick={this.goDown.bind(this, '.wrap-team')}>Equipo</li>
               </ul>
             </nav>
@@ -98,7 +98,7 @@ class Header extends React.Component {
                 <li onClick={this.goDown.bind(this, '.wrap-section-speakers')}>Speakers</li>
                 <li onClick={this.goDown.bind(this, '.wrap-section-agenda')}>Agenda</li>
                 <li onClick={this.goDown.bind(this, '.wrap-venue')}>Lugar de encuentro</li>
-                <li onClick={this.goDown.bind(this, '.wrap-sponsors')}>Patrocionadores</li>
+                <li onClick={this.goDown.bind(this, '.wrap-sponsors')}>Patrocinadores</li>
                 <li onClick={this.goDown.bind(this, '.wrap-team')}>Equipo</li>
               </ul>
             </nav>

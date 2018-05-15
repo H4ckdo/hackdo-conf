@@ -76,6 +76,10 @@ var _speaker_25 = require('../../images/speaker_13.jpg');
 
 var _speaker_26 = _interopRequireDefault(_speaker_25);
 
+var _speaker_27 = require('../../images/speaker_14.jpg');
+
+var _speaker_28 = _interopRequireDefault(_speaker_27);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -258,7 +262,7 @@ var SectionSpeakers = function (_React$Component) {
           React.createElement(
             'a',
             { target: '_blank', href: 'https://yujikiriki.github.io/' },
-            'http://yujikiriki.com '
+            'yujikiriki.com '
           )
         ),
         link: 'https://twitter.com/ykiriki?lang=es',
@@ -282,7 +286,12 @@ var SectionSpeakers = function (_React$Component) {
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
-          'Dise\xF1adora Gr\xE1fica, Corporaci\xF3n Escuela de Artes y Letras Ingeniera de desarrollo en Seven4N'
+          'Ingeniera de desarrollo en ',
+          React.createElement(
+            'b',
+            null,
+            'Seven4N'
+          )
         ),
         link: '',
         nickname: ''
@@ -326,7 +335,7 @@ var SectionSpeakers = function (_React$Component) {
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
-          'Master\'s Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks. passionate about statistical learning and an aspirant to become a fullstack Javascript developer'
+          'Master\'s Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks. passionate about statistical learning and an aspirant to become a fullstack Javascript developer.'
         ),
         link: 'https://twitter.com/jarlinton_zea',
         nickname: '@jarlinton_zea'
@@ -340,6 +349,16 @@ var SectionSpeakers = function (_React$Component) {
         ),
         link: 'https://twitter.com/_painpony',
         nickname: '@_painpony'
+      }, {
+        image: _speaker_28.default,
+        name: 'Santiago Bernal',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Software Engineer, Teacher, Translator : InfoSec, AR/VR, Drones, iOT, Soccer, Productivity'
+        ),
+        link: 'https://twitter.com/santiaguf',
+        nickname: '@aumentada'
       }]
     };
     return _this;
@@ -374,12 +393,7 @@ var SectionSpeakers = function (_React$Component) {
             React.createElement(
               'p',
               { className: 'section-speakers__content__copy' },
-              'Env\xEDa tu propuesta de conferencia ',
-              React.createElement(
-                'span',
-                { className: 'btn-speaker', onClick: this.proposal.bind(this) },
-                'Aqui'
-              )
+              'Estos son nuestros speakers \u2B50'
             ),
             React.createElement(
               'ol',

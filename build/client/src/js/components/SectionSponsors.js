@@ -120,7 +120,7 @@ var SectionSponsors = function (_React$Component) {
             React.createElement(
               'h2',
               { className: 'section-sponsors__article__list__gold__title' },
-              'Gold'
+              '\uD83E\uDD47 Gold'
             ),
             React.createElement(
               'ol',
@@ -201,7 +201,7 @@ var SectionSponsors = function (_React$Component) {
             React.createElement(
               'h2',
               { className: 'section-sponsors__article__list__silver__title' },
-              'Silver'
+              '\uD83E\uDD48 Silver'
             ),
             React.createElement(
               'ol',

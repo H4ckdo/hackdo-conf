@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center center;
     align-items: center;
-    height: 600px;
+    height: 700px;
     .background-section__date {
         background: linear-gradient(270deg,#a2131a,#1d76bd);
         mix-blend-mode: multiply;
@@ -88,7 +88,10 @@
 }
 
 @media (max-width: $medium) {
-    .background-section {
+  .wrap-btn-register {
+    padding-top: 0px !important;
+  }
+  .background-section {
         grid-template-columns: 0.1fr 1fr 0.1fr;
     }
     .background-section__date  {

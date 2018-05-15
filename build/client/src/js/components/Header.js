@@ -67,7 +67,7 @@ var Header = function (_React$Component) {
   }, {
     key: 'onScroll',
     value: function onScroll(background, HeaderContainer, e) {
-      var calc = background.offsetHeight - HeaderContainer.offsetHeight;
+      var calc = background.offsetHeight - HeaderContainer.offsetHeight - 180;
       //console.log(window.scrollY, calc);
       if (window.scrollY >= calc) {
         this.setState({ color: 'header-black' });
@@ -175,7 +175,7 @@ var Header = function (_React$Component) {
                 React.createElement(
                   'li',
                   { onClick: this.goDown.bind(this, '.wrap-sponsors') },
-                  'Patrocionadores'
+                  'Patrocinadores'
                 ),
                 React.createElement(
                   'li',
@@ -208,7 +208,7 @@ var Header = function (_React$Component) {
                 React.createElement(
                   'li',
                   { onClick: this.goDown.bind(this, '.wrap-sponsors') },
-                  'Patrocionadores'
+                  'Patrocinadores'
                 ),
                 React.createElement(
                   'li',

@@ -36,7 +36,7 @@ class SectionSponsors extends React.Component {
               </p>
           </article>
           <article className="section-sponsors__article__list">
-            <h2 className="section-sponsors__article__list__gold__title">Gold</h2>
+            <h2 className="section-sponsors__article__list__gold__title">🥇 Gold</h2>
             <ol className="section-sponsors__article__list__gold">
               <li className="section-sponsors__article__list__gold__item">
                 <a href="https://nodesource.com" target="_blank">
@@ -87,7 +87,7 @@ class SectionSponsors extends React.Component {
 
             </ol>
 
-            <h2 className="section-sponsors__article__list__silver__title">Silver</h2>
+            <h2 className="section-sponsors__article__list__silver__title">🥈 Silver</h2>
             <ol className="section-sponsors__article__list__silver">
               <li className="section-sponsors__article__list__silver__item">
                 <a href="http://enamoratedelchoco.co/" target="_blank">
