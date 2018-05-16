@@ -18,8 +18,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var webpush = require('web-push');
 
-var _require = require('../../../config/local.js'),
-    SECRET_PUSH_KEY = _require.SECRET_PUSH_KEY;
+var _ref = process.env.NODE_ENV === "production" ? require('../../../config/env/production.js') : require('../../../config/env/development.js'),
+    SECRET_PUSH_KEY = _ref.SECRET_PUSH_KEY;
 
 webpush.setVapidDetails('mailto:example@yourdomain.org', "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc", SECRET_PUSH_KEY);
 
