@@ -3,7 +3,7 @@
     background-image: url('/assets/images/portada.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: bottom center;
     align-items: center;
     height: 700px;
     .background-section__date {
@@ -22,7 +22,7 @@
           grid-area: 2/2;
           text-align: center;
           font-size: 107px;
-          color: #31ff00;
+          color: #fff;
           line-height: 1.1;
           font-family: $global-font-family;
           font-weight: bold;
