@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v17';
+let CACHE_NAME = 'v18';
 let urlsToCache = [
   '/',
   '/bundle.js',

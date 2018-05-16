@@ -18,7 +18,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var webpush = require('web-push');
 
-webpush.setVapidDetails('mailto:example@yourdomain.org', "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc", "dNqbYpflZcvDMozaaoujty_inB7OM9utrcJadGBwp4w");
+var _require = require('../../../config/local.js'),
+    SECRET_PUSH_KEY = _require.SECRET_PUSH_KEY;
+
+webpush.setVapidDetails('mailto:example@yourdomain.org', "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc", SECRET_PUSH_KEY);
 
 /**
  * @class RootController

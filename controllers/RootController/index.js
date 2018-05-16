@@ -1,4 +1,5 @@
 const webpush = require('web-push');
+const { SECRET_PUSH_KEY } = require('../../../config/local.js');
 
 webpush.setVapidDetails(
   'mailto:example@yourdomain.org',
