@@ -1,5 +1,5 @@
 const webpush = require('web-push');
-const { SECRET_PUSH_KEY } = require('../../../config/local.js');
+const { SECRET_PUSH_KEY } = process.env.NODE_ENV === "production" ? require('config/env/production.js') : require('config/env/development.js');
 
 webpush.setVapidDetails(
   'mailto:example@yourdomain.org',
