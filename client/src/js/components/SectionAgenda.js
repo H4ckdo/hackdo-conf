@@ -81,7 +81,16 @@ class Agenda extends React.Component {
                   <b>5:00 PM</b> - Charla
                 </span>
                 <p className="section-agenda__list__item__copy">
-                  <b>Romel Pérez</b> - Como iniciar tu carrera en programacion con <b>Open Source</b>.
+                  <b>Romel Pérez</b> - Como iniciar tu carrera en la programacion con <b>Open Source</b>.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>5:30 PM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Alejandra Giraldo</b> - Asynchronous Javascript, Promesas & Observables.
                 </p>
               </li>
 
@@ -90,6 +99,81 @@ class Agenda extends React.Component {
 
             <ol className="section-agenda__list">
               <h2 className="section-agenda__list__title">9 De junio</h2>
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>9:00 AM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Julián Duque</b> - TBD
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>9:00 AM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Juan Pablo Correa Rendón</b> - Como construir un API REST en Scala con <b>Akka HTTP</b>.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>10:00 AM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Laura Camacho Vásquez</b> - Lógica matemática mediante el uso de un lenguaje declarativo <b>(Prolog)</b>.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>10:00 AM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Alejandra Giraldo</b> - Construyendo una aplicación Fullstack con <b>Node.js</b> y <b>Angular</b>.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>11:00 AM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>11:00 AM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Harlen giraldo ortega</b> - Uso de las progresive web apps.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>2:00 PM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programacion funcional.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>3:00 PM</b> - Taller
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>David Castillo</b> - Que es Docker y para que sirve.
+                </p>
+              </li>
+            </ol>
+
+            <ol className="section-agenda__list">
+              <h2 className="section-agenda__list__title">10 De junio</h2>
 
               <li className="section-agenda__list__item">
                 <span className="section-agenda__list__item__title" >
@@ -146,81 +230,6 @@ class Agenda extends React.Component {
               </li>
             </ol>
 
-            <ol className="section-agenda__list">
-              <h2 className="section-agenda__list__title">10 De junio</h2>
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>9:00 AM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Julián Duque</b> - TBD
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>9:00 AM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Juan Pablo Correa Rendón</b> - Como construir un API REST en Scala, usando Akka HTTP con técnicas de modelado funcional para aplicaciones reactivas.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>10:00 AM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Laura Camacho Vásquez</b> - Lógica matemática mediante el uso de un lenguaje declarativo (Prolog).
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>10:00 AM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Oscar Rendon</b> - TBD
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>11:00 AM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                <b>11:00 AM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Harlen giraldo ortega</b> - Uso de las progresive web apps.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>2:00 PM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Juan David Castillo Betancur</b> - Uso de la programación funcional y como puede simplificar nuestro código al vez hacerlo más expresivo, seguro y mantenible.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>3:00 PM</b> - Taller
-                </span>
-                <p className="section-agenda__list__item__copy">
-                    <b>David Castillo</b> - Que es Docker y para que sirve.
-                </p>
-              </li>
-
-            </ol>
 
           </div>
 

@@ -80,6 +80,10 @@ var _speaker_27 = require('../../images/speaker_14.jpg');
 
 var _speaker_28 = _interopRequireDefault(_speaker_27);
 
+var _speaker_29 = require('../../images/speaker_15.jpeg');
+
+var _speaker_30 = _interopRequireDefault(_speaker_29);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = require('react');
@@ -96,7 +100,43 @@ var SectionSpeakers = function (_React$Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (SectionSpeakers.__proto__ || (0, _getPrototypeOf2.default)(SectionSpeakers)).call(this, props));
 
     _this.state = {
+      taps: 0,
       speakers: [{
+        image: _speaker_30.default,
+        name: 'Alejandra Giraldo',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Desarrolladora Web Backend y Frontend Angular, Node.js en Endava.'
+        ),
+        link: '',
+        nickname: ''
+      }, {
+        image: _speaker_26.default,
+        name: 'Valeria Garcia Gonzalez',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Soy una dise\xF1adora e ilustradora de La Guajira, Colombia. Estudi\xE9 Dise\xF1o Gr\xE1fico en la Universidad Pontificia Bolivariana.'
+        ),
+        link: 'https://twitter.com/_painpony',
+        nickname: '@_painpony'
+      }, {
+        image: _speaker_16.default,
+        name: 'Laura Camacho Vásquez',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Ingeniera de desarrollo en ',
+          React.createElement(
+            'b',
+            null,
+            'Seven4N'
+          )
+        ),
+        link: '',
+        nickname: ''
+      }, {
         image: _speaker_2.default,
         name: 'Julián Duque',
         bio: React.createElement(
@@ -134,7 +174,7 @@ var SectionSpeakers = function (_React$Component) {
         nickname: '@julian_duque'
       }, {
         image: _speaker_4.default,
-        name: 'David Castillo',
+        name: 'Juan David Castillo Betancur',
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
@@ -142,6 +182,21 @@ var SectionSpeakers = function (_React$Component) {
         ),
         link: 'https://twitter.com/castillobgr',
         nickname: '@castillobgr'
+      }, {
+        image: _speaker_18.default,
+        name: 'Yuji Kiriki',
+        bio: React.createElement(
+          'p',
+          { className: 'section-speakers__content__list__item__copy' },
+          'Certified\u2122 Buzzword\xA9 Surfer\xAE. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: ',
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://yujikiriki.github.io/' },
+            'yujikiriki.com '
+          )
+        ),
+        link: 'https://twitter.com/ykiriki?lang=es',
+        nickname: '@ykiriki'
       }, {
         image: _speaker_6.default,
         name: 'Romel Pérez',
@@ -243,34 +298,6 @@ var SectionSpeakers = function (_React$Component) {
       /*
       {
         image: Speaker6,
-        name: 'Juan David Castillo Betancur',
-        bio: (
-          <p className="section-speakers__content__list__item__copy">
-           </p>
-        ),
-        link: '',
-        nickname: '@agar3s'
-      },
-      */
-      {
-        image: _speaker_18.default,
-        name: 'Yuji Kiriki',
-        bio: React.createElement(
-          'p',
-          { className: 'section-speakers__content__list__item__copy' },
-          'Certified\u2122 Buzzword\xA9 Surfer\xAE. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: ',
-          React.createElement(
-            'a',
-            { target: '_blank', href: 'https://yujikiriki.github.io/' },
-            'yujikiriki.com '
-          )
-        ),
-        link: 'https://twitter.com/ykiriki?lang=es',
-        nickname: '@ykiriki'
-      },
-      /*
-      {
-        image: Speaker6,
         name: 'Juan Pablo Correa Rendón',
         bio: (
           <p className="section-speakers__content__list__item__copy">
@@ -281,21 +308,6 @@ var SectionSpeakers = function (_React$Component) {
       },
       */
       {
-        image: _speaker_16.default,
-        name: 'Laura Camacho Vásquez',
-        bio: React.createElement(
-          'p',
-          { className: 'section-speakers__content__list__item__copy' },
-          'Ingeniera de desarrollo en ',
-          React.createElement(
-            'b',
-            null,
-            'Seven4N'
-          )
-        ),
-        link: '',
-        nickname: ''
-      }, {
         image: _speaker_20.default,
         name: 'Rafael Socarras',
         bio: React.createElement(
@@ -332,6 +344,7 @@ var SectionSpeakers = function (_React$Component) {
       }, {
         image: _speaker_24.default,
         name: 'Jarlinton Moreno Zea',
+        id: 'frezeer',
         bio: React.createElement(
           'p',
           { className: 'section-speakers__content__list__item__copy' },
@@ -339,16 +352,6 @@ var SectionSpeakers = function (_React$Component) {
         ),
         link: 'https://twitter.com/jarlinton_zea',
         nickname: '@jarlinton_zea'
-      }, {
-        image: _speaker_26.default,
-        name: 'Valeria Garcia Gonzalez',
-        bio: React.createElement(
-          'p',
-          { className: 'section-speakers__content__list__item__copy' },
-          'Soy una dise\xF1adora e ilustradora de La Guajira, Colombia. Estudi\xE9 Dise\xF1o Gr\xE1fico en la Universidad Pontificia Bolivariana.'
-        ),
-        link: 'https://twitter.com/_painpony',
-        nickname: '@_painpony'
       }, {
         image: _speaker_28.default,
         name: 'Santiago Bernal',
@@ -371,13 +374,30 @@ var SectionSpeakers = function (_React$Component) {
       window.open("https://goo.gl/forms/60LHY4IjvvTDyumH2");
     }
   }, {
+    key: 'insecto',
+    value: function insecto() {
+      var _this2 = this;
+
+      var taps = this.state.taps + 1;
+      this.setState({ taps: taps }, function () {
+        if (_this2.state.taps === 5) {
+          var audio = document.getElementById('freezer');
+          audio.play();
+        }
+        if (_this2.state.taps > 5) _this2.setState({ taps: 0 });
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var speakers = this.state.speakers;
 
       return React.createElement(
         'div',
         { className: 'wrap-section-speakers' },
+        React.createElement('audio', { src: '/assets/freezer.mp3', id: 'freezer' }),
         React.createElement(
           'section',
           { className: 'section-speakers' },
@@ -403,12 +423,14 @@ var SectionSpeakers = function (_React$Component) {
                     image = _ref.image,
                     link = _ref.link,
                     nickname = _ref.nickname,
-                    bio = _ref.bio;
+                    bio = _ref.bio,
+                    _ref$id = _ref.id,
+                    id = _ref$id === undefined ? '' : _ref$id;
 
                 return React.createElement(
                   'li',
                   { className: 'section-speakers__content__list__item', key: index },
-                  React.createElement('div', { className: 'section-speakers__content__list__item__image', style: { 'backgroundImage': 'url(' + image + ')' } }),
+                  React.createElement('div', { onClick: id === 'frezeer' ? _this3.insecto.bind(_this3) : null, className: 'section-speakers__content__list__item__image', style: { 'backgroundImage': 'url(' + image + ')' } }),
                   React.createElement(
                     'span',
                     { className: 'section-speakers__content__list__item__name' },

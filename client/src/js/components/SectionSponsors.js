@@ -10,6 +10,7 @@ import Sponsor7 from '../../images/sponsor_7.png';
 import Sponsor8 from '../../images/sponsor_8.jpg';
 import Sponsor9 from '../../images/sponsor_9.jpg';
 import Sponsor10 from '../../images/sponsor_10.jpg';
+import Sponsor11 from '../../images/sponsor_11.png';
 
 class SectionSponsors extends React.Component {
   constructor() {
@@ -43,6 +44,7 @@ class SectionSponsors extends React.Component {
                   <img className="section-sponsors__article__list__gold__img" src={`${Sponsor1}`}/>
                 </a>
               </li>
+
               <li className="section-sponsors__article__list__gold__item">
                 <a href="http://www.samitic.com/" target="_blank">
                   <img className="section-sponsors__article__list__gold__img" src={`${Sponsor2}`}/>
@@ -81,6 +83,12 @@ class SectionSponsors extends React.Component {
 
               <li className="section-sponsors__article__list__gold__item">
                 <a href="http://www.comfachoco.com.co/" target="_blank">
+                  <img className="section-sponsors__article__list__gold__img" src={`${Sponsor11}`} />
+                </a>
+              </li>
+
+              <li className="section-sponsors__article__list__gold__item">
+                <a href="http://www.comfachoco.com.co/" target="_blank">
                   <img className="section-sponsors__article__list__gold__img" src={`${Sponsor10}`} />
                 </a>
               </li>
@@ -100,6 +108,7 @@ class SectionSponsors extends React.Component {
                   <img className="section-sponsors__article__list__silver__img" src={`${Sponsor7}`} />
                 </a>
               </li>
+
 
             </ol>
 

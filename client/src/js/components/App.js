@@ -57,7 +57,7 @@ function tryPushNotification() {
       });
   });
 }
-
+/*
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function (registration) {
     tryPushNotification();
@@ -82,7 +82,7 @@ if ('serviceWorker' in navigator) {
     window.location.reload();
   });
 }
-
+*/
 
 class App extends React.Component {
   constructor() {

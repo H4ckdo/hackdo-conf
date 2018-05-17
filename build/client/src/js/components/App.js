@@ -129,7 +129,7 @@ function tryPushNotification() {
     });
   });
 }
-
+/*
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function (registration) {
     tryPushNotification();
@@ -149,11 +149,12 @@ if ('serviceWorker' in navigator) {
     console.log('ServiceWorker registration failed: ', err);
   });
 
-  navigator.serviceWorker.addEventListener('controllerchange', function () {
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
     //console.log("NUEVO SERVICE WORKER LISTO PARA TOMAR EL CONTROL")
     window.location.reload();
   });
 }
+*/
 
 var App = function (_React$Component) {
   (0, _inherits3.default)(App, _React$Component);

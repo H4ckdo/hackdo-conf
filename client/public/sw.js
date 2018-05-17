@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v20';
+let CACHE_NAME = 'v21';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -8,6 +8,7 @@ let urlsToCache = [
   '/assets/images/fb-icon.png',
   '/assets/images/tw-icon.png',
   '/assets/images/menu-close.png',
+  '/assets/freezer.mp3'
 ];
 
 self.addEventListener('push', function(event) {
@@ -21,7 +22,7 @@ self.addEventListener('push', function(event) {
 })
 
 self.addEventListener('install', function (event) {
-  self.skipWaiting();
+  //self.skipWaiting();
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)

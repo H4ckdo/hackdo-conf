@@ -13,13 +13,48 @@ import Speaker11 from '../../images/speaker_11.jpg';
 import Speaker12 from '../../images/speaker_12.jpg';
 import Speaker13 from '../../images/speaker_13.jpg';
 import Speaker14 from '../../images/speaker_14.jpg';
+import Speaker15 from '../../images/speaker_15.jpeg';
 
 const InjectChildComponent = require('./Inject.js');
 class SectionSpeakers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      taps: 0,
       speakers: [
+        {
+          image: Speaker15,
+          name: 'Alejandra Giraldo',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Desarrolladora Web Backend y Frontend Angular, Node.js en Endava.
+            </p>
+          ),
+          link: '',
+          nickname: ''
+        },
+        {
+          image: Speaker13,
+          name: 'Valeria Garcia Gonzalez',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Soy una diseñadora e ilustradora de La Guajira, Colombia. Estudié Diseño Gráfico en la Universidad Pontificia Bolivariana.
+            </p>
+          ),
+          link: 'https://twitter.com/_painpony',
+          nickname: '@_painpony'
+        },
+        {
+          image: Speaker8,
+          name: 'Laura Camacho Vásquez',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Ingeniera de desarrollo en <b>Seven4N</b>
+            </p>
+          ),
+          link: '',
+          nickname: ''
+        },
         {
           image: Speaker1,
           name: 'Julián Duque',
@@ -33,7 +68,7 @@ class SectionSpeakers extends React.Component {
         },
         {
           image: Speaker2,
-          name: 'David Castillo',
+          name: 'Juan David Castillo Betancur',
           bio: (
             <p className="section-speakers__content__list__item__copy">
               Desarrollador de Software en Medellin, Colombia. Escribo código y tomo fotos de vez en cuando.
@@ -41,6 +76,17 @@ class SectionSpeakers extends React.Component {
           ),
           link: 'https://twitter.com/castillobgr',
           nickname: '@castillobgr'
+        },
+        {
+          image: Speaker9,
+          name: 'Yuji Kiriki',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
+            </p>
+          ),
+          link: 'https://twitter.com/ykiriki?lang=es',
+          nickname: '@ykiriki'
         },
         {
           image: Speaker3,
@@ -100,30 +146,6 @@ class SectionSpeakers extends React.Component {
         /*
         {
           image: Speaker6,
-          name: 'Juan David Castillo Betancur',
-          bio: (
-            <p className="section-speakers__content__list__item__copy">
-
-            </p>
-          ),
-          link: '',
-          nickname: '@agar3s'
-        },
-        */
-        {
-          image: Speaker9,
-          name: 'Yuji Kiriki',
-          bio: (
-            <p className="section-speakers__content__list__item__copy">
-              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
-            </p>
-          ),
-          link: 'https://twitter.com/ykiriki?lang=es',
-          nickname: '@ykiriki'
-        },
-        /*
-        {
-          image: Speaker6,
           name: 'Juan Pablo Correa Rendón',
           bio: (
             <p className="section-speakers__content__list__item__copy">
@@ -134,17 +156,6 @@ class SectionSpeakers extends React.Component {
           nickname: '@agar3s'
         },
         */
-        {
-          image: Speaker8,
-          name: 'Laura Camacho Vásquez',
-          bio: (
-            <p className="section-speakers__content__list__item__copy">
-              Ingeniera de desarrollo en <b>Seven4N</b>
-            </p>
-          ),
-          link: '',
-          nickname: ''
-        },
         {
           image: Speaker10,
           name: 'Rafael Socarras',
@@ -162,7 +173,7 @@ class SectionSpeakers extends React.Component {
           bio: (
             <p className="section-speakers__content__list__item__copy">
               Founder INNOVAATICS, Do In Bits, eduBits, Docente catedratico universidad Tecnológica del Chocó Diego Luis Córdoba
-              <br/>
+              <br />
               Funder & CEO in Dó In Bits.
             </p>
           ),
@@ -172,6 +183,7 @@ class SectionSpeakers extends React.Component {
         {
           image: Speaker12,
           name: 'Jarlinton Moreno Zea',
+          id: 'frezeer',
           bio: (
             <p className="section-speakers__content__list__item__copy">
               Master's Degree student at ICMC-USP, with focus on Machine Learning and Data Sciences in Complex Networks.
@@ -180,17 +192,6 @@ class SectionSpeakers extends React.Component {
           ),
           link: 'https://twitter.com/jarlinton_zea',
           nickname: '@jarlinton_zea'
-        },
-        {
-          image: Speaker13,
-          name: 'Valeria Garcia Gonzalez',
-          bio: (
-            <p className="section-speakers__content__list__item__copy">
-              Soy una diseñadora e ilustradora de La Guajira, Colombia. Estudié Diseño Gráfico en la Universidad Pontificia Bolivariana.
-            </p>
-          ),
-          link: 'https://twitter.com/_painpony',
-          nickname: '@_painpony'
         },
         {
           image: Speaker14,
@@ -212,40 +213,52 @@ class SectionSpeakers extends React.Component {
     window.open("https://goo.gl/forms/60LHY4IjvvTDyumH2");
   }
 
+  insecto() {
+    let taps = this.state.taps+1;
+    this.setState({taps}, () => {
+      if(this.state.taps === 5) {
+        let audio = document.getElementById('freezer');
+        audio.play();
+      }
+      if(this.state.taps > 5) this.setState({taps: 0});
+    });
+  }
+
   render() {
-    let { speakers} = this.state;
+    let { speakers } = this.state;
     return (
       <div className="wrap-section-speakers">
-      <section className="section-speakers">
-        <h1 className="section-speakers__title">
+        <audio src="/assets/freezer.mp3" id="freezer"></audio>
+        <section className="section-speakers">
+          <h1 className="section-speakers__title">
             Speakers
             <div className="lower-bar"></div>
-        </h1>
-         <article className="section-speakers__content">
+          </h1>
+          <article className="section-speakers__content">
             {/*<p className="section-speakers__content__copy">Envía tu propuesta de conferencia <span className="btn-speaker" onClick={ this.proposal.bind(this) }>Aqui</span></p>*/}
             <p className="section-speakers__content__copy">Estos son nuestros speakers ⭐</p>
             <ol className="section-speakers__content__list">
               {
-                speakers.map(({name, image, link, nickname, bio}, index) => {
+                speakers.map(({ name, image, link, nickname, bio, id = '' }, index) => {
                   return (
                     <li className="section-speakers__content__list__item" key={index}>
-                        <div className="section-speakers__content__list__item__image" style={
-                          { 'backgroundImage': `url(${image})` }
-                         }></div>
-                        <span className="section-speakers__content__list__item__name">
-                          { name }
-                        </span>
-                        { bio }
-                        <a className="twiter-link" target="_blank" href={link} target="_blank">{nickname}</a>
+                      <div onClick={id === 'frezeer' ? this.insecto.bind(this) : null} className="section-speakers__content__list__item__image" style={
+                        { 'backgroundImage': `url(${image})` }
+                      }></div>
+                      <span className="section-speakers__content__list__item__name">
+                        {name}
+                      </span>
+                      {bio}
+                      <a className="twiter-link" target="_blank" href={link} target="_blank">{nickname}</a>
                     </li>
                   )
                 })
               }
 
             </ol>
-         </article>
-      </section>
-     </div>
+          </article>
+        </section>
+      </div>
     )
   }
 }
