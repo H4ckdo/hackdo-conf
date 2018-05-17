@@ -99,6 +99,73 @@ class Agenda extends React.Component {
 
             <ol className="section-agenda__list">
               <h2 className="section-agenda__list__title">9 De junio</h2>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>8:00 AM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Yuji Kiriki</b> - Habilidades relevantes de un desarrollador de software.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>8:30 AM</b> - Charla
+                  </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Jarlinton Moreno Zea</b> - Machine learning y complex network.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>9:00 AM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Giovanny Beltran </b> - TBD
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>9:30 PM</b> - Pausa activa 🍕
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  Refrigerios.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>9:45 AM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>10:15 AM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Giovanny Gongora</b> - TBD
+                </p>
+              </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>11:15 AM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Julian Duque</b> - TBD
+                </p>
+              </li>
+            </ol>
+
+            <ol className="section-agenda__list">
+              <h2 className="section-agenda__list__title">10 De junio</h2>
               <li className="section-agenda__list__item">
                 <span className="section-agenda__list__item__title" >
                   <b>9:00 AM</b> - Taller
@@ -172,63 +239,6 @@ class Agenda extends React.Component {
               </li>
             </ol>
 
-            <ol className="section-agenda__list">
-              <h2 className="section-agenda__list__title">10 De junio</h2>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>8:00 AM</b> - Charla
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Yuji Kiriki</b> - Habilidades relevantes de un desarrollador de software.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>8:30 AM</b> - Charla
-                  </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Jarlinton Moreno Zea</b> - Machine learning y complex network.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>9:00 AM</b> - Charla
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Giovanny Beltran </b> - TBD
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>9:30 PM</b> - Pausa activa 🍕
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  Refrigerios.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>9:45 AM</b> - Charla
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
-                </p>
-              </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>10:15 AM</b> - Charla
-                </span>
-                <p className="section-agenda__list__item__copy">
-                    <b>Giovanny Gongora</b> - TBD
-                </p>
-              </li>
-            </ol>
 
 
           </div>
