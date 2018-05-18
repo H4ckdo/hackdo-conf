@@ -148,7 +148,7 @@ class Agenda extends React.Component {
                   <b>11:15 AM</b> - Charla
                 </span>
                 <p className="section-agenda__list__item__copy">
-                  <b>Julian Duque</b> - TBD
+                  <b>Julian Duque</b> - Cómo contribuir a Node.js y Open Source
                 </p>
               </li>
 
