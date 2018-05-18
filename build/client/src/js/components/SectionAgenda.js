@@ -632,30 +632,6 @@ var Agenda = function (_React$Component) {
                     ),
                     ' - Haciendo c\xF3digo mas expresivo, seguro y mantenible con programacion funcional.'
                   )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '3:00 PM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'David Castillo'
-                    ),
-                    ' - Que es Docker y para que sirve.'
-                  )
                 )
               )
             )
