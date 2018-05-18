@@ -170,7 +170,7 @@ class Agenda extends React.Component {
                   <b>9:00 AM</b> - Taller
                 </span>
                 <p className="section-agenda__list__item__copy">
-                  <b>Julián Duque</b> - Construyendo el backend de una aplicación web con <b>Node.js</b>.
+                  <b>Julián Duque</b> - Construyendo el backend de una una aplicación web con <b>Node.js</b>.
                 </p>
               </li>
 
@@ -197,7 +197,7 @@ class Agenda extends React.Component {
                   <b>10:00 AM</b> - Taller
                 </span>
                 <p className="section-agenda__list__item__copy">
-                  <b>Alejandra Giraldo</b> - Construyendo el frontend de aplicación web con <b>Angular</b>.
+                  <b>Alejandra Giraldo</b> - Construyendo el frontend de una aplicación web con <b>Angular</b>.
                 </p>
               </li>
 
