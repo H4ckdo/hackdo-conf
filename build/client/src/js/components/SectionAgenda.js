@@ -235,30 +235,6 @@ var Agenda = function (_React$Component) {
                     ),
                     '.'
                   )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '5:30 PM'
-                    ),
-                    ' - Charla'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Alejandra Giraldo'
-                    ),
-                    ' - Asynchronous Javascript, Promesas & Observables.'
-                  )
                 )
               ),
               React.createElement(
@@ -268,231 +244,6 @@ var Agenda = function (_React$Component) {
                   'h2',
                   { className: 'section-agenda__list__title' },
                   '9 De junio'
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '9:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Juli\xE1n Duque'
-                    ),
-                    ' - TBD'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '9:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Juan Pablo Correa Rend\xF3n'
-                    ),
-                    ' - Como construir un API REST en Scala con ',
-                    React.createElement(
-                      'b',
-                      null,
-                      'Akka HTTP'
-                    ),
-                    '.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '10:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Laura Camacho V\xE1squez'
-                    ),
-                    ' - L\xF3gica matem\xE1tica mediante el uso de un lenguaje declarativo ',
-                    React.createElement(
-                      'b',
-                      null,
-                      '(Prolog)'
-                    ),
-                    '.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '10:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Alejandra Giraldo'
-                    ),
-                    ' - Construyendo una aplicaci\xF3n Fullstack con ',
-                    React.createElement(
-                      'b',
-                      null,
-                      'Node.js'
-                    ),
-                    ' y ',
-                    React.createElement(
-                      'b',
-                      null,
-                      'Angular'
-                    ),
-                    '.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '11:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Valeria Garcia Gonzalez'
-                    ),
-                    ' - Como dise\xF1ar y desarrollar interfaces pensando en patrones y componentes.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '11:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Harlen giraldo ortega'
-                    ),
-                    ' - Uso de las progresive web apps.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '2:00 PM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'Juan David Castillo Betancur'
-                    ),
-                    ' - Haciendo c\xF3digo mas expresivo, seguro y mantenible con programacion funcional.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '3:00 PM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
-                      'David Castillo'
-                    ),
-                    ' - Que es Docker y para que sirve.'
-                  )
-                )
-              ),
-              React.createElement(
-                'ol',
-                { className: 'section-agenda__list' },
-                React.createElement(
-                  'h2',
-                  { className: 'section-agenda__list__title' },
-                  '10 De junio'
                 ),
                 React.createElement(
                   'li',
@@ -631,6 +382,279 @@ var Agenda = function (_React$Component) {
                       'Giovanny Gongora'
                     ),
                     ' - TBD'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '11:15 AM'
+                    ),
+                    ' - Charla'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Julian Duque'
+                    ),
+                    ' - C\xF3mo contribuir a Node.js y Open Source'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '1:00 PM'
+                    ),
+                    ' - Charla'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Alejandra Giraldo'
+                    ),
+                    ' - Asynchronous Javascript, Promesas & Observables.'
+                  )
+                )
+              ),
+              React.createElement(
+                'ol',
+                { className: 'section-agenda__list' },
+                React.createElement(
+                  'h2',
+                  { className: 'section-agenda__list__title' },
+                  '10 De junio'
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '9:00 AM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Juli\xE1n Duque'
+                    ),
+                    ' - Construyendo el backend de una una aplicaci\xF3n web con ',
+                    React.createElement(
+                      'b',
+                      null,
+                      'Node.js'
+                    ),
+                    '.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '9:00 AM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Juan Pablo Correa Rend\xF3n'
+                    ),
+                    ' - Como construir un API REST en Scala con ',
+                    React.createElement(
+                      'b',
+                      null,
+                      'Akka HTTP'
+                    ),
+                    '.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '10:00 AM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Laura Camacho V\xE1squez'
+                    ),
+                    ' - L\xF3gica matem\xE1tica mediante el uso de un lenguaje declarativo ',
+                    React.createElement(
+                      'b',
+                      null,
+                      '(Prolog)'
+                    ),
+                    '.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '10:00 AM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Alejandra Giraldo'
+                    ),
+                    ' - Construyendo el frontend de una aplicaci\xF3n web con ',
+                    React.createElement(
+                      'b',
+                      null,
+                      'Angular'
+                    ),
+                    '.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '11:00 AM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Valeria Garcia Gonzalez'
+                    ),
+                    ' - Como dise\xF1ar y desarrollar interfaces pensando en patrones y componentes.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '11:00 AM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Harlen giraldo ortega'
+                    ),
+                    ' - Uso de las progresive web apps.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '2:00 PM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Juan David Castillo Betancur'
+                    ),
+                    ' - Haciendo c\xF3digo mas expresivo, seguro y mantenible con programacion funcional.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '3:00 PM'
+                    ),
+                    ' - Taller'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'David Castillo'
+                    ),
+                    ' - Que es Docker y para que sirve.'
                   )
                 )
               )
