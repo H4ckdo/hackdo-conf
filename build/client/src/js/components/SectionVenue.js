@@ -66,7 +66,8 @@ var SectionVenue = function (_React$Component) {
                 null,
                 'Comfachoc\xF3'
               ),
-              ' ubicado en la ciudad de Quibd\xF3 a solo 5 minutos del aeropuerto el Cara\xF1o de la ciudad de Quibd\xF3.',
+              ' ubicado en la ciudad de Quibd\xF3 a solo 5 minutos del aeropuerto el Cara\xF1o.',
+              React.createElement('br', null),
               React.createElement(
                 'b',
                 null,
