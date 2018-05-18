@@ -84,17 +84,6 @@ class Agenda extends React.Component {
                   <b>Romel Pérez</b> - Como iniciar tu carrera en la programacion con <b>Open Source</b>.
                 </p>
               </li>
-
-              <li className="section-agenda__list__item">
-                <span className="section-agenda__list__item__title" >
-                  <b>5:30 PM</b> - Charla
-                </span>
-                <p className="section-agenda__list__item__copy">
-                  <b>Alejandra Giraldo</b> - Asynchronous Javascript, Promesas & Observables.
-                </p>
-              </li>
-
-
             </ol>
 
             <ol className="section-agenda__list">
@@ -162,6 +151,16 @@ class Agenda extends React.Component {
                   <b>Julian Duque</b> - TBD
                 </p>
               </li>
+
+              <li className="section-agenda__list__item">
+                <span className="section-agenda__list__item__title" >
+                  <b>1:00 PM</b> - Charla
+                </span>
+                <p className="section-agenda__list__item__copy">
+                  <b>Alejandra Giraldo</b> - Asynchronous Javascript, Promesas & Observables.
+                </p>
+              </li>
+
             </ol>
 
             <ol className="section-agenda__list">
@@ -171,7 +170,7 @@ class Agenda extends React.Component {
                   <b>9:00 AM</b> - Taller
                 </span>
                 <p className="section-agenda__list__item__copy">
-                  <b>Julián Duque</b> - TBD
+                  <b>Julián Duque</b> - Construyendo el backend de una aplicación web con <b>Node.js</b>.
                 </p>
               </li>
 
@@ -198,7 +197,7 @@ class Agenda extends React.Component {
                   <b>10:00 AM</b> - Taller
                 </span>
                 <p className="section-agenda__list__item__copy">
-                  <b>Alejandra Giraldo</b> - Construyendo una aplicación Fullstack con <b>Node.js</b> y <b>Angular</b>.
+                  <b>Alejandra Giraldo</b> - Construyendo el frontend de aplicación web con <b>Angular</b>.
                 </p>
               </li>
 
