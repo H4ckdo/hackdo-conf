@@ -118,7 +118,7 @@ class Agenda extends React.Component {
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>9:30 PM</b> - Pausa activa 🍕
+                    <b>9:30 AM</b> - Pausa activa 🍕
                 </span>
                   <p className="section-agenda__list__item__copy">
                     Refrigerios.
