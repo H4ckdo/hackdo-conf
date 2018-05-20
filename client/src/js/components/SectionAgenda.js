@@ -219,6 +219,16 @@ class Agenda extends React.Component {
                     <b>Harlen giraldo ortega</b> - Uso de las progresive web apps.
                 </p>
                 </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>1:00 PM</b> - Taller
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Juan David Castillo Betancur</b> - ¿ Que es docker y para que sirve?
+                </p>
+                </li>
+
               </ol>
             </div>
           </article>
