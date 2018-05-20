@@ -87,7 +87,7 @@ class Agenda extends React.Component {
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>5:30 AM</b> - Charla
+                    <b>5:30 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
@@ -222,10 +222,10 @@ class Agenda extends React.Component {
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>11:30 PM</b> - Taller
+                    <b>11:30 AM</b> - Taller
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Juan David Castillo Betancur</b> - ¿ Que es docker y para que sirve?
+                    <b>Juan David Castillo Betancur</b> - ¿Que es docker y para que sirve?
                 </p>
                 </li>
 
