@@ -37,7 +37,6 @@ const bootstrap = async () => {
     errorStarting(connectionResult.error);//log the error
   }
 }
-
 const errorStarting = (error) => {
   console.log('Unable to bootstrap the app ', error);
 }
