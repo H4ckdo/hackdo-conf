@@ -87,7 +87,16 @@ class Agenda extends React.Component {
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>5:30 PM</b> - Charla
+                    <b>5:30 AM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>6:00 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programacion funcional.
@@ -140,7 +149,7 @@ class Agenda extends React.Component {
                     <b>9:45 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
+                    <b>Giovanny Gongora</b> - TBD
                 </p>
                 </li>
 
@@ -149,22 +158,13 @@ class Agenda extends React.Component {
                     <b>10:15 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Giovanny Gongora</b> - TBD
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>11:15 AM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
                     <b>Julian Duque</b> - Cómo contribuir a Node.js y Open Source
                 </p>
                 </li>
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>1:00 PM</b> - Charla
+                    <b>11:15 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Alejandra Giraldo</b> - Asynchronous Javascript, Promesas & Observables.
