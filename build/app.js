@@ -26,15 +26,16 @@ var setDependencies = require('../config/globals.js');
 var _require2 = require('../utils/index.js'),
     installFixtures = _require2.installFixtures;
 
+var https = require('https');
+var fs = require('fs');
+
 /**
  * @function bootstrap
  * @return {type} {bootstrap the connection and routes}
  */
-
-
 var bootstrap = function () {
   var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-    var routes, middlewares, app, middlewaresResult, routesLoades;
+    var routes, middlewares, connectionResult, app, middlewaresResult, routesLoades;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -42,15 +43,30 @@ var bootstrap = function () {
             require('../config/logger.js');
             routes = require('../config/routes.js');
             middlewares = require('../config/middlewares/index.js');
+            connectionResult = require('../config/connection.js');
             app = express();
-            _context.next = 6;
+
+            https.createServer({
+              key: fs.readFileSync('./private.pem'),
+              cert: fs.readFileSync('./public.pem')
+            }).on('/', function (req, res) {
+              res.write("ok");
+              res.send();
+            }).listen(5000);
+
+            _context.next = 8;
             return middlewares(app);
 
-          case 6:
+          case 8:
             middlewaresResult = _context.sent;
 
+            if (!connectionResult) {
+              _context.next = 24;
+              break;
+            }
+
             if (!middlewaresResult.ok) {
-              _context.next = 18;
+              _context.next = 21;
               break;
             }
 
@@ -58,10 +74,10 @@ var bootstrap = function () {
             app.engine('html', require('ejs').renderFile);
             app.set('view engine', 'html');
             app.set('views', path.resolve(__dirname, '../views'));
-            _context.next = 14;
+            _context.next = 17;
             return routes(app);
 
-          case 14:
+          case 17:
             routesLoades = _context.sent;
             //define routes
             //debugger;
@@ -72,13 +88,20 @@ var bootstrap = function () {
             } else {
               errorStarting(routesLoades.error); //log the error
             }
-            _context.next = 19;
+            _context.next = 22;
             break;
 
-          case 18:
+          case 21:
             errorStarting(middlewaresResult.error); //log the error
 
-          case 19:
+          case 22:
+            _context.next = 25;
+            break;
+
+          case 24:
+            errorStarting(connectionResult.error); //log the error
+
+          case 25:
           case 'end':
             return _context.stop();
         }

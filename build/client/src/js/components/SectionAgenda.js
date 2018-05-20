@@ -235,6 +235,54 @@ var Agenda = function (_React$Component) {
                     ),
                     '.'
                   )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '5:30 PM'
+                    ),
+                    ' - Charla'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Valeria Garcia Gonzalez'
+                    ),
+                    ' - Como dise\xF1ar y desarrollar interfaces pensando en patrones y componentes.'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  { className: 'section-agenda__list__item' },
+                  React.createElement(
+                    'span',
+                    { className: 'section-agenda__list__item__title' },
+                    React.createElement(
+                      'b',
+                      null,
+                      '6:00 PM'
+                    ),
+                    ' - Charla'
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'section-agenda__list__item__copy' },
+                    React.createElement(
+                      'b',
+                      null,
+                      'Juan David Castillo Betancur'
+                    ),
+                    ' - Haciendo c\xF3digo mas expresivo, seguro y mantenible con programacion funcional.'
+                  )
                 )
               ),
               React.createElement(
@@ -326,7 +374,7 @@ var Agenda = function (_React$Component) {
                     React.createElement(
                       'b',
                       null,
-                      '9:30 PM'
+                      '9:30 AM'
                     ),
                     ' - Pausa activa \uD83C\uDF55'
                   ),
@@ -355,30 +403,6 @@ var Agenda = function (_React$Component) {
                     React.createElement(
                       'b',
                       null,
-                      'Valeria Garcia Gonzalez'
-                    ),
-                    ' - Como dise\xF1ar y desarrollar interfaces pensando en patrones y componentes.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '10:15 AM'
-                    ),
-                    ' - Charla'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
                       'Giovanny Gongora'
                     ),
                     ' - TBD'
@@ -393,7 +417,7 @@ var Agenda = function (_React$Component) {
                     React.createElement(
                       'b',
                       null,
-                      '11:15 AM'
+                      '10:15 AM'
                     ),
                     ' - Charla'
                   ),
@@ -417,7 +441,7 @@ var Agenda = function (_React$Component) {
                     React.createElement(
                       'b',
                       null,
-                      '1:00 PM'
+                      '11:15 PM'
                     ),
                     ' - Charla'
                   ),
@@ -580,30 +604,6 @@ var Agenda = function (_React$Component) {
                     React.createElement(
                       'b',
                       null,
-                      'Valeria Garcia Gonzalez'
-                    ),
-                    ' - Como dise\xF1ar y desarrollar interfaces pensando en patrones y componentes.'
-                  )
-                ),
-                React.createElement(
-                  'li',
-                  { className: 'section-agenda__list__item' },
-                  React.createElement(
-                    'span',
-                    { className: 'section-agenda__list__item__title' },
-                    React.createElement(
-                      'b',
-                      null,
-                      '11:00 AM'
-                    ),
-                    ' - Taller'
-                  ),
-                  React.createElement(
-                    'p',
-                    { className: 'section-agenda__list__item__copy' },
-                    React.createElement(
-                      'b',
-                      null,
                       'Harlen giraldo ortega'
                     ),
                     ' - Uso de las progresive web apps.'
@@ -618,7 +618,7 @@ var Agenda = function (_React$Component) {
                     React.createElement(
                       'b',
                       null,
-                      '2:00 PM'
+                      '11:30 AM'
                     ),
                     ' - Taller'
                   ),
@@ -630,7 +630,7 @@ var Agenda = function (_React$Component) {
                       null,
                       'Juan David Castillo Betancur'
                     ),
-                    ' - Haciendo c\xF3digo mas expresivo, seguro y mantenible con programacion funcional.'
+                    ' - \xBFQue es docker y para que sirve?'
                   )
                 )
               )

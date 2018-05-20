@@ -4,6 +4,8 @@ const { exec } = require('child_process');
 const { PORT, HOST, FIXTURES } = process.env.NODE_ENV === "production" ? require('config/env/production.js') : require('config/env/development.js');
 const setDependencies = require('config/globals.js');
 const { installFixtures } = require('utils/index.js');
+var https = require('https')
+const fs = require('fs');
 
 /**
  * @function bootstrap
@@ -13,22 +15,32 @@ const bootstrap = async () => {
   require('config/logger.js');
   const routes = require('config/routes.js');
   const middlewares = require('config/middlewares/index.js');
+  const connectionResult = require('config/connection.js');
   let app = express();
+  https.createServer({
+    key: fs.readFileSync('./private.pem'),
+    cert: fs.readFileSync('./public.pem')
+  }, app)
+
   let middlewaresResult = await middlewares(app);
-  if(middlewaresResult.ok) {
-    app.use(express.static('./client/public'));
-    app.engine('html', require('ejs').renderFile);
-    app.set('view engine', 'html');
-    app.set('views', path.resolve(__dirname, '../views'));
-    let routesLoades = await routes(app);//define routes
-    //debugger;
-    if (routesLoades.ok) {
-      app.listen(PORT, () => console.log("App listen on: ", `${HOST}:${PORT}`))//lift the server
+  if (connectionResult) {
+    if(middlewaresResult.ok) {
+      app.use(express.static('./client/public'));
+      app.engine('html', require('ejs').renderFile);
+      app.set('view engine', 'html');
+      app.set('views', path.resolve(__dirname, '../views'));
+      let routesLoades = await routes(app);//define routes
+      //debugger;
+      if (routesLoades.ok) {
+        app.listen(PORT, () => console.log("App listen on: ", `${HOST}:${PORT}`))//lift the server
+      } else {
+        errorStarting(routesLoades.error);//log the error
+      }
     } else {
-      errorStarting(routesLoades.error);//log the error
+      errorStarting(middlewaresResult.error);//log the error
     }
   } else {
-    errorStarting(middlewaresResult.error);//log the error
+    errorStarting(connectionResult.error);//log the error
   }
 }
 

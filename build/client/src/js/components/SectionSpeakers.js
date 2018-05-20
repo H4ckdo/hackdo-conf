@@ -109,8 +109,8 @@ var SectionSpeakers = function (_React$Component) {
           { className: 'section-speakers__content__list__item__copy' },
           'Desarrolladora Web Backend y Frontend Angular, Node.js en Endava.'
         ),
-        link: '',
-        nickname: ''
+        link: 'https://twitter.com/maleja111',
+        nickname: '@maleja111'
       }, {
         image: _speaker_26.default,
         name: 'Valeria Garcia Gonzalez',

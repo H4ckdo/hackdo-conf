@@ -1,11 +1,14 @@
 const { surePromise, prometify, fieldContains, AttachMethods } = require('../utils/index.js');
 const routes = require('./anchors/routes.json');
 const _ = require('lodash');
+const mongoose = require('mongoose');
+
 const dependencies = {
   routes,
   AttachMethods,
   surePromise,
   prometify,
+  mongoose,
   _
 }
 
