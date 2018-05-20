@@ -2,9 +2,10 @@ const webpush = require('web-push');
 const environment = process.env.NODE_ENV;
 const { SECRET_PUSH_KEY } = process.env.NODE_ENV === "production" ? require('../../config/env/production.js') : require('../../config/env/development.js');
 const publicServerKey = "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc"
+
 webpush.setVapidDetails(
   'mailto:example@yourdomain.org',
-  "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc",
+  publicServerKey,
   SECRET_PUSH_KEY
 )
 
@@ -20,7 +21,7 @@ class RootController {
     res.render('index', { environment, publicServerKey })
   }
 
-  suscribe(req, res) {
+  async suscribe(req, res) {
     let subscription = req.body;
     debugger;
     const notification = JSON.stringify({
@@ -28,9 +29,22 @@ class RootController {
       body: 'Test'
     });
 
-    webpush.sendNotification(subscription, notification)
-      .then(data => res.json(data))
-      .catch(error => res.json(error));
+    let { ok, error, result } = await surePromise(
+      Users.create(subscription.keys)
+    );
+    debugger;
+    if(ok) {
+      let notificationResult = await surePromise(
+        webpush.sendNotification(subscription, notification)
+      )
+      debugger;
+      if (notificationResult.ok) return res.json(notificationResult.result);
+      debugger;
+      res.json(notificationResult.error);
+    } else {
+      debugger;
+      res.json(error);
+    }
   }
 }
 

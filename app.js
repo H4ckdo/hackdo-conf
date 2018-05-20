@@ -13,11 +13,12 @@ const bootstrap = async () => {
   require('./config/logger.js');
   const routes = require('./config/routes.js');
   const middlewares = require('./config/middlewares/index.js');
-  const connectionResult = require('./config/connection.js');
+  const connection = require('./config/connection.js');
   let app = express();
 
   let middlewaresResult = await middlewares(app);
-  if (connectionResult) {
+  let connectionResult = await connection();
+  if (connectionResult.ok) {
     if(middlewaresResult.ok) {
       app.use(express.static('./client/public'));
       app.engine('html', require('ejs').renderFile);

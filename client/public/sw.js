@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v42';
+let CACHE_NAME = 'v43';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -12,7 +12,7 @@ let urlsToCache = [
 ];
 
 self.addEventListener('push', function(event) {
-  console.log(event);
+  console.log(event.data);
   event.waitUntil(
     self.registration.showNotification('Notificaciones Activadas', {
       body: 'Recibiras notificaciones del evento pronto :)',
