@@ -4,11 +4,11 @@ const routes = require(path.resolve(__dirname,'./anchors/routes.json'))
 function requireControllers(app) {
   let controllers = _.keys(routes);
   for(controller of controllers) {
-    let Ctrl = require(`../build/controllers/${controller}/index.js`);
+    let Ctrl = require(`../controllers/${controller}/index.js`);
     let newController = new Ctrl();
     let methods = _.keys(routes[controller]);
     for(method of methods) {
-      let configs = routes[controller][method];        
+      let configs = routes[controller][method];
       for (config of configs) {
         let route = app.route(config.route);
         let handler = newController[config.handler];

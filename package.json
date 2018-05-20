@@ -9,19 +9,14 @@
   },
   "scripts": {
     "webpack": "./node_modules/.bin/webpack",
-    "babel": "./node_modules/.bin/babel",
     "nodemon": "./node_modules/.bin/nodemon",
-    "start": "NODE_ENV=production node ./build/app.js",
-    "debug": "yarn controllers && yarn babel:components && yarn server && NODE_ENV=development node --inspect ./build/app.js",
-    "babel:components": "yarn babel ./client/src/js/ --out-dir ./build/client/src/js/",
-    "controllers": "yarn babel ./controllers --out-dir ./build/controllers --source-maps",
-    "server": "yarn babel app.jsx --out-file ./build/app.js --source-maps",
+    "start": "NODE_ENV=production node ./app.js",
+    "debug": "NODE_ENV=development node --inspect ./app.js",
     "dev": "yarn webpack --config  webpack.dev.js",
     "dev:watch": "yarn webpack --watch --config webpack.dev.js",
     "postinstall": "yarn run prod",
     "prod": "yarn webpack --config webpack.prod.js",
-    "clean-cache": "yarn cache clean",
-    "generator": "node --inspect ./generator/index.js"
+    "clean-cache": "yarn cache clean"
   },
   "author": "maxtermax",
   "license": "MIT",

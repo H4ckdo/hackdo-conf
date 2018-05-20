@@ -1,19 +1,19 @@
 const express = require('express');
 const path = require('path');
 const { exec } = require('child_process');
-const { PORT, HOST, FIXTURES } = process.env.NODE_ENV === "production" ? require('config/env/production.js') : require('config/env/development.js');
-const setDependencies = require('config/globals.js');
-const { installFixtures } = require('utils/index.js');
+const { PORT, HOST, FIXTURES } = process.env.NODE_ENV === "production" ? require('./config/env/production.js') : require('./config/env/development.js');
+const setDependencies = require('./config/globals.js');
+const { installFixtures } = require('./utils/index.js');
 
 /**
  * @function bootstrap
  * @return {type} {bootstrap the connection and routes}
  */
 const bootstrap = async () => {
-  require('config/logger.js');
-  const routes = require('config/routes.js');
-  const middlewares = require('config/middlewares/index.js');
-  const connectionResult = require('config/connection.js');
+  require('./config/logger.js');
+  const routes = require('./config/routes.js');
+  const middlewares = require('./config/middlewares/index.js');
+  const connectionResult = require('./config/connection.js');
   let app = express();
 
   let middlewaresResult = await middlewares(app);
@@ -22,7 +22,7 @@ const bootstrap = async () => {
       app.use(express.static('./client/public'));
       app.engine('html', require('ejs').renderFile);
       app.set('view engine', 'html');
-      app.set('views', path.resolve(__dirname, '../views'));
+      app.set('views', path.resolve(__dirname, './views'));
       let routesLoades = await routes(app);//define routes
       //debugger;
       if (routesLoades.ok) {
