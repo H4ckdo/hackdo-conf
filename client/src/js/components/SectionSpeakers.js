@@ -30,8 +30,8 @@ class SectionSpeakers extends React.Component {
               Desarrolladora Web Backend y Frontend Angular, Node.js en Endava.
             </p>
           ),
-          link: '',
-          nickname: ''
+          link: 'https://twitter.com/maleja111',
+          nickname: '@maleja111'
         },
         {
           image: Speaker13,
