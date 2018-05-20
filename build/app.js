@@ -26,13 +26,12 @@ var setDependencies = require('../config/globals.js');
 var _require2 = require('../utils/index.js'),
     installFixtures = _require2.installFixtures;
 
-var https = require('https');
-var fs = require('fs');
-
 /**
  * @function bootstrap
  * @return {type} {bootstrap the connection and routes}
  */
+
+
 var bootstrap = function () {
   var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
     var routes, middlewares, connectionResult, app, middlewaresResult, routesLoades;
@@ -45,28 +44,19 @@ var bootstrap = function () {
             middlewares = require('../config/middlewares/index.js');
             connectionResult = require('../config/connection.js');
             app = express();
-
-            https.createServer({
-              key: fs.readFileSync('./private.pem'),
-              cert: fs.readFileSync('./public.pem')
-            }).on('/', function (req, res) {
-              res.write("ok");
-              res.send();
-            }).listen(5000);
-
-            _context.next = 8;
+            _context.next = 7;
             return middlewares(app);
 
-          case 8:
+          case 7:
             middlewaresResult = _context.sent;
 
             if (!connectionResult) {
-              _context.next = 24;
+              _context.next = 23;
               break;
             }
 
             if (!middlewaresResult.ok) {
-              _context.next = 21;
+              _context.next = 20;
               break;
             }
 
@@ -74,10 +64,10 @@ var bootstrap = function () {
             app.engine('html', require('ejs').renderFile);
             app.set('view engine', 'html');
             app.set('views', path.resolve(__dirname, '../views'));
-            _context.next = 17;
+            _context.next = 16;
             return routes(app);
 
-          case 17:
+          case 16:
             routesLoades = _context.sent;
             //define routes
             //debugger;
@@ -88,20 +78,20 @@ var bootstrap = function () {
             } else {
               errorStarting(routesLoades.error); //log the error
             }
-            _context.next = 22;
+            _context.next = 21;
             break;
 
-          case 21:
+          case 20:
             errorStarting(middlewaresResult.error); //log the error
 
-          case 22:
-            _context.next = 25;
+          case 21:
+            _context.next = 24;
             break;
 
-          case 24:
+          case 23:
             errorStarting(connectionResult.error); //log the error
 
-          case 25:
+          case 24:
           case 'end':
             return _context.stop();
         }
@@ -113,7 +103,6 @@ var bootstrap = function () {
     return _ref2.apply(this, arguments);
   };
 }();
-
 var errorStarting = function errorStarting(error) {
   console.log('Unable to bootstrap the app ', error);
 };
