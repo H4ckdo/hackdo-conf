@@ -84,6 +84,16 @@ class Agenda extends React.Component {
                     <b>Romel Pérez</b> - Como iniciar tu carrera en la programacion con <b>Open Source</b>.
                 </p>
                 </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>5:30 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programacion funcional.
+                </p>
+                </li>
+
               </ol>
 
               <ol className="section-agenda__list">
@@ -206,25 +216,7 @@ class Agenda extends React.Component {
                     <b>11:00 AM</b> - Taller
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>11:00 AM</b> - Taller
-                </span>
-                  <p className="section-agenda__list__item__copy">
                     <b>Harlen giraldo ortega</b> - Uso de las progresive web apps.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>2:00 PM</b> - Taller
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programacion funcional.
                 </p>
                 </li>
               </ol>
