@@ -4,8 +4,6 @@ const { exec } = require('child_process');
 const { PORT, HOST, FIXTURES } = process.env.NODE_ENV === "production" ? require('config/env/production.js') : require('config/env/development.js');
 const setDependencies = require('config/globals.js');
 const { installFixtures } = require('utils/index.js');
-var https = require('https')
-const fs = require('fs');
 
 /**
  * @function bootstrap
@@ -17,10 +15,6 @@ const bootstrap = async () => {
   const middlewares = require('config/middlewares/index.js');
   const connectionResult = require('config/connection.js');
   let app = express();
-  https.createServer({
-    key: fs.readFileSync('./private.pem'),
-    cert: fs.readFileSync('./public.pem')
-  }, app)
 
   let middlewaresResult = await middlewares(app);
   if (connectionResult) {
