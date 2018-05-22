@@ -6,6 +6,8 @@ import member_3 from '../../images/member_3.jpeg';
 import member_4 from '../../images/member_4.jpeg';
 import member_5 from '../../images/member_5.jpg';
 import member_6 from '../../images/member_6.jpg';
+import hero1 from '../../images/hero_1.jpg';
+import hero2 from '../../images/speaker_1.jpg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -18,7 +20,7 @@ class SectionTeam extends React.Component {
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
               22 years old 👶👶👶, Javascript full stack developer, member and contributor at
-                  <a href="https://twitter.com/H4ckdo" target="_blank">@H4ckdo</a>   <a href="https://twitter.com/quibdojs">@quibdojs</a>
+                  <a href="https://twitter.com/H4ckdo" target="_blank"> @H4ckdo</a>   <a href="https://twitter.com/quibdojs">@quibdojs</a>
             </p>
           )
         },
@@ -69,11 +71,41 @@ class SectionTeam extends React.Component {
             </p>
           )
         }
+      ],
+      heroes: [
+        {
+          title: `Juan Pablo Buriticá`,
+          image: `${hero1}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+                VP of Eng | Dir of HC/Metal | IT intern
+                <a href="https://twitter.com/splice" target="_blank"> @splice</a>
+                - I build distributed eng teams and Latinamerican dev communities
+                <br/>
+                <a href="https://twitter.com/colombia_dev" target="_blank">@colombia_dev</a>
+                <br/>
+                <a href="https://twitter.com/jsconfco" target="_blank">@jsconfco</a>
+                <br/>
+                <a href="https://twitter.com/quecharla" target="_blank">@quecharla</a>
+                <br/>
+                <a href="https://twitter.com/bogotaJS" target="_blank">@bogotaJS</a>
+            </p>
+          )
+        },
+        {
+          title: `Julián Duque`,
+          image: `${hero2}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+               Developer and Educator - Engineer at <a target="_blank" href="https://twitter.com/NodeSource">@NodeSource</a> - Co-Organizer at <a target="_blank" href='https://twitter.com/Suncoastjs'>@Suncoastjs</a> <a href='https://twitter.com/MedellinJS'>@MedellinJS</a> <a href='https://twitter.com/jsconfco'>@JSConfCo</a> {'{Medellín, St. Petersburg, FL}'} - Satán es la Cumbia
+            </p>
+          )
+        }
       ]
     }
   }
   render() {
-    let { data } = this.state;
+    let { data, heroes } = this.state;
     return (
       <div className="wrap-team">
         <section className="section-team">
@@ -89,6 +121,34 @@ class SectionTeam extends React.Component {
               <ol className="section-team__article__members__wrap-items">
                 {
                   data.map((info, index) => {
+                    return (
+                      <li className="section-team__article__members__wrap-items__item" key={index}>
+                        <div style={
+                          { 'backgroundImage': `url(${info.image})` }
+                        } className="section-team__article__members__wrap-items__image"></div>
+                        <span className="section-team__article__members__wrap-items__title">
+                          {info.title}
+                          <div className="lower-bar"></div>
+                        </span>
+                        {info.copy}
+                      </li>
+                    )
+                  })
+                }
+              </ol>
+            </div>
+
+            <h2 className="section-team__article__title">
+              Agradecimientos especiales
+              <div className="lower-bar"></div>
+            </h2>
+            <p className="section-team__article__copy">
+              Gracias a el apoyo y el amor de estos héroes sin capa el evento va en grande 💖
+            </p>
+            <div className="section-team__article__members">
+              <ol className="section-team__article__members__wrap-items">
+                {
+                  heroes.map((info, index) => {
                     return (
                       <li className="section-team__article__members__wrap-items__item" key={index}>
                         <div style={

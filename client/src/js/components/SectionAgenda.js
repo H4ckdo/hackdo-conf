@@ -35,7 +35,7 @@ class Agenda extends React.Component {
                   <br />
                   </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Rafael Socarras</b> - <span>Como crear emprendimiento de base tecnologica en colombia.</span>
+                    <b>Rafael Socarras</b> - Como crear emprendimiento de base tecnológica en Colombia
                   </p>
                 </li>
 
@@ -81,7 +81,7 @@ class Agenda extends React.Component {
                     <b>5:00 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Romel Pérez</b> - Como iniciar tu carrera en la programacion con <b>Open Source</b>.
+                    <b>Romel Pérez</b> - Cómo iniciar tu carrera en la programación con <b>Open Source</b>.
                 </p>
                 </li>
 
@@ -90,7 +90,7 @@ class Agenda extends React.Component {
                     <b>5:30 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
+                    <b>Valeria Garcia Gonzalez</b> - Cómo diseñar y desarrollar interfaces pensando en patrones y componentes.
                 </p>
                 </li>
 
@@ -99,7 +99,7 @@ class Agenda extends React.Component {
                     <b>6:00 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programacion funcional.
+                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programación funcional.
                 </p>
                 </li>
 
@@ -189,7 +189,7 @@ class Agenda extends React.Component {
                     <b>9:00 AM</b> - Taller
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Juan Pablo Correa Rendón</b> - Como construir un API REST en Scala con <b>Akka HTTP</b>.
+                    <b>Juan Pablo Correa Rendón</b> - Cómo construir un API REST en Scala con <b>Akka HTTP</b>.
                 </p>
                 </li>
 
@@ -216,7 +216,7 @@ class Agenda extends React.Component {
                     <b>11:00 AM</b> - Taller
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Harlen giraldo ortega</b> - Uso de las progresive web apps.
+                    <b>Harlen giraldo ortega</b> - Uso de las <b>progressive web apps</b>.
                 </p>
                 </li>
 
