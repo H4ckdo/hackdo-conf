@@ -30,13 +30,14 @@ class RootController {
     });
 
     let { ok, error, result } = await surePromise(
-      Users.create(subscription.keys)
+      Users.create(subscription)
     );
     debugger;
     if(ok) {
       let notificationResult = await surePromise(
         webpush.sendNotification(subscription, notification)
       )
+
       debugger;
       if (notificationResult.ok) return res.json(notificationResult.result);
       debugger;
