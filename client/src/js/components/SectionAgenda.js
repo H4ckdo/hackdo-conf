@@ -149,7 +149,7 @@ class Agenda extends React.Component {
                     <b>9:45 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Giovanny Gongora</b> - TBD
+                    <b>Giovanny Gongora</b> - Momento para crecer como desarrollador de software.
                 </p>
                 </li>
 
@@ -219,6 +219,16 @@ class Agenda extends React.Component {
                     <b>Harlen giraldo ortega</b> - Uso de las <b>progressive web apps</b>.
                 </p>
                 </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>11:00 AM</b> - Taller
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Giovanny Gongora</b> - Performance primero, Rust y Node.js.
+                </p>
+                </li>
+
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
