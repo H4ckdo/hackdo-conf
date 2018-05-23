@@ -2,12 +2,15 @@ const webpush = require('web-push');
 const { SECRET_PUSH_KEY } = require('./config/local.js');
 const publicServerKey = "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc"
 const setDependencies = require('./config/globals.js');
-let date = new Date();
 
 const notification = JSON.stringify({
   title: 'Hola',
   body: `La inteligencia artificial es uno de nuestros temas claves y @jarlinton_zea nos hablará acerca de Aprendizaje Máquina y Redes Complejas!!`
 });
+
+const errorStarting = (error) => {
+  console.log('Unable to bootstrap the app ', error);
+}
 
 const bootstrap = async (params) => {
   const connection = require('./config/connection.js');
@@ -33,21 +36,22 @@ const bootstrap = async (params) => {
           endpoint,
           keys: { p256dh, auth }
         }
-        let submitNotification = await webpush.sendNotification(subscription, notification);
-        if (submitNotification.statusCode == 201 || submitNotification.statusCode == 200) amountNotified++;
-        //console.log('submitNotification ', submitNotification);
+        try {
+          let submitNotification = await webpush.sendNotification(subscription, notification);
+          if (submitNotification.statusCode == 201 || submitNotification.statusCode == 200) amountNotified++;
+          console.log('submitNotification ', submitNotification.statusCode);
+        } catch(error) {
+          errorStarting(error);
+        }
       }
       console.log('amountNotified: ', amountNotified)
       process.exit(0);
     } else {
-      console.log(subcribers)
+      //console.log(subcribers)
     }
   }
 }
 
-const errorStarting = (error) => {
-  console.log('Unable to bootstrap the app ', error);
-}
 setDependencies()
   .then(bootstrap)
   .catch(errorStarting)

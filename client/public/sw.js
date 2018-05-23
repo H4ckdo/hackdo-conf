@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v66';
+let CACHE_NAME = 'v67';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -10,7 +10,7 @@ let urlsToCache = [
   '/assets/images/menu-close.png',
   '/assets/freezer.mp3'
 ];
-/*
+
 self.addEventListener('notificationclick', function (event) {
   event.notification.close();
   // This looks to see if the current is already open and
@@ -24,7 +24,7 @@ self.addEventListener('notificationclick', function (event) {
     }
   }));
 });
-*/
+
 
 self.addEventListener('push', function (event) {
   try {
