@@ -1,4 +1,5 @@
 const React = require('react');
+
 const InjectChildComponent = require('./Inject.js');
 import Sponsor1 from '../../images/sponsor_1.jpg';
 import Sponsor2 from '../../images/sponsor_2.jpg';
