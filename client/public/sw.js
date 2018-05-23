@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v61';
+let CACHE_NAME = 'v62';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -10,7 +10,7 @@ let urlsToCache = [
   '/assets/images/menu-close.png',
   '/assets/freezer.mp3'
 ];
-
+/*
 self.addEventListener('notificationclick', function (event) {
   event.notification.close();
   // This looks to see if the current is already open and
@@ -23,8 +23,8 @@ self.addEventListener('notificationclick', function (event) {
       if (clients.openWindow && event.notification.body.includes("@maleja111")) return clients.openWindow('https://twitter.com/H4ckdo/status/998659802996903936');
     }
   }));
-
 });
+*/
 
 self.addEventListener('push', function (event) {
   try {
