@@ -19,7 +19,7 @@ class SectionAbout extends React.Component {
               </h1>
 
               <p className="section-about__article__copy">
-                <b>Hackdó Conf</b>, es el evento gratuito anual llevado a cabo por la <b>Hackdó Foundation</b> y <b>Partners</b>, que reúne a entusiasta emprendedores y desarrolladores durante tres días en la ciudad de Quibdó.
+                <b>Hackdó Conf</b>, es el evento <b>gratuito</b> anual llevado a cabo por la <b>Hackdó Foundation</b> y <b>Partners</b>, que reúne a entusiasta emprendedores y desarrolladores durante tres días en la ciudad de Quibdó.
                 <br/>
                 <br/>
                 Más de 2 años impactando el ecosistema de base tecnológica del Chocó,
