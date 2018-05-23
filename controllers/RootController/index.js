@@ -23,6 +23,7 @@ class RootController {
     res.header('Expires', '-1');
     res.header('Pragma', 'no-cache');
     debugger;
+    console.log("ENTRAAAA");
     res.sendFile(path.resolve(__dirname, '../RootController/../../client/sw.js'));
   }
 
