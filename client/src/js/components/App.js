@@ -76,8 +76,8 @@ function tryPushNotification() {
         // Do we already have a push message subscription?
         if (subscription) {
           console.log('endpoint ', subscription.toJSON());
-          updateNotification(subscription);
-          //sendSubscriptionToServer(subscription, true);
+          //updateNotification(subscription);
+          sendSubscriptionToServer(subscription, true);
         } else {
           subscribe();
         }
