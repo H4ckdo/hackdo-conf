@@ -105,7 +105,7 @@ if ('serviceWorker' in navigator) {
   });
 
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    //console.log("NUEVO SERVICE WORKER LISTO PARA TOMAR EL CONTROL")
+    console.log("NUEVO SERVICE WORKER LISTO PARA TOMAR EL CONTROL")
     window.location.reload();
   });
 }
