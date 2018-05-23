@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v58';
+let CACHE_NAME = 'v59';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -41,7 +41,7 @@ self.addEventListener('push', function (event) {
 })
 
 self.addEventListener('install', function (event) {
-  self.skipWaiting();
+  //self.skipWaiting();
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
