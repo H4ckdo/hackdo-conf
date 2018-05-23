@@ -2,6 +2,10 @@
   "RootController": {
     "GET": [
       {
+        "route": "/sw.js",
+        "handler": "sw"
+      },
+      {
         "route": "/*",
         "handler": "main"
       }

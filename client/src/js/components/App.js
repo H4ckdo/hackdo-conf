@@ -86,7 +86,7 @@ function tryPushNotification() {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('https://hackdoconf.herokuapp.com/sw.js').then(function (registration) {
+  navigator.serviceWorker.register('/sw.js').then(function (registration) {
     tryPushNotification();
     if (registration.installing) {
       serviceWorker = registration.installing;

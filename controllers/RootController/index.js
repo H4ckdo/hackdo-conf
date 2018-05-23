@@ -2,6 +2,7 @@ const webpush = require('web-push');
 const environment = process.env.NODE_ENV;
 const { SECRET_PUSH_KEY } = process.env.NODE_ENV === "production" ? require('../../config/env/production.js') : require('../../config/env/development.js');
 const publicServerKey = "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc"
+const path = require('path');
 
 webpush.setVapidDetails(
   'mailto:example@yourdomain.org',
@@ -17,6 +18,14 @@ webpush.setVapidDetails(
  * @return {type} {description}
  */
 class RootController {
+  sw(req, res) {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    debugger;
+    res.sendFile(path.resolve(__dirname, '../RootController/../../client/sw.js'));
+  }
+
   main(req, res) {
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
     res.header('Expires', '-1');
