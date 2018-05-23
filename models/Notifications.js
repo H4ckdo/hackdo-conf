@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UsersSchema = new Schema({
+const NotificationsSchema = new Schema({
   auth: {
     type: String
   },
@@ -16,4 +16,4 @@ const UsersSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model('Users', UsersSchema);
+module.exports = mongoose.model('Notifications', NotificationsSchema);

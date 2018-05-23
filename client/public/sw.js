@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v47';
+let CACHE_NAME = 'v55';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -11,14 +11,33 @@ let urlsToCache = [
   '/assets/freezer.mp3'
 ];
 
-self.addEventListener('push', function(event) {
-  console.log(event.data);
-  event.waitUntil(
-    self.registration.showNotification('Notificaciones Activadas', {
-      body: 'Recibiras notificaciones del evento pronto :)',
-      icon: '/assets/images/logo-2x.png',
-    })
-  )
+self.addEventListener('notificationclick', function (event) {
+  event.notification.close();
+  // This looks to see if the current is already open and
+  // focuses if it is
+  event.waitUntil(clients.matchAll({
+    type: "window"
+  }).then(function (clientList) {
+    if (event.notification.body) {
+      if (clients.openWindow && event.notification.body.includes("@jarlinton_zea")) return clients.openWindow('https://twitter.com/H4ckdo/status/998967577501028353');
+      if (clients.openWindow && event.notification.body.includes("@maleja111")) return clients.openWindow('https://twitter.com/H4ckdo/status/998659802996903936');
+    }
+  }));
+
+});
+
+self.addEventListener('push', function (event) {
+  try {
+    let { title = '', body = '' } = event.data.json();
+    event.waitUntil(
+      self.registration.showNotification(title, {
+        body,
+        icon: '/assets/images/logo-2x.png',
+      })
+    )
+  } catch (error) {
+    console.log('error ', error)
+  }
 })
 
 self.addEventListener('install', function (event) {
@@ -49,26 +68,26 @@ self.addEventListener('fetch', function (event) {
         var fetchRequest = event.request.clone();
 
         return fetch(fetchRequest).then(function (response) {
-            // Check if we received a valid respons, only save in cache valid responses
-            //console.log(!response || response.status !== 200 || response.type !== 'basic', ' ', response);
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-            //console.log(fetchRequest);
-
-            // IMPORTANT: Clone the response. A response is a stream
-            // and because we want the browser to consume the response
-            // as well as the cache consuming the response, we need
-            // to clone it so we have two streams.
-            var responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then(function (cache) {
-                cache.put(event.request, responseToCache);
-              });
-
+          // Check if we received a valid respons, only save in cache valid responses
+          //console.log(!response || response.status !== 200 || response.type !== 'basic', ' ', response);
+          if (!response || response.status !== 200 || response.type !== 'basic') {
             return response;
           }
+          //console.log(fetchRequest);
+
+          // IMPORTANT: Clone the response. A response is a stream
+          // and because we want the browser to consume the response
+          // as well as the cache consuming the response, we need
+          // to clone it so we have two streams.
+          var responseToCache = response.clone();
+
+          caches.open(CACHE_NAME)
+            .then(function (cache) {
+              cache.put(event.request, responseToCache);
+            });
+
+          return response;
+        }
         );
       })
   );

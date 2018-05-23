@@ -20,7 +20,9 @@ function subscribe() {
       navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
         serviceWorkerRegistration.pushManager.subscribe(options)
           .then((subscription) => {
-            console.log('subscription ', subscription);
+            console.log('endpoint ', subscription.endpoint);
+            console.log('options ', subscription.options);
+
             sendSubscriptionToServer(subscription);
           });
       });
@@ -32,25 +34,50 @@ window.subscribe = subscribe;
 
 async function sendSubscriptionToServer(subscription, skip = false) {
   if(skip) return;
-  const rawResponse = await fetch('/suscribe', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(subscription.toJSON())
-  });
-  const content = await rawResponse.json();
-  console.log(content);
+  try {
+    const rawResponse = await fetch('/suscribe', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(subscription.toJSON())
+    });
+    const content = await rawResponse.json();
+    console.log(content);
+  } catch(error) {
+    console.log('error ', error);
+  }
+}
+
+async function updateNotification(subscription) {
+  if (localStorage.getItem('updated')) return;
+  try {
+    const rawResponse = await fetch('/update', {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(subscription.toJSON())
+    });
+    const response = await rawResponse.json();
+    if (response && response.ok) {
+      localStorage.setItem('updated', true);
+    }
+  } catch (error) {
+    console.log('error ', error);
+  }
 }
 
 function tryPushNotification() {
   navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
     serviceWorkerRegistration.pushManager.getSubscription().then((subscription) => {
         // Do we already have a push message subscription?
-        console.log('subscription ', subscription);
         if (subscription) {
-          sendSubscriptionToServer(subscription, true);
+          console.log('endpoint ', subscription.toJSON());
+          updateNotification(subscription);
+          //sendSubscriptionToServer(subscription, true);
         } else {
           subscribe();
         }

@@ -1,7 +1,59 @@
 const webpush = require('web-push');
 const { SECRET_PUSH_KEY } = require('./config/local.js');
 const publicServerKey = "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc"
+const setDependencies = require('./config/globals.js');
+let date = new Date();
 
+const notification = JSON.stringify({
+  title: 'Hola',
+  body: `La inteligencia artificial es uno de nuestros temas claves y @jarlinton_zea nos hablará acerca de Aprendizaje Máquina y Redes Complejas!!`
+});
+
+const bootstrap = async (params) => {
+  const connection = require('./config/connection.js');
+  let { ok, result, error } = await connection();
+  if (ok) {
+    let subcribers = await Notifications.find({
+      endpoint: { $exists: true },
+      auth: { $exists: true },
+      p256dh: { $exists: true }
+    })
+    if (subcribers && subcribers.length) {
+      webpush.setVapidDetails(
+        'mailto:example@yourdomain.org',
+        publicServerKey,
+        SECRET_PUSH_KEY
+      )
+      let amountNotified = 0;
+      for(let i = 0; i < subcribers.length; i++) {
+        let subcriber = subcribers[i];
+        let { endpoint = '', p256dh = '', auth = '' } = subcriber;
+        const subscription = {
+          expirationTime: null,
+          endpoint,
+          keys: { p256dh, auth }
+        }
+        let submitNotification = await webpush.sendNotification(subscription, notification);
+        if (submitNotification.statusCode == 201 || submitNotification.statusCode == 200) amountNotified++;
+        //console.log('submitNotification ', submitNotification);
+      }
+      console.log('amountNotified: ', amountNotified)
+      process.exit(0);
+    } else {
+      console.log(subcribers)
+    }
+  }
+}
+
+const errorStarting = (error) => {
+  console.log('Unable to bootstrap the app ', error);
+}
+setDependencies()
+  .then(bootstrap)
+  .catch(errorStarting)
+
+
+/*
 webpush.setVapidDetails(
   'mailto:example@yourdomain.org',
   publicServerKey,
@@ -17,6 +69,12 @@ const subscription = {
   }
 }
 
+{
+  endpoint: { $exists: true },
+  auth: { $exists: true },
+  p256dh: { $exists: true }
+}
+
 const notification = JSON.stringify({
   title: 'Notificacion de prueba',
   body: 'Test'
@@ -29,3 +87,4 @@ webpush.sendNotification(subscription, notification)
   .catch(error => {
     console.log('error ', error);
   })
+*/
