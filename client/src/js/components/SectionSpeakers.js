@@ -137,7 +137,7 @@ class SectionSpeakers extends React.Component {
           name: 'Harlen giraldo ortega',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Desarrollador de front-end en <b>Seven4N</b>.
+              Desarrollador de front-end en <b>Seven4N</b>
             </p>
           ),
           link: '',
