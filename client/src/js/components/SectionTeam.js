@@ -8,6 +8,7 @@ import member_5 from '../../images/member_5.jpg';
 import member_6 from '../../images/member_6.jpg';
 import hero1 from '../../images/hero_1.jpg';
 import hero2 from '../../images/speaker_1.jpg';
+import hero3 from '../../images/speaker_9.jpg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -98,6 +99,15 @@ class SectionTeam extends React.Component {
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
                Developer and Educator - Engineer at <a target="_blank" href="https://twitter.com/NodeSource">@NodeSource</a> - Co-Organizer at <a target="_blank" href='https://twitter.com/Suncoastjs'>@Suncoastjs</a> <a href='https://twitter.com/MedellinJS'>@MedellinJS</a> <a href='https://twitter.com/jsconfco'>@JSConfCo</a> {'{Medellín, St. Petersburg, FL}'} - Satán es la Cumbia
+            </p>
+          )
+        },
+        {
+          title: 'Yuji Kiriki',
+          image: `${hero3}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
             </p>
           )
         }

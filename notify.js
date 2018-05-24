@@ -5,7 +5,7 @@ const setDependencies = require('./config/globals.js');
 
 const notification = JSON.stringify({
   title: 'Hola',
-  body: `La inteligencia artificial es uno de nuestros temas claves y @jarlinton_zea nos hablará acerca de Aprendizaje Máquina y Redes Complejas!!`
+  body: `Alejandra Giraldo, @maleja111 Es una de nuestras speakers y nos hablará sobre: - Asynchronous Javascript, Promesas & Observables. Durante la conferencia de este año!!`
 });
 
 const errorStarting = (error) => {
