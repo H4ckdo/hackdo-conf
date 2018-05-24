@@ -14,7 +14,6 @@ import Speaker12 from '../../images/speaker_12.jpg';
 import Speaker13 from '../../images/speaker_13.jpg';
 import Speaker14 from '../../images/speaker_14.jpg';
 import Speaker15 from '../../images/speaker_15.jpeg';
-import Speaker16 from '../../images/speaker_16.jpeg';
 
 const InjectChildComponent = require('./Inject.js');
 class SectionSpeakers extends React.Component {
@@ -46,17 +45,6 @@ class SectionSpeakers extends React.Component {
           nickname: '@_painpony'
         },
         {
-          image: Speaker16,
-          name: 'Daniela Patiño',
-          bio: (
-            <p className="section-speakers__content__list__item__copy">
-              Ingeniera en formación, Ruby on Rails, SoftwareDeveloper at <a href="https://twitter.com/FLUVIPGlobal" target="_blank">@FLUVIPGlobal</a>.
-            </p>
-          ),
-          link: 'https://twitter.com/DaniCaprichos',
-          nickname: '@DaniCaprichos'
-        },
-        {
           image: Speaker8,
           name: 'Laura Camacho Vásquez',
           bio: (
@@ -64,8 +52,8 @@ class SectionSpeakers extends React.Component {
               Ingeniera de desarrollo en <b>Seven4N</b>
             </p>
           ),
-          link: '',
-          nickname: ''
+          link: 'https://twitter.com/lcamach1',
+          nickname: '@lcamach1'
         },
         {
           image: Speaker1,
@@ -152,8 +140,8 @@ class SectionSpeakers extends React.Component {
               Desarrollador de front-end en <b>Seven4N</b>
             </p>
           ),
-          link: '',
-          nickname: ''
+          link: 'https://twitter.com/sertrah',
+          nickname: '@sertrah'
         },
         /*
         {
