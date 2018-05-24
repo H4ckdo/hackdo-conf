@@ -164,7 +164,7 @@ class Agenda extends React.Component {
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>11:15 PM</b> - Charla
+                    <b>11:15 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Alejandra Giraldo</b> - Asynchronous Javascript, Promesas & Observables.
