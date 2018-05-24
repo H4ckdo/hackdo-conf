@@ -5,7 +5,7 @@ const setDependencies = require('./config/globals.js');
 
 const notification = JSON.stringify({
   title: 'Hola',
-  body: `Alejandra Giraldo, @maleja111 Es una de nuestras speakers y nos hablará sobre: - Asynchronous Javascript, Promesas & Observables. Durante la conferencia de este año!!`
+  body: `Recuerda que faltan solo 15 días para que de inicio la HackdoConf 2018, invita a todos tu amigos apasionados por la tecnología y el emprendimiento.`
 });
 
 const errorStarting = (error) => {
