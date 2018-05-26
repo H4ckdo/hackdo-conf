@@ -9,6 +9,7 @@ import member_6 from '../../images/member_6.jpg';
 import hero1 from '../../images/hero_1.jpg';
 import hero2 from '../../images/speaker_1.jpg';
 import hero3 from '../../images/speaker_9.jpg';
+import hero4 from '../../images/hero_4.jpg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -108,6 +109,17 @@ class SectionTeam extends React.Component {
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
               Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
+            </p>
+          )
+        },
+        {
+          title: 'Yibson Alexis Leudo',
+          image: `${hero4}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Full-Stack Web Developer
+              <br/>
+              Desarrollador de software, apasionado con Angular y con .Net Core, me gusta compartir, aprender y enseñar todo lo que tenga que ver con tecnología.
             </p>
           )
         }

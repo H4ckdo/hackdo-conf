@@ -1,4 +1,4 @@
-let CACHE_NAME = 'v82';
+let CACHE_NAME = 'v84';
 let urlsToCache = [
   '/',
   '/bundle.js',
@@ -21,6 +21,7 @@ self.addEventListener('notificationclick', function (event) {
     if (event.notification.body) {
       if (clients.openWindow && event.notification.body.includes("@jarlinton_zea")) return clients.openWindow('https://twitter.com/H4ckdo/status/998967577501028353');
       if (clients.openWindow && event.notification.body.includes("@maleja111")) return clients.openWindow('https://twitter.com/H4ckdo/status/998659802996903936');
+      if (clients.openWindow && event.notification.body.includes("Daniela Patiño")) return clients.openWindow('https://twitter.com/DaniCaprichos');
     }
   }));
 });
