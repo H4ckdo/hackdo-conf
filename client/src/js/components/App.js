@@ -101,7 +101,7 @@ if ('serviceWorker' in navigator) {
       console.log('active');
       setTimeout(() => {
         document.getElementById('container-update').classList.add('hide')
-      }, 1000)  
+      }, 500)  
     }
   }).catch(function (err) {
     // registration failed :(
@@ -114,7 +114,7 @@ if ('serviceWorker' in navigator) {
     document.getElementById('container-update').classList.add('hide')
     setTimeout(() => {
       window.location.reload();
-    }, 1000)
+    }, 500)
   });
 } else {
   document.getElementById('container-update').classList.add('hide')
