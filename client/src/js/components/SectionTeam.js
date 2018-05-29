@@ -119,7 +119,7 @@ class SectionTeam extends React.Component {
             <p className="section-team__article__members__wrap-items__copy">
               Full-Stack Web Developer
               <br/>
-              Desarrollador de software, apasionado con Angular y con .Net Core, me gusta compartir, aprender y enseñar todo lo que tenga que ver con tecnología.
+              apasionado con Angular y con .Net Core, me gusta compartir, aprender y enseñar todo lo que tenga que ver con tecnología.
             </p>
           )
         }
