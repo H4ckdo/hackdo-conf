@@ -104,16 +104,24 @@ class App extends React.Component {
         } else if (registration.active) {
           serviceWorker = registration.active;
           console.log('active');
-          setTimeout(() => self.setState({ loading: false }), 500);
+          //setTimeout(() => self.setState({ loading: false }), 500);
         }
 
         if (serviceWorker) {
-          console.log(serviceWorker.state);
+          console.log('current state ', serviceWorker.state);
+          if (serviceWorker.state === 'activated') setTimeout(() => self.setState({ loading: false }), 1000);
           serviceWorker.addEventListener('statechange', function (e) {
+            console.log('current state ', serviceWorker.state);
             if(e.target.state === 'activated') {
+              console.log('activated')
               self.setState({ loading: false });
             }
             if (e.target.state === 'installing') {
+              console.log('installing')
+              self.setState({ loading: true });
+            }
+            if (e.target.state === 'redundant') {
+              console.log('new sw replace old sw');
               self.setState({ loading: true });
             }
           });
