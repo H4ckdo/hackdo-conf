@@ -5,11 +5,7 @@ const setDependencies = require('./config/globals.js');
 
 const notification = JSON.stringify({
   title: 'Hola',
-  body: `
-    Es un honor anunciar que tenemos una nueva conferencista Daniela Patiño de la empresa FLUVIPGlobal
-    que nos va ha hablar sobre: Como saltar al mundo del desarrollo sin morir en el intento.
-  `
-  //body: `Recuerda que faltan solo 15 días para que de inicio la HackdoConf 2018, invita a todos tu amigos apasionados por la tecnología y el emprendimiento.`
+  body: `Recuerda que faltan solo 11 días para que de inicio la HackdoConf 2018, invita a todos tus amigos apasionados por la tecnología y el emprendimiento.`
 });
 
 const errorStarting = (error) => {
