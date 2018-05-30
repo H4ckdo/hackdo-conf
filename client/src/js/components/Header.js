@@ -83,7 +83,7 @@ class Header extends React.Component {
               <h2 className="subtitle">CONF <span className="year">2018</span></h2>
             </div>
 
-            <nav className={`col-nav ${this.state.isMenuOpen ? 'show' : 'hide' }`}>
+            <nav className={`col-nav ${this.state.isMenuOpen ? 'appear' : 'disappear' }`}>
               <ul>
                 <li onClick={this.goDown.bind(this, '.wrap-section-speakers')}>Speakers</li>
                 <li onClick={this.goDown.bind(this, '.wrap-section-agenda')}>Agenda</li>
