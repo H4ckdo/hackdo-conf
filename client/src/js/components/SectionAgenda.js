@@ -248,6 +248,15 @@ class Agenda extends React.Component {
                 </p>
                 </li>
 
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>2:00 PM</b> - Taller
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Oscar Rendon</b> - Como crear un bot con inteligencia artificial
+                </p>
+                </li>
               </ol>
             </div>
           </article>

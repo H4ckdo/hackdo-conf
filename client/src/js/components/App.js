@@ -86,27 +86,38 @@ function tryPushNotification() {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function (registration) {
+  navigator.serviceWorker.register('/sw.js').then(function (registration) {  
     tryPushNotification();
     if (registration.installing) {
       serviceWorker = registration.installing;
-      //console.log('installing');
+      console.log('installing');
+      //document.getElementById('container-update').classList.remove('hide')
     } else if (registration.waiting) {
       serviceWorker = registration.waiting;
-      //console.log('waiting');
+     // document.getElementById('container-update').classList.remove('hide')
+      console.log('waiting');
     } else if (registration.active) {
       serviceWorker = registration.active;
-      //console.log('active');
+      console.log('active');
+      setTimeout(() => {
+        document.getElementById('container-update').classList.add('hide')
+      }, 500)  
     }
   }).catch(function (err) {
     // registration failed :(
     console.log('ServiceWorker registration failed: ', err);
+    document.getElementById('container-update').classList.add('hide')
   });
 
   navigator.serviceWorker.addEventListener('controllerchange', () => {
     console.log("NUEVO SERVICE WORKER LISTO PARA TOMAR EL CONTROL")
-    window.location.reload();
+    document.getElementById('container-update').classList.add('hide')
+    setTimeout(() => {
+      window.location.reload();
+    }, 500)
   });
+} else {
+  document.getElementById('container-update').classList.add('hide')
 }
 
 class App extends React.Component {
@@ -118,6 +129,11 @@ class App extends React.Component {
     const { Footer, data, PopUp, Header, SectionDate, SectionAbout, SectionSpeakers, SectionAgenda, SectionVenue, SectionSponsors, SectionTeam } = this.props;
     return (
       <div>
+        <div className="load-bar" id="container-update">
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
         <Header/>
         <SectionDate/>
         <SectionAbout/>
