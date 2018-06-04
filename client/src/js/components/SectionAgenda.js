@@ -238,20 +238,9 @@ class Agenda extends React.Component {
                 </p>
                 </li>
 
-
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>11:30 AM</b> - Taller
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Juan David Castillo Betancur</b> - ¿Que es docker y para que sirve?
-                </p>
-                </li>
-
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>2:00 PM</b> - Taller
+                    <b>11:30 PM</b> - Taller
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Oscar Rendon</b> - Como crear un bot con inteligencia artificial
