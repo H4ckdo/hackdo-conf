@@ -15,6 +15,7 @@ import Speaker13 from '../../images/speaker_13.jpg';
 import Speaker14 from '../../images/speaker_14.jpg';
 import Speaker15 from '../../images/speaker_15.jpeg';
 import Speaker16 from '../../images/speaker_16.jpeg';
+import Speaker17 from '../../images/speaker_17.jpeg';
 
 const InjectChildComponent = require('./Inject.js');
 class SectionSpeakers extends React.Component {
@@ -90,15 +91,15 @@ class SectionSpeakers extends React.Component {
           nickname: '@castillobgr'
         },
         {
-          image: Speaker9,
-          name: 'Yuji Kiriki',
+          image: Speaker17,
+          name: 'Juan Pablo Correa Rendón',
           bio: (
             <p className="section-speakers__content__list__item__copy">
-              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
+              Desarrollador Backend en <b>S4N</b>
             </p>
           ),
-          link: 'https://twitter.com/ykiriki?lang=es',
-          nickname: '@ykiriki'
+          link: 'https://github.com/jupco',
+          nickname: '@jupco'
         },
         {
           image: Speaker3,

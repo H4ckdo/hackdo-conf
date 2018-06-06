@@ -4,9 +4,10 @@ const publicServerKey = "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdn
 const setDependencies = require('./config/globals.js');
 
 const notification = JSON.stringify({
-  title: 'Hola',
-  body: `Recuerda que faltan solo 11 días para que de inicio la HackdoConf 2018, invita a todos tus amigos apasionados por la tecnología y el emprendimiento.`
+  title: 'Estamos listos!!!',
+  body: `Desde este viernes 8, a la 1:00PM da inicio la #HackdoConf 2018, en el auditorio de (Antiguo Prosocial). Damos apertura con una serie de conferencias de la mano de expertos y entusiastas de la industria tecnológica.`
 });
+
 
 const errorStarting = (error) => {
   console.log('Unable to bootstrap the app ', error);

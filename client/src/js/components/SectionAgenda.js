@@ -113,7 +113,7 @@ class Agenda extends React.Component {
                     <b>8:00 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Yuji Kiriki</b> - Habilidades relevantes de un desarrollador de software.
+                    <b>Daniela Patiño</b> - Como saltar al mundo del desarrollo sin morir en el intento.
                 </p>
                 </li>
 
@@ -131,7 +131,7 @@ class Agenda extends React.Component {
                     <b>9:00 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Giovanny Beltran </b> - TBD
+                    <b>Giovanny Beltran</b> - Como hacer <b>videojuegos</b> de manera independiente.
                 </p>
                 </li>
 
@@ -158,7 +158,7 @@ class Agenda extends React.Component {
                     <b>10:15 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Julian Duque</b> - Como contribuir a Node.js y Open Source
+                    <b>Julian Duque</b> - Como contribuir a <b>Node.js</b> y <b>Open Source</b>.
                 </p>
                 </li>
 
@@ -167,18 +167,10 @@ class Agenda extends React.Component {
                     <b>11:15 AM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Alejandra Giraldo</b> - Asynchronous Javascript, Promesas & Observables.
+                    <b>Alejandra Giraldo</b> - Asynchronous Javascript, <b>Promesas & Observables</b>.
                 </p>
                 </li>
 
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>12:15 PM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Daniela Patiño</b> - Como saltar al mundo del desarrollo sin morir en el intento.
-                </p>
-                </li>
 
               </ol>
 
