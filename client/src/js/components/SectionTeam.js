@@ -10,6 +10,7 @@ import hero1 from '../../images/hero_1.jpg';
 import hero2 from '../../images/speaker_1.jpg';
 import hero3 from '../../images/speaker_9.jpg';
 import hero4 from '../../images/hero_4.jpg';
+import voluntary1 from '../../images/voluntary1.jpg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -123,11 +124,22 @@ class SectionTeam extends React.Component {
             </p>
           )
         }
+      ],
+      voluntarios: [
+        {
+          title: 'Daniel Martinez',
+          image: `${voluntary1}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Joven con una actitud positiva y de mucha Fe en Dios se apasionó aproximadamente a los 14 años por todo lo de sistemas en cómputo y todo lo que ha aprendido lo ha hecho por si mismo.
+            </p>   
+          )
+        }
       ]
     }
   }
   render() {
-    let { data, heroes } = this.state;
+    let { data, heroes, voluntarios } = this.state;
     return (
       <div className="wrap-team">
         <section className="section-team">
@@ -165,7 +177,7 @@ class SectionTeam extends React.Component {
               <div className="lower-bar"></div>
             </h2>
             <p className="section-team__article__copy">
-              Gracias a el apoyo y el amor de estos héroes sin capa el evento va en grande 💖
+              <b>Gracias</b> a el apoyo y el amor de estos héroes sin capa el evento va en grande 💖
             </p>
             <div className="section-team__article__members">
               <ol className="section-team__article__members__wrap-items">
@@ -185,7 +197,35 @@ class SectionTeam extends React.Component {
                     )
                   })
                 }
-              </ol>
+              </ol>              
+            </div>
+
+            <h2 className="section-team__article__title">
+              Equipo de voluntarios
+              <div className="lower-bar"></div>
+            </h2>
+            <p className="section-team__article__copy">
+              <b>Gracias</b> por el apoyo de nuestros voluntarios que se ponen la 10 y juegan con el equipo hackdó 💖
+            </p>            
+            <div className="section-team__article__members">
+              <ol className="section-team__article__members__wrap-items">
+                {
+                  voluntarios.map((info, index) => {
+                    return (
+                      <li className="section-team__article__members__wrap-items__item" key={index}>
+                        <div style={
+                          { 'backgroundImage': `url(${info.image})` }
+                        } className="section-team__article__members__wrap-items__image"></div>
+                        <span className="section-team__article__members__wrap-items__title">
+                          {info.title}
+                          <div className="lower-bar"></div>
+                        </span>
+                        {info.copy}
+                      </li>
+                    )
+                  })
+                }
+              </ol>              
             </div>
           </article>
         </section>

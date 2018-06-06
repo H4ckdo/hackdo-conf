@@ -71,23 +71,13 @@ class Agenda extends React.Component {
                     <b>4:15 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Jota Rodriguez</b> - Realidad aumentada.
-                </p>
-                </li>
-
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>5:15 PM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
                     <b>Romel Pérez</b> - Como iniciar tu carrera en la programación con <b>Open Source</b>.
                 </p>
                 </li>
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>6:15 PM</b> - Charla
+                    <b>5:15 PM</b> - Charla
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
@@ -171,6 +161,14 @@ class Agenda extends React.Component {
                 </p>
                 </li>
 
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>1:15 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Jota Rodriguez</b> - Realidad aumentada.
+                </p>
+                </li>
 
               </ol>
 
@@ -232,10 +230,10 @@ class Agenda extends React.Component {
 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
-                    <b>11:30 PM</b> - Taller
+                    <b>2:00 PM</b> - Taller
                 </span>
                   <p className="section-agenda__list__item__copy">
-                    <b>Oscar Rendon</b> - Como crear un bot con inteligencia artificial
+                    <b>Oscar Rendon</b> - Como crear un bot con <b>inteligencia artificial</b>
                 </p>
                 </li>
               </ol>
