@@ -236,6 +236,16 @@ class Agenda extends React.Component {
                     <b>Oscar Rendon</b> - Como crear un bot con <b>inteligencia artificial</b>
                 </p>
                 </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>2:00 PM</b> - Taller
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Santiago Bernal</b> - Hackeando con motores de busqueda.
+                </p>
+                </li>
+
               </ol>
             </div>
           </article>
