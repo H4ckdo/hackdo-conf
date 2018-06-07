@@ -2,10 +2,10 @@ const webpush = require('web-push');
 const { SECRET_PUSH_KEY } = require('./config/local.js');
 const publicServerKey = "BPlXiFG6NINNh-j7Tqhcgd2xMXYDM9_r1Wuuhbe4KB3TrCwaXQjXsdnCD_iOlh6tGF8Hyz86TMtzNxL2DJpA-Mc"
 const setDependencies = require('./config/globals.js');
-
+//`Desde este viernes 8, a la 1:00PM da inicio la #HackdoConf 2018, en el auditorio de (Antiguo Prosocial). Damos apertura con una serie de conferencias de la mano de expertos y entusiastas de la industria tecnológica.`
 const notification = JSON.stringify({
   title: 'Estamos listos!!!',
-  body: `Desde este viernes 8, a la 1:00PM da inicio la #HackdoConf 2018, en el auditorio de (Antiguo Prosocial). Damos apertura con una serie de conferencias de la mano de expertos y entusiastas de la industria tecnológica.`
+  body: `Mañana comienza la Hackdó Conf 2018!!!, te esperamos desde las 2 de la tarde en el auditorio de comfachocó (Antiguo prosocial)`
 });
 
 

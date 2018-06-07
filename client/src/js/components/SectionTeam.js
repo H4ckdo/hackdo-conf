@@ -18,6 +18,7 @@ import voluntary4 from '../../images/voluntary4.jpeg';
 import voluntary5 from '../../images/voluntary5.jpeg';
 import voluntary6 from '../../images/voluntary6.jpeg';
 import voluntary7 from '../../images/voluntary7.jpeg';
+import voluntary8 from '../../images/voluntary8.jpeg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -206,6 +207,15 @@ class SectionTeam extends React.Component {
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
               Estudiante de ingeniería de sistemas 🖥👨🏾‍💻 soy un persona curiosa, me gusta la programación ver series y prácticar Depor 🏃🏾‍♂🚴🏾‍♂. ¡Gusto en conocerte!
+            </p>
+          )
+        },
+        {
+          title: 'Andres Pinillos Pabon',
+          image: `${voluntary8}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+               Soy un joven de 20 años estudiante de Ingeniería de Sistemas y técnico de sistemas, apasionado al Desarrollo web y a la programación,creativo cuando algo me llama la atención💻🖥
             </p>
           )
         }
