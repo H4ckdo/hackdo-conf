@@ -16,6 +16,7 @@ import Speaker14 from '../../images/speaker_14.jpg';
 import Speaker15 from '../../images/speaker_15.jpeg';
 import Speaker16 from '../../images/speaker_16.jpeg';
 import Speaker17 from '../../images/speaker_17.jpeg';
+import Speaker18 from '../../images/speaker_18.jpg';
 
 const InjectChildComponent = require('./Inject.js');
 class SectionSpeakers extends React.Component {
@@ -216,6 +217,17 @@ class SectionSpeakers extends React.Component {
           ),
           link: 'https://twitter.com/santiaguf',
           nickname: '@aumentada'
+        },
+        {
+          image: Speaker18,
+          name: 'Saulo Guerrero Cordoba',
+          bio: (
+            <p className="section-speakers__content__list__item__copy">
+              Embajador de En Tic Confio en el departemento del Chocó, Comunicador Social - periodista
+            </p>
+          ),
+          link: 'https://twitter.com/saguecor',
+          nickname: '@saguecor'          
         }
       ]
     }

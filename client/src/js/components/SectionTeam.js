@@ -11,6 +11,7 @@ import hero2 from '../../images/speaker_1.jpg';
 import hero3 from '../../images/speaker_9.jpg';
 import hero4 from '../../images/hero_4.jpg';
 import hero5 from '../../images/hero_5.jpeg';
+import hero6 from '../../images/hero_5.jpeg';
 import voluntary1 from '../../images/voluntary1.jpg';
 import voluntary2 from '../../images/voluntary2.jpg';
 import voluntary3 from '../../images/voluntary3.jpg';
@@ -30,8 +31,8 @@ class SectionTeam extends React.Component {
           image: `${member_1}`,
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
-              22 years old 👶👶👶, Javascript full stack developer, member and contributor at
-                  <a href="https://twitter.com/H4ckdo" target="_blank"> @H4ckdo</a>   <a href="https://twitter.com/quibdojs">@quibdojs</a>
+              Full stack <b>javascript developer</b> ‍💻, member founder and contributor at
+              <a href="https://twitter.com/H4ckdo" target="_blank"> @H4ckdo </a>  and  <a href="https://twitter.com/quibdojs"> @quibdojs</a> 
             </p>
           )
         },
@@ -142,7 +143,17 @@ class SectionTeam extends React.Component {
               Actualmente labora vomo Freelance para Grace Producciones y es el redactor de deportes del periódico Siglo XXI.
             </p>
           )
+        },
+        /*
+        {
+          title: 'Burny',
+          image: `${hero6}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+            </p>
+          )          
         }
+        */
       ],
       voluntarios: [
         {
