@@ -1,3 +1,11 @@
+#videoWrapper {
+  height: 500px;
+  background-image: url('/assets/images/spin.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 80px;
+}
+
 .section-about {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -6,7 +14,7 @@
     max-width: $x-large;
     margin: 0px auto;
     position: relative;
-    .section-about__gallery {
+    .section-about__video {
         width: 70%;
         display: inline-block;
         vertical-align: middle;
@@ -42,9 +50,8 @@
     .section-about__article {
         width: 30%;
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         position: relative;
-        left: 40px;
         .section-about__article__title {
             font-size: 2em;
             font-family: $global-font-title;
@@ -66,12 +73,13 @@
     }
 }
 
+
 @media (max-width: 1085px) {
   .section-about__article {
     width: 100%  !important;
     display: block !important;
   }
-  .section-about__gallery {
+  .section-about__video {
     width: 100%  !important;
     display: block  !important;
     left: 0px !important;

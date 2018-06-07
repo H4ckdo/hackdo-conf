@@ -10,7 +10,12 @@ import hero1 from '../../images/hero_1.jpg';
 import hero2 from '../../images/speaker_1.jpg';
 import hero3 from '../../images/speaker_9.jpg';
 import hero4 from '../../images/hero_4.jpg';
+import hero5 from '../../images/hero_5.jpeg';
 import voluntary1 from '../../images/voluntary1.jpg';
+import voluntary2 from '../../images/voluntary2.jpg';
+import voluntary3 from '../../images/voluntary3.jpg';
+import voluntary4 from '../../images/voluntary4.jpeg';
+import voluntary5 from '../../images/voluntary5.jpeg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -105,15 +110,6 @@ class SectionTeam extends React.Component {
           )
         },
         {
-          title: 'Yuji Kiriki',
-          image: `${hero3}`,
-          copy: (
-            <p className="section-team__article__members__wrap-items__copy">
-              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
-            </p>
-          )
-        },
-        {
           title: 'Yibson Alexis Leudo',
           image: `${hero4}`,
           copy: (
@@ -123,6 +119,26 @@ class SectionTeam extends React.Component {
               apasionado con Angular y con .Net Core, me gusta compartir, aprender y enseñar todo lo que tenga que ver con tecnología.
             </p>
           )
+        }, 
+        {
+          title: 'Yuji Kiriki',
+          image: `${hero3}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Certified™ Buzzword© Surfer®. Living life async. Team homeopathy expert. Charlatan del SW. "Millennial Leader". My blog about SW: <a target="_blank" href="https://yujikiriki.github.io/">yujikiriki.com </a>
+            </p>
+          )
+        },
+        {
+          title: 'Francisco Rafael Palacios',
+          image: `${hero5}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Ing. Teleinformatico. 
+              Vinculado a medios de comunicación desde el año 2008, en labores ingenieriles y periodisticas.
+              Actualmente labora vomo Freelance para Grace Producciones y es el redactor de deportes del periódico Siglo XXI.
+            </p>
+          )          
         }
       ],
       voluntarios: [
@@ -134,6 +150,44 @@ class SectionTeam extends React.Component {
               Joven con una actitud positiva y de mucha Fe en Dios se apasionó aproximadamente a los 14 años por todo lo de sistemas en cómputo y todo lo que ha aprendido lo ha hecho por si mismo.
             </p>   
           )
+        },
+        {
+          title: 'Miguel Palacios',
+          image: `${voluntary2}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Prospecto ingeniero en sistemas 🎛⌨📟🖥📱💼
+              Tecnólogo en redes de datos🛰🖥📱📡
+              Tauro♉; Geminis♊Creencia ⚛🕉✡✝☦☪☮☯🔯🕎 <a href="https://twitter.com/mich1500" target="_blank"> @mich1500</a>
+            </p>   
+          )          
+        },
+        {
+          title: 'Annyluz Rentería',
+          image: `${voluntary3}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Soy estudiante en la normal  superior de quibdo y amo todo lo que tenga que ver con tecnología  y diseño de aplicaciones, páginas web, videojuegos etc...   
+            </p>   
+          )                    
+        },
+        {
+          title: 'Lexy Garcés',
+          image: `${voluntary4}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Apasionada estudiante de ingeniería de Sistemas👩🏾‍💻, Técnica en Sistemas y en Programación de Software. #Diosesmiguía <b>#Picis</b> <b>#Afrocolombiana</b>
+            </p>   
+          )                              
+        },
+        {
+          title: 'Cristian Córdoba',
+          image: `${voluntary5}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Tengo 21 años de edad, Soy Desarrollador Web Backend 🤗👨🏽‍💻, estudiante de Ingeniería de Sistemas, técnico en sistemas, técnico en programación. Amanten a la programación.
+            </p>   
+          )                                        
         }
       ]
     }

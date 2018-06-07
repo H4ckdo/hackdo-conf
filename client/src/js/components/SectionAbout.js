@@ -8,7 +8,7 @@ class SectionAbout extends React.Component {
   }
 
   render() {
-    let { Gallery } = this.props;
+    let { Gallery, Video } = this.props;
     return (
       <div className="wrap-about">
         <section className="section-about">
@@ -27,8 +27,9 @@ class SectionAbout extends React.Component {
               </p>
           </article>
 
-          <article className="section-about__gallery">
-            <Gallery />
+          <article className="section-about__video">
+            <Video/>
+            {/*<Gallery />*/}
           </article>
         </section>
        </div>
@@ -37,5 +38,6 @@ class SectionAbout extends React.Component {
 }
 
 module.exports = InjectChildComponent(SectionAbout, [
-  './Gallery.js'
+  './Gallery.js',
+  './Video.js'
 ])
