@@ -32,6 +32,74 @@ class Agenda extends React.Component {
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
                     <b>2:30 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>3:00 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Daniela Patiño</b> - Como saltar al mundo del desarrollo sin morir en el intento.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>3:30 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Romel Pérez</b> - Como iniciar tu carrera en la programación con <b>Open Source</b>.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>4:00 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programación funcional.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>4:30 PM</b> - Pausa activa 🍕
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    Refrigerios.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>4:45 PM</b> - Charla
+                  </span>
+                    <p className="section-agenda__list__item__copy">
+                      <b>Jarlinton Moreno Zea</b> - Machine learning y complex network.
+                    </p>
+                </li>
+
+              </ol>
+
+              <ol className="section-agenda__list">
+                <h2 className="section-agenda__list__title">9 De junio</h2>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>8:30 AM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Saulo Guerrero Cordoba</b> - Uso responsable de las Tic.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>9:30 AM</b> - Charla
                   <br />
                   </span>
                   <p className="section-agenda__list__item__copy">
@@ -39,6 +107,60 @@ class Agenda extends React.Component {
                   </p>
                 </li>
 
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>10:00 AM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Julian Duque</b> - Como contribuir a <b>Node.js</b> y <b>Open Source</b>.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>10:30 AM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Alejandra Giraldo</b> - Asynchronous Javascript, <b>Promesas & Observables</b>.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>11:00 AM</b> - Pausa activa 🍕
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    Refrigerios.
+                </p>
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>11:15 AM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Jota Rodriguez</b> - Realidad aumentada.
+                </p>
+                </li>
+                
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>2:00 PM</b> - Charla
+                </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Giovanny Beltran</b> - Como hacer <b>videojuegos</b> de manera independiente.
+                  </p>  
+                </li>
+
+                <li className="section-agenda__list__item">
+                  <span className="section-agenda__list__item__title" >
+                    <b>2:30 PM</b> - Charla
+                  </span>
+                  <p className="section-agenda__list__item__copy">
+                    <b>Giovanny Gongora</b> - Momento para crecer como desarrollador de software.
+                  </p>
+                </li>
+ 
                 <li className="section-agenda__list__item">
                   <span className="section-agenda__list__item__title" >
                     <b>3:00 PM</b> - Charla
@@ -54,119 +176,6 @@ class Agenda extends React.Component {
                 </span>
                   <p className="section-agenda__list__item__copy">
                     <b>Oscar Rendon</b> - Entendiendo machine learning.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>4:00 PM</b> - Pausa activa 🍕
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    Refrigerios.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>4:15 PM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Romel Pérez</b> - Como iniciar tu carrera en la programación con <b>Open Source</b>.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>5:15 PM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Valeria Garcia Gonzalez</b> - Como diseñar y desarrollar interfaces pensando en patrones y componentes.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>6:45 PM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Juan David Castillo Betancur</b> - Haciendo código mas expresivo, seguro y mantenible con programación funcional.
-                </p>
-                </li>
-
-              </ol>
-
-              <ol className="section-agenda__list">
-                <h2 className="section-agenda__list__title">9 De junio</h2>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>8:00 AM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Daniela Patiño</b> - Como saltar al mundo del desarrollo sin morir en el intento.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>8:30 AM</b> - Charla
-                  </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Jarlinton Moreno Zea</b> - Machine learning y complex network.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>9:00 AM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Giovanny Beltran</b> - Como hacer <b>videojuegos</b> de manera independiente.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>9:30 AM</b> - Pausa activa 🍕
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    Refrigerios.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>9:45 AM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Giovanny Gongora</b> - Momento para crecer como desarrollador de software.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>10:15 AM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Julian Duque</b> - Como contribuir a <b>Node.js</b> y <b>Open Source</b>.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>11:15 AM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Alejandra Giraldo</b> - Asynchronous Javascript, <b>Promesas & Observables</b>.
-                </p>
-                </li>
-
-                <li className="section-agenda__list__item">
-                  <span className="section-agenda__list__item__title" >
-                    <b>1:15 PM</b> - Charla
-                </span>
-                  <p className="section-agenda__list__item__copy">
-                    <b>Jota Rodriguez</b> - Realidad aumentada.
                 </p>
                 </li>
 
