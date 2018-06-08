@@ -11,7 +11,7 @@ import hero2 from '../../images/speaker_1.jpg';
 import hero3 from '../../images/speaker_9.jpg';
 import hero4 from '../../images/hero_4.jpg';
 import hero5 from '../../images/hero_5.jpeg';
-import hero6 from '../../images/hero_5.jpeg';
+import hero6 from '../../images/hero_6.jpeg';
 import voluntary1 from '../../images/voluntary1.jpg';
 import voluntary2 from '../../images/voluntary2.jpg';
 import voluntary3 from '../../images/voluntary3.jpg';
@@ -144,16 +144,16 @@ class SectionTeam extends React.Component {
             </p>
           )
         },
-        /*
         {
-          title: 'Burny',
+          title: 'Burny Lucas Perea Gil',
           image: `${hero6}`,
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
+              Administrador de empresas, cuento con una amplia trayectoria en actividades relacionadas con la formación de emprendedores sociales y de negocios,
+              procesos de incubación de empresas en el Departamento del Chocó.
             </p>
-          )          
+          )
         }
-        */
       ],
       voluntarios: [
         {

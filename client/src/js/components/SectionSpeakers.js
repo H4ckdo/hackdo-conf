@@ -157,19 +157,6 @@ class SectionSpeakers extends React.Component {
           link: 'https://twitter.com/sertrah',
           nickname: '@sertrah'
         },
-        /*
-        {
-          image: Speaker6,
-          name: 'Juan Pablo Correa Rendón',
-          bio: (
-            <p className="section-speakers__content__list__item__copy">
-
-            </p>
-          ),
-          link: '',
-          nickname: '@agar3s'
-        },
-        */
         {
           image: Speaker10,
           name: 'Rafael Socarras',
