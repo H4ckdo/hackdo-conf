@@ -8,7 +8,7 @@ class SectionDate extends React.Component {
   }
 
   goToRegister() {
-    window.open("https://goo.gl/forms/BPEVsVOTguclB2yn1");
+    window.open("https://goo.gl/forms/Eu5S2c6Oxh8qVovx1");
   }
 
   render() {
