@@ -5,11 +5,11 @@ class Video extends React.Component {
   constructor() {
     super();
   }
-  
+
   componentDidMount() {
     const videoWrapper = document.getElementById('videoWrapper');
     videoWrapper.innerHTML =`
-        <iframe src="https://www.youtube.com/embed/jZxADuoBzs0" height="100%" width="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen autoplay></iframe>    
+        <iframe src="https://www.youtube.com/embed/jZxADuoBzs0" height="100%" width="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     `
   }
 
@@ -17,7 +17,7 @@ class Video extends React.Component {
       let { LoadBar } = this.props;
     return (
         <div id="videoWrapper">
-        </div>        
+        </div>
     )
   }
 }

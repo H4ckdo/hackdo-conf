@@ -20,6 +20,7 @@ import voluntary5 from '../../images/voluntary5.jpeg';
 import voluntary6 from '../../images/voluntary6.jpeg';
 import voluntary7 from '../../images/voluntary7.jpeg';
 import voluntary8 from '../../images/voluntary8.jpeg';
+import voluntary9 from '../../images/voluntary9.jpeg';
 
 class SectionTeam extends React.Component {
   constructor() {
@@ -157,31 +158,20 @@ class SectionTeam extends React.Component {
       ],
       voluntarios: [
         {
-          title: 'Daniel Martinez',
-          image: `${voluntary1}`,
-          copy: (
-            <p className="section-team__article__members__wrap-items__copy">
-              Joven con una actitud positiva y de mucha Fe en Dios se apasionó aproximadamente a los 14 años por todo lo de sistemas en cómputo y todo lo que ha aprendido lo ha hecho por si mismo.
-            </p>
-          )
-        },
-        {
-          title: 'Miguel Palacios',
-          image: `${voluntary2}`,
-          copy: (
-            <p className="section-team__article__members__wrap-items__copy">
-              Prospecto ingeniero en sistemas 🎛⌨📟🖥📱💼
-              Tecnólogo en redes de datos🛰🖥📱📡
-              Tauro♉; Geminis♊Creencia ⚛🕉✡✝☦☪☮☯🔯🕎 <a href="https://twitter.com/mich1500" target="_blank"> @mich1500</a>
-            </p>
-          )
-        },
-        {
           title: 'Annyluz Rentería',
           image: `${voluntary3}`,
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
               Soy estudiante en la normal  superior de quibdo y amo todo lo que tenga que ver con tecnología  y diseño de aplicaciones, páginas web, videojuegos etc...
+            </p>
+          )
+        },
+        {
+          title: 'Liliana Ospina',
+          image: `${voluntary9}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Estudiante de la ENSQ, Apasionada por el diseño gráfico 😸 y aprendiz de UI.
             </p>
           )
         },
@@ -229,7 +219,27 @@ class SectionTeam extends React.Component {
                Soy un joven de 20 años estudiante de Ingeniería de Sistemas y técnico de sistemas, apasionado al Desarrollo web y a la programación,creativo cuando algo me llama la atención💻🖥
             </p>
           )
-        }
+        },
+        {
+          title: 'Daniel Martinez',
+          image: `${voluntary1}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Joven con una actitud positiva y de mucha Fe en Dios se apasionó aproximadamente a los 14 años por todo lo de sistemas en cómputo y todo lo que ha aprendido lo ha hecho por si mismo.
+            </p>
+          )
+        },
+        {
+          title: 'Miguel Palacios',
+          image: `${voluntary2}`,
+          copy: (
+            <p className="section-team__article__members__wrap-items__copy">
+              Prospecto ingeniero en sistemas 🎛⌨📟🖥📱💼
+              Tecnólogo en redes de datos🛰🖥📱📡
+              Tauro♉; Geminis♊Creencia ⚛🕉✡✝☦☪☮☯🔯🕎 <a href="https://twitter.com/mich1500" target="_blank"> @mich1500</a>
+            </p>
+          )
+        },
       ]
     }
   }
