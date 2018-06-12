@@ -47,7 +47,7 @@ class SectionSponsors extends React.Component {
               </li>
 
               <li className="section-sponsors__article__list__gold__item">
-                <a href="http://www.samitic.com/" target="_blank">
+                <a href="http://www.barista-v.com/" target="_blank">
                   <img className="section-sponsors__article__list__gold__img" src={`${Sponsor2}`}/>
                 </a>
               </li>
