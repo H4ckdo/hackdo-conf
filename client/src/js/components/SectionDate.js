@@ -8,7 +8,7 @@ class SectionDate extends React.Component {
   }
 
   goToRegister() {
-    window.open("https://goo.gl/forms/Eu5S2c6Oxh8qVovx1");
+    window.open("https://goo.gl/forms/qT8MsUDt8EJAL7b12");
   }
   render() {
     return (
@@ -18,6 +18,7 @@ class SectionDate extends React.Component {
             ¡GRACIAS!
             {/*<div className="lower-bar"></div>*/}
         </span>
+
         {
           /*
           <small className="do-date">
@@ -28,6 +29,9 @@ class SectionDate extends React.Component {
         }
         </div>
         <div className="wrap-btn-register">
+          <button onClick={this.goToRegister.bind(this)} className="btn-register">
+            <small>SEMANA JAVASCRIPT</small>
+          </button>
           {/*<button onClick={this.goToRegister.bind(this)} className="btn-register">Talleres</button>*/}
         </div>
       </div>
