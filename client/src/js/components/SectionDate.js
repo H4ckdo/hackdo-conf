@@ -29,9 +29,6 @@ class SectionDate extends React.Component {
         }
         </div>
         <div className="wrap-btn-register">
-          <button onClick={this.goToRegister.bind(this)} className="btn-register">
-            <small>SEMANA JAVASCRIPT</small>
-          </button>
           {/*<button onClick={this.goToRegister.bind(this)} className="btn-register">Talleres</button>*/}
         </div>
       </div>
