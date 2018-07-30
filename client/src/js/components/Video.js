@@ -9,7 +9,7 @@ class Video extends React.Component {
   componentDidMount() {
     const videoWrapper = document.getElementById('videoWrapper');
     videoWrapper.innerHTML =`
-        <iframe src="https://www.youtube.com/embed/jZxADuoBzs0" height="100%" width="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/n7ytI8lE3o4" height="100%" width="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     `
   }
 
