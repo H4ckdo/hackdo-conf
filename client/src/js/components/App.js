@@ -92,7 +92,7 @@ class App extends React.Component {
     let self = this;
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').then(function (registration) {
-        self.tryPushNotification();
+       // self.tryPushNotification();
         if (registration.installing) {
           serviceWorker = registration.installing;
           console.log('installing');

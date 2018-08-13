@@ -8,14 +8,15 @@ class SectionDate extends React.Component {
   }
 
   goToRegister() {
-    window.open("https://goo.gl/forms/qT8MsUDt8EJAL7b12");
+    window.open("https://goo.gl/forms/FHYOQ9AsshrXgu1h1");
   }
   render() {
     return (
       <div className="background-section">
        <div className="background-section__date ">
         <span className="do-title appear ">
-            ¡GRACIAS!
+            CURSO DE DESARROLLO DE VIDEOJUEGOS
+            {/*¡GRACIAS!*/}
             {/*<div className="lower-bar"></div>*/}
         </span>
 
@@ -29,7 +30,7 @@ class SectionDate extends React.Component {
         }
         </div>
         <div className="wrap-btn-register">
-          {/*<button onClick={this.goToRegister.bind(this)} className="btn-register">Talleres</button>*/}
+          {<button onClick={this.goToRegister.bind(this)} className="btn-register">REGISTRO</button>}
         </div>
       </div>
     )

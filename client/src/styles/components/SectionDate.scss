@@ -21,7 +21,7 @@
           mix-blend-mode: color-dodge;
           grid-area: 2/2;
           text-align: center;
-          font-size: 107px;
+          font-size: 65px;
           color:#fffa0c;
           line-height: 1.1;
           font-family: $global-font-family;
@@ -98,7 +98,7 @@
         grid-template-columns: 0.1fr 1fr 0.1fr;
         .do-title {
             grid-area: 2/1;
-            font-size: 93px !important;
+            font-size: 45px !important;
             margin-top: 100px;
         }
     }
@@ -111,7 +111,7 @@
   .background-section__date  {
         grid-template-columns: 1fr !important;
         .do-title {
-            font-size: 70px !important;
+            font-size: 30px !important;
             margin-top: 0px !important;
         }
     }
