@@ -1,14 +1,14 @@
-let CACHE_NAME = 'v286';
+let CACHE_NAME = 'v288';
 let urlsToCache = [
   '/',
   '/bundle.js',
-  //'/app.css',
-  //'/assets/images/portada.jpg',
-  //'/assets/images/menu-options.png',
-  //'/assets/images/fb-icon.png',
-  //'/assets/images/tw-icon.png',
-  //'/assets/images/menu-close.png',
-  //'/assets/freezer.mp3'
+  '/app.css',
+  '/assets/images/portada.jpg',
+  '/assets/images/menu-options.png',
+  '/assets/images/fb-icon.png',
+  '/assets/images/tw-icon.png',
+  '/assets/images/menu-close.png',
+  '/assets/freezer.mp3'
 ];
 
 self.addEventListener('notificationclick', function (event) {
