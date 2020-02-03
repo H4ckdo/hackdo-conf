@@ -1,26 +1,27 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const InjectChildComponent = require('./Inject.js');
+const React = require("react");
+const ReactDOM = require("react-dom");
+const InjectChildComponent = require("./Inject.js");
 var serviceWorker;
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { loading: true }
+    this.state = { loading: true };
   }
 
   subscribe() {
-    Notification.requestPermission().then((result) => {
-      if (result === 'granted') {
+    Notification.requestPermission().then(result => {
+      if (result === "granted") {
         const options = {
           userVisibleOnly: true,
-          applicationServerKey: this.buildApplicationServerKey(),
+          applicationServerKey: this.buildApplicationServerKey()
         };
-        navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-          serviceWorkerRegistration.pushManager.subscribe(options)
-            .then((subscription) => {
-              console.log('endpoint ', subscription.endpoint);
-              console.log('options ', subscription.options);
+        navigator.serviceWorker.ready.then(serviceWorkerRegistration => {
+          serviceWorkerRegistration.pushManager
+            .subscribe(options)
+            .then(subscription => {
+              console.log("endpoint ", subscription.endpoint);
+              console.log("options ", subscription.options);
               this.sendSubscriptionToServer(subscription);
             });
         });
@@ -30,65 +31,77 @@ class App extends React.Component {
 
   buildApplicationServerKey() {
     const base64 = window.publicServerKey;
-    const rfc4648 = base64.replace(/-/g, '+').replace(/_/g, '/');
-    const characters = atob(rfc4648).split('').map(character => character.charCodeAt(0));
+    const rfc4648 = base64.replace(/-/g, "+").replace(/_/g, "/");
+    const characters = atob(rfc4648)
+      .split("")
+      .map(character => character.charCodeAt(0));
     return new Uint8Array(characters);
   }
 
   async sendSubscriptionToServer(subscription, skip = false) {
     if (skip) return;
     try {
-      const rawResponse = await fetch('/suscribe', {
-        method: 'POST',
+      const rawResponse = await fetch("/suscribe", {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(subscription.toJSON())
       });
       const content = await rawResponse.json();
       console.log(content);
     } catch (error) {
-      console.log('error ', error);
+      console.log("error ", error);
     }
   }
 
   async updateNotification(subscription) {
-    if (localStorage.getItem('updated')) return;
+    if (localStorage.getItem("updated")) return;
     try {
-      const rawResponse = await fetch('/update', {
-        method: 'PUT',
+      const rawResponse = await fetch("/update", {
+        method: "PUT",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(subscription.toJSON())
       });
       const response = await rawResponse.json();
       if (response && response.ok) {
-        localStorage.setItem('updated', true);
+        localStorage.setItem("updated", true);
       }
     } catch (error) {
-      console.log('error ', error);
+      console.log("error ", error);
     }
   }
 
   tryPushNotification() {
-    navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-      serviceWorkerRegistration.pushManager.getSubscription().then((subscription) => {
-        // Do we already have a push message subscription?
-        if (subscription) {
-          console.log('endpoint ', subscription.toJSON());
-          this.updateNotification(subscription);
-          //this.sendSubscriptionToServer(subscription, true);
-        } else {
-          this.subscribe();
-        }
-      });
+    navigator.serviceWorker.ready.then(serviceWorkerRegistration => {
+      serviceWorkerRegistration.pushManager
+        .getSubscription()
+        .then(subscription => {
+          // Do we already have a push message subscription?
+          if (subscription) {
+            console.log("endpoint ", subscription.toJSON());
+            this.updateNotification(subscription);
+            //this.sendSubscriptionToServer(subscription, true);
+          } else {
+            this.subscribe();
+          }
+        });
     });
   }
 
   componentDidMount() {
+    if ("serviceWoker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+    /*
     let self = this;
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').then(function (registration) {
@@ -140,14 +153,28 @@ class App extends React.Component {
     } else {
       self.setState({ loading: false });
     }
+    */
   }
 
   render() {
-    const { Footer, LoadBar, data, PopUp, Header, SectionDate, SectionAbout, SectionSpeakers, SectionAgenda, SectionVenue, SectionSponsors, SectionTeam } = this.props;
+    const {
+      Footer,
+      LoadBar,
+      data,
+      PopUp,
+      Header,
+      SectionDate,
+      SectionAbout,
+      SectionSpeakers,
+      SectionAgenda,
+      SectionVenue,
+      SectionSponsors,
+      SectionTeam
+    } = this.props;
     const { loading } = this.state;
     return (
       <div>
-        <LoadBar display={ loading } />
+        <LoadBar display={loading} />
         <Header />
         <SectionDate />
         <SectionAbout />
@@ -158,20 +185,20 @@ class App extends React.Component {
         <SectionTeam />
         <Footer />
       </div>
-    )
+    );
   }
 }
 
 module.exports = InjectChildComponent(App, [
-  './PopUp.js',
-  './Header.js',
-  './SectionDate.js',
-  './SectionAbout.js',
-  './SectionSpeakers.js',
-  './SectionAgenda.js',
-  './SectionVenue.js',
-  './SectionSponsors.js',
-  './Footer.js',
-  './SectionTeam.js',
-  './LoadBar.js'
+  "./PopUp.js",
+  "./Header.js",
+  "./SectionDate.js",
+  "./SectionAbout.js",
+  "./SectionSpeakers.js",
+  "./SectionAgenda.js",
+  "./SectionVenue.js",
+  "./SectionSponsors.js",
+  "./Footer.js",
+  "./SectionTeam.js",
+  "./LoadBar.js"
 ]);
