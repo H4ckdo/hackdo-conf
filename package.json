@@ -58,7 +58,7 @@
     "ip": "^1.1.5",
     "json-update": "^3.0.0",
     "lodash": "^4.17.4",
-    "mongoose": "^5.1.1",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.0",
     "motion-ui": "1.2.2",
     "node-sass": "^4.7.2",
