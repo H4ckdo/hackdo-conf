@@ -3,7 +3,7 @@ const path = require('path');
 const { exec } = require('child_process');
 const { PORT, HOST, FIXTURES } = process.env.NODE_ENV === "production" ? require('./config/env/production.js') : require('./config/env/development.js');
 const setDependencies = require('./config/globals.js');
-const { installFixtures } = require('./utils/index.js');
+// const { installFixtures } = require('./utils/index.js');
 
 /**
  * @function bootstrap
@@ -13,11 +13,11 @@ const bootstrap = async () => {
   require('./config/logger.js');
   const routes = require('./config/routes.js');
   const middlewares = require('./config/middlewares/index.js');
-  const connection = require('./config/connection.js');
+  // const connection = require('./config/connection.js');
   let app = express();
 
   let middlewaresResult = await middlewares(app);
-  let connectionResult = await connection();
+  let connectionResult = { ok: true } // await connection();
   if (connectionResult.ok) {
     if(middlewaresResult.ok) {
       app.use(express.static('./client/public'));
