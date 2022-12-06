@@ -3914,8 +3914,8 @@ lockfile@~0.4.2:
   resolved "https://registry.yarnpkg.com/lockfile/-/lockfile-0.4.3.tgz#79b965ee9b32d9dd24b59cf81205e6dcb6d3b224"
 
 lodash-es@^4.17.5, lodash-es@^4.2.1:
-  version "4.17.7"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.7.tgz#db240a3252c3dd8360201ac9feef91ac977ea856"
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
 
 lodash._arrayeach@^3.0.0:
   version "3.0.0"
