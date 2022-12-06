@@ -43,7 +43,7 @@
     "compression": "^1.7.2",
     "compression-webpack-plugin": "^1.1.7",
     "css-loader": "0.28.3",
-    "ejs": "^2.5.7",
+    "ejs": "^3.1.7",
     "exports-loader": "0.6.4",
     "expose-loader": "0.7.3",
     "express": "^4.16.2",
