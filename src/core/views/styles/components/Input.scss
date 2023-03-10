@@ -1,0 +1,69 @@
+@import '../settings';
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.invalid {
+  border-color: $error !important;
+  border-width: 2px !important;
+}
+
+.empty {
+  border-color: $warning !important;
+  border-width: 2px !important;
+}
+.valid {
+  border-color: $primary !important;
+}
+.default {
+  color: $black;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: inline-block !important;
+}
+
+.field {
+  margin-top: 10px;
+  .field-input {
+    font-family: Open Sans;
+    vertical-align: top;
+    border: none;
+    padding: 5px;
+    outline: none;
+    border-bottom: 1px solid $primary;
+    transition: all 0.25s;
+    width: 100%;
+    color: $black;
+    font-size: 16px;
+    height: 28px;
+    &:hover {
+
+    }
+    &:focus {
+
+    }
+  }
+}
+
+.push-msg {
+  margin-left: 0px;
+}
+
+.input-msg {
+  font-size: 14px;
+  font-family: Open Sans;
+  display: inline-block;
+  line-height: 1.4;
+  margin-top: 5px;
+  transition: all 0.25s;
+}
+

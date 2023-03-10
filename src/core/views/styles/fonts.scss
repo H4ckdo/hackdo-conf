@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./../fonts//Open_Sans/opensans-regular-webfont.woff') format('woff');
+}
+
+@font-face  {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: local('Open Sans'),
+       url('./../fonts/Open_Sans/opensans-light-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Raleway'),
+  url('./../fonts/Raleway/raleway-bold-webfont.woff') format('woff');
+}
