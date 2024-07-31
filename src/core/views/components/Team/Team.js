@@ -33,7 +33,14 @@ class Team extends React.Component {
           image: `${member_1}`,
           copy: (
             <p className="section-team__article__members__wrap-items__copy">
-              Full stack <b>javascript developer</b> ‍💻, member founder and
+
+             <a
+                href="https://www.maxtermax.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                maxtermax.dev
+              </a>  | full stack <b>javascript developer</b> ‍💻 | member founder and
               contributor at
               <a
                 href="https://twitter.com/H4ckdo"
